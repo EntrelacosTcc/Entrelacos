@@ -1,2 +1,2 @@
 # Entrelacos
-Plataforma digital para conectar ONGs, voluntários e doadores, facilitando ações sociais e a gestão de atividades.
+ Plataforma digital que conecta ONGs, voluntários e doadores, facilitando ações sociais e gestão de atividades.
