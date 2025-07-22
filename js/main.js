@@ -1,21 +1,38 @@
-document.querySelectorAll('.dropdown').forEach(dropdown => {
-  const btn = dropdown.querySelector('.dropdown-btn');
-  const content = dropdown.querySelector('.dropdown-content');
+const path = window.location.pathname.includes("/pages-html/")
+  ? "../components/navbar.html"
+  : "components/navbar.html";
 
-  function showDropdown() {
-    dropdown.classList.add('show');
-  }
+fetch(path)
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+    initNavbarDropdown(); 
+  });
 
-  function hideDropdown() {
-    setTimeout(() => {
-      if (!dropdown.matches(':hover')) {
-        dropdown.classList.remove('show');
-      }
-    }, 150);
-  }
+function initNavbarDropdown() {
+  console.log("Dropdown inicializado!");
 
-  btn.addEventListener('mouseenter', showDropdown);
-  content.addEventListener('mouseenter', showDropdown);
-  btn.addEventListener('mouseleave', hideDropdown);
-  content.addEventListener('mouseleave', hideDropdown);
-});
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const btn = dropdown.querySelector('.dropdown-btn');
+    const content = dropdown.querySelector('.dropdown-content');
+
+    if (!btn || !content) {
+      console.warn("Dropdown incompleto no DOM.");
+      return;
+    }
+
+    btn.addEventListener('mouseenter', () => {
+      dropdown.classList.add('show');
+    });
+    btn.addEventListener('mouseleave', () => {
+      dropdown.classList.remove('show');
+    });
+
+    content.addEventListener('mouseenter', () => {
+      dropdown.classList.add('show');
+    });
+    content.addEventListener('mouseleave', () => {
+      dropdown.classList.remove('show');
+    });
+  });
+}
