@@ -31,9 +31,10 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: var(--branco-fundo);
   font-size: 16px;
+  text-align: justify;
 }
 
 /* Configurações do navbar */
@@ -68,7 +69,7 @@ body {
 }
 
 .search-bar input {
-  width: 65%;
+  width: 70%;
   padding: 8px 12px 8px 35px;
   border: none;
   border-radius: 20px;
@@ -160,6 +161,7 @@ nav a,
   justify-content: center;
   padding: 0 40px;
   box-sizing: border-box;
+  border-bottom: 1px solid var(--primaria-media-2); 
 }
 
 .hero-content {
@@ -177,7 +179,7 @@ nav a,
 .text-hero h1 {
   font-size: 2.8rem;
   margin-bottom: 20px;
-  color: var(--primaria-media)
+  color: var(--primaria-media);
 }
 
 .text-hero p {
@@ -202,4 +204,47 @@ nav a,
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+
+/* Mission Section */
+
+.mission-section {
+  width: 100%;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+.mission-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--primaria-media-2);
+  text-align: center;
+}
+
+.mission-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  gap: 30px; 
+}
+
+.image-mission img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+.text-mission {
+  max-width: 50%;
+}
+
+.text-mission p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--preto);
+  line-height: 1.6;
+  text-align: justify;
 }
