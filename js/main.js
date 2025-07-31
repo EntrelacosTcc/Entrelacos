@@ -36,3 +36,17 @@ function initNavbarDropdown() {
     });
   });
 }
+
+
+// FOOTER
+
+const pathFooter = window.location.pathname.includes("/pages-html/")
+  ? "../components/footer.html"
+  : "components/footer.html";
+
+fetch(pathFooter)
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+    initNavbarDropdown(); 
+  });
