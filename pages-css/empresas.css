@@ -1,0 +1,241 @@
+.parceiraSocial-container{
+    background-color: #3eb4ae62;
+    height: 600px;
+}
+
+
+
+/* PARCERIA INDICE */
+
+.indices-container{
+    display: flex;
+    justify-content: center;
+    height: 450px;
+    background-color: #8b2e5e54;
+}
+
+.indices-content{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.image-indice{
+    flex: 1;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.image-indice img{
+    width: 55%;
+}
+
+
+.valores-indice{
+    max-height: 55%;
+    flex: 1;
+    margin: 150px 100px 150px 20px;
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.valores-indice div{
+    min-width: 10%;
+    display: flex;
+}
+
+.valores-indice img{
+    max-height: 60px;
+}
+
+
+/* RESPONSABILIDADE SOCIAL CORPORATIVA */
+
+.responsabilidade-container h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #05625D;
+  margin-top: 100px;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+
+.responsabilidade-container h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #000;
+  margin-left: 180px;
+  margin-right: 180px;
+  font-weight: normal;
+}
+
+.respContent-cointainer{
+    justify-content: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    gap: 50px;
+}
+
+.responsabilidade-txt p{
+    text-align: justify;
+    max-width: 600px;
+}
+
+
+.responsabilidade-image img{
+    width: 400px;
+    margin-bottom: 50px;
+}
+
+
+/* BENEFICIOS */
+
+.beneficios-conteiner{
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.beneficios-conteiner h1 {
+  font-size: 2.2rem;
+  color: var(--primaria-escura);
+  margin-bottom: 40px;
+}
+
+.beneficio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, auto);   
+  gap: 20px;
+  justify-items: center;
+}
+
+.beneficio-box {
+  max-width: 400px;
+  width: 300px;
+  height: 130px;
+  border-radius: 20px;
+  border: 1px solid #0A3937;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 8px 18px rgba(90, 90, 90, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box-image {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.beneficio-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.box-content h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 15px 0;
+  font-size: 1rem;
+  color: #0A3937;
+  font-weight: 600;
+}
+
+
+
+.box-detalhes p {
+  flex: 1;
+  color: var(--preto);
+  line-height: 1.6;
+  font-size: 0.8rem;
+  text-align: justify;
+}
+
+
+/* METAS ESG */
+
+.metas-container{
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+
+}
+
+.metas-container h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #8B2E5E;
+  margin-bottom: 40px;
+}
+
+.metas-grid {
+  display: grid;
+  margin-left: 50px;
+  margin-right: 50px;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, auto);   
+  gap: 10px;
+  justify-items: center;
+}
+
+.tabela-metas {
+    width: 320px;
+    border: 2px solid #8B2E5E;
+    border-radius: 15px; 
+    border-collapse: separate; 
+    border-spacing: 0; 
+    overflow: hidden; 
+}
+
+.tabela-metas th{
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+    background-color: #8B2E5E;
+    color: white;
+    font-weight: lighter;
+}
+
+.tabela-metas td{
+    color: var(--preto);
+    background-color: #8b2e5e33;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    text-align: justify;
+    padding: 10px 30px 10px 30px;
+}
+
+.tabela-metas th, .tabela-metas td {
+    border: none; 
+}
+
+.tabela-metricas{
+    background-color: rgba(139, 46, 94, 0.2);
+}
+
+
+/* EMPRESAS PARCEIRAS */
+
+.depoimentos-conteiner{
+    background-color: #05625D;
+    height: 350px;
+    margin: 0px 60px 60px 60px;
+}
