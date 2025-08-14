@@ -1,8 +1,58 @@
-.parceiraSocial-container{
-    background-color: #3eb4ae62;
-    height: 600px;
+h1{
+  font-size: 2.2rem;
+  text-align: center;
+  text-align: center;
 }
 
+/* TELA INICIAL */
+
+.parceiraSocial-container{
+  height: 600px;
+  display: flex; 
+  background-color: #3eb4ae62;
+}
+
+.escolha-container{
+  display: flex;
+  justify-content: center;
+  max-height: 600px;
+  height: auto;
+  width: 50%;
+  padding-top: 50px;
+  margin-left: 60px;
+}
+
+.escolha-content{
+  margin-top: 130px;
+  max-width: 600px;
+}
+
+.escolha-content h1{
+  font-size: 3rem;
+  color: #05625D;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.escolha-content button{
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;  
+  color: #05625D;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.escolha-image{
+  width: 50%;
+  background-image: url('/assets/img/empresa-inicial.png');
+  background-repeat: no-repeat; 
+  background-position: right center; 
+  background-size: auto 100%;
+
+}
 
 
 /* PARCERIA INDICE */
@@ -60,7 +110,6 @@
 /* RESPONSABILIDADE SOCIAL CORPORATIVA */
 
 .responsabilidade-container h1 {
-  text-align: center;
   font-size: 2.2rem;
   color: #05625D;
   margin-top: 100px;
@@ -103,11 +152,9 @@
   max-width: 1200px;
   margin: 60px auto;
   padding: 0 20px;
-  text-align: center;
 }
 
 .beneficios-conteiner h1 {
-  font-size: 2.2rem;
   color: var(--primaria-escura);
   margin-bottom: 40px;
 }
@@ -179,8 +226,6 @@
 }
 
 .metas-container h1 {
-  text-align: center;
-  font-size: 2.2rem;
   color: #8B2E5E;
   margin-bottom: 40px;
 }
@@ -207,7 +252,7 @@
 .tabela-metas th{
     font-size: 1rem;
     text-decoration: none;
-    text-align: center;
+
     padding: 15px;
     background-color: #8B2E5E;
     color: white;
@@ -238,4 +283,65 @@
     background-color: #05625D;
     height: 350px;
     margin: 0px 60px 60px 60px;
+}
+
+
+
+/* TRANFORME SEU IMPACTO SOCIAL - FORMS */
+
+.nossoTime-container{
+  margin-bottom: 100px;
+}
+
+.nossoTime-container h1{
+  color: #05625D;
+}
+
+.nossoTime-container form{
+  padding: 20px 20px 40px 20px;
+  text-align: center;
+  width: 750px;
+  border-radius: 20px;
+  background-color: #3eb4ae59;
+}
+
+.nossoTime-content {
+  display: flex;
+  justify-content: center;
+}
+
+.form-content{
+  position: relative;
+  width: fit-content;
+  text-align: start;
+}
+
+.nossoTime-container input{
+  width: 600px;
+  height: 30px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 1px solid #05625D;
+}
+
+.message input{
+  margin-bottom: 15px;
+  height: 60px;
+}
+
+.message p{
+  margin-bottom: 30px;
+  width: 600px;
+  font-size: 0.8rem;
+}
+
+.form-content button{
+  width: 200px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+  background-color: #05625D;
+  font-size: 1.0rem;
+  color: #fff;
 }
