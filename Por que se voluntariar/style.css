@@ -1,0 +1,651 @@
+/* font Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    overflow-x: hidden;
+    background-color: #fffafa;
+}
+
+/* slider */
+section.slider {
+    padding-top: 103px;
+    margin: 0 auto;
+    width: 1146px;
+    height: 358px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-content {
+    width: 400%;
+    height: 100%;
+    display: flex;
+    transition: margin-left 1s;
+}
+
+.slider-content input {
+    display: none;
+}
+
+.slide-box {
+    width: 1146px;
+    height: 358px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: 1s;
+}
+
+#slide1 { background-image: url('./img/transforme.svg'); }
+#slide2 { background-image: url('./img/Screenshot_20250529_104510_Samsung\ Internet.jpg'); }
+
+.camada-transparente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.278), rgba(0, 0, 0, 0.278), rgba(0,0,0,0.278));
+    box-sizing: border-box;
+}
+
+.camada-txt {
+    font-family: "Inter", sans-serif;
+    color: #fff;
+}
+
+.camada-txt h1 {
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.camada-txt p {
+    font-weight: 400;
+    font-size: 21px;
+}
+
+/* slider - navegação botões */
+.nav-manual, .nav-auto {
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    position: absolute;
+    width: 1146px;
+    height: 350px;
+}
+
+.nav-manual .manual-btn, .nav-auto div {
+    border: 1px solid #fffafa;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child) {
+    margin-right: 10px;
+}
+
+.nav-manual .manual-btn:hover {
+    background-color: #fffafa;
+}
+
+#radio1:checked ~ .nav-auto .auto-btn1 { background-color: #b4b4b4; }
+#radio2:checked ~ .nav-auto .auto-btn2 { background-color: #b4b4b4; }
+
+#radio1:checked ~ .primeiro { margin-left: 0%; }
+#radio2:checked ~ .primeiro { margin-left: -25%; }
+
+
+/* o que é ser voluntário? */
+.serVoluntario {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 18vh;
+}
+
+.bloco {
+    width: 1146px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.blocoTxt {
+    margin-top: -5vh;
+}
+
+.blocoImg img {
+    width: 527px;
+    height: 344px;
+    border-radius: 20px;
+}
+
+.titulo {
+    color: #05625D;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.txt {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+    text-align: justify;
+    width: 567px;
+    height: 316px;
+}
+
+.leiVoluntariadoBtn {
+    background-color: #05625D;
+    width: 297px;
+    height: 49.5px;
+    border-radius: 27px;
+    display: flex;
+    justify-content: center;
+    transform: translate(50%, -50%);
+}
+
+.leiVoluntariadoBtn button {
+    background: none;
+    border: none;
+    font-family: 'Poppins', 'sans-serif';
+    font: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.leiVoluntariadoBtn button a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+/* voluntários (código reutilizado no próximo carrossel) */
+.voluntariosImgs {
+  display: flex;
+  justify-content: center;
+  margin-top: 11vh;
+  align-items: center;
+}
+
+.container10 {
+  display: flex;
+  align-items: center;
+  max-width: 1146px;
+  width: 100%;
+  gap: 10px; 
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.gallery-wrapper {
+  overflow-x: auto;
+  flex: 1; 
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+.gallery-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 15px;
+}
+
+.item {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  transition: all 0.6s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.arrow-left,
+.arrow-right {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-left img,
+.arrow-right img {
+  width: 40px;
+  height: 40px;
+}
+
+.arrow-left {
+  margin-right: 5px; 
+}
+
+.arrow-right {
+  margin-left: 5px; 
+}
+
+.control.disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.arrow{
+    display: flex;
+    align-items: center;
+}
+
+/* ranking */
+.voluntariosDestaque {
+    display: flex;
+    justify-content: center;
+    margin-top: 12vh;
+}
+
+.tituloEspecifico {
+    width: 1146px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 9vh;
+}
+
+.rankingContainer {
+    width: 1146px;
+    display: flex;
+    justify-content: center;
+}
+
+.rankingLegenda {
+    display: flex;
+    justify-content: space-around;
+    width: 988px;
+    margin-bottom: -30px;
+    font-family: "Inter", sans-serif;
+    color: #09625D;
+    font-weight: 500;
+    font-size: 19.52px;
+}
+
+.ranking {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/* ainda sem informações sobre a formatação dentro do bloco */
+.rankingUser {
+    background-color: #D9D9D900;
+    width: 988px;
+    height: 98px;
+    border: 1.25px solid #053b39;
+    margin-top: 20px;
+    border-radius: 16.27px;
+    box-shadow: 2px 2px 3px 3.5px rgba(15, 15, 15, 0.27);
+}
+
+/* benefícios de ser voluntário (reutilizado em depoimentos) */
+.beneficios {
+    margin-top: 18vh;
+    display: flex;
+    justify-content: center;
+}
+
+#beneficios {
+    color: #8B2E5E;
+}
+
+.carousel3 {
+    display: flex;
+    justify-content: space-between;
+    width: 1146px;
+}
+ 
+.carousel3 .item img{
+    width: 51px;
+    height: 51px;
+}
+
+.vantagem {
+    border: 1.5px solid #8B2E5E;
+    color: #8B2E5E;
+    width: 315px;
+    height: 185px;
+    border-radius: 18.57px;
+}
+
+.itens {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    column-gap: 30px;
+    align-items: center;
+    padding: 15px;
+    height: 185px;
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 12px;
+}
+
+.itens p {
+    margin-top: -14px;
+    text-align: center;
+}
+
+.itens h1 {
+    font-weight: 600;
+}
+
+#diminuir {
+    font-size: 14px;
+}
+
+/* impacto de ser voluntário */
+.impacto {
+    margin-top: 18vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container4 {
+    display: flex;
+    width: 1146px;
+    justify-content: space-evenly;
+}
+
+.impactoTxt {
+    width: 585px;
+    height: 360px;
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: 400;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.impactoImgs {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: -8vh;
+}
+
+.impactoImgs2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.impactoImgs2 img {
+    width: 211.4105224609375px;
+    height: 256.77490234375px;
+}
+
+.impactoImgs1 img {
+    margin-right: 30px;
+    width: 205.4px;
+    height: 360.04510498046875px;
+}
+
+/* pronto para começar? */
+.pronto {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(img/Rectangle\ 432.svg);
+    width: 100%;
+    height: 488.8px;
+}
+
+.itens2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 488.8px;
+    width: 100%;
+    padding: 30px;
+}
+
+.itens2 h1 {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    margin-top: 15vh;
+    color: #053b39;
+}
+
+.itens2 p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8B2E5E;
+    border-radius: 30px;
+    border: 1px solid #fffafa;
+    width: 390px;
+    height: 72px;
+}
+
+.btn img {
+    width: 30px;
+    height: 42px;
+    margin-right: 20px;
+}
+
+.itens2 button {
+    background-color: #9FCCCA;
+    border: none;
+    color: #ffff;
+}
+
+.itens2 button a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+/* inscrição */
+.inscricao {
+    display: flex;
+    justify-content: center;
+    margin-top: 18vh;
+}
+
+.container6 {
+    width: 1146px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.passosEach {
+    display: flex;
+    font-family: 'Poppins', 'sans-serif';
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.num {
+    width: 54.21px;
+    height: 50px;
+    background-color: #3EB4AE4D;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.descricao {
+    width: 623px;
+    height: 226px;
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 16px;
+    text-align: justify;
+}
+
+.frase {
+    font-size: 16px;
+}
+
+.inscricaoTxt {
+    margin-top: 7vh;
+}
+
+/*O que saber para viver uma experiência voluntária transformadora? */
+.pronto2 {
+    margin-top: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(img/Rectangle\ 435.svg);
+    width: 100%;
+    height: 488.8px;
+}
+
+.pronto2 h1 {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    margin-top: 15vh;
+    color: #2d081b;
+}
+
+#pPronto2 {
+    font-size: 16px;
+}
+
+.pronto2 button {
+    background-color: #ffffff00;
+    border: none;
+    color: #ffff;
+}
+
+.itens2 button a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+/* depoimentos (foi reutilizado o código de "benefícios) */
+#depoimentos {
+    color: #05625D;
+}
+
+#vantagem {
+    border: 1.5px solid #05625D;
+}
+
+/* tutorial */
+.tutorial {
+    margin-top: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container7 {
+    width: 1146px;
+}
+
+#tutorialP {
+    font-weight: 400;
+}
+
+.tituloEspecifico {
+    align-items: center;
+}
+
+hr {
+    margin-top: 12vh;
+    width: 100%;
+    height: 1.5px;
+    background-color: #05625D;
+}
+
+/* perguntas frequentes */
+.perguntasFrequentes {
+    margin-top: 18vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.perguntas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.perguntasEach {
+    width: 842px;
+    background-color: #9FCCCA;
+    margin-bottom: 5vh;
+    border-radius: 15.58px;
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: 450;
+    color: #09625D;
+    align-items: center;
+}
+
+.perguntaVisivel{
+    padding-left: 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 79px;
+}
+
+.mostrar {
+    font-size: 42px;
+    font-weight: 200;
+    cursor: pointer;
+    padding-right: 2vw;
+}
+
+/* respostas */
+.resposta {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.textinho {
+  padding: 5px 2vw;
+  color: #04413f;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.arrow{
+    cursor: pointer;
+}
+
+
+
+
+
+
