@@ -195,7 +195,7 @@
   max-width: 1200px;
 }
 
-.possibilita h1 {
+.possibilita h2 {
   font-size: 2.2rem;
   color: var(--primaria-escura);
   margin-bottom: 40px;
@@ -242,7 +242,7 @@
   padding: 0 20px;
 }
 
-.principais-acoes h1 {
+.principais-acoes h2 {
   text-align: center;
   margin-bottom: 50px;
   font-size: 2.2rem;
@@ -333,18 +333,22 @@
   text-align: center;
 }
 
-.recursos-header h1 {
+.recursos-header h2 {
   font-size: 2.2rem;
   color: var(--destaque-rosa);
   margin: 0 0 10px;
   font-weight: 700;
 }
 
-.recursos-header h2 {
+.recursos-header h3 {
   font-size: 1.2rem;
   color: var(--destaque-rosa);
   margin: 0 0 50px;
   font-weight: 400;
+}
+
+h2 {
+  font-size: 2.8rem;
 }
 
 .recursos-caixas {

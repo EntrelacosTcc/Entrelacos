@@ -1,0 +1,169 @@
+:root {
+  --primaria-escura: #09625d;
+  --primaria-media: #3eb4ae;
+  --primaria-clara: #d3fffd;
+  --primaria-clara2: #9ffffa;
+  --primaria-escura-2: #0a3937;
+  --primaria-media-2: #05625d;
+  --verde-escuro: #0a3937;
+
+  --destaque-rosa: #8b2e5e;
+  --destaque-rosa-claro: #f4dce4;
+  --destaque-rosa-vivo: #b43eaa;
+  --destaque-rosa-vivo-transp: rgba(180, 62, 170, 0.7412);
+  --destaque-rosa-escuro: #46152e;
+
+  --secundaria-clara: #d1ecea;
+  --secundaria-azul-claro: #adf5f1;
+  --secundaria-azul-escuro: #084946;
+
+  --branco-puro: #ffffff;
+  --branco-fundo: #fffafa;
+  --cinza-claro: #d7d7d7;
+  --cinza-medio: #9fcccc;
+  --cinza-escuro: #444444;
+  --preto: #000000;
+  --preto-transp: rgba(0, 0, 0, 0.09);
+
+  --vermelho-vivo: #761447;
+  --cinza-escuro-2: #aaa6a6;
+  --azul-claro-2: #e9ffff;
+  --azul-claro-3: #f8ffff;
+  --azul-claro-4: #bce4e4;
+}
+
+.fundo-loja {
+  background: linear-gradient(rgba(51, 51, 51, 0.6), rgba(33, 33, 33, 0.6)),
+    url(/assets/img/loja.png) no-repeat center center;
+  background-size: cover;
+  padding: 100px 10%;
+  text-align: center;
+  color: var(--branco-puro);
+}
+
+.fundo-loja h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.fundo-loja p {
+  font-size: 1.2rem;
+}
+
+/* Benefícios */
+
+.beneficios-loja {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 10%;
+}
+
+.beneficios-loja-box {
+  border: 3px solid var(--verde-escuro);
+  padding: 10px; /* antes 20px */
+  border-radius: 20px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+
+.beneficios-loja-box img {
+  width: 40px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.beneficios-loja-box p {
+  color: var(--verde-escuro);
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Produtos */
+
+#h2-produtos {
+  font-size: 2rem;
+  color: var(--destaque-rosa-escuro);
+  margin-bottom: 50px;
+}
+
+.produtos-section {
+  padding: 50px 10%;
+}
+
+.produtos-section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--destaque-rosa-escuro);
+  margin-bottom: 50px;
+}
+
+.produtos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+}
+
+.produtos-card {
+  background-color: var(--destaque-rosa-claro);
+  border: 3px solid var(--destaque-rosa);
+  border-radius: 31px;
+  padding: 15px;
+  width: 200px;
+  height: 320px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.img-container {
+  width: 190px;
+  height: 170px;
+  background-color: var(--branco-puro);
+  border: 1px solid var(--destaque-rosa);
+  border-radius: 10px;
+  margin: 0 auto 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container img {
+  max-width: 180px;
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.produto-info {
+  margin-bottom: 10px;
+}
+
+.produto-info .nome {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.produto-info .preco {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--destaque-rosa-escuro);
+}
+
+.produtos-card button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--destaque-rosa);
+  color: #fff;
+  width: 90%;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 auto;
+}
