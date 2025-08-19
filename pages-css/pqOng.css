@@ -1,0 +1,687 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* Seção rosa */
+.hero {
+  background: #f4d7e5; /* tom rosa claro */
+  padding: 80px 20px;
+  height: 340px;
+}
+
+.hero-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Coluna de texto */
+.hero-text {
+    
+  flex: 1 1 400px;
+}
+
+.hero-text h1 {
+    color: #8B2E5E;
+  font-size: 3rem;
+  font-weight: bold;
+
+  margin-top: 0px;
+}
+
+.hero-text p {
+      color: #46152E;
+  font-size: 1rem;
+
+  line-height: 1.5;
+  max-width: 500px;
+}
+
+.hero-text button {
+  margin-top: 25px;
+  padding: 12px 24px;
+  background: #940d50; /* verde */
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-text button:hover {
+
+   transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(61, 7, 30, 0.292);
+cursor: pointer;
+  background: #b61a68f3; ;
+}
+
+/* Placeholder da imagem */
+.hero-image {
+  flex: 1 1 300px;
+ 
+  height: 335px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/Entrelacos/assets/img/pqOng4-voluntaria.jpg);
+  background-size: cover;
+  
+  font-style: italic;
+  margin-top: 0%;
+} 
+.stats{
+display: flex;
+flex-direction: row;
+gap: 72px;
+}
+.stats div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stats strong {
+  font-size: 1.2rem;
+  color: #8b1e50;
+}
+
+.stats span {
+  font-size: 0.9rem;
+  color: #5a3d4d;
+}
+
+.title.c1{
+   color:#0f766e;
+}
+
+.title.c2{
+  color: #8b1e50;
+}
+
+.title.c3{
+  color: #05625D;
+}
+
+.title.c4{
+
+  color: #8B2E5E;
+}
+.title>h1{ position: relative;;
+  top:80px;
+    font-size: 2.5rem;
+    display: flex;
+  font-weight: bold;
+text-align: center;
+justify-content: center;
+}
+
+.subtitle>p{
+position: relative;
+    font-size: 1.3rem;
+    display: flex;
+text-align: center;
+justify-content: center;
+}
+
+.Bcards {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)); /* evita colunas gigantes */
+  gap: 60px 90px; /* espaçamento reduzido */
+  max-width: 800px; /* limite para não estourar a tela */
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.cards {
+  min-height: 150px;
+  width: 300px; /* reduz um pouco a largura do card */
+  border: 2px solid #1c5125;
+  border-radius: 12px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+}
+
+
+.cards:hover {
+  transform: scale(1.05); /* aumenta 5% */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* sombra mais forte no hover */
+}
+/* posicionamento dos cards */
+.Bcards .cards:nth-child(1) { grid-column: 1; }
+.Bcards .cards:nth-child(2) { grid-column: 3; }
+.Bcards .cards:nth-child(3) { grid-column: 5; }
+.Bcards .cards:nth-child(4) { grid-column: 2; }
+.Bcards .cards:nth-child(5) { grid-column: 4; }
+
+/* responsivo */
+@media (max-width: 768px) {
+  .Bcards {
+    grid-template-columns: 1fr;
+  }
+  .Bcards .cards:nth-child(n) {
+    grid-column: auto;
+  }
+  .cards {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+.circle{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+font-weight: bold;
+color: #0f766e;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: #3EB4AE4D;
+}
+.cards.centro{
+  position: absolute;
+  left:50%;
+ top: 150%;
+ transform: translate(-50%, -150%);
+  z-index: 2;
+  gap: 30px;
+
+  
+
+}
+
+.cards>p{
+  position: relative;
+  display: flex;
+  font-weight: 14px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ 
+}
+
+
+.green{
+  width: 100vw;
+  height: 400px;
+  margin-top: 45px;
+ background-image: url(/Entrelacos/assets/img/pqOng5-Rectangle470.png);
+  background-size: cover;
+  
+}
+
+.green>h1{
+ padding-top: 110px;
+display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.txt {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px ;
+  width: 400px;
+  text-align: left;
+  height: 50px;
+  background: rgba(255,255,255,0.2);
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  color: rgb(42, 38, 38); /* Adicionado para corresponder ao texto branco */
+  font-size: 16px; /* Tamanho de fonte igual */
+  line-height: 1.5; /* Altura de linha igual */
+  margin: 0; /* Remove margens padrão */
+}
+
+.txt>p{
+margin-top: 5px;
+}
+/* Adicione também o ícone de check para corresponder */
+.txt i {
+  color: #3fbd95; /* Cor do ícone igual */
+  font-size: 24px; /* Tamanho do ícone igual */
+  margin-top: 0px; /* Alinhamento igual */
+}
+
+/* Mantenha o container checks igual ao features */
+.checks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 90px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 20px 0; /* Adicionado espaçamento se necessário */
+}
+
+/* Container dos benefícios */
+/* Container de cards */
+.benefits-container {
+  max-width: 1100px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 70px;
+  padding: 0 20px;
+}
+
+/* Card rosa */
+.pink-cards {
+  background: #f9f3f6;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 220px;
+  box-shadow: 5px 8px 8px rgba(17, 15, 15, 0.16);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pink-cards:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(61, 7, 30, 0.292);
+}
+
+/* Cabeçalho do card */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-header i {
+  font-size: 22px;
+  color: #8b1e50;
+}
+
+.card-header h3 {
+  font-size: 16px;
+  color: #8b1e50;
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+}
+
+/* Divider rosa */
+.divider {
+  width: 100%;
+  height: 2px;
+  background: #d8a8bb;
+  margin: 0;
+}
+
+/* Texto do card */
+.pink-cards p {
+  font-size: 18px;
+  color: #4b2b3b;
+  line-height: 1.4;
+  margin: 0;
+  text-align: left;
+}
+
+
+
+.car-container{
+
+  position: relative;
+  display: flex;
+  flex-direction: row; 
+  gap: 40px; 
+  justify-content: center; 
+  align-items: center;  
+
+}
+
+.car-cards{
+
+  width: 370px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+border: 2px solid #09625D99;
+  border-radius: 15px;
+  box-shadow: 4px 8px 8px rgba(22, 158, 135, 0.266), -4px 0 15px rgba(22, 158, 135, 0.266);
+}
+
+
+/* Card de depoimento dentro do car-cards */
+.depoimento-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  position: relative;
+  width: 350px;
+  height: 220px;
+}
+
+/* Citação com aspas */
+.depoimento-texto {
+  position: relative;
+  margin-top: 30px;
+  padding-left: 20px;
+  font-weight: 500;
+  color: #333;
+}
+
+.depoimento-texto::before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -40px;
+  font-weight: bold;
+  font-size: 40px;
+  color: #09625D;
+}
+
+/* Parte inferior com nome e foto */
+.depoimento-autor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.depoimento-autor img {
+
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nome {
+  font-weight: bold;
+  font-size: 14px;
+  color: #222;
+}
+
+.ong {
+  font-size: 13px;
+  color: #555;
+}
+
+
+.seta {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  flex-shrink: 0;
+
+}
+.seta.d{
+transform: scaleX(-1);
+}
+
+
+
+
+
+.green.rev{
+   width: 100vw;
+  height: 475px;
+  margin-top: 30px;
+ background-image: url(/Entrelacos/assets/img/pqOng6-Rectangle475.png);
+  background-size: cover;
+}
+
+.green.rev h1{
+ padding-top: 40px;
+ 
+}
+
+
+.btncont{
+  position: relative;
+  display: flex;
+margin-top: 70px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:130px; 
+}
+
+
+.btn{
+  
+width: 350px;
+  height: 60px;
+  background-color: #3EB4AE;
+  border-radius: 25px;
+    box-shadow: 4px 8px 8px rgba(2, 33, 28, 0.266);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover{
+
+    transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(61, 7, 30, 0.292);
+cursor: pointer;
+  background-color: #49cfc8;
+}
+
+.btn p{
+  display: flex;
+  font-weight: bold;
+  padding-top: 5px;
+  color: white;
+ justify-content: center;
+  text-align: center;
+}
+
+
+.bnf-c{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 60px;
+  gap: 40px;
+  
+}
+
+.bnf{
+  width: 190px;
+  height: 30px;
+  border: 2px solid #3EB4AE ;
+  border-radius: 25px;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 15px;
+  
+}
+
+.vd-c{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.vd{
+
+  width: 740px;
+  height: 370px;
+  background-color: #a2a2a2;
+}
+
+.pg-c{
+  position: relative;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 20px;
+}
+
+.pgs{
+width:1050px ;
+height: 85px;
+background-color: #8B2E5E26;
+border-radius: 25px;
+display: flex;
+ justify-content: space-between; /* texto à esquerda, ícone à direita */
+  align-items: center;
+  padding: 0 30px;  
+}
+
+.pgs p{
+  color: #8B2E5E;
+  font-weight: 600;
+ 
+}
+
+.pgs .icone {
+  font-size: 34px;
+  font-weight: bold;
+  color: #8B2E5E;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .pgs {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+.subtitle.c1{
+  color: #05625D;
+}
+
+.contact-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 60px 20px;
+    }
+
+    .contact-card, .form-card {
+      background: white;
+      border: 2px solid #09625D99;
+      border-radius: 25px;
+      box-shadow: 4px 8px 8px rgba(22, 158, 135, 0.15);
+      padding: 30px;
+      width: 350px;
+    }
+
+    .contact-card h3,
+    .form-card h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #064a46;
+      text-align: center;
+    }
+
+    .subtitled {
+      font-size: 15px;
+      text-align: center;
+      color: #0f766e;
+      margin-bottom: 15px;
+     
+      
+    }
+
+    .contact-card hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 10px 0 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #222;
+    }
+
+    .contact-item i {
+      font-size: 30px;
+      color: #0f766e;
+    }
+
+    .form-card form {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .form-card input,
+    .form-card select,
+    .form-card textarea {
+      padding: 10px 15px;
+      border-radius: 20px;
+      border: 1.5px solid #09625D;
+      font-size: 14px;
+    
+    }
+
+    .form-card textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .btn-s{
+      display: flex;
+      justify-content: center;
+    }
+    .form-card button {
+      padding: 12px;
+      background-color: #09625D ;
+       box-shadow: 0 8px 16px rgba(87, 86, 86, 0.292);
+      border: none;
+      border-radius: 25px;
+      width: 200px;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    .form-card button:hover {
+      background-color: #14a498;
+       transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(7, 61, 42, 0.292);
+cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .contact-card, .form-card {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
