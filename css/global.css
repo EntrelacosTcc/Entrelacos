@@ -37,6 +37,10 @@ body {
   text-align: justify;
 }
 
+h2{
+  font-size: 2rem;
+}
+
 /* Configurações do navbar */
 
 .navbar {
@@ -153,102 +157,3 @@ nav a,
   transition: background 0.3s;
 }
 
-/* Hero Section */
-
-.hero-section {
-  width: 100%;
-  height: 550px;
-  background-color: #E9FFFE;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 40px;
-  box-sizing: border-box;
-  border-bottom: 1px solid var(--primaria-media-2); 
-}
-
-.hero-content {
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.text-hero {
-  max-width: 50%;
-}
-
-.text-hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  color: var(--primaria-media);
-}
-
-.text-hero p {
-  font-size: 1rem;
-  margin-bottom: 30px;
-  color: #444444;
-  line-height: 1.5;
-}
-
-.btn-hero {
-  background-color: var(--primaria-media);
-  color: var(--branco);
-  border: none;
-  padding: 12px 28px;
-  border-radius: 15px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.image-hero img {
-  max-width: 450px;
-  width: 100%;
-  padding-top: 30px;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Mission Section */
-
-.mission-section {
-  width: 100%;
-  padding: 60px 40px;
-  box-sizing: border-box;
-}
-
-.mission-section h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: var(--primaria-media-2);
-  text-align: center;
-}
-
-.mission-content {
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-  gap: 30px; 
-}
-
-.image-mission img {
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-}
-
-.text-mission {
-  max-width: 50%;
-}
-
-.text-mission p {
-  font-size: 1rem;
-  margin-bottom: 30px;
-  color: var(--preto);
-  line-height: 1.6;
-  text-align: justify;
-}
