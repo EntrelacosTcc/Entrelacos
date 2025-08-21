@@ -1,0 +1,111 @@
+body{
+
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container{
+
+    width: 100%;
+    height: 100vh;
+
+}
+
+.first-img {
+
+    background-image: url('/assets/img/fale.svg');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    position: relative;
+
+    width: 100%;
+    height: 414px;
+    
+}
+
+.first-txt{
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    color: #FFF;
+    font-family: 'Inter';
+}
+
+.first-txt h1{
+
+    font-size: 50px;
+    margin-top: 0;
+
+}
+
+.first-txt p{
+
+    max-width: 794px;
+    line-height: 1.44;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.contatos{
+    padding: 40px;
+}
+
+.contatos p{
+    margin-left: 15px;
+    font-family: 'Inter';
+    font-weight: 400;
+}
+
+
+.txt-contato h1{
+    font-size: 36px;
+    color: rgba(10, 57, 55, 1);
+    font-family: 'Inter';
+    margin: 30px;
+}
+
+.container-info{
+    margin-top: 70px;
+}
+
+.localizacao{
+    display: flex;
+    margin: 30px;
+}
+
+.email{
+    display: flex;
+    margin: 30px;
+}
+
+
+.telefone{
+    display: flex;
+    margin: 30px;
+}
+
+
+.relogio{
+    display: flex;
+    margin: 30px;
+}
+
+
+
+
