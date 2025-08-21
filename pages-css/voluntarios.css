@@ -30,8 +30,8 @@ section.slider {
     transition: 1s;
 }
 
-#slide1 { background-image: url('./img/transforme.svg'); }
-#slide2 { background-image: url('./img/Screenshot_20250529_104510_Samsung\ Internet.jpg'); }
+#slide1 { background-image: url('/assets/img/transforme.svg'); }
+#slide2 { background-image: url('/assets/img/marmitas.jpg'); }
 
 .camada-transparente {
     display: flex;
@@ -46,7 +46,6 @@ section.slider {
 }
 
 .camada-txt {
-    font-family: "Inter", sans-serif;
     color: #fff;
 }
 
@@ -119,7 +118,6 @@ section.slider {
 
 .titulo {
     color: #05625D;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 600;
 }
@@ -147,7 +145,6 @@ section.slider {
 .leiVoluntariadoBtn button {
     background: none;
     border: none;
-    font-family: 'Poppins', 'sans-serif';
     font: 16px;
     font-weight: 500;
     text-decoration: none;
@@ -270,7 +267,6 @@ section.slider {
     justify-content: space-around;
     width: 988px;
     margin-bottom: -30px;
-    font-family: "Inter", sans-serif;
     color: #09625D;
     font-weight: 500;
     font-size: 19.52px;
@@ -331,7 +327,6 @@ section.slider {
     align-items: center;
     padding: 15px;
     height: 185px;
-    font-family: 'Poppins', 'sans-serif';
     font-size: 12px;
 }
 
@@ -364,7 +359,6 @@ section.slider {
 .impactoTxt {
     width: 585px;
     height: 360px;
-    font-family: 'Poppins', 'sans-serif';
     font-weight: 400;
     font-size: 16px;
     text-align: justify;
@@ -399,7 +393,9 @@ section.slider {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(img/Rectangle\ 432.svg);
+    background-image: url(/assets/img/onda1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 488.8px;
 }
@@ -416,7 +412,6 @@ section.slider {
 }
 
 .itens2 h1 {
-    font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 36px;
     margin-top: 15vh;
@@ -424,7 +419,6 @@ section.slider {
 }
 
 .itens2 p {
-    font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 20px;
 }
@@ -436,13 +430,16 @@ section.slider {
     background-color: #8B2E5E;
     border-radius: 30px;
     border: 1px solid #fffafa;
-    width: 390px;
-    height: 72px;
+    width: 250px;
+    height: 60px;
+}
+
+.btn p {
+    font-size: 16px;
 }
 
 .btn img {
-    width: 30px;
-    height: 42px;
+    height: 25px;
     margin-right: 20px;
 }
 
@@ -472,7 +469,6 @@ section.slider {
 
 .passosEach {
     display: flex;
-    font-family: 'Poppins', 'sans-serif';
     margin-bottom: 20px;
     align-items: center;
 }
@@ -491,7 +487,6 @@ section.slider {
 .descricao {
     width: 623px;
     height: 226px;
-    font-family: 'Poppins', 'sans-serif';
     font-size: 16px;
     text-align: justify;
 }
@@ -510,13 +505,14 @@ section.slider {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(img/Rectangle\ 435.svg);
+    background-image: url(/assets/img/onda2.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 488.8px;
 }
 
 .pronto2 h1 {
-    font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 36px;
     margin-top: 15vh;
@@ -597,7 +593,6 @@ hr {
     background-color: #9FCCCA;
     margin-bottom: 5vh;
     border-radius: 15.58px;
-    font-family: 'Poppins', 'sans-serif';
     font-weight: 450;
     color: #09625D;
     align-items: center;
