@@ -69,6 +69,18 @@
 
 <hr>
 
+<h2>Contatos</h2>
+
+<p align="center">
+  <a href="mailto:contato.entrelacos@gmail.com">
+    <img src="https://img.shields.io/badge/E--mail-000000?style=for-the-badge&logo=gmail&logoColor=800080" alt="E-mail"/>
+  </a>
+  <a href="https://www.instagram.com/entrelacos">
+    <img src="https://img.shields.io/badge/Instagram-000000?style=for-the-badge&logo=instagram&logoColor=800080" alt="Instagram"/>
+  </a>
+</p>
+
+
 <h2>📚 Referências</h2>
 
 <div style="display: flex; align-items: center; gap: 8px;">
