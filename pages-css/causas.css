@@ -1,0 +1,245 @@
+* {
+  margin:0; 
+}
+
+
+.container-hero{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-top: 60px;
+}
+
+.container-img{
+  height: 80%;
+  width: 95%;
+  background-image: url(/assets/img/causas.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* CONTAINERS GERAIS */
+
+.titulo-causas{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+
+}
+
+.titulo-causas img{
+  position: relative;
+  top: -15px;
+  width: 60px;
+}
+
+.titulo-causas h2{
+  margin-right: 120px;
+  text-align: center;
+  width: 600px;
+}
+
+.causas-details-content ul{
+  margin-left: -20px;
+}
+
+
+.fraseMotivadora{
+  margin-top: 40px;
+  display: flex;
+  gap: 10px;
+}
+
+.barrinha{
+  background-color: #05625D;
+  width: 5px;
+  height: 70px;
+}
+
+.fraseMotivadora-txt{
+  display: flex;
+  height: 50px;
+  gap: 10px;
+  align-items: center;
+}
+
+.fraseMotivadora-txt img{
+  width: 30px;
+}
+
+.imagem-principal-causas{
+  width: 330px;
+}
+
+
+
+/* CAUSA CONTAINER-BRANCO */
+
+.white-container{
+  height: 460px;
+  display: flex;
+  padding-right: 60px;
+  gap: 40px;
+}
+
+.causas-img-leftcontent{
+  width: 37%;
+}
+
+.causas-img-leftdetails{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.causa-rightContent{
+  position: relative;
+  width: 50%;
+}
+
+.imagem-secundaria-causas{
+  position: relative;
+  top: -100px;
+  left: -200px;
+  width: 250px;
+}
+
+.titulo-azul{
+  color: #05625D;
+}
+
+
+
+
+/* PURPLE CONTAINER */
+
+
+
+.purple-container{
+  background-image: url("/assets/img/onda-rosa.png"); 
+  height: 460px;
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  display: flex;
+  padding: 170px 0px 0px 300px;
+  margin-bottom: 60px;
+  gap: 40px;
+
+}
+
+.causa-leftContent{
+  position: relative;
+  width: 50%;
+}
+
+.container-geral-esquerdo{
+  width: 700px;
+  position: absolute;
+  right: 0; 
+}
+
+.container-geral-direito{
+  width: 700px;
+  position: absolute;
+  left: 0; 
+}
+
+.causas-img-rightcontent{
+  width: 40%;
+}
+
+.causas-img-rightdetails{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.imagem-secundaria-causasright{
+  position: relative;
+  top: -100px;
+  left: 200px;
+  width: 200px;
+}
+
+.barrinharoxa{
+  background-color: #8B2E5E;
+}
+
+.titulo-roxo h2{
+  color: #8B2E5E;
+}
+
+
+/* BLUE CONTAINER */
+
+.blue-container{
+  height: 460px;
+  background-image: url(/assets/img/onda-azul.png);
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  display: flex;
+  padding: 170px 0px 0px 300px;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+
+/* DETAILS */
+
+
+/* CAUSA SOCIAL */
+.titulo-causas1{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.titulo-causas1 img{
+  position: relative;
+  top: -12px;
+  left: 15px;
+  width: 45px;
+  height: 50px;
+}
+
+.fraseMotivadora-social{
+  margin-top: 40px;
+  display: flex;
+  gap: 10px;
+}
+
+.fraseMotivadora-social img{
+  position: relative;
+  top: 10px;
+  width: 50px;
+}
+
+/* CAUSA AMBIENTAL */
+
+.imagem-ambiental{
+  width: 200px;
+}
+
+/* CAUSA EDUCACIONAL */
+
+.imagem-educacional{
+  width: 170px;
+}
+
+/* SAUDE */
+
+.imagem-saude{
+  width: 330px;
+  left: -50px;
+  top: -120px;
+}
+
+/* HUMANITARIA */
+
+.imagem-humanitaria{
+  width: 200px;
+}
+
