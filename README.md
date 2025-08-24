@@ -72,13 +72,17 @@
 <h2>🌐 Redes Sociais</h2>
 
 <p>
+  <!-- Ícone de E-mail (símbolo @) -->
   <a href="mailto:contato.entrelacos@gmail.com" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="E-mail" width="40" height="40"/>
+    <img src="https://img.icons8.com/ios-filled/50/800080/at-sign.png" alt="E-mail" width="40" height="40"/>
   </a>
+
+  <!-- Ícone do Instagram -->
   <a href="https://www.instagram.com/entrelacos" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/instagram/instagram-original.svg" alt="Instagram" width="40" height="40"/>
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg" alt="Instagram" width="40" height="40"/>
   </a>
 </p>
+
 
 
 <h2>📚 Referências</h2>
