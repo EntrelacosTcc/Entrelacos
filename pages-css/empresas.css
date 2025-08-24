@@ -67,7 +67,6 @@ h1{
 .indices-content{
     position: relative;
     display: flex;
-    flex-wrap: wrap;
     margin-left: 60px;
     margin-right: 60px;
 }
@@ -89,12 +88,6 @@ h1{
   
 }
 
-.image-indice img{
-    max-width: 80%;
-    min-width: 80px;
-}
-
-
 .valores-indice{
     max-height: 55%;
     flex: 1;
@@ -106,26 +99,33 @@ h1{
     gap: 50px;
 }
 
+.valores-indice img{
+  position: relative;
+  top: 5px;
+}
+
 .valores-indice div{
-    min-width: 250px;
-    height: fit-content;
-    display: flex;
+  position: relative;
+  top: -30px;
+  min-width: 250px;
+  height: fit-content;
+  display: flex;
 }
 
 .indice-txt{
   padding-left: 10px;
+  padding-top: 0;
 }
 
 .indice-txt-superior{
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #46152E;
 }
 
 .indice-txt-inferior{
   position: relative;
+  font-size: 0.9rem;
   top: -10px;
-
-  font-size: 0.8rem;
   color: #8B2E5E;
 }
 
@@ -321,59 +321,73 @@ h1{
 
 /* TRANFORME SEU IMPACTO SOCIAL - FORMS */
 
-.nossoTime-container{
-  margin-bottom: 100px;
+/* FORMULARIO */
+
+.formContato-container{
+    margin: 60px 100px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.nossoTime-container h1{
-  color: #05625D;
+.formContato-container form{
+    background-color: #3eb4ae57;
+    width: 700px;
+    border-radius: 20px;
+    padding-bottom: 25px;
 }
 
-.nossoTime-container form{
-  padding: 20px 20px 40px 20px;
+.formContato-container h2{
+  font-size: 1.4rem;
+  margin: 30px;
   text-align: center;
-  width: 750px;
-  border-radius: 20px;
-  background-color: #3eb4ae59;
+  color: #0A3937;
 }
 
-.nossoTime-content {
-  display: flex;
-  justify-content: center;
+.formContato-container label{
+    margin-left: 10%;
+    color: #0A3937;
 }
 
-.form-content{
-  position: relative;
-  width: fit-content;
-  text-align: start;
+.formContato-container input, textarea{
+    margin: 10px 10% 20px ;
+    width: 78%;
+    height: 27px;
+    padding: 5px;
+    border: 1px solid #05625D;
+    border-radius: 10px;
 }
 
-.nossoTime-container input{
-  width: 600px;
-  height: 30px;
-  margin-top: 15px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  border: 1px solid #05625D;
+.formContato-container textarea{
+    height: 70px;
+    padding: 7px;
 }
 
-.message input{
-  margin-bottom: 15px;
+.form-checkbox{
   height: 60px;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  gap: 15px;
+  font-size: 13px;
 }
 
-.message p{
-  margin-bottom: 30px;
-  width: 600px;
-  font-size: 0.8rem;
+.form-checkbox input{
+  width: 35px;
+  margin: 0;
 }
 
-.form-content button{
-  width: 200px;
-  height: 45px;
-  border-radius: 10px;
-  border: none;
-  background-color: #05625D;
-  font-size: 1.0rem;
-  color: #fff;
+.form-checkbox p{
+  margin-top: 5px;
+}
+
+
+.formContato-container button{
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    background-color: #05625D;
+    color: #FFF;
+    border: none;
+    border-radius: 10px;
 }
