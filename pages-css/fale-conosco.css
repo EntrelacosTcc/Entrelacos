@@ -104,39 +104,41 @@ body{
 .formContato-container form{
     width: 600px;
     height: 550px;
-    border: 1px solid #0A3937;
+    border: 1px solid #09625D;
     border-radius: 20px;
-     box-shadow: 2px 4px 10px rgba(0,0,0,0.25);
+    box-shadow: 4px 8px 8px rgba(22, 158, 135, 0.15);
 }
 
 .formContato-container h2{
     text-align: center;
-    color: #0A3937;
+    color: #09625D;
 }
 
 .formContato-container label{
-    margin-left: 5%;
-    color: #0A3937;
+    margin-left: 4.5%;
+    color: #09625D;
+    font-weight: 600;
 }
 
 .formContato-container input, textarea{
-    margin: 10px 5% 20px ;
+    margin: 5px 4% 25px;
     width: 90%;
-    height: 30px;
-    border: 1px solid #0A3937;
-    border-radius: 5px;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid #09625d9a;
+    border-radius: 10px;
 }
 
 .formContato-container textarea{
     height: 70px;
-    padding: 5px;
+
 }
 
 .formContato-container button{
     cursor: pointer;
     width: 200px;
     height: 40px;
-    background-color: #3EB4AE;
+    background-color: #09625D;
     color: #FFF;
     border: none;
     border-radius: 20px;
