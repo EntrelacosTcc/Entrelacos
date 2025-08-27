@@ -417,13 +417,78 @@ h2 {
 
 
 .depoimentos-container{
-  height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .depoimentos-container h2{
   text-align: center;
   font-size: 2.2rem;
   color: #05625D;
+}
+
+#content-slide{
+  display: flex;
+  height: 350px;
+  width: 1100px;
+  align-items: center;
+
+  overflow-x: auto;          
+  scroll-behavior: smooth;                
+
+  margin: 0 auto;           
+  border-radius: 12px;      
+}
+
+
+#bnt-left, #bnt-right{
+  position: absolute;
+  top: 230px;
+  margin-left: 60px;
+  margin-right: 60px;
+  color: #0A3937;
+
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;               
+}
+
+#bnt-right{
+  right: 0;
+}
+
+.block{
+  width: 240px;          /* largura fixa para deslizar certinho */
+  height: 260px;
+  padding: 10px;
+  margin: 0px 50px;       
+  
+  text-align: center;
+  
+  flex-shrink: 0;    
+  border: 2px solid #0A3937;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.block img{
+  border-radius: 100%;
+  width: 90px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.block p{
+  color: #0A3937;
+}
+
+.nome-depoimentos{
+  font-weight: bold;
+}
+
+#content-slide::-webkit-scrollbar{
+  display: none;
 }
 
 
