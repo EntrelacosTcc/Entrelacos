@@ -1,4 +1,4 @@
-const Faleconosco = require('../models/Faleconosco'); // ← Note o "c" minúsculo
+const Sobreongs = require('../models/Sobreongs');
 
 exports.createMensagem = (req, res) => {
   console.log('📩 Dados recebidos:', req.body);
@@ -12,7 +12,7 @@ exports.createMensagem = (req, res) => {
     });
   }
 
-  Faleconosco.create({ nome, email, telefone, assunto, mensagem }, (err, insertId) => {
+  Sobreongs.create({ nome, email, telefone, assunto, mensagem }, (err, insertId) => {
     if (err) {
       console.error('❌ Erro ao salvar contato:', err);
       return res.status(500).json({ 

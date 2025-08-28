@@ -60,13 +60,24 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages-html/home.html'));
 });
 
-app.get('/FaleConosco', (req, res) => {
+app.get('/pages-html/fale-conosco.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages-html/fale-conosco.html'));
+});
+
+app.get('/pages-html/sobre.htmls', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages-html/sobre.html'));
+});
+
+app.get('/pages-html/ONGS.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages-html/ONGS.html'));
 });
 
 // rotas API
 const faleconoscoRoutes = require('./routes/faleconosco');
 app.use('/api/faleconosco', faleconoscoRoutes);
+
+const SobreongsRoutes = require('./routes/sobreongs');
+app.use('/api/Sobreongs', SobreongsRoutes);
 
 // Rota de health check
 app.get('/health', (req, res) => {
@@ -78,6 +89,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Servidor rodando na porta ${PORT}`);
   console.log(`🌐 Home: http://localhost:${PORT}`);
-  console.log(`📞 Fale Conosco: http://localhost:${PORT}/FaleConosco`);
+  console.log(`📞 Fale Conosco: http://localhost:${PORT}/pages-html/fale-conosco.html`);
+  console.log(`📞 Sobre nos: http://localhost:${PORT}/pages-html/sobre.html`);
+  console.log(`📞 ONGS: http://localhost:${PORT}/pages-html/ONGS.html`);
   console.log(`🔧 Health check: http://localhost:${PORT}/health`);
 });

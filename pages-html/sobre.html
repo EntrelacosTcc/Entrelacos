@@ -337,19 +337,19 @@
 
       <div class="form-card">
         <h3>Envie sua mensagem</h3>
-        <form>
-          <input type="text" placeholder="Seu nome">
-          <input type="email" placeholder="Seu e-mail">
-          <input type="text" placeholder="Telefone/WhatsApp">
+        <form id="contact-form">
+          <input type="text" placeholder="Seu nome" name="nome">
+          <input type="email" placeholder="Seu e-mail" name="email">
+          <input type="text" placeholder="Telefone/WhatsApp" name="telefone">
 
-          <select>
+          <select name="assunto">
             <option disabled selected>Assunto</option>
             <option>Dúvidas</option>
             <option>Parcerias</option>
             <option>Outros</option>
           </select>
 
-          <textarea placeholder="Mensagem"></textarea>
+          <textarea placeholder="Mensagem" name="mensagem"></textarea>
 
           <div class="btn-s">
             <button type="submit">Enviar Mensagem</button>
@@ -366,6 +366,6 @@
 
   <script src="/js/carrossel.js"></script>
   <script src="/js/main.js"></script>
+  <script src="/js/sobreongs.js"></script>
 </body>
-
 </html>

@@ -1,6 +1,6 @@
 const db = require('../config/database');
 
-class Faleconosco {
+class Sobreongs {
   // CREATE - Criar novo contato
   static create(novoContato, callback) {
     const { nome, email, telefone, assunto, mensagem } = novoContato;
@@ -11,11 +11,6 @@ class Faleconosco {
       callback(null, results.insertId);
     });
   }
-
-    static getAll(callback) {
-    const query = 'SELECT * FROM faleconosco ORDER BY data_envio DESC';
-    db.query(query, callback);
-  }
 }
 
-module.exports = Faleconosco;
+module.exports = Sobreongs;
