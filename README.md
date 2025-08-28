@@ -1,7 +1,7 @@
 <div class="container-readme" style="text-align:justify">
 
 <p align="left">
-  <img src="./assets/img/iconentrelacos.png" alt="Icon Entrelaços" width="40" style="vertical-align: middle;" />
+  <img src="./assets/img/iconentrelacos.png" alt="Icon Entrelaços" width="100" style="vertical-align: middle;" />
   <strong style="font-size: 32px;">Entrelaços</strong>
 </p>
 
@@ -42,8 +42,6 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="40" height="40"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="40" height="40"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" width="40" height="40"/>
-    <img src="./assets/img/iconentrelacos.png" alt="Icon Entrelaços" width="40"" />
-  hhdjfuuf
 </p>
 
 <h2>🛠️ Ferramentas</h2>
