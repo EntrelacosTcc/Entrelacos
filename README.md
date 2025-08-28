@@ -1,9 +1,10 @@
 <div class="container-readme" style="text-align:justify">
 
-<p align="left">
-  <img src="./assets/img/iconentrelacos.png" alt="Icon Entrelaços" width="100" style="vertical-align: middle;" />
-  <strong style="font-size: 32px;">Entrelaços</strong>
-</p>
+<h1>
+  <div style="display: flex; align-items: center; gap: 8px;"> 
+  <img src="./assets/img/iconentrelacos.png" alt="Icon Entrelaços" width="55" style="position: absolute; top: 20px;"/>
+    Entrelaços 
+</div></h1>
 
 
 
