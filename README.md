@@ -1,7 +1,7 @@
 <div class="container-readme" style="text-align:justify">
 
 <h1><div style="display: flex; align-items: center; gap: 8px;">
-  <img src="./assets/img/iconentrelacos.png" alt="Icon Entrelaços" width="55" style="position: relative; top:-50px" />
+  <img src="./assets/img/iconentrelacos.png" alt="Icon Entrelaços" width="55" style="position: relative;" />
   Entrelaços
 </div></h1>
 
