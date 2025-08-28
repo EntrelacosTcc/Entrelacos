@@ -1,0 +1,8 @@
+# dependências
+node_modules/
+
+# variáveis de ambiente
+.env
+
+# config
+config/

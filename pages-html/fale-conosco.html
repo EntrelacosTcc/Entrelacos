@@ -56,29 +56,33 @@
 
 </section>
 
-<section class="formContato-container">
+<section class="formContato-container" >
 
-   <form action="">
+   <form id="contact-form">
 
       <h2>Entre em contato</h2>
 
-      <label for="">Nome</label><br>
-      <input type="text">
+      <label for="nome">Nome</label><br>
+      <input type="text" name="nome">
       <br>
 
-      <label for="">Email</label><br>
-      <input type="text">
+      <label for="Email">Email</label><br>
+      <input type="text" name="email">
       <br>
 
-      <label for="">Assunto</label><br>
-      <input type="text">
+      <label for="Telefone">Telefone</label><br>
+      <input type="text" name="telefone">
       <br>
 
-      <label for="">Mensagem</label><br>
-      <textarea type="text" ></textarea>
+      <label for="Assunto">Assunto</label><br>
+      <input type="text" name="assunto">
       <br>
 
-      <center><button>Enviar</button></center>
+      <label for="Mensagem">Mensagem</label><br>
+      <textarea type="text" name="mensagem"></textarea>
+      <br>
+
+      <center><button type="submit">Enviar</button></center>
 
    </form>
 
@@ -87,6 +91,7 @@
 <div id="footer"></div>
 
 <script src="/js/main.js"></script>
+<script src="/js/script.js"></script>
 
 </body>
 </html>
