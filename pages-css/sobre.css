@@ -127,7 +127,7 @@
   border: 2px solid var(--primaria-escura);
   border-radius: 12px;
   width: 300px;
-  height: 200px;
+  height: 220px;
   padding: 50px 20px 20px; 
   text-align: center;
   box-sizing: border-box;
@@ -198,7 +198,8 @@
 .possibilita h2 {
   font-size: 2.2rem;
   color: var(--primaria-escura);
-  margin-bottom: 40px;
+  margin-top: 0px;
+  margin-bottom: 60px;
 }
 
 .possibilita-content {
@@ -219,6 +220,7 @@
   line-height: 1.6;
   color: var(--preto);
   margin-bottom: 20px;
+  margin-left: 60px;
   text-align: justify;
 }
 
@@ -474,6 +476,7 @@ h2 {
 .block img{
   border-radius: 100%;
   width: 90px;
+  height: 90px;
   margin-top: 5px;
   margin-bottom: 10px;
 }
