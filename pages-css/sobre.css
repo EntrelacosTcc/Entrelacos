@@ -459,7 +459,7 @@ h2 {
 }
 
 .block{
-  width: 240px;          /* largura fixa para deslizar certinho */
+  width: 240px;         
   height: 260px;
   padding: 10px;
   margin: 0px 50px;       
