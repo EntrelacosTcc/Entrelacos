@@ -1,9 +1,10 @@
 <div class="container-readme" style="text-align:justify">
 
-<h1><div style="display: flex; align-items: center; gap: 8px;">
-  <img src="./assets/img/iconentrelacos.png" alt="Icon Entrelaços" width="55" style="position: relative;" />
+<h1 style="display: flex; align-items: center; gap: 8px;">
+  <img src="./assets/img/iconentrelacos.png" alt="Icon Entrelaços" width="55" style="vertical-align: middle;" />
   Entrelaços
-</div></h1>
+</h1>
+
 
 
 <p><strong>Entrelaços</strong> é uma plataforma que conecta voluntários, ONGs e doadores de forma prática, segura e transparente. Por meio de um sistema inteligente, facilita o engajamento social, promove doações confiáveis e oferece ferramentas de gestão para fortalecer o impacto das organizações e incentivar a solidariedade</p>
