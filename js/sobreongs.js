@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 email: this.querySelector('[name="email"]').value,
                 telefone: this.querySelector('[name="telefone"]').value,
                 assunto: this.querySelector('[name="assunto"]').value,
-                mensagem: this.querySelector('[name="mensagem"]').value
+                mensagem: this.querySelector('[name="mensagem"]').value,
+                origem: 'sobreNos/ONGs'
             };
             
             console.log('📤 Dados a enviar:', formData);
