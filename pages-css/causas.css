@@ -13,13 +13,27 @@
 }
 
 .container-img{
-  height: 80%;
+height: 80%;
   width: 95%;
-  background-image: url(/assets/img/causas.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.116)), 
+    url(/assets/img/causas.svg) center/cover no-repeat;
+  
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.container-img h1{
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.container-img h1, h3{
+  font-weight: 500;
+}
 
 /* CONTAINERS GERAIS */
 
@@ -189,14 +203,12 @@
 
 /* DETAILS */
 
-/* CAUSA ANIMAL */
 
 .img-cachorro{
   top: -150px;
 }
 
 
-/* CAUSA SOCIAL */
 .titulo-causas1{
   display: flex;
   gap: 20px;
@@ -224,15 +236,12 @@
 }
 
 
-/* CAUSA AMBIENTAL */
-
 .imagem-ambiental{
   width: 250px;
   left: -180px;
   top: -100px;
 }
 
-/* CAUSA RELIGIOSA */
 
 .causa-religiosa{
   width: 230px;
@@ -241,7 +250,6 @@
   filter: drop-shadow(2px 2px 1px rgb(255, 255, 255));
 }
 
-/* CAUSA EDUCACIONAL */
 
 .imagem-educacional{
   width: 180px;
@@ -249,15 +257,12 @@
   left: 250px;
 }
 
-/* SAUDE */
-
 .imagem-saude{
   width: 330px;
   left: -50px;
   top: -120px;
 }
 
-/* HUMANITARIA */
 
 .imagem-humanitaria{
   width: 230px;
@@ -265,14 +270,12 @@
   top: -50px;
 }
 
-/* MULHERES */
 
 .causa-mulheres{
   width: 300px;
   left: -40px;
 }
 
-/* LGBTQIA */
 
 .causa-lgbtqia{
   width: 300px;
@@ -281,24 +284,26 @@
 }
 
 
-/* CEA & PCD */
-
 .causa-cea, .causa-pcd{
   left: -80px;
 }
 
-/* CAUSA IDOSO */
 
 .causa-idoso{
   width: 300px;
   left: 90px;
 }
 
-/* CAUSA PCD */
 
 .pcd-titulo img{
   top: -10px;
   filter: saturate(140%) contrast(110%);
   width: 70px;
   height: 70px;
+}
+
+
+.causa-cultural{
+  width: 230px;
+  filter: drop-shadow(2px 2px 1px rgb(255, 255, 255));
 }
