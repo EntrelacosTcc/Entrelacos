@@ -318,9 +318,6 @@ h1{
 }
 
 /* DEPOIMENTOS */
-/* DEPOIMENTOS */
-
-
 .depoimentos-container{
   position: relative;
   display: flex;
@@ -363,37 +360,72 @@ h1{
   right: 0;
 }
 
-.block{
-  width: 240px;         
-  height: 260px;
-  padding: 10px;
-  margin: 0px 50px;       
-  
-  text-align: center;
-  flex-shrink: 0;    
-  border: 2px solid #0A3937;
+.block {
+  width: 300px;       
+  height: 190px;    
+  padding: 10px;      
+  margin: 0px 20px;     
+  border: 1px solid #0A3937;
   border-radius: 20px;
   font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;     
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.block img{
+.block img {
   border-radius: 100%;
   width: 90px;
   height: 90px;
   margin-top: 5px;
   margin-bottom: 10px;
+  object-fit: cover;
 }
 
-.block p{
+.dados p {
   color: #0A3937;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.2rem;
 }
 
-.nome-depoimentos{
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.block img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.nome-depoimentos {
   font-weight: bold;
+}
+
+.texto {
+  margin-top: 3px;
+  color: #0A3937;
+  font-style: italic;
+  padding: 12px;
 }
 
 #content-slide::-webkit-scrollbar{
   display: none;
+}
+
+#content-slide {
+  overflow-x: auto;   
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+#content-slide::-webkit-scrollbar {
+  display: none;         
 }
 
 
@@ -401,6 +433,13 @@ h1{
 /* TRANFORME SEU IMPACTO SOCIAL - FORMS */
 
 /* FORMULARIO */
+
+.faleConosco-title h2 {
+    text-align: center;
+  font-size: 2.2rem;
+  color: #05625D;
+  margin-top:  50px;
+}
 
 .formContato-container{
     margin: 60px 100px 60px;
