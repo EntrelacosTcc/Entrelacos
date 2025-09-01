@@ -47,7 +47,7 @@ h1{
 
 .escolha-image{
   width: 50%;
-  background-image: url('/assets/img/empresa-inicial.png');
+  background-image: url('../assets/img/empresa-inicial.png');
   background-repeat: no-repeat; 
   background-position: right center; 
   background-size: auto 100%;

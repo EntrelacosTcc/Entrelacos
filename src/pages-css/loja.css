@@ -34,7 +34,7 @@
 
 .fundo-loja {
   background: linear-gradient(rgba(51, 51, 51, 0.6), rgba(33, 33, 33, 0.6)),
-    url(/assets/img/loja.png) no-repeat center center;
+    url(../assets/img/loja.png) no-repeat center center;
   background-size: cover;
   padding: 100px 10%;
   text-align: center;

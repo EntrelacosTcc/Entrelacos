@@ -73,7 +73,7 @@ cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(/assets/img/pqOng4-voluntaria.jpg);
+  background-image: url(../assets/img/pqOng4-voluntaria.jpg);
   background-size: cover;
   
   font-style: italic;
@@ -222,7 +222,7 @@ color: #0f766e;
   width: 100vw;
   height: 400px;
   margin-top: 45px;
- background-image: url(/assets/img/pqOng5-Rectangle470.png);
+ background-image: url(../assets/img/pqOng5-Rectangle470.png);
   background-size: cover;
   
 }

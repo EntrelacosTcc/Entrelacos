@@ -17,7 +17,7 @@ height: 80%;
   width: 95%;
   background: 
     linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.116)), 
-    url(/assets/img/causas.svg) center/cover no-repeat;
+    url(../assets/img/causas.svg) center/cover no-repeat;
   
   color: white;
   display: flex;
@@ -133,7 +133,7 @@ height: 80%;
 
 
 .purple-container{
-  background-image: url("/assets/img/onda-rosa.png"); 
+  background-image: url("../assets/img/onda-rosa.png"); 
   height: 460px;
   background-size: cover; 
   background-repeat: no-repeat; 
@@ -191,7 +191,7 @@ height: 80%;
 
 .blue-container{
   height: 460px;
-  background-image: url(/assets/img/onda-azul.png);
+  background-image: url(../assets/img/onda-azul.png);
   background-size: cover; 
   background-repeat: no-repeat; 
   display: flex;

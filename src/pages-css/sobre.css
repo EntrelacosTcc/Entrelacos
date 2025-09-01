@@ -37,7 +37,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-image: url('/assets/img/sobre.png');
+  background-image: url('../assets/img/sobre.png');
   background-size: cover;
   background-position: center;
   padding: 60px 80px;

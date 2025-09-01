@@ -29,11 +29,11 @@ section.slider {
 }
 
 #slide1 {
-    background-image: url('/assets/img/transforme.svg');
+    background-image: url('../assets/img/transforme.svg');
 }
 
 #slide2 {
-    background-image: url('/assets/img/marmitas.jpg');
+    background-image: url('../assets/img/marmitas.jpg');
 }
 
 .camada-transparente {
