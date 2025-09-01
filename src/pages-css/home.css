@@ -102,7 +102,9 @@
 /* QUIZ */
 
 .quiz-container{
-    background-image: url(/assets/img/onda1-home.png);
+  background-image: url("../assets/img/onda1-home.png");
+
+
     background-repeat: no-repeat;
     background-size: cover;
     height: 500px;
@@ -320,7 +322,8 @@
 /* APOIE O ENTRELACOS */
 
 .apoie-container{
-    background-image: url(/assets/img/onda2-home.png);
+  background-image: url(../assets/img/onda2-home.png);
+
     background-repeat: no-repeat;
     background-size: cover;
     color: #D3FFFD;
@@ -356,7 +359,7 @@
     height: 300px;
     width: 480px;
 
-    background-image: url(/assets/img/maos-unidas-home.png);
+    background-image: url(../assets/img/maos-unidas-home.png);
     background-repeat: no-repeat;
     background-size: cover;
 

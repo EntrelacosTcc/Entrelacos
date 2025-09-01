@@ -1,13 +1,22 @@
-const path = window.location.pathname.includes("/pages-html/")
-  ? "../components/navbar.html"
-  : "components/navbar.html";
+const navbarPath = "/src/components/navbar.html";
+const footerPath = "/src/components/footer.html";
 
-fetch(path)
+fetch(navbarPath)
   .then(response => response.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
-    initNavbarDropdown(); 
-  });
+    initNavbarDropdown();
+  })
+  .catch(err => console.error("Erro ao carregar navbar:", err));
+
+fetch(footerPath)
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+    initNavbarDropdown(); // ou outra função se quiser para footer
+  })
+  .catch(err => console.error("Erro ao carregar footer:", err));
+
 
 function initNavbarDropdown() {
   console.log("Dropdown inicializado!");
@@ -36,17 +45,3 @@ function initNavbarDropdown() {
     });
   });
 }
-
-
-// FOOTER
-
-const pathFooter = window.location.pathname.includes("/pages-html/")
-  ? "../components/footer.html"
-  : "components/footer.html";
-
-fetch(pathFooter)
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-    initNavbarDropdown(); 
-  });
