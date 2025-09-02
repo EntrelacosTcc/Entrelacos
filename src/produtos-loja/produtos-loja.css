@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* PRODUTO CONTAINER */
+
+.produto-container{
+  padding: 100px 150px;
+  display: flex;
+  gap: 50px;
+}
+
+/* PRODUTO LATERAL */
+
+.produto-lateral{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.img-lateral{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  background-color: #8b2e5e38;
+  border: 2px solid #8B2E5E;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.img-lateral img{
+  width: 75px;
+  object-fit: cover;
+}
+
+/* PRODUTO PRINCIPAL */
+
+.produto-principal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: #8b2e5e38;
+  border: 2px solid #8B2E5E;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.produto-principal img{
+  width: 250px;
+  object-fit: cover;
+}
+
+/* PRODUTO INFORMAÇÕES */
+
+.inline-p {
+  display: inline;
+  font-weight: bold;
+}
+
+.cor-detail{
+  color: #727272;
+}
+
+.cores{
+  margin-top: 20px;
+  appearance: none;      
+  -webkit-appearance: none;
+  -moz-appearance: none;    
+  
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;   
+  box-shadow: 0 0 0 2px #999; 
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+.cores:checked {
+  box-shadow: 0 0 0 2px #3EB4AE;
+  transition: all 0.3s ease;
+}
+
+/* TAMANHOS */
+
+.tamanhos[type="radio"] {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.opcoes-tamanhos {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #3eb4ae52;
+  color: #333;
+  transition: all 0.3s ease;
+  user-select: none; 
+}
+
+.tamanhos[type="radio"]:checked + label {
+  background-color: #3EB4AE; 
+  color: white;
+  border-color: #4CAF50;
+}
+
+label:hover {
+  background-color: #3eb4ae2c;
+}
+
+
+.produto-info button{
+  margin-top: 15px;
+  cursor: pointer;
+  width: 180px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: #3EB4AE;
+  color: white;
+  font-size: 16px;
+}
