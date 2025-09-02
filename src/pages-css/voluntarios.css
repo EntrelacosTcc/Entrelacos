@@ -109,11 +109,12 @@ section.slider {
 
 
 /* o que é ser voluntário? */
+
 .serVoluntario {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin-top: 18vh;
+    margin-top: 80px;
+    padding: 10px;
 }
 
 .bloco {
@@ -122,11 +123,10 @@ section.slider {
     justify-content: space-between;
 }
 
-.blocoTxt {
-    margin-top: -5vh;
-}
 
 .blocoImg img {
+    position: relative;
+    top: 30px;
     width: 527px;
     height: 344px;
     border-radius: 20px;
@@ -149,127 +149,35 @@ section.slider {
 }
 
 .leiVoluntariadoBtn {
-    background-color: #05625D;
-    width: 297px;
-    height: 49.5px;
-    border-radius: 27px;
-    display: flex;
-    justify-content: center;
-    transform: translate(50%, -50%);
-}
-
-.leiVoluntariadoBtn button {
-    background: none;
-    border: none;
-    font: 16px;
-    font-weight: 500;
-    text-decoration: none;
-}
-
-.leiVoluntariadoBtn button a {
-    text-decoration: none;
-    color: #ffff;
-}
-
-/* voluntários (código reutilizado no próximo carrossel) */
-.voluntariosImgs {
-    display: flex;
-    justify-content: center;
-    margin-top: 11vh;
-    align-items: center;
-}
-
-.container10 {
-    display: flex;
-    align-items: center;
-    max-width: 1146px;
-    width: 100%;
-    gap: 10px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.gallery-wrapper {
-    overflow-x: auto;
-    flex: 1;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.gallery-wrapper::-webkit-scrollbar {
-    display: none;
-}
-
-.gallery {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 15px;
-}
-
-.item {
-    width: 200px;
-    height: 200px;
-    flex-shrink: 0;
-    transition: all 0.6s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.arrow-left,
-.arrow-right {
-    background: transparent;
-    border: none;
+    position: relative;
+    top: -50px;
+    left: 120px;
     cursor: pointer;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #05625D;
+    height: 50px;
+    width: 297px;
+    border-radius: 27px;
+    border: none;
+
+    color: white;
+    font-weight: 500;
+    font: 16px;
 }
 
-.arrow-left img,
-.arrow-right img {
-    width: 40px;
-    height: 40px;
-}
-
-.arrow-left {
-    margin-right: 5px;
-}
-
-.arrow-right {
-    margin-left: 5px;
-}
-
-.control.disabled {
-    opacity: 0.4;
-    cursor: default;
-    pointer-events: none;
-}
-
-.arrow {
-    display: flex;
-    align-items: center;
-}
 
 /* ranking */
+
 .voluntariosDestaque {
     display: flex;
     justify-content: center;
-    margin-top: 12vh;
+    margin-top: 60px;
 }
 
 .tituloEspecifico {
     width: 1146px;
     display: flex;
     justify-content: center;
-    margin-bottom: 9vh;
+    margin-bottom: 50px;
 }
 
 .rankingContainer {
@@ -305,35 +213,24 @@ section.slider {
     box-shadow: 2px 2px 3px 3.5px rgba(15, 15, 15, 0.27);
 }
 
-/* benefícios de ser voluntário (reutilizado em depoimentos) */
 
 /* EMPRESAS PARCEIRAS */
-
-.depoimentos-conteiner{
-    background-color: #05625d36;
-    height: 350px;
-    margin: 0px 60px 60px 60px;
-}
-
-.depoimentos-conteiner h1{
-  color: #05625D;
-}
-
-/* DEPOIMENTOS */
 
 .depoimentos-container{
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
 }
 
 .depoimentos-container h2{
   text-align: center;
   font-size: 2.2rem;
+  margin-bottom: 50px;
   color: #05625D;
 }
 
-#content-slide{
+#content-slide, #content-slide1{
   display: flex;
   height: 350px;
   width: 1100px;
@@ -349,7 +246,7 @@ section.slider {
 
 #bnt-left, #bnt-right{
   position: absolute;
-  top: 230px;
+  top: 260px;
   margin-left: 60px;
   margin-right: 60px;
   color: #0A3937;
@@ -396,11 +293,15 @@ section.slider {
   display: none;
 }
 
+#content-slide1::-webkit-scrollbar{
+  display: none;
+}
+
 
 
 /* impacto de ser voluntário */
 .impacto {
-    margin-top: 40vh;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
 }
@@ -423,7 +324,7 @@ section.slider {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: -8vh;
+    margin-top: -50px;
 }
 
 .impactoImgs2 {
@@ -432,50 +333,47 @@ section.slider {
 }
 
 .impactoImgs2 img {
-    width: 211.4105224609375px;
-    height: 256.77490234375px;
+    width: 211px;
+    height: 256px;
 }
 
 .impactoImgs1 img {
     margin-right: 30px;
-    width: 205.4px;
-    height: 360.04510498046875px;
+    width: 205px;
+    height: 360px;
 }
 
 /* pronto para começar? */
 .pronto {
-    margin-top: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(/assets/img/onda1.svg);
+    background-image: url(../assets/img/onda1.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 488.8px;
+    height: 488px;
 }
 
 .itens2 {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
     text-align: center;
     flex-direction: column;
-    height: 488.8px;
-    width: 100%;
     padding: 30px;
 }
 
 .itens2 h1 {
     font-weight: 600;
     font-size: 36px;
-    margin-top: 15vh;
+    margin-top: 100px;
     color: #053b39;
 }
 
 .itens2 p {
     font-weight: 400;
     font-size: 20px;
+    max-width: 1000px;
+    margin-bottom: 60px;
 }
 
 .btn {
@@ -495,9 +393,6 @@ section.slider {
     gap: 10px;
 }
 
-
-
-
 .btn img {
     height: 25px;
     margin-right: 20px;
@@ -509,16 +404,12 @@ section.slider {
     color: #ffff;
 }
 
-.itens2 button a {
-    text-decoration: none;
-    color: #ffff;
-}
 
 /* inscrição */
 .inscricao {
     display: flex;
     justify-content: center;
-    margin-top: 18vh;
+    margin-top: 100px;
 }
 
 .container6 {
@@ -534,7 +425,7 @@ section.slider {
 }
 
 .num {
-    width: 54.21px;
+    width: 54px;
     height: 50px;
     background-color: #3EB4AE4D;
     border-radius: 50%;
@@ -556,26 +447,25 @@ section.slider {
 }
 
 .inscricaoTxt {
-    margin-top: 7vh;
+    margin-top: 40px;
 }
 
 /*O que saber para viver uma experiência voluntária transformadora? */
 .pronto2 {
-    margin-top: 12vh;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(/assets/img/onda2.svg);
+    background-image: url(../assets/img/onda2.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 488.8px;
+    height: 488px;
 }
 
 .pronto2 h1 {
     font-weight: 600;
     font-size: 36px;
-    margin-top: 15vh;
+    margin-top: 100px;
     color: #2d081b;
 }
 
@@ -594,28 +484,15 @@ section.slider {
     color: #ffff;
 }
 
-/* depoimentos (foi reutilizado o código de "benefícios) */
-#depoimentos {
-    color: #05625D;
-}
-
-#vantagem {
-    border: 1.5px solid #05625D;
-}
 
 /* tutorial */
 .tutorial {
-    margin-top: 15vh;
-    width: 100%;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-}
-
-.container7 {
-    width: 1146px;
 }
 
 #tutorialP {
@@ -627,16 +504,19 @@ section.slider {
 }
 
 hr {
-    margin-top: 12vh;
-    width: 100%;
+    margin-top: 80px;
     height: 1.5px;
     background-color: #05625D;
 }
 
 /* perguntas frequentes */
+
+.container8{
+    margin-bottom: 50px;
+}
+
 .perguntasFrequentes {
-    margin-top: 18vh;
-    width: 100%;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
 }
@@ -649,17 +529,17 @@ hr {
 }
 
 .perguntasEach {
-    width: 842px;
+    width: 840px;
     background-color: #9FCCCA;
-    margin-bottom: 5vh;
-    border-radius: 15.58px;
+    margin-bottom: 35px;
+    border-radius: 15px;
     font-weight: 450;
     color: #09625D;
     align-items: center;
 }
 
 .perguntaVisivel {
-    padding-left: 2vw;
+    padding-left: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -670,7 +550,7 @@ hr {
     font-size: 42px;
     font-weight: 200;
     cursor: pointer;
-    padding-right: 2vw;
+    padding-right: 45px;
 }
 
 /* respostas */
@@ -681,7 +561,7 @@ hr {
 }
 
 .textinho {
-    padding: 5px 2vw;
+    padding: 5px 35px;
     color: #04413f;
     font-weight: 400;
     text-align: justify;

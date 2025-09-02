@@ -13,6 +13,7 @@
 
 <body>
   <div id="navbar"></div>
+  
     <!-- imagem inicial (carrossel de imagens) -->
     <section class="slider">
       <div class="slider-content">
@@ -84,15 +85,13 @@
               acolhedor.
             </p>
           </div>
+
           <a href="https://www.planalto.gov.br/ccivil_03/leis/l9608.htm">
-            <div class="leiVoluntariadoBtn">
-              <button>
-                <a href="https://www.planalto.gov.br/ccivil_03/leis/l9608.htm">
+              <button class="leiVoluntariadoBtn">
                   <p>Lei do Voluntariado</p>
-                </a>
               </button>
-            </div>
           </a>
+
         </div>
         <div class="blocoImg">
           <img src="../assets/img/voluntario6 1.svg" alt="Voluntários reunidos" />
@@ -100,49 +99,8 @@
       </div>
     </div>
 
-    <!-- tirinha de imgs (carrossel) -->
-     <div id="content-slide">
-    <div class="voluntariosImgs carousel-container">
-      <div class="container10">
-        <button id="btn-left" class="arrow-left control" aria-label="Previous image">
-          <img src="../assets/img/chevron-right.svg" alt="Voltar" />
-        </button>
+    <!-- tirinha de imgs -->
 
-        <div class="gallery-wrapper">
-          <div class="gallery">
-            <div class="item">
-              <img src="../assets/img/voluntario1.svg" alt="Voluntários distribuindo itens" />
-            </div>
-            <div class="item">
-              <img src="../assets/img/voluntario2-carrossel.svg" alt="Voluntários descartando reciclagem corretamente" />
-            </div>
-            <div class="item">
-              <img src="../assets/img/voluntario3-carrossel.svg" alt="Voluntários separando itens para doação" />
-            </div>
-            <div class="item">
-              <img src="../assets/img/voluntario4-carrossel.svg" alt="Voluntários doando alimentos" />
-            </div>
-            <div class="item">
-              <img src="../assets/img/voluntario3.svg" alt="Voluntário 4" />
-            </div>
-            <div class="item">
-              <img src="../assets/img/voluntario4.svg" alt="Voluntário 5" />
-            </div>
-            <div class="item">
-              <img src="../assets/img/3.svg" alt="Voluntário 6" />
-            </div>
-            <div class="item">
-              <img src="../assets/img/voluntario5.svg" alt="Voluntário 7" />
-            </div>
-          </div>
-        </div>
-
-        <button id="bnt-right" class="arrow-right control" aria-label="Next image">
-          <img src="../assets/img/seta-direita2.svg" alt="Avançar" />
-        </button>
-      </div>
-    </div>
-  </div>
 
     <!-- voluntários destaque -->
     <div class="voluntariosDestaque">
@@ -171,86 +129,14 @@
       </div>
     </div>
 
-
-    <!-- benefícios de ser voluntário
-    <div class="beneficios">
-      <div class="bloco3">
-        <div class="tituloEspecifico">
-          <div class="titulo">
-            <h1 class="titulo-beneficios">Benefícios de ser voluntário</h1>
-          </div>
-        </div>
-    
-        <div class="carousel3 carousel-container">
-        
-          <button id="btn-left" class="arrow-left control" onclick="direcao(1)">
-            <div class="arrow">
-              <img src="../assets/img/seta-esquerda1.svg" alt="Seta esquerda" />
-            </div>
-          </button>
-    
-       
-          <div class="gallery-wrapper">
-            <div class="gallery" id="content-slide">
-              
-              <div class="vantagem item">
-                <div class="itens">
-                  <img src="../assets/img/pilha-de-tres-livros.svg" alt="Ícone Pilha de Livros" />
-                  <h1 class="diminuir">Autoconhecimento</h1>
-                  <p>Entenda melhor suas capacidades, limites e paixões.</p>
-                </div>
-              </div>
-    
-              <div class="vantagem item">
-                <div class="itens">
-                  <img src="../assets/img/aperto-de-mao.svg" alt="Ícone Aperto de Mão" />
-                  <h1 class="diminuir">Fortalecimento do currículo</h1>
-                  <p>Mostra proatividade, responsabilidade e valores.</p>
-                </div>
-              </div>
-    
-              <div class="vantagem item">
-                <div class="itens">
-                  <img src="../assets/img/planeta-terra.svg" alt="Ícone Planeta Terra" />
-                  <h1 class="diminuir">Impacto real na sociedade</h1>
-                  <p>Ajuda direta a comunidades, causas e instituições.</p>
-                </div>
-              </div>
-    
-              <div class="vantagem item">
-                <div class="itens">
-                  <img src="../assets/img/saude-mental.png" alt="Ícone Saúde Mental" />
-                  <h1 class="diminuir">Melhora do bem-estar emocional</h1>
-                  <p>O voluntariado está associado à redução do estresse e ao aumento da satisfação pessoal.</p>
-                </div>
-              </div>
-    
-            </div>
-          </div>
-    
-       
-          <button id="btn-right" class="arrow-right control" onclick="direcao(2)">
-            <div class="arrow">
-              <img src="../assets/img/seta-direita1.svg" alt="Seta direita" />
-            </div>
-          </button>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- Beneficios -->
-
 <!-- Depoimentos -->
 
-<!-- Depoimentos -->
-
-<!-- Depoimentos -->
 
 <section class="depoimentos-container">
 
   <h2>O que dizem nossas empresas parceiras</h2>
 
-  <i id="bnt-left" class="fa-solid fa-angle-left fa-3x" onclick="direcao(1)"></i>
+  <i id="bnt-left" class="fa-solid fa-angle-left fa-3x" onclick="direcao(1, 360)"></i>
 
   <div id="content-slide">
 
@@ -296,7 +182,7 @@
 
   </div>
 
-  <i id="bnt-right" class="fa-solid fa-angle-right fa-3x" onclick="direcao(2)"></i>
+  <i id="bnt-right" class="fa-solid fa-angle-right fa-3x" onclick="direcao(2, 360)"></i>
 
 </section>
 
@@ -439,9 +325,9 @@
 
   <h2>O que dizem nossas empresas parceiras</h2>
 
-  <i id="bnt-left" class="fa-solid fa-angle-left fa-3x" onclick="direcao(1, 360)"></i>
+  <i id="bnt-left" class="fa-solid fa-angle-left fa-3x" onclick="direcao1(1, 360)"></i>
 
-  <div id="content-slide">
+  <div id="content-slide1">
 
     <div class="block">
 
@@ -485,7 +371,7 @@
 
   </div>
 
-  <i id="bnt-right" class="fa-solid fa-angle-right fa-3x" onclick="direcao(2, 360)"></i>
+  <i id="bnt-right" class="fa-solid fa-angle-right fa-3x" onclick="direcao1(2, 360)"></i>
 
 </section>
 
