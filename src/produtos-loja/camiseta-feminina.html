@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Camiseta Feminina</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../produtos-loja/produtos-loja.css">
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camiseta Feminina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../produtos-loja/produtos-loja.css">
+</head>
+
 <body>
 
-<div id="navbar"></div>
+  <div id="navbar"></div>
 
-<section class="produto-container">
+  <section class="produto-container">
 
     <div class="produto-lateral">
       <div class="img-lateral">
@@ -28,43 +24,181 @@
     </div>
 
     <div class="produto-principal">
-        <img src="../assets/img/Camiseta_feminina.png" alt="Camiseta Feminina">
+      <img src="../assets/img/Camiseta_feminina.png" alt="Camiseta Feminina">
     </div>
 
     <div class="produto-info">
       <h1>Camiseta Feminina</h1>
       <h3>R$84.90</h3>
 
-      <p class="inline-p">Cor:</p>
-      <p class="inline-p cor-detail">Branca</p>
-        <div class="opcoes-cores">
-          <input type="radio" name="branca" id="corBranca" value="branca" class="cores">
-        </div>
 
-      <strong><p>Tamanhos:</p></strong>
-        <div class="opcoes-tamanhos">
-          <input type="radio" id="tamanhoP" name="tamanho" value="P" class="tamanhos">
-          <label for="tamanhoP">P</label>
+      <h3 class="inline-p">Cor:</h3>
+      <h3 class="inline-p cor-detail">Branca</h3>
+      <div class="opcoes-cores">
+        <input type="radio" name="cor" value="branca" class="cores" checked>
+      </div>
 
-          <input type="radio" id="tamanhoM" name="tamanho" value="M" class="tamanhos">
-          <label for="tamanhoM">M</label>
+      <h3>Tamanhos:</h3>
+      <div class="opcoes-tamanhos">
+        <input type="radio" id="tamanhoP" name="tamanho" value="P" class="tamanhos" checked>
+        <label for="tamanhoP">P</label>
 
-          <input type="radio" id="tamanhoG" name="tamanho" value="G" class="tamanhos">
-          <label for="tamanhoG">G</label>
+        <input type="radio" id="tamanhoM" name="tamanho" value="M" class="tamanhos">
+        <label for="tamanhoM">M</label>
 
-          <input type="radio" id="tamanhoGG" name="tamanho" value="GG" class="tamanhos">
-          <label for="tamanhoGG">GG</label>
-        </div>
-        <br>
+        <input type="radio" id="tamanhoG" name="tamanho" value="G" class="tamanhos">
+        <label for="tamanhoG">G</label>
+
+        <input type="radio" id="tamanhoGG" name="tamanho" value="GG" class="tamanhos">
+        <label for="tamanhoGG">GG</label>
+      </div>
+      <br>
 
       <button>Comprar</button>
 
     </div>
-</section>
+  </section>
+
+  <section class="frete-container">
+
+    <div class="frete-title">
+      <h2>Calcular frete</h2>
+    </div>
+
+    <div class="frete">
+      <input type="text" id="cep" required>
+      <label for="cep">Digite seu CEP</label>
+      <button>Ok</button>
+    </div>
 
 
-<div id="footer"></div>
 
-<script src="../js/main.js"></script>
+    </div>
+  </section>
+
+  <section class="produto-detalhes-container">
+
+    <div class="prod-detalhes-content">
+      <div class="detalhes-title">
+        <h2 class="ativo" data-target="descricao">Descrição</h2>
+        <h2 data-target="medidas">Tabela de Medidas</h2>
+      </div>
+
+      <div class="descricao conteudo ativo">
+        <p>Nossa camiseta feminina é muito mais do que uma peça de roupa — é uma forma de vestir
+          propósito. Feita com malha 100% algodão, ela oferece conforto, leveza e um caimento que
+          valoriza todos os estilos. Com estampa exclusiva que representa o amor e o respeito pelos
+          animais, essa camiseta é perfeita para quem quer apoiar a causa animal com atitude e consciência.</p>
+
+        <p>Ideal para o dia a dia ou para eventos de voluntariado, ela combina moda e impacto social. Ao adquirir
+          esta camiseta, você contribui diretamente com projetos que cuidam, protegem e promovem o bem-estar dos
+          animais.</p>
+
+        <p>Características:</p>
+
+        <ul>
+          <li>Tecido 100% algodão (malha penteada).</li>
+          <li>Estampa ecológica com tinta à base d’água.</li>
+          <li>Disponível nos tamanhos P, M, G e GG.</li>
+          <li>Produzida com responsabilidade social.</li>
+        </ul>
+      </div>
+
+      <div class="medidas conteudo">
+        <table>
+          <tr>
+            <th>TAMANHO</th>
+            <th>BUSTO</th>
+            <th>CINTURA</th>
+            <th>QUADRIL</th>
+          </tr>
+
+          <tr>
+            <td>P</td>
+            <td>82-90</td>
+            <td>64-72</td>
+            <td>92-100</td>
+          </tr>
+
+          <tr>
+            <td>M</td>
+            <td>90-98</td>
+            <td>72-80</td>
+            <td>100-108</td>
+          </tr>
+
+          <tr>
+            <td>G</td>
+            <td>98-107</td>
+            <td>80-89</td>
+            <td>108-117</td>
+          </tr>
+
+          <tr>
+            <td>GG</td>
+            <td>107-117</td>
+            <td>89-99</td>
+            <td>117-127</td>
+          </tr>
+        </table>
+        
+        <p>Tamanho em CM</p>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="produtos-section">
+    <h2 id="h2-produtos">Produtos em Destaque</h2>
+    <div class="produtos-grid">
+
+      <div class="produtos-card">
+        <div class="img-container">
+          <img src="../assets/img/Camiseta_feminina.png" alt="Camiseta Feminina">
+        </div>
+        <p>Camiseta Feminina</p>
+        <p>R$84.90</p>
+        <button>Comprar agora</button>
+      </div>
+
+      <div class="produtos-card">
+        <div class="img-container">
+          <img src="../assets/img/Camiseta-Masculina.png" alt="Camiseta Masculina">
+        </div>
+        <p>Camiseta Masculina</p>
+        <p>R$84.90</p>
+        <button>Comprar agora</button>
+      </div>
+
+      <div class="produtos-card">
+        <div class="img-container">
+          <img src="../assets/img/Moletom-Feminino.png" alt="Moletom Feminino">
+        </div>
+        <p>Moletom Feminino</p>
+        <p>R$104.90</p>
+        <button>Comprar agora</button>
+      </div>
+
+      <div class="produtos-card">
+        <div class="img-container">
+          <img src="../assets/img/Moletom.png" alt="Moletom Masculino">
+        </div>
+        <p>Moletom Masculino</p>
+        <p>R$104.90</p>
+        <button>Comprar agora</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <div id="footer"></div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/produtos.js"></script>
 </body>
+
 </html>
