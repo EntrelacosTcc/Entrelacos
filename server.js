@@ -56,8 +56,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Rotas para páginas HTML
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages-html/home.html'));
+app.get('/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/pages-html/fale-conosco.html', (req, res) => {
@@ -88,9 +88,6 @@ app.get('/health', (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Servidor rodando na porta ${PORT}`);
-  console.log(`🌐 Home: http://localhost:${PORT}`);
-  console.log(`📞 Fale Conosco: http://localhost:${PORT}/pages-html/fale-conosco.html`);
-  console.log(`📞 Sobre nos: http://localhost:${PORT}/pages-html/sobre.html`);
-  console.log(`📞 ONGS: http://localhost:${PORT}/pages-html/ONGS.html`);
+  console.log(`🌐 Home: http://localhost:${PORT}/index.html`);
   console.log(`🔧 Health check: http://localhost:${PORT}/health`);
 });
