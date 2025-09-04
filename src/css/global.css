@@ -152,5 +152,9 @@ nav a,
   transition: background 0.3s;
 }
 
+textarea {
+  resize: none;
+}
+
 
 /*  */

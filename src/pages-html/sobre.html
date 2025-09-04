@@ -338,9 +338,9 @@
       <div class="form-card">
         <h3>Envie sua mensagem</h3>
         <form id="contact-form">
-          <input type="text" placeholder="Seu nome" name="nome">
-          <input type="email" placeholder="Seu e-mail" name="email">
-          <input type="text" placeholder="Telefone/WhatsApp" name="telefone">
+          <input type="text" placeholder="Seu nome" name="nome" required>
+          <input type="email" placeholder="Seu e-mail" name="email" required>
+          <input type="text" placeholder="Telefone/WhatsApp" name="telefone" required>
 
           <select name="assunto">
             <option disabled selected>Assunto</option>
@@ -349,7 +349,7 @@
             <option>Outros</option>
           </select>
 
-          <textarea placeholder="Mensagem" name="mensagem"></textarea>
+          <textarea placeholder="Mensagem" name="mensagem" required></textarea>
 
           <div class="btn-s">
             <button type="submit">Enviar Mensagem</button>
