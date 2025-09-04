@@ -90,7 +90,7 @@
 }
 
 .produtos-section {
-  padding: 50px 10%;
+  padding-bottom: 50px 10%;
 }
 
 .produtos-section h2 {
@@ -103,8 +103,9 @@
 .produtos-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 40px;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .produtos-card {
@@ -167,3 +168,4 @@
   cursor: pointer;
   margin: 0 auto;
 }
+
