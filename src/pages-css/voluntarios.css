@@ -214,7 +214,78 @@ section.slider {
 }
 
 
+
 /* EMPRESAS PARCEIRAS */
+
+.beneficios-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.beneficios-container h2{
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #8B2E5E;
+}
+
+.beneficios-slide{
+  display: flex;
+  height: 350px;
+  width: 970px;
+  align-items: center;
+
+  overflow-x: auto;          
+  scroll-behavior: smooth;                
+
+  margin: 0 auto;           
+  border-radius: 12px;      
+}
+
+
+#btn-left, #btn-right{
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;               
+}
+
+#btn-right{
+  right: 0;
+}
+
+.btn-purple{
+  top: 230px;
+  margin-left: 90px;
+  margin-right: 90px;
+  color: #8B2E5E;
+}
+
+.card-beneficios{
+  width: 260px;         
+  height: 150px;
+  padding: 20px 10px 10px;
+  margin: 0px 20px;       
+  
+  text-align: center;
+  flex-shrink: 0;    
+  border: 2px solid #8B2E5E;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.card-beneficios img{
+  width: 50px;
+}
+
+.card-beneficios p{
+  color: #8B2E5E;
+}
+
+
+/* DEPOIMENTOS VOLUNTARIOS */
 
 .depoimentos-container{
   position: relative;
@@ -226,14 +297,14 @@ section.slider {
 .depoimentos-container h2{
   text-align: center;
   font-size: 2.2rem;
-  margin-bottom: 50px;
-  color: #05625D;
+  margin-bottom: 10px;
+  color: #09625D;
 }
 
-#content-slide, #content-slide1{
+.voluntarios-slide{
   display: flex;
   height: 350px;
-  width: 1100px;
+  width: 1030px;
   align-items: center;
 
   overflow-x: auto;          
@@ -243,50 +314,52 @@ section.slider {
   border-radius: 12px;      
 }
 
-
-#bnt-left, #bnt-right{
-  position: absolute;
-  top: 260px;
-  margin-left: 60px;
-  margin-right: 60px;
-  color: #0A3937;
-
-  cursor: pointer;
-  user-select: none;
-  z-index: 10;               
-}
-
-#bnt-right{
-  right: 0;
-}
-
 .block{
-  width: 240px;         
-  height: 260px;
+  width: 280px;         
+  height: 150px;
   padding: 10px;
-  margin: 0px 50px;       
+  margin: 0px 20px;       
   
   text-align: center;
   flex-shrink: 0;    
   border: 2px solid #0A3937;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .block img{
   border-radius: 100%;
-  width: 90px;
-  height: 90px;
+  width: 50px;
+  height: 50px;
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .block p{
   color: #0A3937;
+  text-align: justify;
+  padding: 0 5px;
+}
+
+.depoimentos-user{
+  display: flex;
+  gap: 15px;
+}
+
+.user-name p{
+  text-align: start;
 }
 
 .nome-depoimentos{
   font-weight: bold;
+  line-height: 0;
+}
+
+.btn-blue{
+  top: 230px;
+  margin-left: 90px;
+  margin-right: 90px;
+  color: #09625D;
 }
 
 #content-slide::-webkit-scrollbar{
