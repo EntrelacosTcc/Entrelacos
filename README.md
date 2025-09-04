@@ -2,7 +2,7 @@
 
 <h1>
   <div style="display: flex; align-items: center; gap: 8px;"> 
-  <img src="./assets/img/iconentrelacos.png" alt="Icon Entrelaços" width="55" style="position: absolute; top: 20px;"/>
+  <img src="src/assets/img/iconentrelacos.png" alt="Icon Entrelaços" width="55" style="position: absolute; top: 20px;"/>
     Entrelaços 
 </div></h1>
 
