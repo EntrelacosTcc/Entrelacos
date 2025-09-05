@@ -86,7 +86,7 @@ app.get('/health', (req, res) => {
 });
 
 // Iniciar servidor
-const PORT = process.env.MYSQL_URL;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Servidor rodando na porta ${PORT}`);
   console.log(`🌐 Home: http://localhost:${PORT}/index.html`);
