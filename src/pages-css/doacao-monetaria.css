@@ -171,3 +171,70 @@ body{
     color: rgba(10, 57, 55, 1);
    
 }
+.cont-cardsv{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    gap: 40px;
+    
+}
+.card-valor{
+width: 410px;
+height: 550px;
+position: relative;
+border-radius: 25px;
+border: solid #0A3937;
+
+}
+
+
+.card-pay{
+    width: 555px;
+    height: 850px;
+    border-radius: 25px;
+    border: solid #0A3937;
+    }
+
+.title-valor{
+    position: relative;
+    display: flex;
+    text-align: center;
+    
+}
+
+
+
+
+    .cont-valores{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* evita colunas gigantes */
+        gap: 30px 30px; /* espaçamento reduzido */
+        max-width: 800px; /* limite para não estourar a tela */
+        margin: 0 auto;
+        justify-items: center;
+    
+    }
+
+.valores{
+width: 122px;
+height: 51px;
+background-color: #3EB4AE4D;
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.title-valor p{
+    font-size: 30px;
+}
+
+.title-valor.c{
+    margin-left: 40px;
+}
