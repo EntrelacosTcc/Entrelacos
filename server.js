@@ -42,6 +42,7 @@ app.use((req, res, next) => {
 
 // SERVIR ARQUIVOS ESTÁTICOS
 app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, "src")));
 
 // Servir AMBAS as pastas CSS
 app.use('/css', express.static(path.join(__dirname, 'css')));        
