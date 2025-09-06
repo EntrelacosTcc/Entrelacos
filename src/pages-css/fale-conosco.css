@@ -4,46 +4,64 @@ body{
 }
 
 
-.hero-container {
-    background-image: url('../assets/img/fale.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.hero-img {
     position: relative;
-    height: 414px;
+    padding-top: 60px;
+    height: 360px;
+    overflow: hidden;
 }
 
-.hero-txt{
+.hero-img .bg {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    filter: brightness(85%);
+}
+
+.hero-txt {
     position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #FFF;
+    text-align: center;
+    color: #fff;
+    font-family: 'Inter';
 }
 
 .hero-txt h1{
-    font-size: 50px;
-    margin-bottom: 0;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
 .hero-txt p{
     max-width: 794px;
     line-height: 1.44;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 1rem;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
+
+
+/* CONTATOS */
 
 .contatos-container{
     display: flex;
+    justify-content: center;
     padding-left: 40px;
 }
 
 
+.contato-content{
+    display: flex;
+    width: 1150px;
+}
+
 .contatos-container p{
     margin-left: 15px;
+    width: 400px;
     font-weight: 400;
 }
 
@@ -52,37 +70,24 @@ body{
     font-size: 36px;
     color: rgba(10, 57, 55, 1);
     margin-left: 40px;
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 .container-info{
     width: 50%;
+    
 }
 
 .container-info img{
-    width: 35px;
+    width: 30px;
 }
 
-.localizacao{
-    display: flex;
-    margin: 30px;
-}
-
-.email{
-    display: flex;
-    margin: 30px;
-}
-
-
-.telefone{
-    display: flex;
-    margin: 30px;
-}
-
-
+.localizacao,
+.email,
+.telefone,
 .relogio{
     display: flex;
-    margin: 30px;
+    margin: 15px 38px;
 }
 
 .container-map{
@@ -103,7 +108,7 @@ body{
 
 .formContato-container form{
     width: 600px;
-    height: 550px;
+    padding: 30px 15px;
     border: 1px solid #09625D;
     border-radius: 20px;
     box-shadow: 4px 8px 8px rgba(22, 158, 135, 0.15);
@@ -112,6 +117,7 @@ body{
 .formContato-container h2{
     text-align: center;
     color: #09625D;
+    margin-top: 15px;
 }
 
 .formContato-container label{
