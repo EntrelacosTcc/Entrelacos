@@ -150,7 +150,7 @@ section.slider {
 
 .leiVoluntariadoBtn {
     position: relative;
-    top: -50px;
+    top: -80px;
     left: 120px;
     cursor: pointer;
     background-color: #05625D;
@@ -170,7 +170,7 @@ section.slider {
 .voluntariosDestaque {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .tituloEspecifico {
@@ -374,7 +374,7 @@ section.slider {
 
 /* impacto de ser voluntário */
 .impacto {
-    margin-top: 50px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
 }
@@ -457,7 +457,7 @@ section.slider {
     border-radius: 30px;
     border: 1px solid #fffafa;
     width: 260px;
-    height: 60px;
+    height: 50px;
     padding: 5px 20px;
     font-size: 16px;
     color: white;
@@ -555,6 +555,10 @@ section.slider {
 .itens2 button a {
     text-decoration: none;
     color: #ffff;
+}
+
+.btn{
+    width: 290px;
 }
 
 
