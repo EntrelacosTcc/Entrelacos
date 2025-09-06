@@ -4,7 +4,7 @@ class Sobreongs {
   // CREATE - Criar novo contato
   static create(novoContato, callback) {
     const { nome, email, telefone, assunto, mensagem, origem } = novoContato;
-    const query = 'INSERT INTO faleconosco (nome, email, telefone, assunto, mensagem, origem) VALUES (?, ?, ?, ?, ?, ?)';
+    const query = 'INSERT INTO db_entrelacos.faleconosco (nome, email, telefone, assunto, mensagem, origem) VALUES (?, ?, ?, ?, ?, ?)';
     
     db.query(query, [nome, email, telefone, assunto, mensagem, origem], (err, results) => {
       if (err) return callback(err);
@@ -13,7 +13,7 @@ class Sobreongs {
   }
 
     static getAll(callback) {
-    const query = 'SELECT * FROM faleconosco ORDER BY data_envio DESC';
+    const query = 'SELECT * FROM db_entrelacos.faleconosco ORDER BY data_envio DESC';
     db.query(query, callback);
   }
 }
