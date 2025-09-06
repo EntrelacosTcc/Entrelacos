@@ -144,6 +144,7 @@
 }
 
 .quiz-content button{
+    cursor: pointer;
     background-color: #8B2E5E;
     color: white;
     border: none;
