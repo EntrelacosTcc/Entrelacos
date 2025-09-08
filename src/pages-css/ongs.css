@@ -116,7 +116,7 @@ gap: 72px;
 
   color: #8B2E5E;
 }
-.title>h1{ position: relative;;
+.title>h2{ position: relative;;
   top:80px;
     font-size: 2.5rem;
     display: flex;
@@ -227,7 +227,7 @@ color: #0f766e;
   
 }
 
-.green>h1{
+.green>h2{
  padding-top: 110px;
 display: flex;
   justify-content: center;
@@ -450,7 +450,7 @@ transform: scaleX(-1);
   background-size: cover;
 }
 
-.green.rev h1{
+.green.rev h2{
  padding-top: 40px;
  
 }

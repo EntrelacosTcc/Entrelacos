@@ -74,7 +74,7 @@ body{
     font-weight: 400;
 }
 
-.quemSomos h1{
+.quemSomos h2{
     text-align: center;
     padding-top: 50px ;
     font-weight: 600;
@@ -90,7 +90,7 @@ body{
 }
 
 
-.doacao h1{
+.doacao h2{
     text-align: center;
     color: rgba(10, 57, 55, 1);
     padding-top: 150px;

@@ -121,7 +121,7 @@
   background-color: #8b2e5e1c;
 }
 
-.resumofinanceiro h1{
+.resumofinanceiro h2{
   position: relative;
   display: flex;
   padding-top: 30px;
@@ -201,14 +201,14 @@
 /* TEXTO MEMBROS */
 
 /* ESQUERDA */
-.text-box-left h1{
+.text-box-left h2{
   font-size: 1.4rem;
   color: #3eb4ae;
   margin-left: 120px;
   font-weight: normal;
 }
 
-.text-box-left h2{
+.text-box-left h3{
   font-size: 1rem;
   color: #000000;  
   margin-left: 120px;
@@ -224,14 +224,14 @@
 }
 
 /* DIREITA */
-.text-box-right h1{
+.text-box-right h2{
   font-size: 1.4rem;
   color: #3eb4ae;
   margin-left: 120px;
   font-weight: normal;
 }
 
-.text-box-right h2{
+.text-box-right h3{
   font-size: 1rem;
   color: #000000;  
   margin-left: 120px;
@@ -265,7 +265,7 @@
   width: 100%;
 }
 
-.seguranca-title h1{
+.seguranca-title h2{
   font-size: 2.4rem;
   color: #0a3937;
 }
@@ -276,7 +276,7 @@
   margin-bottom: 30px;
 }
 
-.text-box-seguranca h1{
+.text-box-seguranca h2{
   font-size: 1rem;
   color: #000000;
   margin-left: 100px;
@@ -311,7 +311,7 @@
   height: 475px;
 }
 
-.relatorios h1{
+.relatorios h2{
   font-size: 2.2rem;
   position: absolute;
   color: #0a3937;

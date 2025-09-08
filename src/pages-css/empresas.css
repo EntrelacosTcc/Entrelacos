@@ -1,4 +1,4 @@
-h1{
+h2{
   font-size: 2.2rem;
   text-align: center;
   text-align: center;
@@ -137,7 +137,7 @@ h1{
 
 /* RESPONSABILIDADE SOCIAL CORPORATIVA */
 
-.responsabilidade-container h1 {
+.responsabilidade-container h2 {
   font-size: 2.2rem;
   color: #05625D;
   margin-top: 100px;
@@ -182,7 +182,7 @@ h1{
   padding: 0 20px;
 }
 
-.beneficios-conteiner h1 {
+.beneficios-conteiner h2 {
   color: var(--primaria-escura);
   margin-bottom: 40px;
 }
@@ -252,7 +252,7 @@ h1{
 
 }
 
-.metas-container h1 {
+.metas-container h2 {
   color: #8B2E5E;
   margin-bottom: 40px;
 }
@@ -312,7 +312,7 @@ h1{
     margin: 0px 60px 60px 60px;
 }
 
-.depoimentos-conteiner h1{
+.depoimentos-conteiner h2{
   color: #05625D;
 }
 
