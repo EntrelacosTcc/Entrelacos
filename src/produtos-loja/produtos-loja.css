@@ -9,9 +9,15 @@ body{
 .produto-container{
   display: flex;
   justify-content: center;
-  padding-top: 100px;
+  align-items: center;
   margin: 0px 60px;
+  padding-top: 100px;
+}
+
+.produto-content{
+  position: relative;
   display: flex;
+  width: 1100px;
   gap: 50px;
 }
 
@@ -50,6 +56,7 @@ body{
   align-items: center;
   width: 400px;
   height: 400px;
+  margin-right: 50px;
   background-color: #8b2e5e38;
   border: 2px solid #8B2E5E;
   border-radius: 10px;
@@ -68,35 +75,18 @@ body{
 }
 
 
-.inline-p {
+.inline-h {
   display: inline;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
-.cor-detail{
-  color: #686868;
-}
 
-.cores{
-  margin-top: 20px;
-  appearance: none;      
-  -webkit-appearance: none;
-  -moz-appearance: none;    
-  
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;   
-  box-shadow: 0 0 0 2px #686868; 
-  background-color: aliceblue;
-  cursor: pointer;
-}
-
-.cores:checked {
-  box-shadow: 0 0 0 2px #3EB4AE;
-  transition: all 0.3s ease;
-}
 
 /* TAMANHOS */
+
+.tamanho-content{
+  margin-top: 50px;
+}
 
 .tamanhos[type="radio"] {
   display: none;
@@ -166,7 +156,7 @@ body{
 }
 
 .frete-title{
-  width: 950px;
+  width: 1100px;
   text-align: start;
 }
 
@@ -180,7 +170,7 @@ body{
   gap: 20px;
   position: relative;
   margin: 20px 0;
-  width: 950px;
+  width: 1100px;
 }
 
 .frete input {
@@ -236,7 +226,7 @@ body{
   gap: 20px;
   position: relative;
   margin: 20px 0;
-  width: 950px;
+  width: 1100px;
   line-height: 27px;
 }
 
