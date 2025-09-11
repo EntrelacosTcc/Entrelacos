@@ -15,7 +15,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(85%);
+    filter: brightness(70%);
 }
 
 .hero-txt {
@@ -27,6 +27,7 @@
     flex-direction: column;
     text-align: center;
     color: #A6FCF7;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
 .hero-txt h1{
@@ -136,4 +137,16 @@
 
 .passos p{
     font-size: 16px;
+}
+
+
+/* DOAÇÕES */
+
+.doacoes-container{
+    margin-bottom: 50px;
+}
+
+.doacoes-container h2{
+    text-align: center;
+    color: #09625D;
 }
