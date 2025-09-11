@@ -1,0 +1,509 @@
+h2{
+  font-size: 2.2rem;
+  text-align: center;
+  text-align: center;
+}
+
+/* TELA INICIAL */
+
+.parceiraSocial-container{
+  height: 600px;
+  display: flex; 
+  background-color: #3eb4ae62;
+}
+
+.escolha-container{
+  display: flex;
+  justify-content: center;
+  max-height: 600px;
+  height: auto;
+  width: 50%;
+  padding-top: 50px;
+  margin-left: 60px;
+}
+
+.escolha-content{
+  margin-top: 130px;
+  max-width: 600px;
+}
+
+.escolha-content h1{
+  font-size: 3rem;
+  color: #05625D;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.escolha-content button{
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;  
+  color: #05625D;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.escolha-image{
+  width: 50%;
+  background-image: url('../assets/img/empresa-inicial.png');
+  background-repeat: no-repeat; 
+  background-position: right center; 
+  background-size: auto 100%;
+
+}
+
+
+/* PARCERIA INDICE */
+
+.indices-container{
+    display: flex;
+    justify-content: center;
+    height: 450px;
+    background-color: #8b2e5e54;
+}
+
+.indices-content{
+    position: relative;
+    display: flex;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.image-indice {
+    flex: 1;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.image-indice img {
+    width: 80%; 
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  
+}
+
+.valores-indice{
+    max-height: 55%;
+    flex: 1;
+    margin: 150px 100px 150px 20px;
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.valores-indice img{
+  position: relative;
+  top: 5px;
+}
+
+.valores-indice div{
+  position: relative;
+  top: -30px;
+  min-width: 250px;
+  height: fit-content;
+  display: flex;
+}
+
+.indice-txt{
+  padding-left: 10px;
+  padding-top: 0;
+}
+
+.indice-txt-superior{
+  font-size: 1.1rem;
+  color: #46152E;
+}
+
+.indice-txt-inferior{
+  position: relative;
+  font-size: 0.9rem;
+  top: -10px;
+  color: #8B2E5E;
+}
+
+
+.valores-indice img{
+    max-height: 60px;
+}
+
+
+/* RESPONSABILIDADE SOCIAL CORPORATIVA */
+
+.responsabilidade-container h2 {
+  font-size: 2.2rem;
+  color: #05625D;
+  margin-top: 100px;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+
+.responsabilidade-container h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #000;
+  margin-left: 180px;
+  margin-right: 180px;
+  font-weight: normal;
+}
+
+.respContent-cointainer{
+    justify-content: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    gap: 50px;
+}
+
+.responsabilidade-txt p{
+    text-align: justify;
+    max-width: 600px;
+}
+
+
+.responsabilidade-image img{
+    width: 400px;
+    margin-bottom: 50px;
+}
+
+
+/* BENEFICIOS */
+
+.beneficios-conteiner{
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.beneficios-conteiner h2 {
+  color: var(--primaria-escura);
+  margin-bottom: 40px;
+}
+
+.beneficio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, auto);   
+  gap: 20px;
+  justify-items: center;
+}
+
+.beneficio-box {
+  max-width: 400px;
+  width: 300px;
+  height: 130px;
+  border-radius: 20px;
+  border: 1px solid #0A3937;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.box-image {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.beneficio-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.box-content h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 15px 0;
+  font-size: 1rem;
+  color: #0A3937;
+  font-weight: 600;
+}
+
+
+
+.box-detalhes p {
+  flex: 1;
+  color: var(--preto);
+  line-height: 1.6;
+  font-size: 0.8rem;
+  text-align: justify;
+}
+
+
+/* METAS ESG */
+
+.metas-container{
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+
+}
+
+.metas-container h2 {
+  color: #8B2E5E;
+  margin-bottom: 40px;
+}
+
+.metas-grid {
+  display: grid;
+  margin-left: 50px;
+  margin-right: 50px;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, auto);   
+  gap: 10px;
+  justify-items: center;
+}
+
+.tabela-metas {
+    width: 320px;
+    border: 2px solid #8B2E5E;
+    border-radius: 15px; 
+    border-collapse: separate; 
+    border-spacing: 0; 
+    overflow: hidden; 
+}
+
+.tabela-metas th{
+    font-size: 1rem;
+    text-decoration: none;
+
+    padding: 15px;
+    background-color: #8B2E5E;
+    color: white;
+    font-weight: lighter;
+}
+
+.tabela-metas td{
+    color: var(--preto);
+    background-color: #8b2e5e33;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    text-align: justify;
+    padding: 10px 30px 10px 30px;
+}
+
+.tabela-metas th, .tabela-metas td {
+    border: none; 
+}
+
+.tabela-metricas{
+    background-color: rgba(139, 46, 94, 0.2);
+}
+
+
+/* EMPRESAS PARCEIRAS */
+
+.depoimentos-conteiner{
+    background-color: #05625d36;
+    height: 350px;
+    margin: 0px 60px 60px 60px;
+}
+
+.depoimentos-conteiner h2{
+  color: #05625D;
+}
+
+/* DEPOIMENTOS */
+.depoimentos-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.depoimentos-container h2{
+  text-align: center;
+  font-size: 2.2rem;
+  color: #05625D;
+}
+
+#content-slide{
+  display: flex;
+  height: 350px;
+  width: 1100px;
+  align-items: center;
+
+  overflow-x: auto;          
+  scroll-behavior: smooth;                
+
+  margin: 0 auto;           
+  border-radius: 12px;      
+}
+
+
+#bnt-left, #bnt-right{
+  position: absolute;
+  top: 230px;
+  margin-left: 60px;
+  margin-right: 60px;
+  color: #0A3937;
+
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;               
+}
+
+#bnt-right{
+  right: 0;
+}
+
+.block {
+  width: 300px;       
+  height: 190px;    
+  padding: 10px;      
+  margin: 0px 20px;     
+  border: 1px solid #0A3937;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;     
+}
+
+.block img {
+  border-radius: 100%;
+  width: 90px;
+  height: 90px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.dados p {
+  color: #0A3937;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.2rem;
+}
+
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.block img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.nome-depoimentos {
+  font-weight: bold;
+}
+
+.texto {
+  margin-top: 3px;
+  color: #0A3937;
+  font-style: italic;
+  padding: 12px;
+}
+
+#content-slide::-webkit-scrollbar{
+  display: none;
+}
+
+#content-slide {
+  overflow-x: auto;   
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+#content-slide::-webkit-scrollbar {
+  display: none;         
+}
+
+
+
+/* TRANFORME SEU IMPACTO SOCIAL - FORMS */
+
+/* FORMULARIO */
+
+.faleConosco-title h2 {
+    text-align: center;
+  font-size: 2.2rem;
+  color: #05625D;
+  margin-top:  50px;
+}
+
+.formContato-container{
+    margin: 60px 100px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContato-container form{
+    background-color: #3eb4ae57;
+    width: 700px;
+    border-radius: 20px;
+    padding-bottom: 25px;
+}
+
+.formContato-container h2{
+  font-size: 1.4rem;
+  margin: 30px;
+  text-align: center;
+  color: #0A3937;
+}
+
+.formContato-container label{
+    margin-left: 10%;
+    color: #0A3937;
+}
+
+.formContato-container input, textarea{
+    margin: 10px 10% 20px ;
+    width: 78%;
+    height: 27px;
+    padding: 5px;
+    border: 1px solid #05625D;
+    border-radius: 10px;
+}
+
+.formContato-container textarea{
+    height: 70px;
+    padding: 7px;
+}
+
+.form-checkbox{
+  height: 60px;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  gap: 15px;
+  font-size: 13px;
+}
+
+.form-checkbox input{
+  width: 35px;
+  margin: 0;
+}
+
+.form-checkbox p{
+  margin-top: 5px;
+}
+
+
+.formContato-container button{
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    background-color: #05625D;
+    color: #FFF;
+    border: none;
+    border-radius: 10px;
+}

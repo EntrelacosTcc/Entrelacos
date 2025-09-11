@@ -1,0 +1,90 @@
+body, *{
+    margin: 0;
+    padding: 0;
+}
+
+.quiz-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.quiz-box{
+    text-align: center;
+    margin: 20px 40px;
+    padding: 25px;
+    width: 850px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    box-shadow: 5px 15px 25px #09625d5d;
+}
+
+.quiz-box h1{
+    color: #3EB4AE;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.quiz-box p{
+    margin: 10px;
+}
+
+
+/* CARDS */
+
+.quiz-cards{
+    margin: 30px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.card{
+    background-color: #ffffff;
+    border: 2px solid #3EB4AE;
+    border-radius: 10px;
+    height: 230px;
+    width: 220px;
+}
+
+.card img{
+    margin-top: 40px;
+    width: 55px;
+}
+
+#personalized-img{
+    width: 50px;
+}
+
+.card h3{
+    color: #8B2E5E;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+
+/* BOTOES */
+
+.quiz-box button{
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    margin: 15px 20px;
+}
+
+.btn-cancelar{
+    border: 2px solid #3EB4AE;
+    background-color: #ffffff;
+    color: #3EB4AE;
+}
+
+.btn-iniciar{
+    border: none;
+    background-color: #3EB4AE;
+    color: #ffffff;
+}

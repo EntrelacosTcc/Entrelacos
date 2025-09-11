@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rodapé Entrelaços</title>
+
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="/css/global.css">
+  <!-- Fonte personalizada -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+<style>
+
+    .container-footer {
+    background-color: #05625D;
+    color: #D3FFFD;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-content > div {
+      flex: 1 1 auto;
+      min-width: 180px;
+    }
+
+    .footer-content h2 {
+      margin-bottom: 12px;
+      color: #FFFFFF;         
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .logo-footer-img {
+    position: relative;
+    top: -30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    }
+
+
+    .logo-footer-img img {
+      width: 120px;
+    }
+
+    .nameLogo {
+      font-size: 2rem;
+      color: #D3FFFD;
+      font-family: 'Leckerli One', cursive;
+              position: relative;
+        left: -15px;
+        top: 8px;
+    }
+
+    .txtFooter-logo{
+        position: relative;
+        top: -55px;
+        left: 20px;
+        line-height: 1.5;
+    }
+
+
+    .footer-contact ul,
+    .footer-pages ul,
+    .footer-terms ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-contact li,
+    .footer-pages li,
+    .footer-terms li {
+      margin: 8px 0;
+    }
+
+    .footer-contact a,
+    .footer-pages a,
+    .footer-terms a {
+      text-decoration: none;
+      color: #D3FFFD;
+    }
+
+    .footer-contact a:hover,
+    .footer-pages a:hover,
+    .footer-terms a:hover {
+      color: #a0e7e5;
+    }
+
+    .footer-contact i {
+      margin-right: 8px;
+      width: 20px;
+      text-align: center;
+      color: #D3FFFD;
+    }
+
+    .footer-politics {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 30px;
+      border-top: 1px solid #ffffff44;
+      padding-top: 15px;
+    }
+
+    .footer-contact li {
+        line-height: 2;
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-content > div {
+        width: 100%;
+      }
+
+      .logo-footer-img {
+        justify-content: center;
+      }
+
+      .footer-contact i {
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-footer">
+    <div class="footer-content">
+
+      <div class="footer-logo">
+        <div class="logo-footer-img">
+          <img src="/src/assets/img/logo-navbar.png" alt="Logo Entrelaços" />
+          <p class="nameLogo">Entrelaços</p>
+        </div>
+        <p class="txtFooter-logo">Uma rede solidária que aproxima <br> voluntários, ONGs e doadores.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h2>Contato</h2>
+        <ul>
+          <li><a href="https://maps.app.goo.gl/N3XSoY1Hyw9yUpo69"><i class="fas fa-map-marker-alt"></i>Rua Voluntários da Pátria, 1926 - São Paulo - SP</a></li>
+          <li><a href="#"><i class="fab fa-whatsapp"></i>(11) 98765-4321</a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i>contatoentrelacos.tcc@gmail.com</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i>@entrelacos.web</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-pages">
+        <h2>Páginas</h2>
+        <ul>
+          <li><a href="/src/index.html">Página Inicial</a></li>
+          <li><a href="/src/pages-html/sobre.html">Sobre nós</a></li>
+          <li><a href="/src/pages-html/empresas.html">Empresas</a></li>
+          <li><a href="/src/pages-html/loja.html">Loja</a></li>
+          <li><a href="#">Vagas de Voluntariado</a></li>
+          <li><a href="/src/pages-html/doacao-monetaria.html">Doe Valores</a></li>
+          <li><a href="/src/pages-html/doacao-itens.html">Doe Itens</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-terms">
+        <h2>Termos</h2>
+        <ul>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-politics">
+      <p>© 2025 Entrelaços – Todos os Direitos Reservados | Termos e Condições | Política de Privacidade</p>
+    </div>
+  </div>
+
+</body>
+</html>

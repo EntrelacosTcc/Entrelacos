@@ -1,0 +1,381 @@
+/* Hero Section */
+
+.hero-section {
+  width: 100%;
+  height: 550px;
+  background-color: #E9FFFE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--primaria-media-2); 
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-hero {
+  max-width: 50%;
+}
+
+.text-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: var(--primaria-media);
+}
+
+.text-hero p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #444444;
+  line-height: 1.5;
+}
+
+.btn-hero {
+  background-color: var(--primaria-media);
+  color: var(--branco);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.image-hero img {
+  max-width: 450px;
+  width: 100%;
+  padding-top: 30px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Mission Section */
+
+.mission-section {
+  width: 100%;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+.mission-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--primaria-media-2);
+  text-align: center;
+}
+
+.mission-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  gap: 30px; 
+}
+
+.image-mission img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+.text-mission {
+  max-width: 50%;
+}
+
+.text-mission p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--preto);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+/* QUIZ */
+
+.quiz-container{
+  background-image: url("../assets/img/onda1-home.png");
+
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 60px;
+    padding-right: 60px;
+    gap: 80px;
+}
+
+.quiz-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.quiz-image img{
+    height: 280px;
+}
+
+
+.quiz-content h2{
+    color: #0A3937;
+    font-weight: 500;
+}
+
+.quiz-content h3{
+    color: #09625D;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.quiz-content p{
+    width: 700px;
+}
+
+.quiz-content button{
+    cursor: pointer;
+    background-color: #8B2E5E;
+    color: white;
+    border: none;
+    height: 40px;
+    width: 160px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+/* VAGAS DE VOLUNTARIADO */
+
+.vagas-container{
+    margin-bottom: 50px;
+}
+
+.vagas-container h2{
+    text-align: center;
+    color: #05625D;
+}
+
+.vagas-txt{
+    background-color: #3EB4AE;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 25px;
+    width: 150px;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.vagas-carrossel{
+    height: 400px;
+    background-color: #05625d3a;
+}
+
+/* MAPA - SUA AJUDA MUDA HISTORIAS */
+
+.mapa-container{
+    text-align: center;
+}
+
+.mapa-container h2{
+    color: #05625D;
+}
+.txt-mapa{
+    font-size: 1.3rem;
+    margin-bottom: 50px;
+}
+
+
+/* LOJA */
+
+.loja-container{
+    margin-bottom: 100px;
+}
+
+.loja-txt h2{
+    color: #761447;
+}
+
+.loja-txt p{
+    width: 850px;
+}
+
+
+/* CARROSSEL LOJA */
+
+.produtos-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#content-slide{
+  display: flex;
+  height: 350px;
+  width: 1060px;
+  align-items: center;
+
+  overflow-x: auto;          
+  scroll-behavior: smooth;                
+
+  margin: 0 auto;           
+  border-radius: 12px;      
+}
+
+
+#bnt-left, #bnt-right{
+  position: absolute;
+  top: 150px;
+  margin-left: 60px;
+  margin-right: 60px;
+  color: #8b2e5e;
+
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;               
+}
+
+#bnt-right{
+  right: 0;
+}
+
+.produto{
+  background-color: #f4dce4;
+  border: 3px solid #8b2e5e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;         
+  height: 320px;
+  padding: 10px;
+  margin: 0px 20px;       
+  
+  text-align: center;
+  flex-shrink: 0;    
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.produto-imagem{
+  width: 190px;
+  height: 170px;
+  background-color: white;
+  border: 1px solid #8b2e5e;
+  border-radius: 10px;
+  margin: 0 auto 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.produto-imagem img {
+  max-width: 180px;
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.produto-info {
+  margin-bottom: 10px;
+}
+
+.produto-info .nome {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.produto-info .preco {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--destaque-rosa-escuro);
+}
+
+.produto button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--destaque-rosa);
+  color: #fff;
+  width: 90%;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+#content-slide::-webkit-scrollbar{
+  display: none;
+}
+
+
+
+
+/* APOIE O ENTRELACOS */
+
+.apoie-container{
+  background-image: url(../assets/img/onda2-home.png);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #D3FFFD;
+    padding-bottom: 50px;
+}
+
+.title-container{
+    padding-top: 60px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title-container h2{
+    color: white;
+    margin-bottom: 0;
+}
+
+.apoie-content{
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.content-txt{
+    width: 600px;
+    line-height: 25px;
+}
+
+.content-image{
+    margin-top: 20px;
+    height: 300px;
+    width: 480px;
+
+    background-image: url(../assets/img/maos-unidas-home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 20px;
+}
+
+.content-txt button{
+  cursor: pointer;
+  background-color: #fff;
+  color: #09625D;
+  margin-top: 20px;
+  border: none;
+  height: 40px;
+  width: 160px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
