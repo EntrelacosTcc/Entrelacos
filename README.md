@@ -68,6 +68,10 @@
     <td>Node.js</td>
     <td>Backend com JavaScript</td>
   </tr>
+    <tr>
+    <td>MySQL</td>
+    <td>Banco de Dados</td>
+  </tr>
 </table>
 
 <hr>
@@ -79,7 +83,7 @@
 </div>
 
 <div style="display: flex; align-items: center; gap: 8px;">
-  <p style="position: relative; top: 7px"><strong>ONG Nova Mulher</strong> - Referência em comunicação, acolhimento e design centrado na causa.</p>
+  <p style="position: relative; top: 7px"><strong>Solidarizando</strong> - Referência em comunicação, acolhimento e design centrado na causa.</p>
 </div>
 
 <div style="display: flex; align-items: center; gap: 8px;">
