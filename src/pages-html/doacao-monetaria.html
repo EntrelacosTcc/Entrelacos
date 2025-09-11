@@ -76,39 +76,70 @@
       </div>
     </div>
   </div>
+
+<div class="cont-cardsv">
+
+  <!-- CARD 1 - Valores -->
+  <div class="card-valor">
+    <div class="title-valor">
+      <p>Escolha o valor da sua contribuição</p>
+    </div>
+    <div class="cont-valoresc">
+    <div class="cont-valores">
+      <div class="valores">R$25</div>
+      <div class="valores">R$50</div>
+      <div class="valores">R$100</div>
+      <div class="valores">OUTRO</div>
+    </div></div>
+    <input type="text" class="input-valor" placeholder="Digite o valor">
+    <p class="txt-apoio">Sua doação faz a diferença</p>
+    <p class="txt-explica">Cada contribuição, independente do valor, nos ajuda a manter essa rede de solidariedade ativa e acessível para quem mais precisa.</p>
   </div>
-  <div class="cont-cardsv">
 
-
-    <div class="card-valor">
-      <div class="title-valor">
-        <p>Escolha o valor da sua contribuição</p>
-      </div>
-      <div class="cont-valores">
-        <div class="valores">R$25</div>
-        <div class="valores">R$50</div>
-        <div class="valores">R$100</div>
-        <div class="valores">OUTRO</div>
-
-
-      </div>
-
+  <!-- CARD 2 - Dados -->
+  <div class="card-pay">
+    <div class="title-valor">
+      <p>Complete seus dados</p>
     </div>
 
+    <form class="form-dados">
+      <label>Nome completo</label>
+      <input type="text" placeholder="Digite seu nome" required>
 
+      <label>E-mail</label>
+      <input type="email" placeholder="seu@email.com" required>
 
-    <div class="card-pay">
+      <label>CPF</label>
+      <input type="text" placeholder="000.000.000-00" required>
 
+      <label >Telefone (opcional)</label>
+      <input type="text" placeholder="(00) 00000-0000" >
 
-
-
-
-      <div class="title-valor c">
-        <p>Complete seus dados</p>
+      <h3 class="subtitle">Forma de pagamento</h3>
+      <div class="botoes-pagamento">
+        <button type="button" class="btn-pagamento">Cartão de Crédito</button>
+        <button type="button" class="btn-pagamento">PIX</button>
       </div>
+
+
+
+
+       <div class="termos">
+      <input type="checkbox" id="aceite" name="aceite" required>
+      <label for="aceite">
+        Concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a>.
+        Autorizo o uso dos dados fornecidos para processamento desta doação.
+      </label>
     </div>
 
+    <div class="cont-btn-doacao">
+    <button type="submit" class="btn-doacao">Confirmar Doação</button></div>
+    </form>
   </div>
+</div>
+
+
+ 
 
   <div id="footer"></div>
 

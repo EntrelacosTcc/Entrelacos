@@ -1,3 +1,5 @@
+
+
 body{
     width: 100%;
     height: 100vh;
@@ -152,67 +154,225 @@ body{
     color: rgba(10, 57, 55, 1);
    
 }
+
+
+/* Seção dos dois cards */
 .cont-cardsv{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 50px;
-    margin-bottom: 70px;
-    gap: 40px;
-    
-}
-.card-valor{
-    width: 410px;
-    height: 550px;
-    position: relative;
-    border-radius: 25px;
-    border: solid #0A3937;
-
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+ margin-top: 40px;
+  padding: 40px 20px;
 }
 
-
-.card-pay{
-    width: 555px;
-    height: 850px;
-    border-radius: 25px;
-    border: solid #0A3937;
-}
-
+/* Título comum aos cards */
 .title-valor{
-    position: relative;
-    display: flex;
-    text-align: center;
+display:flex;
+position: relative;
+text-align: center;
+ margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 28px;
+  color: #0A3937;
 }
 
+/* CARD 1 - Valores */
+.card-valor{
+  width: 410px;
+  height: 540px;
+  border: 2px solid #0A3937;
+  border-radius: 25px;
+  padding: 24px;
+  background: #fff;
+}
 
 .cont-valores{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* evita colunas gigantes */
-    gap: 30px 30px; /* espaçamento reduzido */
-    max-width: 800px; /* limite para não estourar a tela */
-    margin: 0 auto;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 90px;
 
+  margin-bottom: 14px;
+  
+}
+
+
+.cont-valoresc{
+
+display: flex;
+justify-content: center;
+align-items: center;
+  
 }
 
 .valores{
-    width: 122px;
-    height: 51px;
-    background-color: #3EB4AE4D;
-    border-radius: 5px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 51px;
+  width: 122px;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: #3EB4AE4D;
+  font-weight: 600;
+  color: #0A3937;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.valores:hover{
+  background: #3EB4AE70;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,.15);
 }
 
-.title-valor p{
-    font-size: 30px;
+/* Input e textos do card 1 (você já tinha) */
+.input-valor{
+  width: 320px;
+  height: 30px;
+  margin: 20px auto 10px;
+  display: block;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3EB4AE4D;
+  font-size: 16px;
+}
+.txt-apoio{
+  font-size: 20px;
+  text-align: left;
+  margin-top: 30px;
+  padding-left: 32px;
+  font-weight: 400;
+  color: #0A3937;
+
+}
+.txt-explica{
+  font-size: 18px;
+  text-align: left;
+  padding-left: 32px;
+  max-width: 360px;
+  text-align: justify;
+  color: #666;
 }
 
-.title-valor.c{
-    margin-left: 40px;
+/* CARD 2 (mantém o que você já tinha, só garantindo padding) */
+.card-pay{
+  width: 555px;
+  min-height: 1050px;
+  border-radius: 25px;
+  border: 2px solid #0A3937;
+  padding: 30px;
+  background: #fff;
+  
+}
+
+.form-dados{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 10px;
+}
+.form-dados label{
+  font-size: 16px;
+  color: #0A3937;
+  font-weight: 600;
+  
+  }
+
+
+
+.form-dados > label:nth-of-type(1)::after,
+.form-dados > label:nth-of-type(2)::after,
+.form-dados > label:nth-of-type(3)::after {
+  content: "*";
+  color: red;
+  font-weight: bold; 
+}
+
+
+.form-dados input{
+  border: none;
+  border-bottom: 1px solid #0A3937;
+  padding: 8px;
+  font-size: 15px;
+  outline: none;
+}
+.subtitle{
+  margin-top: 24px;
+  font-size: 25px;
+  font-weight: 600;
+  color: #0A3937;
+}
+.botoes-pagamento{
+  display: flex;
+  gap: 100px;
+  margin-top: 14px;
+  justify-content: center;
+}
+.btn-pagamento{
+    width: 200px;
+    height: 48px;
+  background-color: #3EB4AE;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn-pagamento:hover{ 
+    background-color: #2b8d87;
+ transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,.15); }
+
+
+
+
+
+.termos {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 280px;
+  font-size: 12px;
+  color: #333;
+}
+
+.termos a {
+  color: #3EB4AE;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.termos a:hover {
+  text-decoration: underline;
+}
+
+
+
+.cont-btn-doacao{
+display: flex;
+justify-content: center;
+}
+
+/* Botão */
+.btn-doacao {
+    width: 280px;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #3EB4AE;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-doacao:hover {
+  background-color: #2a8f8a;
+   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,.15);
 }
