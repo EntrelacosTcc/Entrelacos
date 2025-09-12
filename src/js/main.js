@@ -18,30 +18,29 @@ fetch(footerPath)
   .catch(err => console.error("Erro ao carregar footer:", err));
 
 
+  // Dropdown
 function initNavbarDropdown() {
-  console.log("Dropdown inicializado!");
-
   document.querySelectorAll('.dropdown').forEach(dropdown => {
     const btn = dropdown.querySelector('.dropdown-btn');
     const content = dropdown.querySelector('.dropdown-content');
 
-    if (!btn || !content) {
-      console.warn("Dropdown incompleto no DOM.");
-      return;
-    }
+    if (!btn || !content) return;
 
-    btn.addEventListener('mouseenter', () => {
+    // Hover no container inteiro (resolve o "sumir")
+    dropdown.addEventListener('mouseenter', () => {
       dropdown.classList.add('show');
     });
-    btn.addEventListener('mouseleave', () => {
+
+    dropdown.addEventListener('mouseleave', () => {
       dropdown.classList.remove('show');
     });
 
-    content.addEventListener('mouseenter', () => {
-      dropdown.classList.add('show');
-    });
-    content.addEventListener('mouseleave', () => {
-      dropdown.classList.remove('show');
+    // Extra: toggle por clique (funciona no celular)
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      dropdown.classList.toggle('show');
     });
   });
 }
+
+
