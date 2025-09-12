@@ -268,7 +268,6 @@ section.slider {
   height: 150px;
   padding: 20px 10px 10px;
   margin: 0px 20px;       
-  
   text-align: center;
   flex-shrink: 0;    
   border: 2px solid #8B2E5E;
@@ -278,6 +277,9 @@ section.slider {
 
 .card-beneficios img{
   width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  color: #8B2E5E;
 }
 
 .card-beneficios p{
@@ -362,19 +364,15 @@ section.slider {
   color: #09625D;
 }
 
+#content-slide::-webkit-scrollbar{
+  display: none;
+}
+
 #content-slide1::-webkit-scrollbar{
   display: none;
 }
 
-#content-slide1 {
-  overflow-x: auto;   
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
-}
 
-#content-slide1::-webkit-scrollbar {
-  display: none;         
-}
 
 /* impacto de ser voluntário */
 .impacto {
@@ -393,9 +391,15 @@ section.slider {
     width: 585px;
     height: 360px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 17px;
     text-align: justify;
 }
+
+.impactoTxt p{
+    padding-bottom: 20px;
+
+}
+
 
 .impactoImgs {
     display: flex;
