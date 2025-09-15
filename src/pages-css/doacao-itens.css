@@ -1,13 +1,6 @@
-*, body{
-    margin: 0;
-    padding: 0;
-}
-
-
 .hero-img {
     position: relative;
     height: 340px;
-    padding-top: 60px;
     overflow: hidden;
 }
 

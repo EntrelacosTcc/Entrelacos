@@ -30,7 +30,7 @@
 }
 
 body {
-  padding-top: 70px;
+  padding-top: 60px;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: var(--branco-fundo);
@@ -46,6 +46,10 @@ body {
 
 h2{
   font-size: 2rem;
+}
+
+textarea{
+  resize: none;
 }
 
 /* Configurações do navbar */

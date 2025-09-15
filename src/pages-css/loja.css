@@ -113,7 +113,7 @@
   border: 3px solid var(--destaque-rosa);
   border-radius: 31px;
   padding: 15px;
-  width: 200px;
+  width: auto;
   height: 320px;
   text-align: center;
   display: flex;

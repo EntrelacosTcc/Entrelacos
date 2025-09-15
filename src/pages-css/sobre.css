@@ -40,7 +40,7 @@
   background-image: url('../assets/img/sobre.png');
   background-size: cover;
   background-position: center;
-  padding: 60px 80px;
+  padding: 0px 80px 60px;
   min-height: 400px;
   gap: 40px;
   position: relative;

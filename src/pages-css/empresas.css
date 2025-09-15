@@ -7,7 +7,7 @@ h2{
 /* TELA INICIAL */
 
 .parceiraSocial-container{
-  height: 600px;
+  height: 550px;
   display: flex; 
   background-color: #3eb4ae62;
 }
@@ -18,7 +18,6 @@ h2{
   max-height: 600px;
   height: auto;
   width: 50%;
-  padding-top: 50px;
   margin-left: 60px;
 }
 
