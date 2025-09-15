@@ -50,6 +50,7 @@ body{
     display: flex;
     justify-content: center;
     padding-left: 40px;
+    margin-top: 70px;
 }
 
 
@@ -58,8 +59,12 @@ body{
     width: 1150px;
 }
 
+.contatos-container h2{
+    margin-top: 0;
+}
+
 .contatos-container p{
-    margin-left: 15px;
+    margin: 15px 15px;
     width: 400px;
     font-weight: 400;
 }
@@ -128,7 +133,7 @@ body{
 .formContato-container input, textarea{
     margin: 5px 4% 25px;
     width: 90%;
-    height: 25px;
+    height: 40px;
     padding: 5px;
     border: 1px solid #09625d9a;
     border-radius: 10px;
