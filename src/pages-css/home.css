@@ -109,24 +109,22 @@
 
 .quiz-container{
   background-image: url("../assets/img/onda1-home.png");
-
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 60px;
-    padding-right: 60px;
-    gap: 80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 60px;
+  padding-right: 60px;
+  gap: 80px;
 }
 
 .quiz-image{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .quiz-image img{
@@ -135,50 +133,56 @@
 
 
 .quiz-content h2{
-    color: #0A3937;
-    font-weight: 500;
+  color: #0A3937;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .quiz-content h3{
-    color: #09625D;
-    font-size: 1.8rem;
-    font-weight: 500;
+  color: #09625D;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 30px;
 }
 
 .quiz-content p{
-    width: 700px;
+  width: 700px;
+  line-height: 25px;
+  margin-bottom: 30px;
 }
 
 .quiz-content button{
-    cursor: pointer;
-    background-color: #8B2E5E;
-    color: white;
-    border: none;
-    height: 40px;
-    width: 160px;
-    border-radius: 10px;
-    margin-top: 20px;
+  cursor: pointer;
+  background-color: #8B2E5E;
+  color: white;
+  border: none;
+  height: 40px;
+  width: 160px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 
 /* VAGAS DE VOLUNTARIADO */
 
 .vagas-container{
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .vagas-container h2{
-    text-align: center;
-    color: #05625D;
+  text-align: center;
+  color: #05625D;
+  margin-top: 40px;
 }
 
 .vagas-txt{
-    background-color: #3EB4AE;
-    color: white;
-    font-size: 1.2rem;
-    padding: 15px 25px;
-    width: 150px;
-    border-radius: 0px 30px 30px 0px;
+  background-color: #3EB4AE;
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px 25px;
+  width: fit-content;
+  border-radius: 0px 30px 30px 0px;
+  margin: 40px 0px;
 }
 
 .vagas-carrossel{
@@ -189,30 +193,32 @@
 /* MAPA - SUA AJUDA MUDA HISTORIAS */
 
 .mapa-container{
-    text-align: center;
+  text-align: center;
 }
 
 .mapa-container h2{
-    color: #05625D;
+  color: #05625D;
 }
 .txt-mapa{
-    font-size: 1.3rem;
-    margin-bottom: 50px;
+  font-size: 1.3rem;
+  margin-bottom: 50px;
 }
 
 
 /* LOJA */
 
 .loja-container{
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .loja-txt h2{
-    color: #761447;
+  margin-top: 100px;
+  color: #761447;
 }
 
 .loja-txt p{
     width: 850px;
+    margin-bottom: 20px;
 }
 
 
@@ -260,7 +266,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px;         
+  width: auto;         
   height: 320px;
   padding: 10px;
   margin: 0px 20px;       
@@ -345,7 +351,7 @@
 
 .title-container h2{
     color: white;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .apoie-content{
@@ -359,6 +365,10 @@
 .content-txt{
     width: 600px;
     line-height: 25px;
+}
+
+.content-txt p{
+  margin-bottom: 20px;
 }
 
 .content-image{
