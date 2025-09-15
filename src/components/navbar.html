@@ -3,47 +3,48 @@
 <script src="/js/main.js" defer></script>
 
 <header class="navbar">
-  <div class="logo">
-    <img src="/src/assets/img/logo-navbar.png" alt="Logo Entrelaços" />
-  </div>
-  <div class="search-bar">
-    <i class="fas fa-search search-icon"></i>
-    <input type="text" placeholder="Busque por vagas, ONGs, causas sociais..." />
-  </div>
   <nav>
-    <a href="/index.html">Home</a>
-
-    <div class="dropdown">
-      <span class="dropdown-btn">Quem somos <i class="fa-solid fa-caret-down thin-arrow"></i></span>
-      <div class="dropdown-content">
-        <a href="/src/pages-html/sobre.html">Sobre nós</a>
-        <a href="/src/pages-html/transparencia.html">Transparência</a>
-        <a href="/src/pages-html/fale-conosco.html">Fale Conosco</a>
-      </div>
+    <div class="logo">
+        <img src="/src/assets/img/logo-navbar.png" alt="Logo Entrelaços" />
     </div>
 
-    <a href="/src/pages-html/empresas.html">Empresas</a>
-
-    <div class="dropdown">
-      <span class="dropdown-btn">Colabore <i class="fa-solid fa-caret-down thin-arrow"></i></span>
-      <div class="dropdown-content">
-        <a href="#">Vagas Voluntariado</a>
-        <a href="/src/pages-html/doacao-monetaria.html">Doação monetária</a>
-        <a href="/src/pages-html/doacao-itens.html">Doação de itens</a>
-      </div>
+    <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Busque por vagas, ONGs, causas sociais..." />
     </div>
 
-    <a href="/src/pages-html/loja.html">Loja</a>
-
-    <div class="dropdown">
-      <span class="dropdown-btn">Razões <i class="fa-solid fa-caret-down thin-arrow"></i></span>
-      <div class="dropdown-content">
-        <a href="/src/pages-html/causas.html">Causas</a>
-        <a href="/src/pages-html/voluntarios.html">Voluntários</a>
-        <a href="/src/pages-html/ongs.html">ONGs</a>
-      </div>
+    <div class="nav-menu">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li>
+                <a href="#">Quem Somos <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="/src/pages-html/sobre.html">Sobre Nós</a></li>
+                    <li><a href="/src/pages-html/transparencia.html">Transparência</a></li>
+                    <li><a href="/src/pages-html/fale-conosco.html">Fale Conosco</a></li>
+                </ul>
+            </li>
+            <li><a href="/src/pages-html/empresas.html">Empresas</a></li>
+            <li>
+                <a href="#">Colabore <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#">Vagas Voluntariado</a></li>
+                    <li><a href="/src/pages-html/doacao-monetaria.html">Doação Monetária</a></li>
+                    <li><a href="/src/pages-html/doacao-itens.html">Doação de Itens</a></li>
+                </ul>
+            </li>
+            <li><a href="/src/pages-html/loja.html">Loja</a></li>
+            <li>
+                <a href="#">Razões <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="/src/pages-html/causas.html">Causas</a></li>
+                    <li><a href="/src/pages-html/voluntarios.html">Voluntários</a></li>
+                    <li><a href="/src/pages-html/ongs.html">ONGs</a></li>
+                </ul>
+            </li>
+            <button class="enter-btn">Entrar</button>
+        </ul>
     </div>
-  </nav>
+</nav>
 
-  <button class="enter-btn">Entrar</button>
 </header>
