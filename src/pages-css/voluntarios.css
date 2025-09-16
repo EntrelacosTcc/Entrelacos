@@ -1,6 +1,6 @@
 /* slider */
 section.slider {
-    padding-top: 103px;
+    padding-top: 30px;
     margin: 0 auto;
     width: 1146px;
     height: 358px;
@@ -55,6 +55,7 @@ section.slider {
 .camada-txt h1 {
     font-weight: 500;
     font-size: 50px;
+    margin-bottom: 30px;
 }
 
 .camada-txt p {
@@ -113,7 +114,7 @@ section.slider {
 .serVoluntario {
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 60px;
     padding: 10px;
 }
 
@@ -148,6 +149,10 @@ section.slider {
     height: 316px;
 }
 
+.txt p{
+    margin-bottom: 15px;
+}
+
 .leiVoluntariadoBtn {
     position: relative;
     top: -80px;
@@ -177,7 +182,7 @@ section.slider {
     width: 1146px;
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .rankingContainer {
@@ -190,7 +195,6 @@ section.slider {
     display: flex;
     justify-content: space-around;
     width: 988px;
-    margin-bottom: -30px;
     color: #09625D;
     font-weight: 500;
     font-size: 19.52px;
@@ -265,7 +269,7 @@ section.slider {
 
 .card-beneficios{
   width: 260px;         
-  height: 150px;
+  height: 170px;
   padding: 20px 10px 10px;
   margin: 0px 20px;       
   text-align: center;
@@ -278,13 +282,15 @@ section.slider {
 .card-beneficios img{
   width: 50px;
   height: 50px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   color: #8B2E5E;
 }
 
 .card-beneficios p{
+  line-height: 1.5; 
   color: #8B2E5E;
 }
+
 
 
 /* DEPOIMENTOS VOLUNTARIOS */
@@ -324,7 +330,7 @@ section.slider {
   
   text-align: center;
   flex-shrink: 0;    
-  border: 2px solid #0A3937;
+  border: 2px solid #09625D;
   border-radius: 20px;
   font-size: 1rem;
 }
@@ -340,7 +346,7 @@ section.slider {
 .block p{
   color: #0A3937;
   text-align: justify;
-  padding: 0 5px;
+  padding: 5px 5px;
 }
 
 .depoimentos-user{
@@ -348,8 +354,9 @@ section.slider {
   gap: 15px;
 }
 
-.user-name p{
+.user-name{
   text-align: start;
+  padding-top: 15px;
 }
 
 .nome-depoimentos{
@@ -376,14 +383,13 @@ section.slider {
 
 /* impacto de ser voluntário */
 .impacto {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
 }
 
 .container4 {
     display: flex;
-    width: 1146px;
+
     justify-content: space-evenly;
 }
 
@@ -525,10 +531,12 @@ section.slider {
 
 .frase {
     font-size: 16px;
+
 }
 
 .inscricaoTxt {
-    margin-top: 40px;
+    margin-top: 20px;
+    line-height: 1.5;
 }
 
 /*O que saber para viver uma experiência voluntária transformadora? */
@@ -551,7 +559,9 @@ section.slider {
 }
 
 #pPronto2 {
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 20px;
+    max-width: 1000px;
 }
 
 .pronto2 button {
@@ -572,7 +582,6 @@ section.slider {
 
 /* tutorial */
 .tutorial {
-    margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
