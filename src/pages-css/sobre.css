@@ -2,7 +2,7 @@
   --primaria-escura: #09625d;
   --primaria-media: #3eb4ae;
   --primaria-clara: #d3fffd;
-  --primaria-clara2: #9FFFFA;
+  --primaria-clara2: #9ffffa;
   --primaria-escura-2: #0a3937;
   --primaria-media-2: #05625d;
 
@@ -37,7 +37,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-image: url('../assets/img/sobre.png');
+  background-image: url("../assets/img/sobre.png");
   background-size: cover;
   background-position: center;
   padding: 0px 80px 60px;
@@ -50,7 +50,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); 
+  background: rgba(0, 0, 0, 0.5);
   z-index: 0;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .content-left {
-    padding-top: 100px;
+  padding-top: 100px;
 }
 
 .content-left h1 {
@@ -71,7 +71,7 @@
 }
 
 .content-left p {
-    color: var(--primaria-clara2);
+  color: var(--primaria-clara2);
   margin-bottom: 30px;
   font-size: 1.1rem;
   line-height: 1.5;
@@ -82,7 +82,8 @@
   gap: 20px;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary,
+.btn-secondary {
   padding: 12px 25px;
   border: none;
   border-radius: 4px;
@@ -103,7 +104,7 @@
 }
 
 .content-right {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .content-right p {
@@ -128,7 +129,7 @@
   border-radius: 12px;
   width: 300px;
   height: 220px;
-  padding: 50px 20px 20px; 
+  padding: 50px 20px 20px;
   text-align: center;
   box-sizing: border-box;
   color: #fff;
@@ -165,7 +166,7 @@
 }
 
 .missao img {
-    width: 600px;
+  width: 600px;
 }
 
 .box h3 {
@@ -260,8 +261,8 @@
 
 .acoes-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  grid-template-rows: repeat(2, auto);   
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
   gap: 60px;
   justify-items: center;
 }
@@ -332,7 +333,6 @@
   width: 100px;
   height: auto;
 }
-
 
 /* A Plataforma Entrelaços */
 
@@ -421,7 +421,6 @@ h2 {
   margin-bottom: 8px;
 }
 
-
 /* DEPOIMENTOS */
 
 .depoimentos-container {
@@ -433,21 +432,21 @@ h2 {
 .depoimentos-container h2 {
   text-align: center;
   font-size: 2.2rem;
-  color: #05625D;
+  color: #05625d;
 }
 
 #content-slide {
   display: flex;
-  gap: 40px; 
+  gap: 40px;
   height: 350px;
   max-width: 1040px;
   align-items: center;
 
-  overflow-x: auto;          
-  scroll-behavior: smooth;                
+  overflow-x: auto;
+  scroll-behavior: smooth;
 
-  margin: 0 auto;           
-  border-radius: 12px;      
+  margin: 0 auto;
+  border-radius: 12px;
 }
 
 #bnt-left,
@@ -456,11 +455,11 @@ h2 {
   top: 230px;
   margin-left: 60px;
   margin-right: 60px;
-  color: #0A3937;
+  color: #0a3937;
 
   cursor: pointer;
   user-select: none;
-  z-index: 10;               
+  z-index: 10;
 }
 
 #bnt-right {
@@ -468,12 +467,12 @@ h2 {
 }
 
 .block {
-  flex: 0 0 320px;  
+  flex: 0 0 320px;
   height: 260px;
   padding: 20px;
-  
+
   text-align: center;
-  border: 2px solid #0A3937;
+  border: 2px solid #0a3937;
   border-radius: 20px;
   font-size: 0.85rem;
   cursor: pointer;
@@ -493,7 +492,7 @@ h2 {
 }
 
 .block p {
-  color: #0A3937;
+  color: #0a3937;
 }
 
 .nome-depoimentos {
@@ -507,127 +506,125 @@ h2 {
 
 /* FORMS FALE CONOSCO */
 
-.faleConosco-title{
+.faleConosco-title {
   text-align: center;
 }
 
-.faleConosco-title h2{
-  color: #05625D;
+.faleConosco-title h2 {
+  color: #05625d;
   font-size: 2.2rem;
 }
 
-.faleConosco-title p{
-  color: #0E605B;
+.faleConosco-title p {
+  color: #0e605b;
 }
 
 .contact-section {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      padding: 60px 20px;
-    }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 60px 20px;
+}
 
-    .contact-card, .form-card {
-      background: white;
-      border: 2px solid #09625D99;
-      border-radius: 25px;
-      box-shadow: 4px 8px 8px rgba(22, 158, 135, 0.15);
-      padding: 30px;
-      width: 350px;
-    }
+.contact-card,
+.form-card {
+  background: white;
+  border: 2px solid #09625d99;
+  border-radius: 25px;
+  box-shadow: 4px 8px 8px rgba(22, 158, 135, 0.15);
+  padding: 30px;
+  width: 350px;
+}
 
-    .contact-card h3,
-    .form-card h3 {
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 20px;
-      color: #064a46;
-      text-align: center;
-    }
+.contact-card h3,
+.form-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #064a46;
+  text-align: center;
+}
 
-    .subtitled {
-      font-size: 15px;
-      text-align: center;
-      color: #0f766e;
-      margin-bottom: 15px;
-     
-      
-    }
+.subtitled {
+  font-size: 15px;
+  text-align: center;
+  color: #0f766e;
+  margin-bottom: 15px;
+}
 
-    .contact-card hr {
-      border: none;
-      border-top: 1px solid #ccc;
-      margin: 10px 0 20px;
-    }
+.contact-card hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0 20px;
+}
 
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      margin-bottom: 20px;
-      font-size: 14px;
-      color: #222;
-    }
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #222;
+}
 
-    .contact-item i {
-      font-size: 30px;
-      color: #0f766e;
-    }
+.contact-item i {
+  font-size: 30px;
+  color: #0f766e;
+}
 
-    .form-card form {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 
-    .form-card input,
-    .form-card select,
-    .form-card textarea {
-      padding: 10px 15px;
-      border-radius: 20px;
-      border: 1.5px solid #09625D;
-      font-size: 14px;
-    }
+.form-card input,
+.form-card select,
+.form-card textarea {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1.5px solid #09625d;
+  font-size: 14px;
+}
 
-    .form-card select {
-      background-color: #fff;
-    }
+.form-card select {
+  background-color: #fff;
+}
 
+.form-card textarea {
+  height: 100px;
+  resize: none;
+}
 
-    .form-card textarea {
-      height: 100px;
-      resize: none;
-    }
+.btn-s {
+  display: flex;
+  justify-content: center;
+}
 
-    .btn-s{
-      display: flex;
-      justify-content: center;
-    }
+.form-card button {
+  padding: 12px;
+  background-color: #09625d;
+  box-shadow: 0 8px 16px rgba(87, 86, 86, 0.292);
+  border: none;
+  border-radius: 25px;
+  width: 200px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
 
-    .form-card button {
-      padding: 12px;
-      background-color: #09625D ;
-       box-shadow: 0 8px 16px rgba(87, 86, 86, 0.292);
-      border: none;
-      border-radius: 25px;
-      width: 200px;
-      color: white;
-      font-size: 15px;
-      cursor: pointer;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-    }
-
-    .form-card button:hover {
-      background-color: #14a498;
+.form-card button:hover {
+  background-color: #14a498;
   box-shadow: 0 8px 16px rgba(7, 61, 42, 0.292);
-cursor: pointer;
-    }
+  cursor: pointer;
+}
 
-
-    @media (max-width: 768px) {
-      .contact-card, .form-card {
-        width: 100%;
-        max-width: 400px;
-      }
-    }
+@media (max-width: 768px) {
+  .contact-card,
+  .form-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
