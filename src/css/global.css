@@ -173,6 +173,138 @@ i {
   margin-left: 5px;
 }
 
+/* FOOTER  */
+.container-footer {
+  background-color: #05625D;
+  color: #D3FFFD;
+  padding: 30px 20px 24px; 
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.container-footer h2,
+.container-footer p,
+.container-footer ul,
+.container-footer li {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content > div {
+  flex: 1 1 auto;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+.txtFooter-logo {
+  line-height: 1.2rem;
+}
+.footer-content h2 {
+  margin-bottom: 10px;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+}
+
+.logo-footer-img {
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.logo-footer-img img {
+  width: 120px;
+  display: block;
+  margin-top: -23px;
+}
+
+.nameLogo {
+  font-size: 2rem;
+  color: #D3FFFD;
+  font-family: 'Leckerli One', cursive;
+  margin: 0; 
+}
+
+.footer-contact ul,
+.footer-pages ul,
+.footer-terms ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-contact li,
+.footer-pages li,
+.footer-terms li {
+  margin: 6px 0;
+  line-height: 1.8;
+}
+
+.footer-contact a,
+.footer-pages a,
+.footer-terms a {
+  text-decoration: none;
+  color: #D3FFFD;
+}
+
+.footer-contact a:hover,
+.footer-pages a:hover,
+.footer-terms a:hover {
+  color: #a0e7e5;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+  width: 20px;
+  text-align: center;
+  color: #D3FFFD;
+  display: inline-block;
+}
+
+.footer-politics {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 18px;
+  border-top: 1px solid #ffffff44;
+  padding-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .container-footer {
+    padding: 14px 16px 18px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-content > div {
+    width: 100%;
+    align-items: center;
+  }
+
+  .logo-footer-img {
+    justify-content: center;
+  }
+
+  .footer-contact i {
+    display: inline-block;
+  }
+}
+
 
 /* retirada de scrool automático */
 
