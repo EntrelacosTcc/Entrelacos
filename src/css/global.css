@@ -166,3 +166,20 @@ nav {
 i {
   margin-left: 5px;
 }
+
+
+/* retirada de scrool automático */
+
+#content-slide::-webkit-scrollbar{
+  display: none;
+}
+
+#content-slide {
+  overflow-x: auto;   
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+#content-slide::-webkit-scrollbar {
+  display: none;         
+}
