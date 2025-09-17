@@ -42,157 +42,131 @@
         </div>
     </section>
 
-     <section class="produtos-section">
-    <h2 id="h2-produtos">Nossos Produtos</h2>
-    <h2>Roupas</h2>
-    <div class="produtos-grid">
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Camiseta_feminina.png" alt="Camiseta Feminina">
-        </div>
-        <p>Camiseta Feminina</p>
-        <p>R$84.90</p>
-        <button>Comprar agora</button>
+  <!-- INCIO SEÇÃO PRODUTOS -->
+  <main>
+    <section class="produtos-section">
+      <h2 id="h2-produtos">Nossos Produtos</h2>
+      <div id="lista-produtos">
+        <!-- Produtos carregados via JavaScript -->
       </div>
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Camiseta-Masculina.png" alt="Camiseta Masculina">
-        </div>
-        <p>Camiseta Masculina</p>
-        <p>R$84.90</p>
-        <button>Comprar agora</button>
-      </div>
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Moletom-Feminino.png" alt="Moletom Feminino">
-        </div>
-        <p>Moletom Feminino</p>
-        <p>R$104.90</p>
-        <button>Comprar agora</button>
-      </div>
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Moletom.png" alt="Moletom Masculino">
-        </div>
-        <p>Moletom Masculino</p>
-        <p>R$104.90</p>
-        <button>Comprar agora</button>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="produtos-section">
-    <h2>Acessórios</h2>
-    <div class="produtos-grid">
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Boné.png" alt="Boné">
-        </div>
-        <div class="produto-info">
-          <p class="nome">Boné</p>
-          <p class="preco">R$54.90</p>
-        </div>
-        <button>Comprar agora</button>
-      </div>
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Caneca.png" alt="Caneca">
-        </div>
-        <div class="produto-info">
-          <p class="nome">Caneca</p>
-          <p class="preco">R$51.30</p>
-        </div>
-        <button>Comprar agora</button>
-      </div>
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Colar.png" alt="Colar">
-        </div>
-        <div class="produto-info">
-          <p class="nome">Colar</p>
-          <p class="preco">R$49.90</p>
-        </div>
-        <button>Comprar agora</button>
-      </div>
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Broche.png" alt="Broche">
-        </div>
-        <div class="produto-info">
-          <p class="nome">Broche</p>
-          <p class="preco">R$9.90</p>
-        </div>
-        <button>Comprar agora</button>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="produtos-section">
-    <div class="produtos-grid">
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Ecobag.png" alt="Ecobag">
-        </div>
-        <div class="produto-info">
-          <p class="nome">Ecobag</p>
-          <p class="preco">R$47.90</p>
-        </div>
-        <button>Comprar agora</button>
-      </div>
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Chaveiro.png" alt="Chaveiro">
-        </div>
-        <div class="produto-info">
-          <p class="nome">Chaveiro</p>
-          <p class="preco">R$14.90</p>
-        </div>
-        <button>Comprar agora</button>
-      </div>
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Garrafa1.png" alt="Garrafa">
-        </div>
-        <div class="produto-info">
-          <p class="nome">Garrafa</p>
-          <p class="preco">R$49.90</p>
-        </div>
-        <button>Comprar agora</button>
-      </div>
-
-      <div class="produtos-card">
-        <div class="img-container">
-          <img src="../assets/img/Garrafa2.png" alt="Garrafa">
-        </div>
-        <div class="produto-info">
-          <p class="nome">Garrafa</p>
-          <p class="preco">R$49.90</p>
-        </div>
-        <button>Comprar agora</button>
-      </div>
-
-    </div>
-  </section>
+    </section>
+  </main>
 
     <div id="footer"></div>
+
+
+<!-- INICIO SCRIPT PRODUTOS -->
+    <script>
+      // CARREGAR E ORGANIZAR PRODUTOS POR CATEGORIA
+      async function carregarProdutos() {
+          try {
+              const response = await fetch('/api/produtos');
+              
+              if (!response.ok) {
+                  throw new Error(`Erro HTTP: ${response.status}`);
+              }
+              
+              const produtos = await response.json();
+              organizarProdutosPorCategoria(produtos);
+          } catch (error) {
+              console.error('Erro ao carregar produtos:', error);
+              
+              // Exibir mensagem de erro para o usuário
+              const container = document.getElementById('lista-produtos');
+              container.innerHTML = `
+                  <div class="error-message">
+                      <h3>Erro ao carregar produtos</h3>
+                      <p>Não foi possível carregar a lista de produtos. Por favor, recarregue a página.</p>
+                      <button onclick="window.location.reload()" style="margin-top: 10px; padding: 8px 16px; background: #2c5aa0; color: white; border: none; border-radius: 4px; cursor: pointer;">Recarregar Página</button>
+                  </div>
+              `;
+          }
+      }
+
+      function organizarProdutosPorCategoria(produtos) {
+          const container = document.getElementById('lista-produtos');
+          
+          // Limpar container antes de adicionar novos produtos
+          container.innerHTML = '';
+          
+          if (produtos.length === 0) {
+              container.innerHTML = '<div class="no-products"><p>Nenhum produto encontrado.</p></div>';
+              return;
+          }
+          
+          // Agrupar produtos por categoria
+          const produtosPorCategoria = {};
+          
+          produtos.forEach(produto => {
+              const categoria = produto.categoria || 'Geral';
+              
+              if (!produtosPorCategoria[categoria]) {
+                  produtosPorCategoria[categoria] = [];
+              }
+              
+              produtosPorCategoria[categoria].push(produto);
+          });
+          
+          // Ordem das categorias
+          const ordemCategorias = ['Roupas', 'Acessórios',  'Geral'];
+          
+          // Criar seções para cada categoria na ordem especificada
+          ordemCategorias.forEach(categoria => {
+              if (produtosPorCategoria[categoria] && produtosPorCategoria[categoria].length > 0) {
+                  // Criar título da categoria
+                  const categoriaTitle = document.createElement('h3');
+                  categoriaTitle.className = 'categoria-title';
+                  categoriaTitle.textContent = categoria;
+                  container.appendChild(categoriaTitle);
+                  
+                  // Criar grid para os produtos da categoria
+                  const categoriaGrid = document.createElement('div');
+                  categoriaGrid.className = 'produtos-grid';
+                  
+                  // Adicionar produtos da categoria
+                  produtosPorCategoria[categoria].forEach(produto => {
+                      const card = criarCardProduto(produto);
+                      categoriaGrid.appendChild(card);
+                  });
+                  
+                  container.appendChild(categoriaGrid);
+              }
+          });
+      }
+
+      function criarCardProduto(produto) {
+          const card = document.createElement('div');
+          card.className = 'produtos-card';
+          
+          // Garantir que o preço seja tratado como número
+          const preco = typeof produto.preco === 'number' 
+              ? produto.preco 
+              : parseFloat(produto.preco) || 0;
+          
+          // Usar placeholder se a imagem não estiver disponível
+          const imagem = produto.imagem && produto.imagem !== '' ? produto.imagem : 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2YwZjBmMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkeT0iMC4zNWVtIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlByb2R1dG8gZW0gYnJhbmNvPC90ZXh0Pjwvc3ZnPg==';
+          const imagem_lateral = produto.imagem_lateral && produto.imagem_lateral !== '' ? produto.imagem_lateral : 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2YwZjBmMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkeT0iMC4zNWVtIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlByb2R1dG8gZW0gYnJhbmNvPC90ZXh0Pjwvc3ZnPg==';
+
+          
+          card.innerHTML = `
+              <div class="img-container">
+                <img src="${imagem}" alt="${produto.nome || produto.nome_produto || 'Produto'}" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2YwZjBmMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkeT0iMC4zNWVtIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlByb2R1dG8gZW0gYnJhbmNvPC90ZXh0Pjwvc3ZnPg=='">
+              </div>
+              <div class="produto-info">
+                <p class="nome">${produto.nome || produto.nome_produto || 'Produto sem nome'}</p>
+                <p class="preco">R$ ${preco.toFixed(2)}</p>
+              </div>
+              <a href="/produto/${produto.id || produto.id_produto}" class="btn-ver-mais">Comprar agora</a>
+          `;
+          
+          return card;
+      }
+
+      // Iniciar quando a página carregar
+      document.addEventListener('DOMContentLoaded', carregarProdutos);
+    </script>
 
     <script src="../js/main.js"></script>
   </body>
 </html>
-
-
-
-   

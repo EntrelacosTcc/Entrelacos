@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camiseta Feminina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../produtos-loja/produtos-loja.css">
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <main id="produto-container">
+
+  </main>
+
+  <section class="frete-container">
+
+    <div class="frete-title">
+      <h2>Calcular frete</h2>
+    </div>
+
+    <div class="frete">
+      <input type="text" id="cep" required>
+      <label for="cep">Digite seu CEP</label>
+      <button>Ok</button>
+    </div>
+
+    </div>
+  </section>
+
+      <section class="produto-detalhes-container">
+        <div class="prod-detalhes-content">
+            <div class="detalhes-title">
+                <h2 class="ativo" data-target="descricao">Descrição</h2>
+                <h2 data-target="medidas">Tabela de Medidas</h2>
+            </div>
+            
+            <div class="descricao conteudo ativo" id="descricao-conteudo">
+                <!-- Descrição será preenchida dinamicamente -->
+            </div>
+            
+            <div class="medidas conteudo" id="medidas-conteudo">
+                <!-- Tabela de medidas será preenchida dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+  <section class="produtos-section">
+    <h2 id="h2-produtos">Produtos em Destaque</h2>
+    <div class="produtos-grid">
+
+      <div class="produtos-card">
+        <div class="img-container">
+          <img src="../src/assets/img/Camiseta_feminina.png" alt="Camiseta Feminina">
+        </div>
+        <p>Camiseta Feminina</p>
+        <p>R$84.90</p>
+        <button>Comprar agora</button>
+      </div>
+
+      <div class="produtos-card">
+        <div class="img-container">
+          <img src="../src/assets/img/Camiseta-Masculina.png" alt="Camiseta Masculina">
+        </div>
+        <p>Camiseta Masculina</p>
+        <p>R$84.90</p>
+        <button>Comprar agora</button>
+      </div>
+
+      <div class="produtos-card">
+        <div class="img-container">
+          <img src="../src/assets/img/Moletom-Feminino.png" alt="Moletom Feminino">
+        </div>
+        <p>Moletom Feminino</p>
+        <p>R$104.90</p>
+        <button>Comprar agora</button>
+      </div>
+
+      <div class="produtos-card">
+        <div class="img-container">
+          <img src="../src/assets/img/Moletom.png" alt="Moletom Masculino">
+        </div>
+        <p>Moletom Masculino</p>
+        <p>R$104.90</p>
+        <button>Comprar agora</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <div id="footer"></div>
+  <script src="../js/produtos-main.js"></script>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/produtos.js"></script>
+</body>
+
+</html>

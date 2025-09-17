@@ -40,8 +40,14 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/produto", (req, res) => {
+  res.sendFile(path.join(__dirname, "produtos-loja", "produto.html"));
+});
+
 // SERVIR ARQUIVOS ESTÁTICOS
 app.use(express.static(path.join(__dirname)));
+app.use(express.json());
+
 app.use(express.static(path.join(__dirname, "src")));
 
 // Servir AMBAS as pastas CSS
@@ -51,6 +57,8 @@ app.use('/pages-css', express.static(path.join(__dirname, 'pages-css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/pages-html', express.static(path.join(__dirname, 'pages-html')));
+app.use('/produtos-loja', express.static(path.join(__dirname, 'produtos-loja')));
+
 
 // Middleware para parsear JSON
 app.use(express.json());
@@ -61,16 +69,30 @@ app.get('/index.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/pages-html/fale-conosco.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages-html/fale-conosco.html'));
+    // FALE-CONOSCO
+
+app.get('src/pages-html/fale-conosco.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src/pages-html/fale-conosco.html'));
 });
 
-app.get('/pages-html/sobre.html', (req, res) => {
+    // SOBRE
+
+app.get('/pages-html/sobre.htmls', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages-html/sobre.html'));
 });
 
+    // ONGS
+
 app.get('/pages-html/ONGS.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages-html/ONGS.html'));
+});
+
+app.get('/pages-html/loja.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages-html/loja.html'));
+});
+
+app.get('/produto/:id_produto', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/produtos-loja/produto.html'));
 });
 
 // rotas API
@@ -80,15 +102,19 @@ app.use('/api/faleconosco', faleconoscoRoutes);
 const SobreongsRoutes = require('./routes/sobreongs');
 app.use('/api/Sobreongs', SobreongsRoutes);
 
+const produtoRoutes = require('./routes/produtoRoutes');
+app.use('/api/produtos', produtoRoutes);
+
 // Rota de health check
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'Servidor funcionando' });
 });
 
 // Iniciar servidor
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
   console.log(`✅ Servidor rodando na porta ${PORT}`);
   console.log(`🌐 Home: http://localhost:${PORT}/index.html`);
+  console.log(`🌐 Home: http://localhost:${PORT}/produto/:id_produto`);
   console.log(`🔧 Health check: http://localhost:${PORT}/health`);
 });
