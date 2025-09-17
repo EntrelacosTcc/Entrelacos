@@ -6,9 +6,8 @@
   text-align: center;
 }
 
-
 /* Conecta pessoas */
-.conectapessoas-container{
+.conectapessoas-container {
   display: flex;
   position: relative;
   justify-content: center;
@@ -17,15 +16,15 @@
   width: 100%;
 }
 
-.conectapessoas-container img{
+.conectapessoas-container img {
   width: 100%;
-  height: auto;  
+  height: auto;
   max-width: 100%;
   margin-bottom: 0px;
   display: inline-block;
 }
 
-.conectapessoas-container h1{
+.conectapessoas-container h1 {
   font-size: clamp(1.8rem, 5vw, 3.2rem);
   position: absolute;
   color: #ffffff;
@@ -34,7 +33,7 @@
   width: 90%;
 }
 
-.conectapessoas-container p{
+.conectapessoas-container p {
   font-size: 1.8rem;
   position: absolute;
   color: #ffffff;
@@ -43,9 +42,8 @@
   width: 90%;
 }
 
-
 /* Proposito e Compromisso */
-.proposito{
+.proposito {
   position: relative;
   justify-content: center;
   max-height: 150%;
@@ -54,7 +52,7 @@
   margin-left: 0px;
 }
 
-.proposito-img{
+.proposito-img {
   display: flex;
   justify-content: center;
   max-height: 600px;
@@ -63,20 +61,20 @@
   padding-top: 5%;
 }
 
-.proposito-img #img1{
+.proposito-img #img1 {
   z-index: 1;
   top: 50px;
   left: 130px;
   position: relative;
 }
 
-.proposito-img #img2{
+.proposito-img #img2 {
   left: 50px;
   top: -25px;
   position: relative;
 }
 
-.proposito-text{
+.proposito-text {
   position: absolute;
   justify-content: center;
   padding-top: 10px;
@@ -87,16 +85,16 @@
   text-align: right center;
 }
 
-.proposito-text h2{
+.proposito-text h2 {
   font-size: 2.2rem;
-  color: #05625D;
+  color: #05625d;
   padding-top: 10px;
   margin-bottom: 0;
-  /* margin-right: 10px; */  
+  /* margin-right: 10px; */
   position: absolute;
 }
 
-.proposito-text p{
+.proposito-text p {
   position: relative;
   font-size: 1rem;
   color: #000000;
@@ -109,24 +107,23 @@
 
 /* RESUMO FINANCEIRO */
 
-.resumofinanceiro{
+.resumofinanceiro {
   margin-top: 100px;
   position: relative;
-  height: 960px;
+  height: 1020px;
   width: 100%;
-  padding-top: 60px;
+  padding: 25px 20px;
   margin-left: 0px;
   background-color: #8b2e5e1c;
 }
 
-.resumofinanceiro h2{
+.resumofinanceiro h2 {
   position: relative;
   display: flex;
-  padding-top: 30px;
-  color: #46152E;
+  color: #46152e;
 }
 
-.img-resumo1{
+.img-resumo1 {
   width: 660px;
   height: 360px;
   padding-top: 10px;
@@ -135,7 +132,7 @@
   margin-right: auto;
 }
 
-.img-resumo2{
+.img-resumo2 {
   width: 627px;
   height: 398px;
   padding-top: 10px;
@@ -147,33 +144,32 @@
 
 /* EQUIPE E SÓCIOS */
 
-.socios{
+.socios {
   position: relative;
   height: 2000px;
   width: 100%;
-  padding-top: 60px;
 }
 
-.socios img{
+.socios img {
   transition: transform 0.3s ease;
   border-radius: 30px;
 }
 
-.socios img:hover{
+.socios img:hover {
   transform: translateY(-5px);
 }
 
-.equipe-title{
+.equipe-title {
   position: relative;
   display: flex;
-  padding-top: 60px;
+  padding-top: 20px;
   text-align: center;
   justify-content: center;
   height: 150px;
   width: 100%;
 }
 
-.equipe-title h2{
+.equipe-title h2 {
   font-size: 2.4rem;
   color: #0a3937;
 }
@@ -181,15 +177,15 @@
 /* CONTAINER MEMBROS */
 
 /* Esquerda */
-.socios-container-left{
-  display:flex;
+.socios-container-left {
+  display: flex;
   margin-left: 100px;
   margin-bottom: 50px;
 }
 
 /* Direita */
-.socios-container-right{
-  display:flex;
+.socios-container-right {
+  display: flex;
   justify-content: right;
   margin-right: 100px;
   margin-bottom: 50px;
@@ -198,117 +194,129 @@
 /* TEXTO MEMBROS */
 
 /* ESQUERDA */
-.text-box-left h2{
+.text-box-left h2 {
   font-size: 1.4rem;
   color: #3eb4ae;
   margin-left: 120px;
   font-weight: 600;
 }
 
-.text-box-left h3{
+.text-box-left h3 {
   font-size: 1rem;
-  color: #000000;  
+  color: #000000;
   margin-left: 120px;
   font-style: italic;
   font-weight: normal;
+  margin-top: -25px;
 }
 
-.text-box-left p{
+.text-box-left p {
   color: #000000;
   margin-left: 120px;
   text-align: justify;
   width: 70%;
+  padding-top: 25px;
 }
 
 /* DIREITA */
-.text-box-right h2{
+.text-box-right h2 {
   font-size: 1.4rem;
   color: #3eb4ae;
   margin-left: 120px;
   font-weight: 600;
 }
 
-.text-box-right h3{
+.text-box-right h3 {
   font-size: 1rem;
-  color: #000000;  
+  color: #000000;
   margin-left: 120px;
   font-style: italic;
   font-weight: normal;
-
+  margin-top: -25px;
 }
 
-.text-box-right p{
+.text-box-right p {
   color: #000000;
   margin-left: 120px;
   text-align: justify;
   width: 70%;
+  padding-top: 25px;
 }
 
 /* PRIVACIDADE E SEGURANCA */
 
 .seguranca {
   position: relative;
-  height: 800px;
   width: 100%;
+  padding-bottom: 40px;
 }
 
-.seguranca-title{
-  position: relative;
+.seguranca-title {
   display: flex;
-  padding-top: 60px;
-  text-align: center;
   justify-content: center;
-  height: 150px;
   width: 100%;
+  text-align: center;
+  margin-top: -20px;
+  padding-bottom: 20px;
 }
 
-.seguranca-title h2{
+.seguranca-title h2 {
   font-size: 2.4rem;
   color: #0a3937;
 }
 
 .seguranca-container {
-  display:flex;
-  margin-left: 150px;
-  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+  margin: 35px 150px;
 }
 
-.text-box-seguranca h2{
+.seguranca-container img {
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.text-box-seguranca h2 {
   font-size: 1rem;
   color: #000000;
-  margin-left: 100px;
   font-weight: bold;
+  margin: 0 0 8px 0;
 }
 
-.text-box-seguranca p{
+.text-box-seguranca p {
   font-size: 1rem;
   color: #000000;
-  margin-left: 100px;
   text-align: justify;
-  width: 100%;
+  margin: 0;
 }
 
-.seguranca-link{
+.seguranca-link {
   color: #000000;
   font-weight: bold;
   text-decoration: none;
 }
 
+.centralizando {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 /* RELATÓRIOS 2025 */
 
-.relatorios{
+.relatorios {
   height: 475px;
   width: 100%;
   position: relative;
 }
 
-.relatorios img{
+.relatorios img {
   display: block;
   width: 100%;
   height: 475px;
 }
 
-.relatorios h2{
+.relatorios h2 {
   font-size: 2.2rem;
   position: absolute;
   color: #0a3937;
@@ -316,7 +324,7 @@
 }
 
 .relatorios .btn-1semestre,
-.relatorios .btn-2semestre{
+.relatorios .btn-2semestre {
   position: absolute;
   top: 240px;
   background-color: #3eb4ae;
@@ -329,25 +337,23 @@
   transition: 0.3s ease;
 }
 
-.btn-1semestre{
+.btn-1semestre {
   margin-left: 30%;
 }
 
-.btn-2semestre{
+.btn-2semestre {
   left: 56%;
 }
 
 .relatorios .btn-1semestre:hover,
-.relatorios .btn-2semestre:hover{
-background-color: #05625D;
+.relatorios .btn-2semestre:hover {
+  background-color: #05625d;
 }
 
-.relatorios p{
+.relatorios p {
   font-size: 1rem;
   position: absolute;
-  color: #0A3937;
+  color: #0a3937;
   display: flex;
   margin-top: 365px;
 }
-
-
