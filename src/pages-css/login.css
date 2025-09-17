@@ -1,0 +1,107 @@
+*, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+}
+
+.left-side {
+    width: 50%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+.login-container {
+    width: 400px; 
+}
+
+.login-container form{
+    margin-bottom: 40px;
+}
+
+.login-container h1{
+    font-size: 2.2rem;
+    color: #3EB4AE;
+    margin-bottom: 40px;
+}
+
+.login-container input {
+    width: 100%;
+    height: 45px;
+    padding: 8px;
+    font-size: 0.9rem;
+    border: 1px solid #0A3937;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+.login-container label{
+    color: #0A3937;
+}
+
+.login-container p{
+    text-align: center;
+    color: #0A3937;
+}
+
+.centralized-items{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icons{
+    display: flex;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.centralized-items img{
+    width: 45px;
+}
+
+.centralized-items button{
+    background-color: #8B2E5E;
+    color: #fff;
+    width: 70%;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* RIGHT SIDE */
+
+.right-side{
+    width: 50%;
+    height: 100vh;
+    background-image: url(../assets/img/login-bc.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.right-side h2{
+    font-size: 2.8rem;
+    width: 500px;
+    text-align: center;
+}
+
+.right-side h3{
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
