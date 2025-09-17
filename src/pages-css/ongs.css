@@ -117,7 +117,7 @@ body {
 .title > h2 {
   position: relative;
   top: 80px;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   display: flex;
   font-weight: bold;
   text-align: center;
@@ -132,18 +132,20 @@ body {
   justify-content: center;
 }
 
+/* Como Funciona */
 .Bcards {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr)); /* evita colunas gigantes */
-  gap: 60px 90px; /* espaçamento reduzido */
-  max-width: 800px; /* limite para não estourar a tela */
+  grid-template-columns: repeat(5, minmax(0, 1fr)); 
+  gap: 60px 90px; 
+  max-width: 800px; 
   margin: 0 auto;
   justify-items: center;
+  margin-top: -50px;
 }
 
 .cards {
   min-height: 150px;
-  width: 300px; /* reduz um pouco a largura do card */
+  width: 300px;
   border: 2px solid #1c5125;
   border-radius: 12px;
   background: white;
@@ -156,8 +158,8 @@ body {
 }
 
 .cards:hover {
-  transform: scale(1.05); /* aumenta 5% */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* sombra mais forte no hover */
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px #09625D; 
 }
 /* posicionamento dos cards */
 .Bcards .cards:nth-child(1) {
@@ -190,6 +192,7 @@ body {
   }
 }
 
+/* Para quem é nossa plataforma */
 .circle {
   position: relative;
   display: flex;
@@ -202,10 +205,9 @@ body {
   border-radius: 50px;
   background-color: #3eb4ae4d;
 }
+
 .cards.centro {
   position: absolute;
-  left: 50%;
-  top: 150%;
   transform: translate(-50%, -150%);
   z-index: 2;
   gap: 30px;
@@ -218,11 +220,12 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 10px;
 }
 
 .green {
   width: 100vw;
-  height: 400px;
+  height: 450px;
   margin-top: 45px;
   background-image: url(../assets/img/pqOng5-Rectangle470.png);
   background-size: cover;
@@ -233,37 +236,39 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2.2rem;
 }
 
 .txt {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 20px;
   width: 400px;
+  height: 85px;
   text-align: left;
-  height: 50px;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   border-radius: 8px;
   backdrop-filter: blur(5px);
-  color: rgb(42, 38, 38); /* Adicionado para corresponder ao texto branco */
-  font-size: 16px; /* Tamanho de fonte igual */
-  line-height: 1.5; /* Altura de linha igual */
-  margin: 0; /* Remove margens padrão */
+  color: rgb(42, 38, 38); 
+  font-size: 16px; 
+  line-height: 1.5; 
+  margin: 0; 
 }
 
 .txt > p {
-  margin-top: 5px;
-}
-/* Adicione também o ícone de check para corresponder */
-.txt i {
-  color: #3fbd95; /* Cor do ícone igual */
-  font-size: 24px; /* Tamanho do ícone igual */
-  margin-top: 0px; /* Alinhamento igual */
+  margin-top: 3px;
+  text-align: justify;
 }
 
-/* Mantenha o container checks igual ao features */
+.txt i {
+  color: #3fbd95;
+  font-size: 24px; 
+  margin-top: 0px; 
+}
+
 .checks {
   display: flex;
   flex-wrap: wrap;
@@ -273,11 +278,10 @@ body {
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  padding: 20px 0; /* Adicionado espaçamento se necessário */
+  padding: 20px 0; 
 }
 
 /* Container dos benefícios */
-/* Container de cards */
 .benefits-container {
   max-width: 1100px;
   margin: 50px auto;
@@ -289,15 +293,16 @@ body {
 
 /* Card rosa */
 .pink-cards {
-  background: #f9f3f6;
+  background: #f4dce4;
   border-radius: 12px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: 220px;
+  min-height: 170px;
   box-shadow: 5px 8px 8px rgba(17, 15, 15, 0.16);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.5s ease, box-shadow 0.3s ease;
+  margin-top: -40px;
 }
 
 .pink-cards:hover {
@@ -335,13 +340,14 @@ body {
 
 /* Texto do card */
 .pink-cards p {
-  font-size: 18px;
+  font-size: 14px;
   color: #4b2b3b;
   line-height: 1.4;
   margin: 0;
   text-align: left;
 }
 
+/* Depoimentos */
 .car-container {
   position: relative;
   display: flex;
@@ -372,7 +378,8 @@ body {
   line-height: 1.5;
   position: relative;
   width: 350px;
-  height: 220px;
+  height: 240px;
+  font-size: 14px;
 }
 
 /* Citação com aspas */
@@ -382,6 +389,8 @@ body {
   padding-left: 20px;
   font-weight: 500;
   color: #333;
+  font-size: 14px;
+  max-height: 50px;
 }
 
 .depoimento-texto::before {
@@ -432,13 +441,14 @@ body {
 .green.rev {
   width: 100vw;
   height: 475px;
-  margin-top: 30px;
-  background-image: url(/Entrelacos/assets/img/pqOng6-Rectangle475.png);
+  margin-top: 80px;
+  background-image: url(../assets/img/onda-ong.png);
   background-size: cover;
 }
 
 .green.rev h2 {
   padding-top: 40px;
+  font-size: 2.2rem;
 }
 
 .btncont {
@@ -452,17 +462,17 @@ body {
 }
 
 .btn {
-  width: 350px;
+  width: 280px;
   height: 60px;
   background-color: #3eb4ae;
   border-radius: 25px;
   box-shadow: 4px 8px 8px rgba(2, 33, 28, 0.266);
-  transition: transform 0.3s ease, box-shadow 0.3s ease,
-    background-color 0.3s ease;
+  transition: 0.5s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
-  transform: scale(1.03);
   box-shadow: 0 8px 16px rgba(61, 7, 30, 0.292);
   cursor: pointer;
   background-color: #49cfc8;
@@ -488,13 +498,16 @@ body {
 }
 
 .bnf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 190px;
   height: 30px;
   border: 2px solid #3eb4ae;
   border-radius: 25px;
   text-align: center;
   font-weight: bold;
-  padding-bottom: 15px;
+    padding: 20px;
 }
 
 .vd-c {
@@ -511,6 +524,14 @@ body {
   background-color: #a2a2a2;
 }
 
+.rev{
+  width: 100vw;
+  height: 450px;
+  margin-top: 45px;
+  background-image: url(../assets/img/pqOng5-Rectangle470.png);
+  background-size: cover;
+}
+
 /* PERGUNTAS FREQUENTES */
 
 .titulo-faq {
@@ -520,6 +541,7 @@ body {
 
 .titulo-faq h2 {
   color: #8b2e5e;
+  font-size: 2.2rem;
 }
 
 .titulo-faq h3 {
