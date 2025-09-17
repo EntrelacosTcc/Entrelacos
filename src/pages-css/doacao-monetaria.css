@@ -35,7 +35,7 @@ body {
 
 .hero-txt h1 {
   font-size: 2.8rem;
-  margin-top: 0;
+  margin-bottom: 30px;
 }
 
 .hero-txt h2 {
@@ -55,10 +55,13 @@ body {
 
 .quemSomos {
   color: rgba(10, 57, 55, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .quemSomos hr {
-  width: 393px;
+  width: 400px;
   height: 5px;
   background-color: rgba(62, 180, 174, 0.3);
   border: none;
@@ -68,7 +71,7 @@ body {
   text-align: center;
   max-width: 1113px;
   line-height: 1.58;
-  margin: 50px auto;
+  margin: 50px auto 20px;
   font-size: 16px;
   font-family: "Inter";
   font-weight: 400;
@@ -79,10 +82,16 @@ body {
   padding-top: 50px;
   font-weight: 600;
   font-size: 36px;
+  margin-bottom: 20px;
   font-family: "Inter";
 }
 
+/* PORQUE SUA DOAÇÃO IMPORTA */
+
 .doacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: rgba(62, 180, 174, 0.3);
   margin-top: 70px;
 }
@@ -90,16 +99,17 @@ body {
 .doacao h2 {
   text-align: center;
   color: rgba(10, 57, 55, 1);
-  padding-top: 150px;
+  padding-top: 50px;
   font-family: "Inter";
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .doacao hr {
-  background-color: rgba(62, 180, 174, 0.3);
+  background-color: #3EB4AE;
   width: 393px;
   height: 5px;
   border: none;
+  margin-bottom: 50px;
 }
 
 .text-doacao {
@@ -128,8 +138,8 @@ body {
   box-sizing: border-box;
   padding: 15px;
   align-items: center;
-  width: 258px;
-  height: 290px;
+  width: 260px;
+  height: 250px;
 }
 
 .title-card {
