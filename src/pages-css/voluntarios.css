@@ -92,21 +92,13 @@ section.slider {
     background-color: #fffafa;
 }
 
-#radio1:checked~.nav-auto .auto-btn1 {
-    background-color: #b4b4b4;
-}
 
-#radio2:checked~.nav-auto .auto-btn2 {
-    background-color: #b4b4b4;
-}
+#radio1:checked ~ .nav-auto .auto-btn1 { background-color: #b4b4b4; }#radio1:checked ~ .nav-auto .auto-btn1 { background-color: #b4b4b4; }
+#radio2:checked ~ .nav-auto .auto-btn2 { background-color: #b4b4b4; }#radio2:checked ~ .nav-auto .auto-btn2 { background-color: #b4b4b4; }
 
-#radio1:checked~.primeiro {
-    margin-left: 0%;
-}
+#radio1:checked ~ .primeiro { margin-left: 0%; }#radio1:checked ~ .primeiro { margin-left: 0%; }
+#radio2:checked ~ .primeiro { margin-left: -25%; }#radio2:checked ~ .primeiro { margin-left: -25%; }
 
-#radio2:checked~.primeiro {
-    margin-left: -25%;
-}
 
 
 /* o que é ser voluntário? */
