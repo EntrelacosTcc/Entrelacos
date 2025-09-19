@@ -351,24 +351,34 @@ body {
 .car-container {
   position: relative;
   display: flex;
-  flex-direction: row;
-  gap: 40px;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 1200px;  
+  margin: 0 auto;
 }
 
+.car-viewport {
+  overflow: hidden;
+  width: 1150px; 
+  padding-top: 10px;
+}
+
+.car-wrapper {
+  display: flex;
+  gap: 40px; /* define o espaço entre os cards */
+  transition: transform 0.5s ease;
+}
+
+
 .car-cards {
-  width: 370px;
-  height: 200px;
-  background-color: rgb(255, 255, 255);
+  flex: 0 0 330px; 
+  height: 240px;
+  background-color: #fff;
   border: 2px solid #09625d99;
   border-radius: 15px;
   box-shadow: 4px 8px 8px rgba(22, 158, 135, 0.266),
-    -4px 0 15px rgba(22, 158, 135, 0.266);
-}
-
-/* Card de depoimento dentro do car-cards */
-.depoimento-card {
+              -4px 0 15px rgba(22, 158, 135, 0.266);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -377,12 +387,16 @@ body {
   font-size: 14px;
   line-height: 1.5;
   position: relative;
-  width: 350px;
-  height: 240px;
-  font-size: 14px;
+  transition: 0.5s ease;
 }
 
-/* Citação com aspas */
+
+.car-cards:hover {
+  transform: translateY(-4px);
+  z-index: 10px;
+}
+
+/* Texto da citação */
 .depoimento-texto {
   position: relative;
   margin-top: 30px;
@@ -390,7 +404,6 @@ body {
   font-weight: 500;
   color: #333;
   font-size: 14px;
-  max-height: 50px;
 }
 
 .depoimento-texto::before {
@@ -403,7 +416,7 @@ body {
   color: #09625d;
 }
 
-/* Parte inferior com nome e foto */
+/* Autor */
 .depoimento-autor {
   display: flex;
   align-items: center;
@@ -428,15 +441,28 @@ body {
   color: #555;
 }
 
+/* Setas */
 .seta {
-  width: 35px;
-  height: 35px;
   cursor: pointer;
-  flex-shrink: 0;
+  color: #09625d;
+  transition: 0.2s;
+  z-index: 5;
 }
-.seta.d {
-  transform: scaleX(-1);
+
+.seta:hover {
+  color: #064944;
 }
+
+
+#btn-left {
+  left: -50px;
+}
+
+#btn-right {
+  right: -50px;
+}
+
+
 
 .green.rev {
   width: 100vw;

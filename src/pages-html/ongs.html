@@ -182,59 +182,74 @@
     <p>Veja o que dizem organizações que já fazem parte</p>
   </div>
   <br><br><br>
-  <div class="car-container">
-    <img src="../assets/img/pqOng.png" alt="Anterior" class="seta">
-
-    <div class="car-cards depoimento-card">
-
-      <p class="depoimento-texto">
-        “Antes da plataforma, nossa ONG era praticamente invisível. Hoje recebemos voluntários toda semana e conseguimos
-        doações. É incrível ver nosso trabalho ganhando alcance!”
-      </p>
-      <div class="depoimento-autor">
-        <img src="../assets/img/pqOng1-carla.jpg" alt="Bruno Martins">
-        <div>
-          <div class="nome">Carla Mendes</div>
-          <div class="ong"> Raiz do Saber</div>
+  
+  <div id="content-slide" class="car-container">
+    <!-- seta esquerda -->
+    <i id="btn-left" class="fa-solid fa-angle-left fa-3x seta" onclick="direcao(1, 360)"></i>
+  
+    <div class="car-viewport">
+      <div class="car-wrapper">
+        <div class="car-cards depoimento-card">
+          <p class="depoimento-texto">
+            “Antes da plataforma, nossa ONG era praticamente invisível. Hoje recebemos voluntários toda semana e conseguimos
+            doações. É incrível ver nosso trabalho ganhando alcance!”
+          </p>
+          <div class="depoimento-autor">
+            <img src="../assets/img/pqOng1-carla.jpg" alt="Carla Mendes">
+            <div>
+              <div class="nome">Carla Mendes</div>
+              <div class="ong">Raiz do Saber</div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="car-cards depoimento-card">
+          <p class="depoimento-texto">
+            “Somos um grupo de jovens promovendo arte nas periferias. Com a visibilidade que ganhamos aqui, conseguimos
+            apoio de outras ONGs e voluntários para expandir nossas oficinas.”
+          </p>
+          <div class="depoimento-autor">
+            <img src="../assets/img/pqOng2-thiago.jpg" alt="Thiago Rocha">
+            <div>
+              <div class="nome">Thiago Rocha</div>
+              <div class="ong">Perifa em Cena</div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="car-cards depoimento-card">
+          <p class="depoimento-texto">
+            “Conseguimos ração, medicamentos e até serviços veterinários por meio de doações específicas. A plataforma
+            facilitou muito nossa comunicação com quem quer ajudar de verdade.”
+          </p>
+          <div class="depoimento-autor">
+            <img src="../assets/img/pqOng3-bruno.jpg" alt="Bruno Martins">
+            <div>
+              <div class="nome">Bruno Martins</div>
+              <div class="ong">Patinhas Felizes</div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="car-cards depoimento-card">
+          <p class="depoimento-texto">
+            “Graças à plataforma, conseguimos parcerias importantes e aumentar nosso impacto social.”
+          </p>
+          <div class="depoimento-autor">
+            <img src="../assets/img/pqOng4-ana.jpg" alt="Ana Souza">
+            <div>
+              <div class="nome">Ana Souza</div>
+              <div class="ong">Mãos Unidas</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="car-cards depoimento-card">
-      <p class="depoimento-texto">
-        “Somos um grupo de jovens promovendo arte nas periferias. Com a visibilidade que ganhamos aqui, conseguimos
-        apoio de outras ONGs e voluntários para expandir nossas oficinas.”
-      </p>
-      <div class="depoimento-autor">
-        <img src="../assets/img/pqOng2-thiago.jpg" alt="Bruno Martins">
-        <div>
-          <div class="nome">Thiago Rocha</div>
-          <div class="ong">Perifa em Cena</div>
-        </div>
-
-
-      </div>
-
-
-    </div>
-    <div class="car-cards  depoimento-card">
-      <p class="depoimento-texto">
-        “Conseguimos ração, medicamentos e até serviços veterinários por meio de doações específicas. A plataforma
-        facilitou muito nossa comunicação com quem quer ajudar de verdade.”
-      </p>
-      <div class="depoimento-autor">
-        <img src="../assets/img/pqOng3-bruno.jpg" alt="Bruno Martins">
-        <div>
-          <div class="nome">Bruno Martins</div>
-          <div class="ong">Patinhas Felizes</div>
-        </div>
-      </div>
-    </div>
-
-    <img src="../assets/img/pqOng.png" alt="Anterior" class="seta d">
+  
+    <!-- seta direita -->
+    <i id="btn-right" class="fa-solid fa-angle-right fa-3x seta" onclick="direcao(1, 360)"></i>
   </div>
-  </div>
-
-
+  
   <div class="green rev">
     <div class="title">
       <h2>Pronto para levar sua ONG para o próximo nível?</h2>
@@ -478,7 +493,49 @@
   </section>
 
   <div id="footer"></div>
+<script>
 
+const wrapper = document.querySelector(".car-wrapper");
+const viewport = document.querySelector(".car-viewport");
+const btnLeft = document.querySelector("#btn-left");
+const btnRight = document.querySelector("#btn-right");
+
+let currentTranslate = 0;
+
+// quantidade de pixels para deslizar por clique
+function getSlideDistance() {
+  const card = wrapper.querySelector(".car-cards");
+  const style = getComputedStyle(card);
+  const width = card.offsetWidth;
+  const marginRight = parseInt(style.marginRight);
+  return width + marginRight;
+}
+
+// largura máxima que dá para deslizar
+function getMaxTranslate() {
+  return wrapper.scrollWidth - viewport.offsetWidth;
+}
+
+// atualizar posição do carrossel
+function updateCarousel() {
+  if (currentTranslate < 0) currentTranslate = 0;
+  if (currentTranslate > getMaxTranslate()) currentTranslate = getMaxTranslate();
+  wrapper.style.transform = `translateX(${-currentTranslate}px)`;
+}
+
+// clique na seta direita
+btnRight.addEventListener("click", () => {
+  currentTranslate += getSlideDistance();
+  updateCarousel();
+});
+
+// clique na seta esquerda
+btnLeft.addEventListener("click", () => {
+  currentTranslate -= getSlideDistance();
+  updateCarousel();
+});
+
+</script>
   <script src="../js/main.js"></script>
   <script src="../js/sobreongs.js"></script>
   <script src="../js/perguntasFrequentes.js"></script>
