@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz Vocacional</title>
+  <link rel="stylesheet" href="../pages-css/quiz.css">
+  <link rel="stylesheet" href="../css/global.css">
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<section class="quiz-container">
+  <div id="quiz">
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div id="questionBlock"></div>
+    <div class="controls">
+      <button id="nextBtn" disabled>Próxima</button>
+    </div>
+    <div id="result"></div>
+    <div id="result-control">
+      <button id="restartBtn" style="display:none;">Refazer</button>
+      <a href="../pages-html/causas.html"><button id="finishBtn" style="display: none;">Finalizar</button></a>
+    </div>
+  </div>
+</section>
+
+<script type="module" src="../js/quiz.js"></script>
+<script src="../js/main.js"></script>
+</body>
+
+</html>
