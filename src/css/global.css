@@ -320,3 +320,17 @@ i {
 #content-slide::-webkit-scrollbar {
   display: none;         
 }
+
+#content-slide1::-webkit-scrollbar{
+  display: none;
+}
+
+#content-slide1 {
+  overflow-x: auto;   
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+#content-slide1::-webkit-scrollbar {
+  display: none;         
+}

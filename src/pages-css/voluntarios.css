@@ -320,14 +320,13 @@ section.slider {
   overflow-x: auto;          
   scroll-behavior: smooth;                
 
-  margin: 0 auto;           
-  border-radius: 12px;      
+  margin: 0 auto;             
 }
 
 .block{
-  width: 280px;         
-  height: 150px;
-  padding: 10px;
+  width: 308px;         
+  height: 200px;
+  padding: 20px;
   margin: 0px 20px;       
   
   text-align: center;
