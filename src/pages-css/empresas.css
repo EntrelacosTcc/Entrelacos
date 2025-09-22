@@ -352,7 +352,7 @@
 
 #bnt-left, #bnt-right{
   position: absolute;
-  top: 230px;
+  top: 260px;
   margin-left: 60px;
   margin-right: 60px;
   color: #0A3937;
@@ -367,7 +367,7 @@
 }
 
 .block {
-  width: 330px;       
+  width: 320px;       
   height: 200px;    
   padding: 10px;      
   margin: 0px 20px;     
@@ -377,15 +377,6 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;     
-}
-
-.block img {
-  border-radius: 100%;
-  width: 90px;
-  height: 90px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  object-fit: cover;
 }
 
 .dados p {
@@ -403,9 +394,11 @@
 
 .block img {
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .nome-depoimentos {
