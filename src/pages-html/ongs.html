@@ -183,10 +183,12 @@
   </div>
   <br><br><br>
   
-  <div id="content-slide" class="car-container">
+
+    <div class="car-container">
     <!-- seta esquerda -->
-    <i id="btn-left" class="fa-solid fa-angle-left fa-3x seta" onclick="direcao(1, 360)"></i>
-  
+     
+  <i id="bnt-left" class="fa-solid fa-angle-left fa-3x" onclick="direcao(-1)"></i>
+  <div id="content-slide">
     <div class="car-viewport">
       <div class="car-wrapper">
         <div class="car-cards depoimento-card">
@@ -233,21 +235,23 @@
   
         <div class="car-cards depoimento-card">
           <p class="depoimento-texto">
-            “Graças à plataforma, conseguimos parcerias importantes e aumentar nosso impacto social.”
+            “Graças à plataforma, conseguimos parcerias importantes e aumentar nosso impacto social. Conseguimos
+            apoio de outras ONGs e voluntários para manter a ração para os animais.”
           </p>
           <div class="depoimento-autor">
-            <img src="../assets/img/pqOng4-ana.jpg" alt="Ana Souza">
+            <img src="../assets/img/Renata.png" alt="Renata Souza">
             <div>
-              <div class="nome">Ana Souza</div>
+              <div class="nome">Renata Souza</div>
               <div class="ong">Mãos Unidas</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  
+    </div>
     <!-- seta direita -->
-    <i id="btn-right" class="fa-solid fa-angle-right fa-3x seta" onclick="direcao(1, 360)"></i>
+ <i id="bnt-right" class="fa-solid fa-angle-right fa-3x" onclick="direcao(1)"></i>
+
   </div>
   
   <div class="green rev">
@@ -493,52 +497,25 @@
   </section>
 
   <div id="footer"></div>
-<script>
 
-const wrapper = document.querySelector(".car-wrapper");
-const viewport = document.querySelector(".car-viewport");
-const btnLeft = document.querySelector("#btn-left");
-const btnRight = document.querySelector("#btn-right");
+ <script>
+  
+function direcao(e) {
+  const wrapper = document.querySelector(".car-wrapper"); 
+  const card = wrapper.querySelector(".car-cards");     
+  const gap = 40;                                    
+  const deslocamento = card.offsetWidth + gap;          
 
-let currentTranslate = 0;
-
-// quantidade de pixels para deslizar por clique
-function getSlideDistance() {
-  const card = wrapper.querySelector(".car-cards");
-  const style = getComputedStyle(card);
-  const width = card.offsetWidth;
-  const marginRight = parseInt(style.marginRight);
-  return width + marginRight;
+  wrapper.scrollBy({ left: e * deslocamento, behavior: 'smooth' });
 }
 
-// largura máxima que dá para deslizar
-function getMaxTranslate() {
-  return wrapper.scrollWidth - viewport.offsetWidth;
-}
 
-// atualizar posição do carrossel
-function updateCarousel() {
-  if (currentTranslate < 0) currentTranslate = 0;
-  if (currentTranslate > getMaxTranslate()) currentTranslate = getMaxTranslate();
-  wrapper.style.transform = `translateX(${-currentTranslate}px)`;
-}
 
-// clique na seta direita
-btnRight.addEventListener("click", () => {
-  currentTranslate += getSlideDistance();
-  updateCarousel();
-});
-
-// clique na seta esquerda
-btnLeft.addEventListener("click", () => {
-  currentTranslate -= getSlideDistance();
-  updateCarousel();
-});
-
-</script>
+ </script>
   <script src="../js/main.js"></script>
-  <script src="../js/sobreongs.js"></script>
   <script src="../js/perguntasFrequentes.js"></script>
+  <script src="../../routes/sobreongs.js"></script>
+
 
 
 </body>

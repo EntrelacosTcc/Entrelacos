@@ -135,9 +135,9 @@ body {
 /* Como Funciona */
 .Bcards {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr)); 
-  gap: 60px 90px; 
-  max-width: 800px; 
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 60px 90px;
+  max-width: 800px;
   margin: 0 auto;
   justify-items: center;
   margin-top: -50px;
@@ -153,13 +153,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 12px 10px rgba(0, 0, 0, 0.12);
+  transition: 0.5s ease;
 }
 
 .cards:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 8px 16px #09625D; 
+  transform: scale(1.05);
 }
 /* posicionamento dos cards */
 .Bcards .cards:nth-child(1) {
@@ -252,10 +251,10 @@ body {
   padding: 10px 20px;
   border-radius: 8px;
   backdrop-filter: blur(5px);
-  color: rgb(42, 38, 38); 
-  font-size: 16px; 
-  line-height: 1.5; 
-  margin: 0; 
+  color: rgb(42, 38, 38);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .txt > p {
@@ -265,8 +264,8 @@ body {
 
 .txt i {
   color: #3fbd95;
-  font-size: 24px; 
-  margin-top: 0px; 
+  font-size: 24px;
+  margin-top: 0px;
 }
 
 .checks {
@@ -278,7 +277,7 @@ body {
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  padding: 20px 0; 
+  padding: 20px 0;
 }
 
 /* Container dos benefícios */
@@ -353,48 +352,45 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  width: 1200px;  
+  width: 1200px;
   margin: 0 auto;
 }
 
 .car-viewport {
-  overflow: hidden;
-  width: 1150px; 
+  width: 1150px;
   padding-top: 10px;
+  overflow-x: auto; 
+  scroll-behavior: smooth;
 }
 
 .car-wrapper {
   display: flex;
-  gap: 40px; /* define o espaço entre os cards */
-  transition: transform 0.5s ease;
+  gap: 40px;
+  transition: 0.5s ease;
+  scroll-behavior: smooth;
+  overflow-x: auto;
 }
 
-
 .car-cards {
-  flex: 0 0 330px; 
+  min-width: 330px;
   height: 240px;
   background-color: #fff;
   border: 2px solid #09625d99;
   border-radius: 15px;
-  box-shadow: 4px 8px 8px rgba(22, 158, 135, 0.266),
-              -4px 0 15px rgba(22, 158, 135, 0.266);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  gap: 20px;
+  margin: 0 10px;
   font-size: 14px;
   line-height: 1.5;
   position: relative;
-  transition: 0.5s ease;
+  /* transition: 0.5s ease; */
 }
 
-
-.car-cards:hover {
+/* .car-cards:hover {
   transform: translateY(-4px);
-  z-index: 10px;
-}
+} */
 
 /* Texto da citação */
 .depoimento-texto {
@@ -453,16 +449,49 @@ body {
   color: #064944;
 }
 
-
-#btn-left {
+#bnt-left {
   left: -50px;
 }
 
-#btn-right {
+#bnt-right {
   right: -50px;
 }
 
+#content-slide {
+  display: flex;
+  gap: 40px;
+  height: 370px;
+  max-width: 1300px;
+  align-items: center;
 
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.car-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
+
+.car-wrapper {
+  -ms-overflow-style: none; /* IE e Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+#bnt-left,
+#bnt-right {
+  position: absolute;
+  top: 150px;
+  margin-left: 20px;
+  margin-right: 40px;
+  color: #0a3937;
+
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
 
 .green.rev {
   width: 100vw;
@@ -533,7 +562,7 @@ body {
   border-radius: 25px;
   text-align: center;
   font-weight: bold;
-    padding: 20px;
+  padding: 20px;
 }
 
 .vd-c {
@@ -550,7 +579,7 @@ body {
   background-color: #a2a2a2;
 }
 
-.rev{
+.rev {
   width: 100vw;
   height: 450px;
   margin-top: 45px;
