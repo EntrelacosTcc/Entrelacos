@@ -1,5 +1,5 @@
 body {
-  background: #f7f9fc;
+  background: #F5F5F5;
 }
 
 .quiz-container{
@@ -9,15 +9,15 @@ body {
 }
 
 #quiz{
-  width: 1000px;
+  width: 950px;
   background-color: #fff;
-  box-shadow: 10px 8px 15px #09625d4b;
-  padding: 70px;
+  box-shadow: 5px 8px 15px #09625d4b;
+  padding: 30px;
   border-radius: 20px;
 }
 
 .question {
-  margin: 40px 40px 60px;
+  margin: 30px 40px 50px;
   text-align: center;
   font-size: 1.4rem;
   color: #1a1a1a;
@@ -26,9 +26,10 @@ body {
 .options {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
-  gap: 30px; 
-  column-gap: 55px;
+  gap: 25px; 
+  column-gap: 25px;
   margin: 12px;
+  text-align: left;
 }
 
 .options label {
@@ -63,8 +64,8 @@ body {
 #nextBtn,
 #restartBtn,
 #finishBtn {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   height: 50px;
   font-size: 1.2rem;
   border-radius: 30px;

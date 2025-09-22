@@ -2,10 +2,10 @@ import perguntas from "../js/perguntas-quiz.js";
 
 
 // ===== Configurações =====
-  const NUM_PERGUNTAS = 5;
+  const NUM_PERGUNTAS = 6;
   let selecionadas = [];
   let indiceAtual = 0;
-  let pontos = { matematica: 0, portugues: 0, historia: 0 };
+  let pontos = { animal: 0, ambiental: 0, religiosa: 0, minoria: 0, social: 0, educacional: 0, saude: 0 };
 
   const questionBlock = document.getElementById("questionBlock");
   const nextBtn = document.getElementById("nextBtn");
@@ -26,7 +26,7 @@ import perguntas from "../js/perguntas-quiz.js";
 
   // ===== Iniciar Quiz =====
   function iniciarQuiz() {
-    pontos = { matematica: 0, portugues: 0, historia: 0 };
+    pontos = { animal: 0, ambiental: 0, religiosa: 0, minoria: 0, social: 0, educacional: 0, saude: 0 };
     selecionadas = shuffleArray(perguntas).slice(0, NUM_PERGUNTAS);
     indiceAtual = 0;
     resultDiv.style.display = "none";
@@ -104,9 +104,13 @@ import perguntas from "../js/perguntas-quiz.js";
     const vencedor = Object.keys(pontos).reduce((a, b) => pontos[a] > pontos[b] ? a : b);
 
     const textos = {
-      matematica: "Você combina com carreiras que envolvem lógica e números (engenharia, estatística, programação).",
-      portugues: "Você combina com carreiras de comunicação e linguagem (jornalismo, letras, professor).",
-      historia: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador)."
+      animal: "Você combina com carreiras que envolvem lógica e números (engenharia, estatística, programação).",
+      ambiental: "Você combina com carreiras de comunicação e linguagem (jornalismo, letras, professor).",
+      religiosa: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
+      minoria: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
+      social: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
+      educacional: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
+      saude: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador)."
     };
 
     resultDiv.innerHTML = `<h2>Sua causa ideal é:</h2><p><strong>${vencedor.toUpperCase()}</strong></p><p>${textos[vencedor]}</p>`;
