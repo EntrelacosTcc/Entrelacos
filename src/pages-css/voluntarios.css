@@ -9,19 +9,19 @@ section.slider {
 }
 
 .slider-content {
-    width: 400%;
+    width: 200%;
     height: 100%;
     display: flex;
     transition: margin-left 1s;
 }
 
 .slider-content input {
-    display: none;
+    display: none; 
 }
 
 .slide-box {
-    width: 1146px;
-    height: 358px;
+    width: 50%;
+    height: 100%;
     position: relative;
     background-size: cover;
     background-position: center;
@@ -68,37 +68,47 @@ section.slider {
 .nav-auto {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     position: absolute;
-    width: 1146px;
-    height: 350px;
+    bottom: 20px;
+    width: 100%;
+    z-index: 10;
+    gap: 10px;
 }
 
 .nav-manual .manual-btn,
 .nav-auto div {
+    width: 15px;
+    height: 15px;
     border: 1px solid #fffafa;
-    padding: 5px;
     border-radius: 50%;
+    background-color: transparent;
     cursor: pointer;
-    transition: .5s;
-}
-
-.nav-manual .manual-btn:not(:last-child),
-.nav-auto div:not(:last-child) {
-    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .nav-manual .manual-btn:hover {
     background-color: #fffafa;
+    transform: scale(1.2);
 }
 
+.nav-auto div {
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
 
-#radio1:checked ~ .nav-auto .auto-btn1 { background-color: #b4b4b4; }#radio1:checked ~ .nav-auto .auto-btn1 { background-color: #b4b4b4; }
-#radio2:checked ~ .nav-auto .auto-btn2 { background-color: #b4b4b4; }#radio2:checked ~ .nav-auto .auto-btn2 { background-color: #b4b4b4; }
+#radio1:checked ~ .nav-manual label[for="radio1"],
+#radio2:checked ~ .nav-manual label[for="radio2"] {
+    background-color: #b4b4b4;
+}
 
-#radio1:checked ~ .primeiro { margin-left: 0%; }#radio1:checked ~ .primeiro { margin-left: 0%; }
-#radio2:checked ~ .primeiro { margin-left: -25%; }#radio2:checked ~ .primeiro { margin-left: -25%; }
+#radio1:checked ~ .nav-auto .auto-btn1,
+#radio2:checked ~ .nav-auto .auto-btn2 {
+    background-color: #b4b4b4;
+}
 
+#radio1:checked ~ .primeiro { margin-left: 0%; }
+#radio2:checked ~ .primeiro { margin-left: -50%; }
 
 
 /* o que é ser voluntário? */
