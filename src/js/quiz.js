@@ -2,7 +2,7 @@ import perguntas from "../js/perguntas-quiz.js";
 
 
 // ===== Configurações =====
-  const NUM_PERGUNTAS = 6;
+  const NUM_PERGUNTAS = 5;
   let selecionadas = [];
   let indiceAtual = 0;
   let pontos = { animal: 0, ambiental: 0, religiosa: 0, GrupoSubRepresentado: 0, social: 0, educacional: 0, saude: 0 };
@@ -13,6 +13,7 @@ import perguntas from "../js/perguntas-quiz.js";
   const restartBtn = document.getElementById("restartBtn");
   const finishBtn = document.getElementById("finishBtn");
   const progressBar = document.getElementById("progressBar");
+  const progressContainer = document.querySelector(".progress-container")
 
   // ===== Embaralhar array =====
   function shuffleArray(arr) {
@@ -32,7 +33,10 @@ import perguntas from "../js/perguntas-quiz.js";
     resultDiv.style.display = "none";
     restartBtn.style.display = "none";
     finishBtn.style.display = "none";
+    progressContainer.style.display = "inline-block"
+    progressBar.style.display = "inline-block"
     nextBtn.style.display = "inline-block";
+    
     atualizarProgresso();
     mostrarPergunta();
   }
@@ -99,21 +103,28 @@ import perguntas from "../js/perguntas-quiz.js";
     nextBtn.style.display = "none";
     restartBtn.style.display = "inline-block";
     finishBtn.style.display = "inline-block"
-    progressBar.style.width = "100%";
+    progressBar.style.display = "none";
+    progressContainer.style.display = "none";
 
     const vencedor = Object.keys(pontos).reduce((a, b) => pontos[a] > pontos[b] ? a : b);
 
     const textos = {
-      animal: "Você combina com carreiras que envolvem lógica e números (engenharia, estatística, programação).",
-      ambiental: "Você combina com carreiras de comunicação e linguagem (jornalismo, letras, professor).",
-      religiosa: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
-      GrupoSubRepresentado: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
-      social: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
-      educacional: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
-      saude: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador)."
+      animal: '<p>Você combina com carreiras que envolvem lógica e números (engenharia, estatística, programação).</p><img src="../assets/img/causa-animal.png" alt="Imagem de um gato">',
+
+      ambiental: '<p>Você combina com carreiras que envolvem lógica e números (engenharia, estatística, programação).</p><img src="../assets/img/causa-ambiental.png" alt="Imagem de um gato">.',
+
+      religiosa: '<p>Você combina com carreiras que envolvem lógica e números (engenharia, estatística, programação).</p><img src="../assets/img/causa-religiosa.png" alt="Imagem de um gato">',
+
+      GrupoSubRepresentado: '<p>Você combina com carreiras que envolvem lógica e números (engenharia, estatística, programação).</p><img src="../assets/img/causa-animal.png" alt="Imagem de um gato">',
+
+      social: '<p>Você combina com carreiras que envolvem lógica e números (engenharia, estatística, programação).</p><img src="../assets/img/causa-social.png" alt="Imagem de um gato">',
+
+      educacional: '<p>Você combina com carreiras que envolvem lógica e números (engenharia, estatística, programação).</p><img src="../assets/img/causa-educacional.png" alt="Imagem de um gato">',
+
+      saude: '<p>Você combina com carreiras que envolvem lógica e números (engenharia, estatística, programação).</p><img src="../assets/img/causa-saude.png" alt="Imagem de um gato">'
     };
 
-    resultDiv.innerHTML = `<h2>Sua causa ideal é:</h2><p><strong>${vencedor.toUpperCase()}</strong></p><p>${textos[vencedor]}</p>`;
+    resultDiv.innerHTML = `<section class="causa-container"><h2>Sua causa ideal é:</h2><h3>${vencedor.toUpperCase()}</h3><div class="texto-resultado">${textos[vencedor]}</div></section>`;
     resultDiv.style.display = "block";
   }
 
