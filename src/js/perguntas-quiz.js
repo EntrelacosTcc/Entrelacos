@@ -110,7 +110,15 @@ const perguntas = [
         { texto: "Implementar políticas que ajudem a reverter os danos ambientais causados pela industrialização.", resultado: "animal" },
         { texto: "Oferecer mais oportunidades educacionais para todas faixas etárias.", resultado: "ambiental" }
       ]
-    }
+    },
+    {
+      texto: "Qual palavra te define melhor?", opcoes: [
+        { texto: "Sustentável.", resultado: "ambiental" },
+        { texto: "Inclusivo", resultado: "minoria" },
+        { texto: "Solidário", resultado: "social" },
+        { texto: "Cuidadoso.", resulltado: "saude"}
+      ]
+    },
   ];
 
 
