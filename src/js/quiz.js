@@ -5,7 +5,7 @@ import perguntas from "../js/perguntas-quiz.js";
   const NUM_PERGUNTAS = 6;
   let selecionadas = [];
   let indiceAtual = 0;
-  let pontos = { animal: 0, ambiental: 0, religiosa: 0, minoria: 0, social: 0, educacional: 0, saude: 0 };
+  let pontos = { animal: 0, ambiental: 0, religiosa: 0, GrupoSubRepresentado: 0, social: 0, educacional: 0, saude: 0 };
 
   const questionBlock = document.getElementById("questionBlock");
   const nextBtn = document.getElementById("nextBtn");
