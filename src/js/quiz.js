@@ -26,7 +26,7 @@ import perguntas from "../js/perguntas-quiz.js";
 
   // ===== Iniciar Quiz =====
   function iniciarQuiz() {
-    pontos = { animal: 0, ambiental: 0, religiosa: 0, minoria: 0, social: 0, educacional: 0, saude: 0 };
+    pontos = { animal: 0, ambiental: 0, religiosa: 0, GrupoSubRepresentado: 0, social: 0, educacional: 0, saude: 0 };
     selecionadas = shuffleArray(perguntas).slice(0, NUM_PERGUNTAS);
     indiceAtual = 0;
     resultDiv.style.display = "none";
@@ -107,7 +107,7 @@ import perguntas from "../js/perguntas-quiz.js";
       animal: "Você combina com carreiras que envolvem lógica e números (engenharia, estatística, programação).",
       ambiental: "Você combina com carreiras de comunicação e linguagem (jornalismo, letras, professor).",
       religiosa: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
-      minoria: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
+      GrupoSubRepresentado: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
       social: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
       educacional: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador).",
       saude: "Você combina com carreiras de análise do passado (historiador, arqueólogo, pesquisador)."
