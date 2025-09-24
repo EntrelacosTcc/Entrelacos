@@ -2,7 +2,7 @@ import perguntas from "../js/perguntas-quiz.js";
 
 
 // ===== Configurações =====
-  const NUM_PERGUNTAS = 1;
+  const NUM_PERGUNTAS = 6;
   let selecionadas = [];
   let indiceAtual = 0;
   let pontos = { animal: 0, ambiental: 0, religiosa: 0, GrupoSubRepresentado: 0, social: 0, educacional: 0, saude: 0 };
@@ -109,7 +109,7 @@ import perguntas from "../js/perguntas-quiz.js";
     const vencedor = Object.keys(pontos).reduce((a, b) => pontos[a] > pontos[b] ? a : b);
 
     const textos = {
-      animal: '<p>Sua causa é animal! Seu amor pelos animais é evidente. Seja protegendo pets abandonados ou lutando contra a exploração animal, você acredita que todos os seres vivos merecem respeito e compaixão. Provavelmente já pensou (ou pratica) vegetarianismo ou veganismo, e adora compartilhar vídeos fofos de animais.</p><img src="../assets/img/causa-animal.png" alt="Imagem de um gato">',
+      animal: '<p>Sua causa é animal! Seu amor pelos animais é evidente. Seja protegendo pets abandonados ou lutando contra a exploração animal, você acredita que todos os seres vivos merecem respeito e compaixão. Provavelmente adora compartilhar vídeos fofos de animais.</p><img src="../assets/img/causa-animal.png" alt="Imagem de um gato">',
 
       ambiental: '<p>Sua causa é ambiental! Você se importa profundamente com o planeta e entende que cada pequena ação conta. Reciclar, economizar água, reduzir o uso de plástico ou simplesmente defender a natureza faz parte do seu dia a dia. Você é daquelas pessoas que não conseguem ver uma árvore sendo cortada sem sentir no peito.</p><img src="../assets/img/causa-ambiental.png" alt="Imagem de um gato">.',
 
