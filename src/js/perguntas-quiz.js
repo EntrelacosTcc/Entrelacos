@@ -41,7 +41,7 @@ const perguntas = [
   },
   {
     texto: "Se tivesse que escolher uma causa por um ano, qual seria?", opcoes: [
-      { texto: "Direito dos animais", resultado: "niml" },
+      { texto: "Direito dos animais", resultado: "animal" },
       { texto: "Igualdade social", resultado: "GrupoSubRepresentado" },
       { texto: "Direito à educação", resultado: "educacional" },
       { texto: "Preservação ambiental", resultado: "ambiental" }
@@ -67,7 +67,7 @@ const perguntas = [
     texto: "Se pudesse transformar algo no mundo, o que seria?", opcoes: [
       { texto: "Acabar com a pobreza", resultado: "social" },
       { texto: "Respeitar todas as diversidades", resultado: "GrupoSubRepresentado" },
-      { texto: "Acesso universal à educação", resultado: "educaional" },
+      { texto: "Acesso universal à educação", resultado: "educacional" },
       { texto: "Preservar os animais", resultado: "animal" }
     ]
   },
@@ -116,7 +116,7 @@ const perguntas = [
       { texto: "Sustentável.", resultado: "ambiental" },
       { texto: "Inclusivo.", resultado: "GrupoSubRepresentado" },
       { texto: "Solidário.", resultado: "social" },
-      { texto: "Cuidadoso.", resulltado: "saude" }
+      { texto: "Cuidadoso.", resultado: "saude" }
     ]
   },
   {
@@ -124,7 +124,7 @@ const perguntas = [
       { texto: "Comunicação com pessoas de diferentes religiões e crenças.", resultado: "religiosa" },
       { texto: "Conhecimento sobre práticas sustentáveis e reciclagem", resultado: "ambiental" },
       { texto: "Capacidade de mediar conflitos e apoiar minorias ", resultado: "GrupoSubRepresentado" },
-      { texto: "Técnicas de primeiros socorros e saúde preventiva", resulltado: "saude" }
+      { texto: "Técnicas de primeiros socorros e saúde preventiva", resultado: "saude" }
     ]
   },
   {
@@ -132,7 +132,7 @@ const perguntas = [
       { texto: "ONG de proteção animal.", resultado: "animal" },
       { texto: "Centro de reforço escolar para jovens.", resultado: "educacional" },
       { texto: "Centro comunitário para apoio a minorias.", resultado: "GrupoSubRepresentado" },
-      { texto: "Hospital ou clínica com atendimento voluntário.", resulltado: "saude" }
+      { texto: "Hospital ou clínica com atendimento voluntário.", resultado: "saude" }
     ]
   },
   {
