@@ -37,7 +37,7 @@ const produtoController = {
 
     // POST - Criar novo produto
     create: (req, res) => {
-        const { nome_produto, descricao, preco, categoria, imagem, imagem_lateral, especificacoes } = req.body;
+        const { nome_produto, descricao, caracteristicas, preco, categoria, imagem, imagem_lateral, especificacoes } = req.body;
         
         // Validação básica
         if (!nome_produto || !preco) {
@@ -47,6 +47,7 @@ const produtoController = {
         const novoProduto = {
             nome_produto,
             descricao,
+            caracteristicas,
             preco,
             categoria,
             imagem,

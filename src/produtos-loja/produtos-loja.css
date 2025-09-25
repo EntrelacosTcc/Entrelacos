@@ -328,16 +328,15 @@ th{
   border: 3px solid var(--destaque-rosa);
   border-radius: 31px;
   padding: 15px;
-  width: 200px;
+  width: 220px;
   height: 320px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 .img-container {
-  width: 190px;
+  width: 180px;
   height: 170px;
   background-color: var(--branco-puro);
   border: 1px solid var(--destaque-rosa);
