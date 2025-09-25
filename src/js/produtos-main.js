@@ -37,7 +37,7 @@ async function carregarProduto(id_produto) {
 
     <div class="produto-lateral">
       <div class="img-lateral">
-        <img src="${produto.imagem_lateral}" alt="Camiseta Feminina - Verso">
+        <img src="${produto.imagem_lateral}" alt="produto.nome">
       </div>
     </div>
 
@@ -154,7 +154,11 @@ function gerarSeletorTamanhos(produto) {
 function preencherDescricaoProduto(produto) {
     if (produto.descricao) {
         document.getElementById('descricao-conteudo').innerHTML = 
-            `<p>${produto.descricao.replace(/\n/g, '</p><p>')}</p>`;
+            `
+            <p>${produto.descricao.replace(/\n/g, '</p><p>')}</p>
+            <br>
+            <p>${produto.caracteristicas.replace(/\n/g, '</p><p>')}</p>
+            `;
     }
     
     // Esconder seção de medidas se não for roupa
