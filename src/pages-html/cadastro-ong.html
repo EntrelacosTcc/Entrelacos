@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Ong</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../pages-css/cadastro-ong.css">
+</head>
+<body>
+
+    <section class="left-side">
+
+    <h2>Bem-vindo ao Entrelaços</h2>
+    <h3>Dê voz à sua causa. Cadastre sua ONG e transforme vidas junto com a gente.</h3>
+
+</section>
+
+<section class="right-side">
+    <div class="cadastro-container">
+
+    <form>
+    <h1>Informações da sua ONG</h1>
+
+         <label>Classificação</label>
+         <select name="classificacao" required="required">
+            <option value=""></option>
+            <option value="instituto">Instituto</option>
+            <option value="Associação">Associação</option>
+            <option value="Fundação">Fundação</option>
+            <option value="Organização-Social">Organização Social</option>
+
+         </select>
+
+         <label>Nome</label><br>
+        <input type="text"><br>
+
+         <label>Descreva sua ONG</label>
+         <textarea  name="mensagem" rows="4" cols="52" placeholder="Faça uma descrição do trabalho da sua ONG" ></textarea><br><br>
+
+        <label>Endereço</label><br>
+        <input type="text"><br>
+
+         <label>Causas</label>
+         <select name="causas"  required="required">
+            <option value=""></option>
+             <option value=""></option>
+            <option value="Animal">Animal</option>
+            <option value="Social">Social</option>
+            <option value="Ambiental">Ambiental</option>
+            <option value="Educacional">Educacional</option>
+            <option value="Saude">Saúde</option>
+            <option value="Cultural">Cultural</option>
+            <option value="Humanitaria">Humanitária</option>
+            <option value="Religiosa">Religiosa</option>
+            <option value="Mulheres">Mulheres</option>
+            <option value="LGBT">LGBTQIA+</option>
+            <option value="Crianca">Criança e adolescente</option>
+            <option value="Idosos">Idosos</option>
+            <option value="PCD">PCD</option>
+
+         </select>
+
+        <label>Responsavél pela ONG</label><br>
+        <input type="text">
+             
+        <label>Cargo do responsavél</label><br>
+        <input type="text">
+
+        <label>CNPJ</label>
+        <input type="text" placeholder="00.000.000/0000-00">
+
+
+
+
+        <div class="centralized-items">
+
+        <button>Continuar</button>
+        </div>
+      
+    </form>
+    </div>
+
+</section>
+
+
+
+</body>
+</html>
