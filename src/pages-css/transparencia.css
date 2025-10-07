@@ -114,7 +114,7 @@
   width: 100%;
   padding: 25px 20px;
   margin-left: 0px;
-  background-color: #8b2e5e1c;
+  background-color: #fbebf3b6;
 }
 
 .resumofinanceiro h2 {
@@ -133,8 +133,7 @@
 }
 
 .img-resumo2 {
-  width: 627px;
-  height: 398px;
+  height: 380px;
   padding-top: 10px;
   display: block;
   margin-left: auto;
