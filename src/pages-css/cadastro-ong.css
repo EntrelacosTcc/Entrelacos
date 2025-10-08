@@ -5,20 +5,25 @@
 
 body{
     display: flex;
+   
 }
 
 .right-side {
+
     width: 50%;
-    min-height: 100dvh;
+    max-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     padding: 40px;
+    overflow-y: auto;
+    
 }
 
 .cadastro-container {
     width: 400px; 
+    padding-top: 100vh;
 }
 
 .cadastro-container form{
@@ -26,6 +31,7 @@ body{
 }
 
 .cadastro-container h1{
+    margin-top: 30px;
     font-size: 2.2rem;
     color: #3EB4AE;
     margin-bottom: 40px;
@@ -62,6 +68,7 @@ body{
 .cadastro-container p{
     text-align: center;
     color: #0A3937;
+    
 }
 
 .centralized-items{
@@ -94,9 +101,10 @@ textarea{
 /* LEFT SIDE */
 
 .left-side{
+   
     width: 50%;
-    min-height: 100vh;
-    background-image: url(../assets/img/cadastroOng.svg);
+    height: 100vh;
+    background-image: url(../assets/img/CadastroOng.png);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -104,6 +112,7 @@ textarea{
     justify-content: center;
     align-items: center;
     color: #fff;
+   
 }
 
 .left-side h2{
@@ -116,4 +125,5 @@ textarea{
     font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 50px;
+    margin: 25px;
 }
