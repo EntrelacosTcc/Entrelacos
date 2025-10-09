@@ -21,7 +21,7 @@ body{
 
 .cadastro-container {
     width: 400px; 
-    padding-top: 35vh;
+    padding-top: 55vh;
     
 }
 
@@ -46,6 +46,7 @@ body{
     border-radius: 8px;
     margin-bottom: 30px;
     margin-top: 5px;
+    outline: none; 
 }
 .cadastro-container select {
     width: 100%;
@@ -56,6 +57,28 @@ body{
     border-radius: 8px;
     margin-bottom: 30px;
     margin-top: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../assets/img/seta-para-baixo.png'); 
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-left: 10px; 
+    cursor: pointer;
+}
+
+.cadastro-container .input-icon{
+    display: flex;
+    align-items: center;
+}
+
+.cadastro-container .input-icon img{
+    height: 15px;
+    width: 15px;
+    margin-left: 3px;
+    margin-top: -3px;
 }
 
 .cadastro-container label{
@@ -67,6 +90,31 @@ body{
     text-align: center;
     color: #0A3937;
 }
+
+.cadastro-container .termos{
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro-container .termos .checkbox{
+    display: flex;
+    margin-bottom: -20px;
+    margin-left: 7px;
+}
+
+.cadastro-container .checkbox-square{
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+    color: #0A3937 1px solid;
+    cursor: pointer;
+}
+
+.cadastro-container .termos .checkbox label{
+    margin-top: 5px;
+    font-size: 12px;
+}
+
 
 .centralized-items{
     width: 100%;
@@ -80,6 +128,11 @@ body{
     width: 45px;
 }
 
+.centralized-items a{
+    margin-left: 2px;
+    color: #0A3937;
+} 
+
 .centralized-items button{
     background-color: #8B2E5E;
     color: #fff;
@@ -89,6 +142,7 @@ body{
     border-radius: 15px;
     font-size: 1rem;
     margin-bottom: 20px;
+    margin-top: 35px ;
 }
 
 textarea{

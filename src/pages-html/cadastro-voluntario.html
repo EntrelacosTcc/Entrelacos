@@ -22,31 +22,82 @@
     <form>
     <h1>Cadastre-se</h1>
 
-         <label>Nome de usuário</label><br>
-        <input type="text"><br>
+        <label>Nome de usuário</label>
+        <input type="text" required="required"><br>
 
          <label>E-mail</label>
-         <input type="email"><br>
+         <input type="email" required="required"><br>
 
          <label>Senha</label>
-         <input type="password"><br>
+         <input type="password" required="required"><br>
 
 
-         <label>Cidade</label>
+         <div class="input-icon">
+            <label>Estado</label>
+            <img src="../assets/img/icon-localizacao.png" alt="">
+         </div>
          <select name="cidade" required="required">
-             <option value="">São Paulo</option>
-             <option value=""></option>
+            <option value="" data-default disabled selected></option>
+            <option value="SP">São Paulo</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+            <option value="EX">Estrangeiro</option>        
          </select>
 
          <label>Como conheceu nossa plataforma?</label>
          <select name="comoConheceu" required="required">
-            <option value=""></option>
+            <option value="" data-default disabled selected></option>
+            <option value="">Através do site oficial</option>
+            <option value="">Redes sociais</option>
+            <option value="">Indicação de amigos ou familiares</option>
+            <option value="">Palestras ou apresentações</option>
+            <option value="">Navegando online</option>
+            <option value="">Outro</option>
          </select>
 
+        <div class="termos">
+            <div class="checkbox">
+                <input type="checkbox" class="checkbox-square">
+                <label>Termos de privacidade</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" class="checkbox-square">
+                <label>Termos de uso</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" class="checkbox-square">
+                <label>Consentimento do tratamento de dados pessoais</label>
+            </div>
+        </div>
 
         <div class="centralized-items">
 
         <button>Continuar</button>
+        <p>Já tem uma conta criada?<a href="#">Login</a></p>
         </div>
       
     </form>
