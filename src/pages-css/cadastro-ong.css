@@ -94,6 +94,7 @@ body{
     margin-bottom: 20px;
 }
 
+
 textarea{
     border-radius:8px ;
     padding: 8px;
@@ -107,7 +108,7 @@ textarea{
     height: 100vh;
     background-image: url(../assets/img/cadastroOng.svg);
     background-repeat: no-repeat;
-    background-size: 720px 960px;
+    background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
@@ -143,3 +144,4 @@ textarea{
     margin-bottom: 50px;
     margin: 25px;
 }
+

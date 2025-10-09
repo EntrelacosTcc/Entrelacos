@@ -23,7 +23,7 @@ body{
 
 .cadastro-container {
     width: 400px; 
-    padding-top: 100vh;
+    padding-top: 30vh;
 }
 
 .cadastro-container form{
@@ -77,11 +77,18 @@ body{
     flex-direction: column;
     align-items: center;
 }
-
-
-.centralized-items img{
-    width: 45px;
+.cadastro-container .input-icon{
+    display: flex;
+    align-items: center;
 }
+
+.cadastro-container .input-icon img{
+    height: 15px;
+    width: 15px;
+    margin-left: 3px;
+    margin-top: -3px;
+}
+
 
 .centralized-items button{
     background-color: #8B2E5E;
@@ -94,9 +101,31 @@ body{
     margin-bottom: 20px;
 }
 
-textarea{
-    border-radius:8px ;
-    padding: 8px;
+.cadastro-container .termos{
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro-container .termos .checkbox{
+    display: flex;
+    margin-bottom: -20px;
+    margin-left: 7px;
+}
+
+.cadastro-container .checkbox-square{
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+    color: #0A3937 1px solid;
+    cursor: pointer;
+}
+
+.cadastro-container .termos .checkbox label{
+    margin-top: 5px;
+    font-size: 12px;
+}
+.centralized-items img{
+    width: 45px;
 }
 
 /* LEFT SIDE */
@@ -107,7 +136,7 @@ textarea{
     height: 100vh;
     background-image: url(../assets/img/cadastroOng.svg);
     background-repeat: no-repeat;
-    background-size: 720px 960px;
+    background-size:cover;
     background-position: center;
     display: flex;
     flex-direction: column;
