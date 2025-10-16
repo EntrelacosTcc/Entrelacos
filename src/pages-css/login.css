@@ -39,7 +39,7 @@ body{
     border: 1px solid #0A3937;
     border-radius: 8px;
     margin-bottom: 30px;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .login-container label{
@@ -76,6 +76,7 @@ body{
     border: none;
     border-radius: 15px;
     font-size: 1rem;
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -95,13 +96,14 @@ body{
 }
 
 .right-side h2{
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     width: 500px;
     text-align: center;
 }
 
 .right-side h3{
     font-size: 1.5rem;
+    margin-top: -25px;
     font-weight: 400;
     margin-bottom: 50px;
 }
