@@ -22,29 +22,28 @@
     <form>
     <h1>Informações da ONG</h1>
 
-         <label>Classificação</label>
-         <select name="classificacao" required="required">
-            <option value=""></option>
+         <label>Classificação</label><br>
+         <select name="classificacao" required>
+            <option value="" selected disabled>Selecione a Classificação da sua ONG</option>
             <option value="instituto">Instituto</option>
             <option value="Associação">Associação</option>
             <option value="Fundação">Fundação</option>
             <option value="Organização-Social">Organização Social</option>
 
-         </select>
+         </select><br>
 
          <label>Nome</label><br>
-        <input type="text"><br>
+        <input type="text" placeholder="Digite seu nome completo"><br>
 
-         <label>Descreva sua ONG</label>
-         <textarea  name="mensagem" rows="4" cols="52"  placeholder=" Faça uma descrição do trabalho da sua ONG" ></textarea><br><br>
+         <label>Descreva sua ONG</label><br>
+         <textarea  name="mensagem" rows="4" cols="52"  placeholder="Faça uma descrição do trabalho da sua ONG" ></textarea><br>
 
         <label>Endereço</label><br>
-        <input type="text"><br>
+        <input type="text" placeholder="Digite seu endereço"><br>
 
-         <label>Causas</label>
+         <label>Causas</label><br>
          <select name="causas"  required="required">
-            <option value=""></option>
-             <option value=""></option>
+            <option value="causa" selected disabled>Selecione a causa que mais define sua ONG</option>
             <option value="Animal">Animal</option>
             <option value="Social">Social</option>
             <option value="Ambiental">Ambiental</option>
@@ -59,19 +58,16 @@
             <option value="Idosos">Idosos</option>
             <option value="PCD">PCD</option>
 
-         </select>
+         </select><br>
 
         <label>Responsavél pela ONG</label><br>
-        <input type="text">
+        <input type="text" placeholder="Digite o nome do responsável pela ONG"><br>
              
         <label>Cargo do responsavél</label><br>
-        <input type="text">
+        <input type="text" placeholder="Digite o cargo do responsável pela ONG"><br>
 
-        <label>CNPJ</label>
-        <input type="text" placeholder="00.000.000/0000-00">
-
-
-
+        <label>CNPJ</label><br>
+        <input type="number" placeholder="00.000.000/0000-00"><br>
 
         <div class="centralized-items">
 

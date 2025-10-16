@@ -9,7 +9,6 @@ body{
 }
 
 .right-side {
-
     width: 50%;
     max-height: 100vh;
     display: flex;
@@ -23,7 +22,7 @@ body{
 
 .cadastro-container {
     width: 400px; 
-    padding-top: 100vh;
+    padding-top: 530px;
 }
 
 .cadastro-container form{
@@ -39,7 +38,9 @@ body{
     display: block; 
 }
 
-.cadastro-container input {
+.cadastro-container input,
+.cadastro-container select,
+.cadastro-container textarea{
     width: 100%;
     height: 45px;
     padding: 8px;
@@ -47,28 +48,15 @@ body{
     border: 1px solid #0A3937;
     border-radius: 8px;
     margin-bottom: 30px;
-    margin-top: 5px;
-}
-.cadastro-container select {
-    width: 100%;
-    height: 45px;
-    padding: 8px;
-    font-size: 0.9rem;
-    border: 1px solid #0A3937;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .cadastro-container label{
     color: #0A3937;
-    display: block; 
 }
 
-.cadastro-container p{
-    text-align: center;
-    color: #0A3937;
-    
+.cadastro-container textarea{
+    height: 90px;
 }
 
 .centralized-items{
@@ -86,27 +74,20 @@ body{
 .centralized-items button{
     background-color: #8B2E5E;
     color: #fff;
-    width: 70%;
+    width: 100%;
     height: 50px;
     border: none;
     border-radius: 15px;
     font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-
-textarea{
-    border-radius:8px ;
-    padding: 8px;
+    margin-top: 40px;
 }
 
 /* LEFT SIDE */
 
 .left-side{
-   
     width: 50%;
     height: 100vh;
-    background-image: url(../assets/img/cadastroOng.svg);
+    background-image: url(../assets/img/cadong.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -114,10 +95,10 @@ textarea{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(20, 24, 31, 0.635);
     color: #fff;
     z-index: 0;
-
-   
 }
 
 .left-side::before {
@@ -127,7 +108,7 @@ textarea{
     left: 0;
     width: 50%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.249); 
     z-index: -2; 
 }
 
@@ -135,6 +116,7 @@ textarea{
 .left-side h2{
     font-size: 2.8rem;
     width: 500px;
+    margin-bottom: 0;
     text-align: center;
 }
 
