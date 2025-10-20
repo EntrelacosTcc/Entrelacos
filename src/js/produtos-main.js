@@ -37,12 +37,12 @@ async function carregarProduto(id_produto) {
 
     <div class="produto-lateral">
       <div class="img-lateral">
-        <img src="${produto.imagem_lateral}" alt="produto.nome">
+        <img src="${produto.imagem_lateral}" alt="produto.nome" id="small-img">
       </div>
     </div>
 
     <div class="produto-principal">
-      <img src="${produto.imagem}" alt="produto.nome">
+      <img src="${produto.imagem}" alt="produto.nome" id="MainImg">
     </div>
 
     <div class="produto-info">
@@ -50,11 +50,6 @@ async function carregarProduto(id_produto) {
       <h3>R$ ${Number(produto.preco).toFixed(2)}</h3>
 
 
-      <h3 class="inline-p">Cor:</h3>
-      <h3 class="inline-p cor-detail">Branca</h3>
-      <div class="opcoes-cores">
-        <input type="radio" name="cor" value="branca" class="cores" checked>
-      </div>
 
       ${precisaTamanho ? gerarSeletorTamanhos(produto) : ''}
       <br>
@@ -95,10 +90,22 @@ function processarTamanhos(tamanhosData) {
         }
     }
     
-    // Formato não reconhecido, retorna array vazio
     console.error('Formato de tamanhos não reconhecido:', tamanhosData);
     return [];
 }
+
+// Trocar imagem principal ao clicar na imagem pequena
+
+const mainImg = document.getElementById("MainImg");
+  const smallImg = document.getElementById("small-img");
+
+  smallImg.addEventListener("click", () => {
+    let trocarImagem = mainImg.src;
+
+    mainImg.src = smallImg.src;
+    smallImg.src = trocarImagem;
+  });
+
 
 // Gerar seletor de tamanhos
 function gerarSeletorTamanhos(produto) {
@@ -166,7 +173,6 @@ function preencherDescricaoProduto(produto) {
         document.querySelector('[data-target="medidas"]').style.display = 'none';
     }
 }
-
 
 
 // Carregar página com base na URL
