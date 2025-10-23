@@ -19,22 +19,88 @@
     <div class="bgImg-hero"></div>
     <div class="profileImg-hero"></div>
 
-    <article>
+    <article class="info-ong">
+      <br><br><br>
         <h1>Nome ONG</h1>
-        <h3>Descrição breveeee</h3>
-
-        <div class="causa-tag">Causa</div>
-        <hr>
+        <p>ONG dedicada à educação ambiental de crianças e jovens em comunidades rurais e periféricas. </p>
 
     </article>
 
+    <div class="line"></div>
+
   </section>
+
+  <!-- OPÇÕES -->
+
+  <div class="opcoesPerfil">
+    <button onclick="mostrarOpcao('opcao1')" class="option-btn">Sobre</button>
+    <button onclick="mostrarOpcao('opcao2')" class="option-btn">Vagas</button>
+    <button onclick="mostrarOpcao('opcao3')" class="option-btn">Doações</button>
+    <button onclick="mostrarOpcao('opcao4')" class="option-btn">Postagens</button>
+    <button onclick="mostrarOpcao('opcao5')" class="option-btn">Avaliações</button>
+  </div>
+
+  <div id="opcao1" class="opcao visivel">
+    <div class="sobre-grid">
+
+      <div class="sobre-ong">
+        <h2>Sobre a Organização</h2>
+        <hr>
+        <p>A Raízes do Futuro nasceu do desejo de conectar as novas gerações com o 
+          meio ambiente. Atuando em escolas públicas e centros comunitários, a ONG promove 
+          oficinas práticas sobre sustentabilidade, hortas urbanas, reciclagem e preservação 
+          da biodiversidade local. Além disso, realiza mutirões ecológicos e campanhas de 
+          conscientização, criando um vínculo real entre as crianças e o cuidado com o planeta.</p>
+      </div>
+
+      <div class="contato">
+        <h2>Contato</h2>
+        <hr>
+
+        
+        
+      </div>
+
+      <hr>
+    </div>
+
+  </div>
+  
+  <div id="opcao2" class="opcao">
+    <h3>opcao 2</h3>
+    <p>Descrição do opcao 2. Excelente qualidade!</p>
+  </div>
+  
+  <div id="opcao3" class="opcao">
+    <h3>opcao 3</h3>
+    <p>Descrição do opcao 3. Melhor custo-benefício!</p>
+  </div>
+
+  <div id="opcao4" class="opcao">
+    <h3>opcao 4</h3>
+    <p>Descrição do opcao 4. Melhor custo-benefício!</p>
+  </div>
+
+  <div id="opcao5" class="opcao">
+    <h3>opcao 5</h3>
+    <p>Descrição do opcao 5. Melhor custo-benefício!</p>
+  </div>
+
 
 
   <div id="footer"></div>
 
+<script src="../js/main.js"></script>
+<script>
 
-  <script src="../js/main.js"></script>
+function mostrarOpcao(id) {
+
+  document.querySelectorAll('.opcao').forEach(el => el.classList.remove('visivel'));
+
+  document.getElementById(id).classList.add('visivel');
+}
+
+</script>
 
 </body>
 

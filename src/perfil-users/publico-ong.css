@@ -1,0 +1,98 @@
+.hero-ong{
+    position: relative;
+}
+
+.bgImg-hero{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(185, 185, 185);
+}
+
+.profileImg-hero{
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 100%;
+}
+
+h1{
+    font-size: 2.2rem;
+}
+
+.info-ong{
+    position: relative;
+    left: 60px;
+}
+
+.info-ong p{
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.line{
+    margin-left: 60px;
+    margin-right: 60px;
+    width: auto;
+    height: 1px;
+    background-color: #09625D;
+}
+
+/* OPCOES */
+
+.opcoesPerfil{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 150px;
+}
+
+.option-btn {
+    margin: 10px 0 20px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    font-size: 1rem;
+  }
+
+  .opcao {
+    margin: 0 100px;
+    display: none;
+  }
+
+  .opcao.visivel {
+    display: block; 
+  }
+
+  /* SOBRE A ONG */
+
+  .sobre-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 100px; 
+  }
+
+  .sobre-ong h2, .contato h2{
+    margin: 10px 20px;
+    font-size: 1.4rem;
+    color: #09625D;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .sobre-ong p{
+    margin: 20px 20px;
+  }
+
+  .sobre-ong, .contato{
+    border: 2px solid #09625D;
+    border-radius: 10px;
+    padding: 15px 0 10px;
+  }
+
+  .sobre-ong hr, .contato hr{
+    height: 2px;
+    width: 100%;
+    background-color: #09625D;
+  }
