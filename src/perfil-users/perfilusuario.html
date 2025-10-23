@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../pages-css/perfilusuario.css">
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <main>
+        <aside>
+            <div class="perfil-navegacao">
+                <div class="infos">
+                    <div class="img-user-container">
+                        <div class="img-user"></div>
+                        <input type="file" id="inputImagem" accept="image/*">
+                        <button type="button" id="btnAlterarImagem">Alterar Imagem</button>
+                    </div>
+                    
+                    <h3 id="name">Julia Neves</h3>
+
+                    <div class="data-ingresso">
+                       <p>Voluntário desde  <span id="dataIngresso"> 2022</span></p> 
+                    </div>
+                </div>
+                <div class="dados">
+                    <div class="acoes">
+                        <h6 id="atuacoes">23</h6>
+                        <p>Atuações</p>
+                    </div>
+                    <div class="acoes">
+                        <h6 id="horas_voluntariado">56</h6>
+                        <p>Tempo Voluntário</p>
+                    </div>
+                    <div class="acoes">
+                        <h6 id="n_itens_doados">12</h6>
+                        <p>Itens Doados</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- API de acessibilidade -->
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+
+    <script src="/src/js/perfilusuario.js"></script>
+    <script src="/src/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+.perfil-navegacao {
+    margin-top: 50px;
+    margin: 60px;
+    width: 500px;            
+    height: 980px;           
+    border: 1px solid #09625D;  
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    padding: 20px;        
+    box-sizing: border-box;     
+}
+
+#inputImagem {
+    display: none;
+}
+
+.img-user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.img-user {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid #0A3937;
+    background-color: #f0f0f0;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+#btnAlterarImagem {
+    padding: 8px 16px;
+    border: none;
+    background-color: #09625D;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#btnAlterarImagem:hover {
+    background-color: #0A7F77;
+}
+
+#name {
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.data-ingresso {
+    margin-top: 15px;
+    height: 35px;
+    width: 190px;
+    background-color: #09625D;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+/* Dados atuações */
+.dados {
+    display: flex;           
+    gap: 20px;                 
+    justify-content: flex-start;
+    align-items: center;    
+    margin-top: 25px;
+}
+
+.dados .acoes {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;       
+    padding: 10px;
+    width: 150px;            
+}
+
+.dados h6 {
+    color: #09625D;
+    font-size: 20px;
+    font-weight: 500;
+}
+
