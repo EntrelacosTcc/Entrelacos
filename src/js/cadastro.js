@@ -26,16 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
       // Cria usuário
       const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
 
-      // Atualiza o displayName para aparecer no login
+      // Atualiza o nome do usuário
       await updateProfile(userCredential.user, { displayName: nome });
 
       alert(`Cadastro realizado com sucesso! Bem-vindo(a), ${nome}!`);
-      console.log("Usuário cadastrado:", userCredential.user);
 
       // Limpa os campos
       document.getElementById("nome").value = "";
       document.getElementById("email").value = "";
       document.getElementById("senha").value = "";
+
+      // Redireciona para a página de login
+      window.location.href = "./login.html"; // 🔹 ajusta o caminho se necessário
 
     } catch (error) {
       switch (error.code) {

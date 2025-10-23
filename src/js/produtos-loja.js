@@ -19,6 +19,22 @@ async function carregarProdutos() {
     }
 }
 
+const pool = require('../db');
+
+class Produto {
+  static async getAll() {
+    try {
+      const [rows] = await pool.query('SELECT * FROM produtos');
+      return rows;
+    } catch (err) {
+      console.error('Erro ao buscar produtos:', err);
+      throw err;
+    }
+  }
+}
+
+module.exports = Produto;
+
 function exibirProdutos(produtos) {
     const container = document.getElementById('lista-produtos');
     

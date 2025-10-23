@@ -1,7 +1,12 @@
 const mysql = require('mysql2');
 require('dotenv').config(); // Isso carrega as variáveis do .env
 
-const connection = mysql.createConnection(process.env.MYSQL_URL);
+const connection = mysql.createConnection({
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+});
 
 // 2. Conecte ao banco
 connection.connect((error) => {
@@ -14,3 +19,14 @@ connection.connect((error) => {
 
 // 3. Exporte a conexão
 module.exports = connection
+
+const pool = mysql.createPool({
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  waitForConnections: true,
+  connectionLimit: 10, // número máximo de conexões simultâneas
+});
+
+module.exports = pool;

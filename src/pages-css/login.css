@@ -58,6 +58,11 @@ body{
     align-items: center;
 }
 
+#cadastrolink {
+    margin-left: 2px;
+    color: #0A3937;
+} 
+
 .icons{
     display: flex;
     margin: 20px 0;

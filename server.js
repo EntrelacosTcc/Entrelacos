@@ -77,7 +77,7 @@ app.get('src/pages-html/fale-conosco.html', (req, res) => {
 
     // SOBRE
 
-app.get('/pages-html/sobre.htmls', (req, res) => {
+app.get('/pages-html/sobre.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages-html/sobre.html'));
 });
 
@@ -113,8 +113,8 @@ app.get('/health', (req, res) => {
 // Iniciar servidor
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
-  console.log(`✅ Servidor rodando na porta ${PORT}`);
-  console.log(`🌐 Home: http://localhost:${PORT}/index.html`);
-  console.log(`🌐 Home: http://localhost:${PORT}/produto/:id_produto`);
-  console.log(`🔧 Health check: http://localhost:${PORT}/health`);
+  console.log("✅ Servidor rodando na porta ${PORT}");
+  console.log("🌐 Home: http://localhost:${PORT}/index.html");
+  console.log("🌐 Home: http://localhost:${PORT}/produto/:id_produto");
+  console.log("🔧 Health check: http://localhost:${PORT}/health");
 });
