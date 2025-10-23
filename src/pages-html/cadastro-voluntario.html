@@ -23,13 +23,13 @@
     <h1>Cadastre-se</h1>
 
         <label>Nome de usuário</label>
-        <input type="text" required="required"><br>
+        <input type="text" id="nome" required="required"><br>
 
          <label>E-mail</label>
-         <input type="email" required="required"><br>
+         <input type="email" id="email" required="required"><br>
 
          <label>Senha</label>
-         <input type="password" required="required"><br>
+         <input type="password" id="senha" required="required"><br>
 
 
          <div class="input-icon">
@@ -96,7 +96,7 @@
 
         <div class="centralized-items">
 
-        <button>Continuar</button>
+        <button type="button" id="btnCadastrar">Cadastrar</button>
         <p>Já tem uma conta criada?<a href="#">Login</a></p>
         </div>
       
@@ -105,6 +105,7 @@
 
 </section>
 
+<script type="module" src="../js/cadastro.js"></script>
 
 
 </body>

@@ -12,28 +12,29 @@
 <section class="left-side">
     <div class="login-container">
 
-    <form>
-    <h1>Login</h1>
+<form>
+  <h1>Login</h1>
 
-    
-        <label>E-mail</label><br>
-        <input type="text"><br>
+  <label>E-mail</label><br>
+  <input type="text" id="email" required><br>
 
-        <label>Senha</label><br>
-        <input type="password"><br>
+  <label>Senha</label><br>
+  <input type="password" id="senha" required><br>
 
-        <p>Esqueceu sua senha?</p>
+  <p>Esqueceu sua senha?</p>
 
-        <div class="centralized-items">
-        <div class="icons">
-            <img src="../assets/img/google.png" alt="Google">
-            <img src="../assets/img/facebook.png" alt="Facebook">
-        </div>
+  <div class="centralized-items">
+    <div class="icons">
+      <img src="../assets/img/google.png" alt="Google">
+      <img src="../assets/img/facebook.png" alt="Facebook">
+    </div>
 
-        <button>Entrar</button>
-        </div>
-        <p>Não possui uma conta? Cadastre-se</p>
-    </form>
+    <button type="button" id="btnLogin">Entrar</button>
+  </div>
+
+  <p>Não possui uma conta? <a href="./cadastro-voluntario.html">Cadastre-se</a></p>
+</form>
+
     </div>
 
 </section>
@@ -44,7 +45,7 @@
     <h3>Conectando pessoas, ideias e propósitos.</h3>
 
 </section>
-
+    <script type="module" src="../js/login.js"></script>
     <!-- API de acessibilidade -->
     <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
 </body>
