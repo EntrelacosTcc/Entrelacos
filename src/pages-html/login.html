@@ -9,44 +9,45 @@
 </head>
 <body>
 
-<section class="left-side">
+  <section class="left-side">
     <div class="login-container">
 
-<form>
-  <h1>Login</h1>
+      <form id="formLogin">
+        <h1>Login</h1>
 
-  <label>E-mail</label><br>
-  <input type="text" id="email" required><br>
+        <label for="email">E-mail</label><br>
+        <input type="email" id="email" required><br>
 
-  <label>Senha</label><br>
-  <input type="password" id="senha" required><br>
+        <label for="senha">Senha</label><br>
+        <input type="password" id="senha" required><br>
 
-  <p>Esqueceu sua senha?</p>
+        <p><a href="#">Esqueceu sua senha?</a></p>
 
-  <div class="centralized-items">
-    <div class="icons">
-      <img src="../assets/img/google.png" alt="Google">
-      <img src="../assets/img/facebook.png" alt="Facebook">
+        <div class="centralized-items">
+          <!-- Botão Google -->
+          <div class="icons" title="Entrar com Google">
+            <img src="../assets/img/google.png" alt="Login com Google" id="btnGoogle">
+          </div>
+
+          <!-- Botão Entrar -->
+          <button type="button" id="btnLogin">Entrar</button>
+        </div>
+
+        <p>Não possui uma conta? <a id="cadastrolink" href="./cadastro-voluntario.html">Cadastre-se</a></p>
+      </form>
+
     </div>
+  </section>
 
-    <button type="button" id="btnLogin">Entrar</button>
-  </div>
-
-  <p>Não possui uma conta? <a href="./cadastro-voluntario.html">Cadastre-se</a></p>
-</form>
-
-    </div>
-
-</section>
-
-<section class="right-side">
-
+  <section class="right-side">
     <h2>Bem-vindo ao Entrelaços</h2>
     <h3>Conectando pessoas, ideias e propósitos.</h3>
+  </section>
 
-</section>
-    <script type="module" src="../js/login.js"></script>
-    <!-- API de acessibilidade -->
-    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+  <!-- Seu script principal -->
+  <script type="module" src="../js/login.js"></script>
+
+  <!-- API de acessibilidade -->
+  <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
 </body>
 </html>
