@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 .container-hero{
   height: 400px;
   display: flex;
