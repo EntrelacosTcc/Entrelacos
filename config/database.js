@@ -6,8 +6,6 @@ const connection = mysql.createConnection({
   user: process.env.MYSQLUSER,
   password: process.env.MYSQLPASSWORD,
   database: process.env.MYSQLDATABASE,
-  waitForConnections: true,
-  connectionLimit: 10,
 });
 
 // 2. Conecte ao banco
@@ -21,3 +19,14 @@ connection.connect((error) => {
 
 // 3. Exporte a conexão
 module.exports = connection
+
+const pool = mysql.createPool({
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  waitForConnections: true,
+  connectionLimit: 10, // número máximo de conexões simultâneas
+});
+
+module.exports = pool;
