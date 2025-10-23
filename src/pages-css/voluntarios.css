@@ -633,6 +633,7 @@ hr {
   justify-content: space-between;
   align-items: center;
   height: 79px;
+
 }
 
 .mostrar {
@@ -640,6 +641,7 @@ hr {
   font-weight: 200;
   cursor: pointer;
   padding-right: 45px;
+
 }
 
 /* respostas */
@@ -650,7 +652,7 @@ hr {
 }
 
 .textinho {
-  padding: 5px 35px;
+  padding: 5px 35px ;
   color: #04413f;
   font-weight: 400;
   text-align: justify;
