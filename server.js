@@ -77,7 +77,7 @@ app.get('src/pages-html/fale-conosco.html', (req, res) => {
 
     // SOBRE
 
-app.get('/pages-html/sobre.htmls', (req, res) => {
+app.get('/pages-html/sobre.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages-html/sobre.html'));
 });
 
