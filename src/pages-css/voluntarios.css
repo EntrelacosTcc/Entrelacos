@@ -661,3 +661,54 @@ hr {
 .arrow {
   cursor: pointer;
 }
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+
+  /* slider */
+  section.slider {
+    width: 100%;
+    height: 258px;
+  }
+
+  .camada-txt h1{
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .camada-txt p{
+    font-size: 14px;
+  }
+
+  /* lei do voluntariado */
+  .bloco{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+  }
+
+  .txt{
+    width: 100%;
+    margin-bottom: 10%;
+  }
+
+  .leiVoluntariadoBtn {
+    margin-left: -120px;
+
+  }
+
+
+
+  /*  */
+  .content-txt {
+    font-size: 0.9rem;
+    line-height: 22px;
+  }
+
+   h2 {
+    font-size: 1.6rem;
+  }
+}
+
+
