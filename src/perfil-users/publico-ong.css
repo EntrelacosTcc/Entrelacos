@@ -1,3 +1,4 @@
+
 .hero-ong{
     position: relative;
 }
@@ -49,17 +50,37 @@ h1{
 }
 
 .option-btn {
-    margin: 10px 0 20px 0;
+    margin: 10px 0 30px 0;
     padding: 8px 12px;
     cursor: pointer;
     border: none;
-    background-color: #fff;
+    background-color: #fffafa;
     font-size: 1rem;
   }
 
+  .option-btn:hover{
+    color: #09625D;
+    transition: 0.2s;
+  }
+
   .opcao {
-    margin: 0 100px;
+    margin: 0 150px;
     display: none;
+  }
+
+  .opcao h2{
+    color: #09625D;
+    margin: 10px 0;
+  }
+
+  .opcao h2, .opcao h3{
+    text-align: center;
+  }
+
+  .opcao h3{
+    color: #127772;
+    font-weight: 300;
+    font-size: 1.6rem;
   }
 
   .opcao.visivel {
@@ -71,21 +92,22 @@ h1{
   .sobre-grid{
     display: grid;
     grid-template-columns: 2fr 1fr; 
-    gap: 100px; 
+    gap: 50px; 
   }
 
   .sobre-ong h2, .contato h2{
     margin: 10px 20px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: #09625D;
     font-family: 'Roboto', sans-serif;
   }
 
   .sobre-ong p{
-    margin: 20px 20px;
+    margin: 20px;
   }
 
   .sobre-ong, .contato{
+    height: fit-content;
     border: 2px solid #09625D;
     border-radius: 10px;
     padding: 15px 0 10px;
@@ -96,3 +118,31 @@ h1{
     width: 100%;
     background-color: #09625D;
   }
+
+  /* CONTATO DADOS */
+
+  .cntDados{
+    display: flex;
+    gap: 10px;
+  }
+
+  .cntDados .icon{
+    margin: 20px 0 15px 20px;
+  }
+
+  .cntDados .dados{
+    margin-top: 18px;
+    margin-right: 20px;
+  }
+
+  .icon i{
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #09625D;
+    color: #D0FFFD;
+  }
+
