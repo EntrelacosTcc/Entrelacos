@@ -23,3 +23,5 @@ function direcao1(e, qnt) {
     direcao1.scrollBy({ left: qnt, behavior: 'smooth' });
   }
 }
+
+
