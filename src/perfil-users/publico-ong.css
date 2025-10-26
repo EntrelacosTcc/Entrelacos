@@ -68,12 +68,12 @@ h1{
     display: none;
   }
 
-  .opcao h2{
+  .opcao .opcao-titulo{
     color: #09625D;
     margin: 10px 0;
   }
 
-  .opcao h2, .opcao h3{
+  .opcao .opcao-titulo, .opcao h3{
     text-align: center;
   }
 
