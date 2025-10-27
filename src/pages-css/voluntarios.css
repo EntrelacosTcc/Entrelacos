@@ -1,3 +1,9 @@
+* { box-sizing: border-box }
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* slider */
 section.slider {
   padding-top: 30px;
@@ -120,7 +126,6 @@ section.slider {
 }
 
 /* o que é ser voluntário? */
-
 .serVoluntario {
   display: flex;
   justify-content: center;
@@ -178,7 +183,6 @@ section.slider {
 }
 
 /* ranking */
-
 .voluntariosDestaque {
   display: flex;
   justify-content: center;
@@ -225,7 +229,6 @@ section.slider {
 }
 
 /* EMPRESAS PARCEIRAS */
-
 .beneficios-container {
   position: relative;
   display: flex;
@@ -245,10 +248,8 @@ section.slider {
   height: 350px;
   width: 1000px;
   align-items: center;
-
   overflow-x: auto;
   scroll-behavior: smooth;
-
   margin: 0 auto;
   border-radius: 12px;
 }
@@ -296,7 +297,6 @@ section.slider {
 }
 
 /* DEPOIMENTOS VOLUNTARIOS */
-
 .depoimentos-container {
   position: relative;
   display: flex;
@@ -316,10 +316,8 @@ section.slider {
   height: 350px;
   width: 1030px;
   align-items: center;
-
   overflow-x: auto;
   scroll-behavior: smooth;
-
   margin: 0 auto;
 }
 
@@ -328,7 +326,6 @@ section.slider {
   height: 200px;
   padding: 20px;
   margin: 0px 20px;
-
   text-align: center;
   flex-shrink: 0;
   border: 2px solid #09625d;
@@ -598,7 +595,6 @@ hr {
 }
 
 /* perguntas frequentes */
-
 .container8 {
   margin-bottom: 50px;
 }
@@ -632,7 +628,6 @@ hr {
   justify-content: space-between;
   align-items: center;
   height: 79px;
-
 }
 
 .mostrar {
@@ -640,7 +635,6 @@ hr {
   font-weight: 200;
   cursor: pointer;
   padding-right: 45px;
-
 }
 
 /* respostas */
@@ -662,67 +656,46 @@ hr {
 }
 
 /* Celulares pequenos (até 480px) */
-* {
-  box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-
 @media (max-width: 480px) {
-  *{
-    box-sizing: content-box;
-  }
-
   h1{
     font-size: 18px;
     font-weight: 500;
   }
-
-  p{
-    font-size: 14px;
-  }
+  p{ font-size: 14px;}
 
   /* slider */
   section.slider {
     width: 100%;
     height: 258px;
   }
-
   .camada-txt h1{
     font-size: 18px;
     font-weight: 500;
   }
-
   .camada-txt p{
     font-size: 14px;
   }
 
-  /* lei do voluntariado */
   .serVoluntario{
     margin-top: 10px;
   }
-
+.serVoluntario h2{
+  margin-bottom: 6vh;
+}
   .bloco{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 80%;
   }
-
   .txt{
     width: 100%;
     margin-bottom: 10%;
   }
-
   .leiVoluntariadoBtn {
-    margin-left: -30vw;
-    top: -60px;
+    left: 0px;
+    top: -90px;
   }
-
   .blocoImg{
     width: 100%;
     display: flex;
@@ -730,103 +703,87 @@ img {
     height: 25vh;
   }
   .blocoImg img {
-  top: -10px;
+  top: -40px;
   width: 100%;
   height: 100%;
   border-radius: 10px;
   }
 
-  /* ranking */
-
   .bloco2{
     width: 100%;
+    margin-top: -6vh;
   }
-
 .tituloEspecifico {
   width: 100%;
 }
-
 .rankingContainer {
   width: 100%;
 }
-
 .rankingLegenda {
-  width: 350px;
+  width: 300px;
   font-size: 16px;
 }
-
 .rankingUser {
-  width: 350px;
+  width: 320px;
   height: 50px;
   border-radius: 12px;
 }
 
-
-  /* beneficios */
   .beneficios-container {
   position: relative;
   display: flex;
   flex-direction: column;
   margin-top: 40px;
 }
-
 #btn-left,
 #btn-right {
   display: none;
 }
-
 .beneficios-container h2 {
   font-size: 1.6rem;
   margin-bottom: 35px;
 }
-
 .beneficios-slide {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 490px;
+  height: 410px;
   width: 100%;
   align-items: center;
 }
-
 .card-beneficios {
   flex: 0 0 130px;
-  height: 110px;
+  height: 120px;
   border: 2px solid #8b2e5e;
   border-radius: 20px;
-  padding: 20px 10px 10px;
+  padding: 15px 10px 10px;
   text-align: center;
-  font-size: 0.25rem;
+  font-size: 0.2rem;
   margin: 8px;
 }
-
 .card-beneficios img {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   margin-bottom: 5px;
   color: #8b2e5e;
 }
-
 .card-beneficios p {
   line-height: 1.2;
   color: #8b2e5e;
-  font-size: 12px;
+  font-size: 10px;
 }
 .nome-depoimentos{
   margin-bottom: 4px;
 }
 
-/* impacto */
 .impacto {
   display: flex;
   width: 100%;
 }
-
 .titulo{
-  margin-top: 40px;
+  margin-top: 2vh;
   margin-bottom: -30px;
 }
-
 .container4 {
   display: flex;
   flex-direction: column;
@@ -834,25 +791,21 @@ img {
   margin-left: 10%;
   margin-right: 10%;
 }
-
 .impactoTxt {
   width: 100%;
   font-weight: 400;
-  margin-bottom: 14vh;
+  margin-bottom: 18vh;
 }
-
 .impactoImgs2 {
   height: 220px;
   margin-top: -15vh;
 }
-
 .impactoImgs2 img {
   margin: 10px;
 }
 
-/* ondinha */
 .pronto{
-  margin-top: -7vh;
+  margin-top: -2vh;
 }
 .pronto h2{
   font-size: 2rem;
@@ -861,41 +814,44 @@ img {
   line-height: 1.3;
 }
 .pronto a{
-  font-size: 20px;
+  font-size: 16px;
+}
+.itens2{
+  margin-top: -15px;
+}
+.pronto2{
+  margin-top: -15px;
+}
+.pronto2 h2{
+  font-size: 1.6rem;
+}
+#pPronto2{
+  line-height: 1.2;
+  font-size: 16px;
+  text-align: justify;
+}
+.pronto2 .btn2{
+  font-size: 12px;
+  margin-top: -20px;
 }
 
-/* inscrição */
 .inscricao {
   display: flex;
   justify-content: center;
   margin-top: 2vh;
   width: 100%;
 }
-
 .container6 {
   width: 80%;
   display: flex;
   justify-content: center;
   flex-direction: column-reverse;
 }
-
 .passosEach {
   display: flex;
   margin-bottom: 20px;
   align-items: center;
 }
-
-.num {
-  width: 54px;
-  height: 50px;
-  background-color: #3eb4ae4d;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 15px;
-}
-
 .descricao {
   width: 100%;
   height: 310px;
@@ -903,17 +859,55 @@ img {
   text-align: justify;
 }
 
+.tutorial {
+  width: 100%;
+}
+.container7{
+  width: 80%;
+}
+#tutorialP {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.tituloEspecifico h2 {
+  font-size: 1.4rem;  
+}
 
+.container8 {
+  margin-top: -5vh;
+   width: 90%;
+}
+.perguntasFrequentes {
+  width: 100%;
+}
 
-
-  /*  */
-  .content-txt {
-    font-size: 0.9rem;
-    line-height: 22px;
-  }
-
-   h2 {
+.perguntasEach {
+  width: 100%;
+  font-weight: 600;
+}
+.perguntaVisivel {
+  padding-left: 25px;
+}
+.perguntaVisivel p{
+  margin: 10px;
+}
+.mostrar {
+  font-size: 42px;
+  padding-right: 25px;
+}
+.resposta {
+  padding-bottom: 5px;
+}
+h2 {
     font-size: 1.6rem;
   }
 }
 
+@media (max-width: 1024px){
+  section.slider {
+    width: 100%;
+    height: 298px;
+  }
+  
+
+} 
