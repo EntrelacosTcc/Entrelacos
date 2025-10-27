@@ -1,14 +1,20 @@
 body {
-  background: #F5F5F5;
+  margin: 0;
+  padding: 0;
+  background-color: #3eb4ae91;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.quiz-container{
-  padding-top: 50px;
+.quiz-container {
   display: flex;
   justify-content: center;
 }
 
-#quiz{
+#quiz {
   position: relative;
   width: 950px;
   background-color: #fff;
@@ -26,8 +32,8 @@ body {
 
 .options {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 25px; 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
   column-gap: 25px;
   margin: 12px;
   text-align: left;
@@ -35,7 +41,7 @@ body {
 
 .options label {
   padding: 15px;
-  border: 2px solid #3EB4AE;
+  border: 2px solid #3eb4ae;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.2s;
@@ -49,7 +55,7 @@ body {
 }
 
 .options input[type="radio"] {
-  accent-color: #8B2E5E;
+  accent-color: #8b2e5e;
   flex-shrink: 0;
   height: 19px;
   width: 19px;
@@ -73,33 +79,35 @@ body {
   cursor: pointer;
 }
 
-#nextBtn{
+#nextBtn {
   width: 300px;
 }
 
-#nextBtn, #finishBtn{
+#nextBtn,
+#finishBtn {
   border: none;
   color: #fff;
-  background: #3EB4AE;
+  background: #3eb4ae;
 }
 
-#restartBtn{
-  border: 2px solid #3EB4AE;
-  color: #3EB4AE;
+#restartBtn {
+  border: 2px solid #3eb4ae;
+  color: #3eb4ae;
   background-color: #fff;
 }
 
-#restartBtn, #finishBtn{
+#restartBtn,
+#finishBtn {
   width: 250px;
 }
 
-#result-control{
+#result-control {
   display: flex;
   justify-content: end;
   gap: 50px;
 }
 
-.controls{
+.controls {
   display: flex;
   justify-content: center;
 }
@@ -108,8 +116,6 @@ body {
   opacity: 0.5;
   cursor: not-allowed;
 }
-
-
 
 /* BARRA DE PROGRESSO */
 .progress-container {
@@ -125,7 +131,7 @@ body {
 .progress-bar {
   height: 100%;
   width: 0%;
-  background: #3EB4AE;
+  background: #3eb4ae;
   transition: width 0.3s ease;
 }
 
@@ -138,7 +144,7 @@ body {
   margin-top: -40px;
 }
 
-#result .causa-container{
+#result .causa-container {
   width: 500px;
   height: 300px;
   display: flex;
@@ -147,28 +153,28 @@ body {
   margin-bottom: 30px;
 }
 
-#result h2{
+#result h2 {
   text-align: center;
 }
 
-
-#result h3{
+#result h3 {
   width: fit-content;
-  background-color: #3EB4AE;
+  background-color: #3eb4ae;
   color: #fff;
   padding: 10px 70px;
   border-radius: 30px;
-  margin-top: -20px;
+  margin-top: -5px;
   margin-bottom: 20px;
 }
 
-#result .texto-resultado p{
+#result .texto-resultado p {
   padding: 30px;
   background-color: #3eb4ae3e;
   border-radius: 20px;
+  text-align: justify;
 }
 
-#result img{
+#result img {
   position: absolute;
   width: 250px;
   right: 100px;
