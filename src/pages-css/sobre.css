@@ -622,7 +622,7 @@ h2 {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   .contact-card,
   .form-card {
     width: 100%;
@@ -632,8 +632,8 @@ h2 {
   .sobre-hero {
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 40px 20px;
+    text-align: justify;
+    padding: 40px 30px;
     gap: 30px;
   }
 
@@ -675,7 +675,7 @@ h2 {
     margin-left: 0;
   }
   .possibilita-imagem img {
-    max-width: 90%;
+    max-width: 100%;
   }
 
   /* Ações */
@@ -719,6 +719,20 @@ h2 {
 
   .block {
     flex: 0 0 260px;
+  }
+
+  .caixa {
+    height: 300px;
+    width: 320px;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .recurso-container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
   }
 
   /* Fale conosco */
