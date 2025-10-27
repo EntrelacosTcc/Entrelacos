@@ -340,6 +340,7 @@
   background-color: var(--destaque-rosa-claro);
   padding: 60px 20px 80px;
   text-align: center;
+  width: 100%;
 }
 
 .recursos-header h2 {
@@ -621,10 +622,248 @@ h2 {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   .contact-card,
   .form-card {
     width: 100%;
     max-width: 400px;
+  }
+  /* Seção hero */
+  .sobre-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .sobre-hero > div {
+    max-width: 100%;
+  }
+
+  .content-left {
+    padding-top: 60px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  /* Missão, visão e valores */
+  .missao-visao-valores {
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 80%;
+    margin-left: 10%; margin-right: 10%;
+  }
+
+.box {
+  padding: 60px 20px 10px;
+  line-height: 1;
+}
+
+
+  /* Possibilita */
+  .possibilita-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .possibilita-textos, .possibilita-textos p  {
+    margin-left: 0;
+  }
+  .possibilita-imagem img {
+    max-width: 100%;
+  }
+
+  /* Ações */
+  .acoes-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .acao-box{
+    height: 360px;
+  }
+
+  .acao-detalhes {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .acao-detalhes img {
+    width: 215px;
+    height: 195px;
+  }
+
+  /* Recursos */
+  .recursos-caixas {
+    flex-direction: column;
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Depoimentos */
+  #bnt-left, #bnt-right {
+    display: none;
+  }
+
+  #content-slide {
+    gap: 20px;
+    height: auto;
+    padding-bottom: 30px;
+  }
+
+  .block {
+    flex: 0 0 260px;
+  }
+
+  .caixa {
+    height: 300px;
+    width: 320px;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .recurso-container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  }
+
+  /* Fale conosco */
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-card, .form-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Hero */
+  .sobre-hero {
+    padding: 30px 15px;
+  }
+
+  .content-left h1 {
+    font-size: 1.8rem;
+  }
+
+  .content-left p {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .content-right{
+    text-align: justify;
+    padding: 5%;
+  }
+
+  /* Missão, visão, valores */
+  .missao-visao-valores {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 100%;
+  }
+
+  .circle {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+  }
+
+  .circle img {
+    width: 70%;
+  }
+
+  /* Possibilita */
+  .possibilita h2 {
+    font-size: 1.5rem;
+  }
+
+  .possibilita-textos p {
+    font-size: 0.9rem;
+  }
+
+  /* Ações */
+  .principais-acoes h2 {
+    font-size: 1.6rem;
+  }
+
+  .acao-detalhes p {
+    font-size: 0.85rem;
+  }
+
+  .acao-detalhes img {
+    width: 70%;
+  }
+
+  /* Recursos */
+  .recursos-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .recursos-header h3 {
+    font-size: 1rem;
+  }
+
+  .caixa {
+    height: auto;
+    width: 280px;
+
+  }
+
+  .recurso-container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  }
+
+  /* Depoimentos */
+  .depoimentos-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .block {
+    flex: 0 0 220px;
+    padding: 15px;
+    font-size: 0.8rem;
+  }
+
+  /* Fale Conosco */
+  .faleConosco-title h2 {
+    font-size: 1.8rem;
+  }
+  .faleConosco-title p{
+    padding: 10px;
+  }
+
+
+  .contact-section {
+    padding: 40px 15px;
+  }
+
+  .contact-card, .form-card {
+    width: 100%;
+  }
+
+  .form-card button {
+    width: 100%;
   }
 }
