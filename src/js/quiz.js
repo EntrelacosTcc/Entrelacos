@@ -1,4 +1,4 @@
-import perguntas from "../js/perguntas-quiz.js";
+import perguntas from "./perguntas-quiz.js";
 
 
 // ===== Configurações =====
