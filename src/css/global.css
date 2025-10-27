@@ -172,6 +172,35 @@ i {
   margin-left: 5px;
 }
 
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  color: #fff;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.cart-icon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+}
+
+.cart-count {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background-color: var(--vermelho-vivo);
+  color: var(--branco);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+
 /* FOOTER  */
 .container-footer {
   background-color: #05625D;
