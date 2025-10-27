@@ -145,7 +145,7 @@ function mostrarResultado() {
       '<p>Sua causa é a educação. Você acredita que o acesso ao conhecimento transforma realidades e abre caminhos para a igualdade de oportunidades. Para você, não basta ensinar: é preciso garantir qualidade, inclusão e condições que permitam a todos aprender e crescer. A educação, em sua visão, é direito essencial e base para a justiça social.</p><img src="../assets/img/causa-educacional.png" alt="Imagem Casa Educacional">',
 
     saude:
-      '<p>Sua causa é a saúde. Você acredita que cuidar do corpo e da mente não deve ser luxo, mas direito assegurado. Para você, não basta oferecer tratamento: é preciso garantir acesso digno, prevenção e bem-estar. A saúde, em sua visão, é pilar fundamental para que cada pessoa viva com qualidade e dignidade.</p><img src="../assets/img/causa-saude.png" alt="Imagem Causa Saúde">',
+      '<p>Sua causa é a saúde. Você acredita que cuidar do corpo e da mente não deve ser luxo, mas direito assegurado. Para você, não basta oferecer tratamento: é preciso garantir acesso digno, prevenção e bem-estar. A saúde, em sua visão, é pilar fundamental para que cada pessoa viva com qualidade e dignidade.</p><img src="img/causa-saude.png" alt="Imagem Causa Saúde">',
   };
 
   resultDiv.innerHTML = `<section class="causa-container"><h2>Sua causa ideal é :</h2><h3>${vencedor.toUpperCase()}</h3><div class="texto-resultado">${
