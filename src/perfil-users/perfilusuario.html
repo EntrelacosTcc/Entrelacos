@@ -1,61 +1,277 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../pages-css/perfilusuario.css">
-</head>
+    <link rel="stylesheet" href="../pages-css/perfilusuario.css" />
+  </head>
 
-<body>
+  <body>
+    <div id="navbar"></div>
 
     <div id="navbar"></div>
 
     <main>
-        <aside>
-            <div class="perfil-navegacao">
-                <div class="infos">
-                    <div class="img-user-container">
-                        <div class="img-user"></div>
-                        <input type="file" id="inputImagem" accept="image/*">
-                        <button type="button" id="btnAlterarImagem">Alterar Imagem</button>
-                    </div>
-                    
-                    <h3 id="name">Julia Neves</h3>
+      <aside>
+      <div class="perfil-container">
+        <!-- Menu de navegação lateral esquerda -->
+        <div class="perfil-navegacao">
+          <div class="img-user-container">
+            <div class="img-user"></div>
+            <input type="file" id="inputImagem" />
+            <button id="btnAlterarImagem">Alterar Imagem</button>
+          </div>
 
-                    <div class="data-ingresso">
-                       <p>Voluntário desde  <span id="dataIngresso"> 2022</span></p> 
-                    </div>
-                </div>
-                <div class="dados">
-                    <div class="acoes">
-                        <h6 id="atuacoes">23</h6>
-                        <p>Atuações</p>
-                    </div>
-                    <div class="acoes">
-                        <h6 id="horas_voluntariado">56</h6>
-                        <p>Tempo Voluntário</p>
-                    </div>
-                    <div class="acoes">
-                        <h6 id="n_itens_doados">10</h6>
-                        <p>Itens Doados</p>
-                    </div>
-                </div>
+          <h1 id="name">Lara Gonçalves</h1>
+
+          <div class="data-ingresso"><p>Voluntária desde <span id="data-ingresso">2022</span></p></div>
+
+          <div class="dados">
+            <div class="acoes">
+              <h6>12</h6>
+              <p>Atuações</p>
             </div>
-        </aside>
+            <div class="acoes">
+              <h6>48h</h6>
+              <p>Tempo Voluntário</p>
+            </div>
+            <div class="acoes">
+              <h6>24</h6>
+              <p>Itens Doados</p>
+            </div>
+          </div>
+
+          <div class="menu-navegacao">
+            <ul>
+              <li class="active" data-target="perfil">
+                <div class="checkbox-icon"><img src="../assets/img/icone-perfil.png" alt="Ícone" /></div>
+                Meu perfil
+              </li>
+              <li data-target="inscricoes">
+                <div class="checkbox-icon"><img src="../assets/img/inscricoes.png" alt="Ícone" /></div>
+                Minhas Inscrições
+              </li>
+              <li data-target="certificados">
+                <div class="checkbox-icon"><img src="../assets/img/certificados.png" alt="Ícone" /></div>
+                Certificados
+              </li>
+              <li data-target="pedidos">
+                <div class="checkbox-icon"><img src="../assets/img/pedidos.png" alt="Ícone" /></div>
+                Pedidos
+              </li>
+              <li data-target="endereco">
+                <div class="checkbox-icon"><img src="../assets/img/endereco.png" alt="Ícone" /></div>
+                Endereço
+              </li>
+              <li data-target="config">
+                <div class="checkbox-icon"><img src="../assets/img/config.png" alt="Ícone" /></div>
+                Configurações
+              </li>
+              <li data-target="sair">
+                <div class="checkbox-icon"><img src="../assets/img/sair.png" alt="Ícone" /></div>
+                Sair
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Conteúdo à direita -->
+          <div class="conteudo-lateral">
+          <!-- Perfil -->
+          <div class="conteudo-item active" id="perfil">
+            <!-- Informações Pessoais -->
+            <div class="secao">
+              <div class="secao-header">
+                <img src="../assets/img/icone-info.png" alt="Ícone" class="secao-icone" />
+                <h2>Informações Pessoais</h2>
+              </div>
+              <div class="info-grid">
+                <div class="info-box">
+                  <label for="email" class="info-label">E-mail</label>
+                  <input type="email" id="email" class="info-value" placeholder="seuemail@gmail.com">
+                </div>
+                <div class="info-box">
+                  <label for="telefone" class="info-label">Telefone</label>
+                  <input type="text" id="telefone" class="info-value" placeholder="11 99999-9999">
+                </div>
+                <div class="info-box">
+                  <label for="dataNascimento" class="info-label">Data de Nascimento</label>
+                  <input type="date" id="dataNascimento" class="info-value">
+                </div>
+                <div class="info-box">
+                  <label for="cpf" class="info-label">CPF</label>
+                  <input type="text" id="cpf" class="info-value" placeholder="444.777.888-99">
+                </div>
+                <div class="info-box">
+                  <label for="nome" class="info-label">Nome</label>
+                  <input type="text" id="nome" class="info-value" placeholder="Lara">
+                </div>
+                <div class="info-box">
+                  <label for="sobrenome" class="info-label">Sobrenome</label>
+                  <input type="text" id="sobrenome" class="info-value" placeholder="Gonçalves">
+                </div>
+              </div>
+            </div>
+
+            <!-- Causas de Interesse -->
+            <div class="secao">
+              <div class="secao-header">
+                <img src="../assets/img/icone-causas.png" alt="Ícone" class="secao-icone" />
+                <h2>Causas de Interesse</h2>
+              </div>
+              <div class="causas-checkboxes">
+                <!-- 13 opções -->
+                <label><input type="checkbox" value="Social"> Social</label>
+                <label><input type="checkbox" value="Educação"> Educação</label>
+                <label><input type="checkbox" value="Meio Ambiente"> Meio Ambiente</label>
+                <label><input type="checkbox" value="Saúde"> Saúde</label>
+                <label><input type="checkbox" value="Animais"> Animais</label>
+                <label><input type="checkbox" value="Cultura"> Cultura</label>
+                <label><input type="checkbox" value="Esporte"> Esporte</label>
+                <label><input type="checkbox" value="Tecnologia"> Tecnologia</label>
+                <label><input type="checkbox" value="Inclusão"> Inclusão</label>
+                <label><input type="checkbox" value="Direitos Humanos"> Direitos Humanos</label>
+                <label><input type="checkbox" value="Meio Urbano"> Meio Urbano</label>
+                <label><input type="checkbox" value="Juventude"> Juventude</label>
+                <label><input type="checkbox" value="Outros"> Outros</label>
+              </div>
+              <h4>Selecionadas (máx. 3):</h4>
+              <div class="causas-tags" id="perfilCausas"></div>
+            </div>
+
+            <!-- Descrição -->
+            <div class="secao">
+              <div class="secao-header">
+                <img src="../assets/img/icone-descricao.png" alt="Ícone" class="secao-icone" />
+                <h2>Descrição</h2>
+              </div>
+              <textarea id="descricao" placeholder="Digite sua descrição aqui..."></textarea>
+            </div>
+
+            <button id="btnSalvar">Salvar</button>
+          </div>
+
+
+          <!-- Inscrições -->
+          <div class="conteudo-item" id="inscricoes">
+            <div class="secao">
+              <h2>Minhas Inscrições</h2>
+              <p>Aqui você verá todas as inscrições em eventos e cursos.</p>
+            </div>
+          </div>
+
+          <!-- Certificados -->
+          <div class="conteudo-item" id="certificados">
+            <div class="secao">
+              <h2>Certificados</h2>
+              <p>Lista de certificados obtidos em atividades voluntárias.</p>
+            </div>
+          </div>
+
+          <!-- Pedidos -->
+          <div class="conteudo-item" id="pedidos">
+            <div class="secao">
+              <h2>Pedidos</h2>
+              <p>Todos os pedidos realizados pelo usuário aparecerão aqui.</p>
+            </div>
+          </div>
+
+          <!-- Endereço -->
+      <div class="conteudo-item" id="endereco">
+  <div class="secao">
+    <div class="secao-header">
+      <img src="../assets/img/icone-info.png" alt="Ícone" class="secao-icone" />
+      <h2>Endereço</h2>
+    </div>
+
+    <form id="formEndereco">
+      <div class="endereco-grid">
+        <div class="endereco-box">
+          <label for="cep" class="info-label">CEP</label>
+          <input type="text" id="cep" class="info-endereco" placeholder="00000-000" required>
+        </div>
+
+        <div class="endereco-box">
+          <label for="rua" class="info-label">Rua</label>
+          <input type="text" id="rua" class="info-endereco" placeholder="Nome da Rua" required>
+        </div>
+
+        <div class="endereco-row">
+          <div class="endereco-box">
+            <label for="numero" class="info-label">Número</label>
+            <input type="text" id="numero" class="info-endereco" placeholder="123" required>
+          </div>
+          <div class="endereco-box">
+            <label for="complemento" class="info-label">Complemento</label>
+            <input type="text" id="complemento" class="info-endereco" placeholder="Apto / Bloco" required>
+          </div>
+        </div>
+
+        <div class="endereco-box">
+          <label for="bairro" class="info-label">Bairro</label>
+          <input type="text" id="bairro" class="info-endereco" placeholder="Bairro" required>
+        </div>
+
+        <div class="endereco-box">
+          <label for="cidade" class="info-label">Cidade</label>
+          <input type="text" id="cidade" class="info-endereco" placeholder="Cidade" required>
+        </div>
+
+        <div class="endereco-box">
+          <label for="estado" class="info-label">Estado</label>
+          <input type="text" id="estado" class="info-endereco" placeholder="Estado" required>
+        </div>
+
+        <div class="endereco-box">
+          <label for="ponto" class="info-label">Ponto de Referência</label>
+          <input type="text" id="ponto" class="info-endereco" placeholder="Ex: Próximo ao mercado" required>
+        </div>
+      </div>
+
+      <button type="submit" id="btnSalvarEndereco">Salvar Endereço</button>
+    </form>
+  </div>
+</div>
+
+
+
+          <!-- Configurações -->
+          <div class="conteudo-item" id="config">
+            <div class="secao">
+              <h2>Configurações</h2>
+              <p>Aqui você pode alterar suas configurações de conta.</p>
+            </div>
+          </div>
+
+          <!-- Sair -->
+          <div class="conteudo-item" id="sair">
+            <div class="secao">
+              <h2>Sair</h2>
+              <p>Clique aqui para sair da sua conta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+      </aside>
     </main>
 
     <div id="footer"></div>
 
     <!-- API de acessibilidade -->
-    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+    <script
+      src="https://website-widgets.pages.dev/dist/sienna.min.js"
+      defer
+    ></script>
 
     <script src="/src/js/perfilusuario.js"></script>
     <script src="/src/js/main.js"></script>
-
-</body>
-
+  </body>
 </html>

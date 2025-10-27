@@ -21,7 +21,7 @@ body{
 
 .cadastro-container {
     width: 400px; 
-    padding-top: 55vh;
+    padding-top: 300px;
     
 }
 
@@ -46,6 +46,7 @@ body{
     border-radius: 8px;
     margin-bottom: 30px;
     margin-top: 5px;
+    background-color: #fff;
 }
 .cadastro-container select {
     width: 100%;
@@ -66,6 +67,7 @@ body{
     background-size: 16px;
     padding-left: 10px; 
     cursor: pointer;
+    background-color: #fff;
 }
 
 .cadastro-container .input-icon{

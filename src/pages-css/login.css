@@ -71,6 +71,7 @@ body{
 
 .centralized-items img{
     width: 45px;
+    border-radius: 100%;
 }
 
 .centralized-items button{

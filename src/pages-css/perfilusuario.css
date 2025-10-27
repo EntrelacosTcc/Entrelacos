@@ -1,15 +1,30 @@
+.perfil-container {
+    display: flex;
+    flex-wrap: wrap; 
+    max-width: 1300px;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start; 
+    margin: 50px auto;
+    padding-bottom: 50px; 
+    box-sizing: border-box;
+}
+
+/* Coluna lateral esquerda */
 .perfil-navegacao {
-    margin-top: 50px;
-    margin: 60px;
-    width: 500px;            
-    height: 980px;           
-    border: 1px solid #09625D;  
+    width: 500px;
+    min-height: 600px;
+    border: 1px solid #09625D;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;  
-    align-items: center; 
-    padding: 20px;        
-    box-sizing: border-box;     
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    margin-right: 40px;
+    box-sizing: border-box;
+    background-color: white;
+    flex-shrink: 0; 
 }
 
 #inputImagem {
@@ -42,6 +57,7 @@
     border-radius: 8px;
     cursor: pointer;
     font-size: 0.9rem;
+    transition: background-color 0.3s ease;
 }
 
 #btnAlterarImagem:hover {
@@ -67,26 +83,341 @@
     border-radius: 15px;
 }
 
-/* Dados atuações */
+/* Bloco com as atuações */
 .dados {
-    display: flex;           
-    gap: 20px;                 
-    justify-content: flex-start;
-    align-items: center;    
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
     margin-top: 25px;
+    flex-wrap: wrap; 
 }
 
 .dados .acoes {
     display: flex;
-    flex-direction: column;  
-    align-items: center;       
-    padding: 10px;
-    width: 150px;            
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    width: 130px;
 }
 
 .dados h6 {
     color: #09625D;
     font-size: 20px;
     font-weight: 500;
+}
+
+.dados p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Menu de navegação lateral */
+.menu-navegacao {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.menu-navegacao ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.menu-navegacao li {
+    padding: 15px 20px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-navegacao li:hover {
+    background-color: #f0f0f0;
+}
+
+.menu-navegacao li.active {
+    background-color: #e6f2f1;
+    color: #09625D;
+    font-weight: 500;
+}
+
+.menu-navegacao .checkbox-icon {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+/* Conteúdo principal */
+.conteudo-lateral {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    border: 1px solid #09625D;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px; 
+    box-sizing: border-box;
+}
+
+main {
+    padding-bottom: 50px;
+}
+
+/* Exibição */
+ .conteudo-item {
+      display: none; /* todos escondidos */
+    }
+
+    .conteudo-item.active {
+      display: block; /* apenas o ativo aparece */
+    }
+
+
+/* Seções de informações */
+.secao {
+    margin-bottom: 40px;
+}
+
+/* Header da seção com ícone e título lado a lado */
+.secao-header {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 20px;
+  padding-bottom: 10px; 
+  border-bottom: 2px solid #e6f2f1; 
+}
+
+.secao-header h2 {
+  color: #09625D;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0; 
+}
+
+.secao-endereco h2 {
+      color: #09625D;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0; 
+}
+
+.secao-icone {
+  width: 20px; 
+  height: 20px;
+  object-fit: contain; 
+}
+
+/* inputs de informações pessoais */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Cada caixinha de input */
+.info-box {
+  border: 1px solid #09625D;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.info-value {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Textarea da descrição */
+#descricao {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: vertical;
+  margin-top: 5px;
+resize: none;
+}
+
+/* Botão de salvar */
+#btnSalvar {
+    height: 40px;
+    width: 150px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  background-color: #09625D;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#btnSalvar:hover {
+   background-color: #3eb4ae;
+}
+
+/* Container das causas selecionáveis */
+.causas-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Cada opção de causa clicável */
+.causa-opcao {
+  padding: 6px 12px;
+  border: 1px solid #09625D;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: white;
+  color: #09625D;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.causas-checkboxes {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px; 
+    margin-bottom: 10px;
+}
+
+.causas-checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    padding: 5px 7px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.causas-checkboxes label:hover {
+    background-color: #e0f2f1;
+    border-color: #09625D;
+}
+
+.causa-opcao.selected {
+  background-color: #09625D;
+  color: white;
+}
+
+/* Container das tags verdes exibidas no perfil */
+.causas-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.causa-tag {
+    background-color: #e6f2f1;
+    color: #09625D;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.descricao p {
+    line-height: 1.6;
+    color: #555;
+    font-size: 16px;
+}
+
+
+/* Inscrições */
+
+
+
+
+    /* Seção Endereço */
+    .endereco-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.endereco-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.endereco-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 15px;
+}
+
+#btnSalvarEndereco {
+    height: 40px;
+    width: 180px;
+  margin-top: 40px;
+  padding: 10px 20px;
+  background-color: #09625D;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  font-size: 16px;
+}
+
+#btnSalvarEndereco:hover {
+  background-color: #3eb4ae;
+}
+
+.info-endereco {
+    height: 40px;
+    border-radius: 10px;
+border: 1px solid #09625D;
+padding: 10px;
+}
+
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .perfil-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .perfil-navegacao {
+        width: 100%;
+    }
+
+    .conteudo-lateral {
+        width: 100%;
+    }
+
+    .info-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
 }
 
