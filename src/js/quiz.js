@@ -1,4 +1,4 @@
-import perguntas from "./perguntas-quiz.js";
+import perguntas from "./js/perguntas-quiz.js";
 
 // ===== Configurações =====
 const NUM_PERGUNTAS = 6;
