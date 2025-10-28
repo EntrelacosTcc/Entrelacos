@@ -753,7 +753,7 @@ body {
   font-size: 15px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease,
-    background-color 0.3s ease;
+  background-color 0.3s ease;
 }
 
 .form-card button:hover {
@@ -768,5 +768,148 @@ body {
   .form-card {
     width: 100%;
     max-width: 400px;
+  }
+}
+
+/* ============================================= */
+/*  RESPONSIVIDADE - ATÉ 820px (TABLET)         */
+/* ============================================= */
+@media (max-width: 822px) {
+  .fundo-loja {
+    padding: 80px 5%;
+  }
+
+  .fundo-loja h1 {
+    font-size: 2rem;
+  }
+
+  .fundo-loja p {
+    font-size: 1rem;
+  }
+
+  .beneficios-loja {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 5%;
+  }
+
+  .beneficios-loja-box {
+    width: 180px;
+    height: 90px;
+  }
+
+  .beneficios-loja-box img {
+    width: 35px;
+  }
+
+  .beneficios-loja-box p {
+    font-size: 13px;
+  }
+
+  .produtos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    padding: 10px;
+  }
+
+  .produtos-card {
+    height: 300px;
+    padding: 12px;
+  }
+
+  .img-container {
+    width: 170px;
+    height: 150px;
+  }
+
+  .img-container img {
+    max-width: 160px;
+    max-height: 140px;
+  }
+
+  .produto-info .nome {
+    font-size: 15px;
+  }
+
+  .produto-info .preco {
+    font-size: 14px;
+  }
+
+  .btn-ver-mais {
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+/* ============================================= */
+/*  RESPONSIVIDADE - ATÉ 480px (MOBILE)         */
+/* ============================================= */
+@media (max-width: 480px) {
+  .fundo-loja {
+    padding: 60px 5%;
+  }
+
+  .fundo-loja h1 {
+    font-size: 1.6rem;
+  }
+
+  .fundo-loja p {
+    font-size: 0.95rem;
+  }
+
+  .beneficios-loja {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 5%;
+  }
+
+  .beneficios-loja-box {
+    width: 45%;
+    height: 90px;
+    margin-bottom: 10px;
+  }
+
+  .beneficios-loja-box img {
+    width: 35px;
+  }
+
+  .beneficios-loja-box p {
+    font-size: 13px;
+  }
+
+  .produtos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 10px;
+  }
+
+  .produtos-card {
+    height: 280px;
+    padding: 10px;
+  }
+
+  .img-container {
+    width: 150px;
+    height: 130px;
+  }
+
+  .img-container img {
+    max-width: 140px;
+    max-height: 120px;
+  }
+
+  .produto-info .nome {
+    font-size: 14px;
+  }
+
+  .produto-info .preco {
+    font-size: 13px;
+  }
+
+  .btn-ver-mais {
+    height: 38px;
+    font-size: 13px;
   }
 }

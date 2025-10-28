@@ -185,3 +185,159 @@
   cursor: pointer;
   margin: 0 auto;
 }
+
+
+/* ============================== */
+/* RESPONSIVIDADE - ATÉ 820px     */
+/* ============================== */
+@media (max-width: 822px) {
+  .fundo-loja {
+    padding: 7vh 6%;
+    background-position: center;
+  }
+
+  .fundo-loja h1 {
+    font-size: 2rem;
+  }
+
+  .fundo-loja p {
+    font-size: 1rem;
+  }
+
+  .beneficios-loja {
+    justify-content: center;
+    gap: 25px;
+    padding: 30px 6%;
+  }
+
+  .beneficios-loja-box {
+    width: 280px;
+    height: 150px;
+    padding: 30px 10px;
+  }
+
+  .produtos-section {
+    padding: 40px 6%;
+  }
+
+  #h2-produtos,
+  .categoria-title {
+    font-size: 1.6rem;
+    margin-bottom: 35px;
+  }
+
+  .produtos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    justify-items: center;
+  }
+
+  .produtos-card {
+    max-width: 230px;
+    height: 300px;
+  }
+
+  .img-container {
+    width: 170px;
+    height: 150px;
+  }
+
+  .img-container img {
+    max-width: 160px;
+    max-height: 140px;
+  }
+
+  .btn-ver-mais {
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fundo-loja {
+    padding: 7.5vh 5%;
+    text-align: center;
+    background-position: center;
+    height: 23vh;
+  }
+
+  .fundo-loja h1 {
+    font-size: 1.8rem;
+  }
+
+  .fundo-loja p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .beneficios-loja {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 10px;
+    justify-items: center;
+    padding: 25px 5%;
+  }
+
+  .beneficios-loja-box {
+    width: 90%;
+    max-width: 180px;
+    height: 115px;
+    padding: 17px 10px;
+  }
+
+  .beneficios-loja-box img {
+    width: 35px;
+  }
+
+  .beneficios-loja-box p {
+    font-size: 13px;
+  }
+
+  .produtos-section {
+    padding: 30px 5%;
+  }
+
+  #h2-produtos,
+  .categoria-title {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+
+  .produtos-grid {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    justify-items: center;
+  }
+
+  .produtos-card {
+    width: 90%;
+    max-width: 260px;
+    height: auto;
+    padding: 12px;
+  }
+
+  .img-container {
+    width: 100%;
+    height: 150px;
+  }
+
+  .img-container img {
+    max-width: 140px;
+    max-height: 130px;
+  }
+
+  .produto-info .nome {
+    font-size: 14px;
+  }
+
+  .produto-info .preco {
+    font-size: 13.5px;
+  }
+
+  .btn-ver-mais {
+    height: 38px;
+    font-size: 13px;
+    width: 100%;
+  }
+}
+
