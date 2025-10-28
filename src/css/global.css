@@ -44,12 +44,12 @@ body {
   box-sizing: border-box;
 }
 
-h2{
+h2 {
   font-size: 2rem;
   margin: 40px 0;
 }
 
-textarea{
+textarea {
   resize: none;
 }
 
@@ -205,7 +205,7 @@ i {
 .container-footer {
   background-color: #05625D;
   color: #D3FFFD;
-  padding: 30px 20px 24px; 
+  padding: 30px 20px 24px;
   font-size: 0.9rem;
   box-sizing: border-box;
 }
@@ -228,7 +228,7 @@ i {
   margin: 0 auto;
 }
 
-.footer-content > div {
+.footer-content>div {
   flex: 1 1 auto;
   min-width: 180px;
   display: flex;
@@ -238,6 +238,7 @@ i {
 .txtFooter-logo {
   line-height: 1.2rem;
 }
+
 .footer-content h2 {
   margin-bottom: 10px;
   color: #FFFFFF;
@@ -260,7 +261,7 @@ i {
   font-size: 2rem;
   color: #D3FFFD;
   font-family: 'Leckerli One', cursive;
-  margin: 0; 
+  margin: 0;
 }
 
 .footer-contact ul,
@@ -319,7 +320,7 @@ i {
     gap: 20px;
   }
 
-  .footer-content > div {
+  .footer-content>div {
     width: 100%;
     align-items: center;
   }
@@ -336,30 +337,119 @@ i {
 
 /* retirada de scrool automático */
 
-#content-slide::-webkit-scrollbar{
+#content-slide::-webkit-scrollbar {
   display: none;
 }
 
 #content-slide {
-  overflow-x: auto;   
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 #content-slide::-webkit-scrollbar {
-  display: none;         
+  display: none;
 }
 
-#content-slide1::-webkit-scrollbar{
+#content-slide1::-webkit-scrollbar {
   display: none;
 }
 
 #content-slide1 {
-  overflow-x: auto;   
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 #content-slide1::-webkit-scrollbar {
-  display: none;         
+  display: none;
+}
+
+
+
+/* VAGAS */
+
+
+.grid-vagas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+.vagas {
+  width: 270px;
+  border: 2px solid #09625D;
+  border-radius: 13px;
+  margin-top: 10px;
+}
+
+.vaga-img {
+  width: 100%;
+  height: 180px;
+  background-color: #12777294;
+  border-radius: 11px 11px 0 0;
+}
+
+.vagas h3 {
+  margin: 5px 10px;
+  text-align: left;
+  color: #0A3937;
+  font-size: 1.2rem;
+}
+
+.vagas h4 {
+  font-weight: 100;
+  font-size: 1rem;
+  color: #0A3937;
+  margin: 5px 10px;
+}
+
+.tags-vagas,
+.vagas-info {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  font-size: 0.9rem;
+}
+
+.vagas p {
+  margin: 0 10px;
+  color: #0A3937;
+}
+
+.vagas-info {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.dados-vaga {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dados-vaga i {
+  margin-right: 5px;
+  color: #09625D;
+}
+
+.vagas button {
+  cursor: pointer;
+  background-color: #09625D;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  width: 160px;
+  margin: 15px 10px;
+  height: 30px;
+  font-size: 0, 9rem;
+}
+
+.vagas button:hover{
+  background-color: #065350;
+  transition: 0.5s;
 }

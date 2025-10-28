@@ -1,5 +1,6 @@
 const navbarPath = "/src/components/navbar.html";
 const footerPath = "/src/components/footer.html";
+const vagaPath = "/src/components/vaga.html";
 
 fetch(navbarPath)
   .then(response => response.text())
@@ -16,6 +17,13 @@ fetch(footerPath)
     initNavbarDropdown(); // ou outra função se quiser para footer
   })
   .catch(err => console.error("Erro ao carregar footer:", err));
+
+fetch(vagaPath)
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("vaga").innerHTML = data;
+  })
+  .catch(err => console.error("Erro ao carregar vaga:", err));
 
 
   // Dropdown
