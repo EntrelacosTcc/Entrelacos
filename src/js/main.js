@@ -21,10 +21,15 @@ fetch(footerPath)
 fetch(vagaPath)
   .then(response => response.text())
   .then(data => {
-    document.getElementById("vaga").innerHTML = data;
+    // Pega todos os elementos com a classe 'vaga'
+    const vagas = document.getElementsByClassName("vaga");
+    
+    // Percorre todos os elementos e injeta o HTML
+    Array.from(vagas).forEach(vaga => {
+      vaga.innerHTML = data;
+    });
   })
   .catch(err => console.error("Erro ao carregar vaga:", err));
-
 
   // Dropdown
 function initNavbarDropdown() {
