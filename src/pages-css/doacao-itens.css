@@ -138,3 +138,194 @@
 .passos p{
     font-size: 16px;
 }
+
+@media (max-width: 822px) {
+
+  .hero-img {
+    height: 270px;
+  }
+
+  .hero-txt h1 {
+    font-size: 2.2rem;
+    margin-top: 3vh;
+  }
+
+  .hero-txt h2 {
+    font-size: 1.4rem;
+    margin-top: 15px;
+  }
+
+  .cards-container {
+    padding: 40px 30px;
+  }
+
+  .cards-content {
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap; 
+  }
+
+  .card {
+    width: 220px;
+    padding: 15px;
+  }
+
+  .card img {
+    width: 45px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .como-funciona-container {
+    margin: 30px 30px;
+  }
+
+  .como-funciona-container h2 {
+    font-size: 2rem;
+  }
+
+  .como-funciona-container h3 {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+
+  .infos-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .infos {
+    margin: 20px 30px;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .infos h3{
+    margin: 5px;
+
+  }
+
+  .number {
+    height: 35px;
+    width: 35px;
+    font-size: 1rem;
+  }
+
+  .passos {
+    width: 100%;
+  }
+
+  .passos h3 {
+    font-size: 1rem;
+  }
+
+  .passos p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero-img {
+    height: 230px;
+  }
+
+  .hero-txt h1 {
+    font-size: 1.6rem;
+    margin-top: 5vh;
+  }
+
+  .hero-txt h2 {
+    font-size: 1rem;
+    width: 85%;
+    margin-top: 10px;
+  }
+
+  .cards-container {
+    padding: 30px 20px;
+  }
+
+  .cards-content {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .card {
+    width: 80%;
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .card img {
+    width: 45px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+    margin: 15px 0;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .como-funciona-container {
+    margin: 30px 20px;
+  }
+
+  .como-funciona-container h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .como-funciona-container h3 {
+    font-size: 1rem;
+    text-align: justify;
+    margin-bottom: 5vh;
+  }
+
+  .infos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .infos {
+    margin: 15px 10px;
+    gap: 15px;
+    align-items: flex-start;
+    display: flex;
+    align-items: center;
+  }
+
+  .number {
+    height: 35px;
+    width: 35px;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .passos {
+    width: auto;
+  }
+
+  .passos h3 {
+    font-size: 1rem;
+    margin: 5px;
+  }
+
+  .passos p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
