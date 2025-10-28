@@ -7,3 +7,5 @@ const mainImg = document.getElementById("MainImg");
     mainImg.src = smallImg.src;
     smallImg.src = trocarImagem;
   });
+
+  
