@@ -453,3 +453,50 @@ i {
   background-color: #065350;
   transition: 0.5s;
 }
+
+
+
+/* DOAÇAO */
+
+.doacao{
+  display: flex;
+  gap: 10px;
+  height: fit-content;
+  width: 700px;
+  padding: 20px;
+  background-color: #3eb4ae49;
+  border-radius: 15px;
+}
+
+.imgDoacao{
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: #a1a1a1;
+}
+
+.pedidoDoacao{
+  position: relative;
+  padding: 10px;
+}
+
+.pedidoDoacao span{
+  font-size: 1.2rem;
+}
+
+.pedidoDoacao p{
+  margin-top: 10px;
+}
+
+.pedidoDoacao button{
+  background-color: #05625D;
+  color: #fff;
+  width: 118px;
+  height: 28px;
+  border: none;
+  border-radius: 9px;
+  margin-top: 15px;
+  position: absolute;
+  right: 0;
+}

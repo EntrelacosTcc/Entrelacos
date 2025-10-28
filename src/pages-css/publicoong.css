@@ -153,3 +153,12 @@ h1{
     color: #D0FFFD;
   }
 
+/* DOACAO */
+
+.doacao-container{
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
