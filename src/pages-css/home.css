@@ -472,11 +472,20 @@ height: 500px;
 
   .content-txt {
     width: 100%;
+    margin-top: 90px;
   }
+
+  .title-container h2{
+   margin-top: 200px;
+  }
+ 
 
   .content-image {
     width: 100%;
     max-width: 480px;
+  }
+  .apoie-container{
+    height: 1300px;
   }
 }
 
@@ -537,6 +546,7 @@ height: 500px;
 
   .mapa-container img {
     width: 90%;
+    height: 80%;
   }
 
   /* LOJA */
@@ -591,16 +601,26 @@ height: 500px;
 
   .produto {
     width: 90%;
+    margin: 10px;
   }
 
   .content-txt {
     font-size: 0.9rem;
     line-height: 22px;
+    margin-top: 40px;
   }
 
   .title-container h2 {
     font-size: 1.6rem;
+    margin-top: 140px;
   }
+
+  .apoie-container{
+    height: 1250px;
+  
+   
+  }
+  
 }
 
 
