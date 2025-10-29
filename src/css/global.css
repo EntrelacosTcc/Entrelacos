@@ -369,7 +369,6 @@ i {
 
 /* VAGAS */
 
-
 .grid-vagas {
   display: flex;
   justify-content: center;
@@ -380,9 +379,19 @@ i {
 
 .vagas {
   width: 270px;
+  min-height: 450px; 
   border: 2px solid #09625D;
   border-radius: 13px;
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.vagas p {
+  margin: 0 10px;
+  color: #0A3937;
+  flex-grow: 1; 
 }
 
 .vaga-img {
@@ -390,40 +399,37 @@ i {
   height: 180px;
   background-color: #12777294;
   border-radius: 11px 11px 0 0;
+  flex-shrink: 0; 
 }
 
 .vagas h3 {
   margin: 5px 10px;
   text-align: left;
-  color: #0A3937;
-  font-size: 1.2rem;
+  color: #000000;
+  font-size: 1.1rem;
 }
 
 .vagas h4 {
   font-weight: 100;
-  font-size: 1rem;
+  font-size: 0.99rem;
   color: #0A3937;
   margin: 5px 10px;
 }
 
-.tags-vagas,
-.vagas-info {
+.tags-vagas {
   display: flex;
   gap: 10px;
   margin: 10px;
   font-size: 0.9rem;
-}
-
-.vagas p {
-  margin: 0 10px;
-  color: #0A3937;
+  flex-wrap: wrap;
 }
 
 .vagas-info {
   margin-top: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   font-size: 0.8rem;
+  flex-shrink: 0;
 }
 
 .dados-vaga {
@@ -446,7 +452,8 @@ i {
   width: 160px;
   margin: 15px 10px;
   height: 30px;
-  font-size: 0, 9rem;
+  font-size: 0.9rem;
+  flex-shrink: 0; 
 }
 
 .vagas button:hover{
@@ -454,6 +461,14 @@ i {
   transition: 0.5s;
 }
 
+.causa {
+  background-color: #D1ECEA;
+  border: 1px solid #09625D;
+  color: #09625D;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
 
 /* PEDIDO DE DOACAO */
 .doacao {
