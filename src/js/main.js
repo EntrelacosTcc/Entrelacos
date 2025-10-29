@@ -108,3 +108,39 @@ function initNavbarDropdown() {
 }
 
 
+
+// *************************
+// MENU HAMBURGUER MOBILE
+function toggleMenu() {
+  const menuContainer = document.querySelector(".mobile-menuContainer");
+  const overlay = document.querySelector(".overlay");
+
+  if (!menuContainer || !overlay) return;
+
+  const isOpen = menuContainer.style.display === "block";
+
+  if (isOpen) {
+    menuContainer.style.display = "none";
+    overlay.style.display = "none";
+    document.body.style.overflow = "auto";
+  } else {
+    menuContainer.style.display = "block";
+    overlay.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+}
+
+// Botão de saída (X)
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".menu-saida")) {
+    document.querySelector(".mobile-menuContainer").style.display = "none";
+    document.querySelector(".overlay").style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  if (e.target.classList.contains("overlay")) {
+    document.querySelector(".mobile-menuContainer").style.display = "none";
+    document.querySelector(".overlay").style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+});

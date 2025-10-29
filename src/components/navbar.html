@@ -8,7 +8,17 @@
 <script src="../js/main.js" defer></script>
 
 <header class="navbar">
+
   <nav>
+
+    <!-- **************** -->
+     <!-- Ícone do menu (hambúrguer) -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <div class="logo">
         <img src="/src/assets/img/logo-navbar.png" alt="Logo Entrelaços" />
     </div>
@@ -66,3 +76,59 @@
 </nav>
 
 </header>
+
+<!-- **************** -->
+
+<div class="repeticaoParaResponsividade">
+  <div class="mobile-icons">
+  <a href="/src/pages-html/carrinho.html" class="cart-icon">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count">0</span>
+  </a>
+  <a href="/src/pages-html/login.html">
+    <button class="enter-btn">Entrar</button>
+  </a>
+</div>
+</div>
+
+<!-- Fundo escurecido -->
+<div class="overlay"></div>
+
+<!-- Menu lateral (mobile) -->
+<div class="mobile-menuContainer">
+  <div class="top-menu">
+          <button type="button" class="menu-saida"><a href="#">X</a></button>
+  </div>
+  <div class="mobile-menu">
+     <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li>
+      <a href="#">Quem Somos <i class="fa-solid fa-caret-down"></i></a>
+      <ul class="dropdown">
+          <li class="sublink"><a href="/src/pages-html/sobre.html">Sobre Nós</a></li>
+          <li class="sublink"><a href="/src/pages-html/transparencia.html">Transparência</a></li>
+          <li class="sublink"><a href="/src/pages-html/fale-conosco.html">Fale Conosco</a></li>
+      </ul>
+    </li>
+    <li><a href="/src/pages-html/empresas.html">Empresas</a></li>
+    <li>
+      <a href="#">Colabore <i class="fa-solid fa-caret-down"></i></a>
+      <ul class="dropdown">
+          <li class="sublink"><a href="#">Vagas Voluntariado</a></li>
+          <li class="sublink"><a href="/src/pages-html/doacao-monetaria.html">Doação Monetária</a></li>
+          <li class="sublink"><a href="/src/pages-html/doacao-itens.html">Doação de Itens</a></li>
+      </ul>
+    </li>
+    <li><a href="/src/pages-html/loja.html">Loja</a></li>
+    <li>
+      <a href="#">Razões <i class="fa-solid fa-caret-down"></i></a>
+      <ul class="dropdown">
+          <li class="sublink"><a href="/src/pages-html/causas.html">Causas</a></li>
+          <li class="sublink"><a href="/src/pages-html/voluntarios.html">Voluntários</a></li>
+          <li class="sublink"><a href="/src/pages-html/ongs.html">ONGs</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+</div>
+
