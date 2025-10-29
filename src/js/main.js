@@ -1,6 +1,5 @@
 const navbarPath = "/src/components/navbar.html";
 const footerPath = "/src/components/footer.html";
-const vagaPath = "/src/components/vaga.html";
 const doacaoPath = "/src/components/doacao.html";
 
 // NAVBAR PATH
@@ -22,18 +21,53 @@ fetch(footerPath)
   })
   .catch(err => console.error("Erro ao carregar footer:", err));
 
+// COMPONENTE VAGA
+class VagaComponent extends HTMLElement {
+    constructor() {
+        super();
+    }
 
-// VAGA PATH
-fetch(vagaPath)
-  .then(response => response.text())
-  .then(data => {
-    const vagas = document.getElementsByClassName("vaga");
-    
-    Array.from(vagas).forEach(vaga => {
-      vaga.innerHTML = data;
-    });
-  })
-  .catch(err => console.error("Erro ao carregar vaga:", err));
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        const imagem = this.getAttribute('imagem');
+        const imagemHTML = imagem 
+            ? `<img src="${imagem}" alt="${this.getAttribute('titulo')}" class="vaga-img">`
+            : `<div class="vaga-img"></div>`;
+
+        this.innerHTML = `
+        <div class="vagas">
+            ${imagemHTML}
+            <h3>${this.getAttribute('titulo')}</h3>
+            <h4>${this.getAttribute('ong')}</h4>
+            <div class="tags-vagas">
+                ${this.getCausas()}
+            </div>
+            <p>${this.getAttribute('descricao')}</p>
+            <div class="vagas-info">
+                <div class="dados-vaga"><i class="fa-solid fa-location-dot fa-lg"></i>${this.getAttribute('localizacao')}</div>
+                <div class="dados-vaga"><i class="fa-solid fa-calendar"></i>${this.getAttribute('frequencia')}</div>
+                <div class="dados-vaga"><i class="fa-solid fa-clock"></i>${this.getAttribute('carga-horaria')}</div>
+            </div>
+            <center><button>Participe</button></center>
+        </div>
+        `;
+    }
+
+    getCausas() {
+        const causas = this.getAttribute('causas');
+        if (causas) {
+            return causas.split(',').map(causa => 
+                `<div class="causa">${causa.trim()}</div>`
+            ).join('');
+        }
+        return '';
+    }
+}
+
+customElements.define('vaga-item', VagaComponent);
 
 
 // DOACAO PATH
