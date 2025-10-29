@@ -836,8 +836,13 @@ h2 {
   }
 
   /* Depoimentos */
+  .depoimentos-container{
+    overflow-x: scroll ;
+  }
   .depoimentos-container h2 {
     font-size: 1.6rem;
+    position: relative;
+    text-align: center;
   }
 
   .block {
