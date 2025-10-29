@@ -590,6 +590,7 @@
 
   .formContato-container {
     margin: 40px;
+  
   }
 
   .formContato-container form {
@@ -634,19 +635,22 @@
     height: auto;
     margin: 20px;
   }
+  #bnt-right, #bnt-left{
+  display: none;
+}
 
-  #bnt-left, #bnt-right {
-    /* display: none; Esconde setas no mobile */
-  }
 
   .block {
+    margin: 35px;
     width: 260px;
     height: auto;
   }
 
   .formContato-container {
     margin: 20px;
-    height: auto;
+    height: 800px;
+    margin-bottom: 60px;
+    
     
    
   }
@@ -659,11 +663,19 @@
   }
 
   .form-checkbox {
-    flex-direction: column;
-    align-items: start;
+
+    align-items:start;
+    margin-right: 45px;
+   
   }
+  
 
   .formContato-container button {
+    margin-top: 50px;
     width: 150px;
+  }
+
+  .faleConosco-title{
+    margin-bottom: 60px;
   }
 }
