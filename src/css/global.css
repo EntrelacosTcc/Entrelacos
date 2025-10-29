@@ -645,6 +645,7 @@ i {
     z-index: 1100;
     position: fixed;
     z-index: 1200;
+    
   }
 
   .mobile-icons .enter-btn {
@@ -691,7 +692,8 @@ i {
 
 .search-bar .search-icon {
   position: absolute;
-  left: 8vw;
+  left: 8.5vw;
+  top: -1px;
   font-size: 15px;
   color: var(--cinza-claro);
   pointer-events: none;
@@ -700,6 +702,7 @@ i {
 .search-bar input {
   width: 50%;
   margin-right: 30vw;
+  margin-top: -1vh;
   padding: 8px 12px 8px 35px;
   border: none;
   border-radius: 20px;
@@ -726,7 +729,7 @@ i {
     padding: 20px;
     box-shadow: 2px 0 10px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
-    overflow-y: auto;
+    overflow-y:scroll;
     z-index: 10001;
   }
 
