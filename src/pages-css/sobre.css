@@ -430,7 +430,7 @@ h2 {
   flex-direction: column;
 }
 
-.depoimentos-container h2 {
+.depoimentos-containerH2 {
   text-align: center;
   font-size: 2.2rem;
   color: #05625d;
@@ -453,7 +453,7 @@ h2 {
 #bnt-left,
 #bnt-right {
   position: absolute;
-  top: 230px;
+  top: 155px;
   margin-left: 60px;
   margin-right: 60px;
   color: #0a3937;
@@ -480,9 +480,9 @@ h2 {
   transition: 0.5s ease;
 }
 
-.block:hover {
+/* .block:hover {
   transform: translateY(-5px);
-}
+} */
 
 .block img {
   border-radius: 100%;
@@ -707,6 +707,12 @@ h2 {
   }
 
   /* Depoimentos */
+  .depoimentos-container{
+    overflow-x: scroll;
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+  
   #bnt-left, #bnt-right {
     display: none;
   }
@@ -719,6 +725,7 @@ h2 {
 
   .block {
     flex: 0 0 260px;
+    height: 25vh;
   }
 
   .caixa {
@@ -837,19 +844,27 @@ h2 {
 
   /* Depoimentos */
   .depoimentos-container{
-    overflow-x: scroll ;
+    overflow-x: scroll;
+    margin-left: 4vw;
+    margin-right: 4vw;
   }
-  .depoimentos-container h2 {
-    font-size: 1.6rem;
+  .depoimentos-containerH2 {
+    font-size: 1.8rem;
     position: relative;
     text-align: center;
+    margin-top: 8vh;
+    margin-bottom: 3vh;
   }
 
   .block {
     flex: 0 0 220px;
     padding: 15px;
     font-size: 0.8rem;
+    height: auto;
   }
+
+
+
 
   /* Fale Conosco */
   .faleConosco-title h2 {

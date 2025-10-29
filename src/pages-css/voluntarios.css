@@ -321,6 +321,10 @@ section.slider {
   margin: 0 auto;
 }
 
+.block:hover{
+  cursor: pointer;
+}
+
 .block {
   width: 308px;
   height: 200px;
@@ -729,12 +733,20 @@ hr {
   border-radius: 12px;
 }
 
+.voluntarios-slide{
+  width: 96%;
+  overflow-x: scroll;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
   .beneficios-container {
   position: relative;
   display: flex;
   flex-direction: column;
   margin-top: 40px;
-}
+  }
+
 #btn-left,
 #btn-right {
   display: none;

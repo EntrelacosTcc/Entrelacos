@@ -864,8 +864,10 @@ body {
 
   #bnt-left,
   #bnt-right {
-    top: 120px;
+    top: 170px;
     font-size: 2rem;
+    margin-left: 5vw;
+    margin-right: 5vw;
   }
 
   /* Bloco verde final */
@@ -972,6 +974,17 @@ body {
   /* Depoimentos */
   .car-container {
     width: 100%;
+    overflow-x: scroll;
+    margin-left: 4%;
+    /* margin-right: 4vw; */
+  }
+
+  .car-viewport{
+    margin-right: 4vw;
+  }
+
+  #btn-left, #btn-right{
+    display: none;
   }
 
   .car-cards {
