@@ -157,28 +157,323 @@
 
 
           <!-- Inscrições -->
-          <div class="conteudo-item" id="inscricoes">
-            <div class="secao">
-              <h2>Minhas Inscrições</h2>
-              <p></p>
-            </div>
+ <div class="conteudo-item" id="inscricoes"> 
+  <div class="secao-header">
+     <img src="../assets/img/inscricoes.png" alt="Ícone" class="secao-icone" /> 
+     <h2>Minhas Inscrições</h2> </div> 
+     <!-- Abas (Vagas / Doações) --> 
+     <div class="abas"> <span class="aba ativa" id="aba-vagas">Vagas</span> 
+      <span class="aba" id="aba-doacoes">Doações</span> </div> 
+      <!-- Conteúdo das Abas --> 
+       <div class="conteudo-abas ativa" id="conteudo-vagas"> 
+        <div class="inscricoes-container"> 
+          <div class="inscricao-card">
+             <div class="inscricao-header">
+               <h3>Instrutor de música comunitária</h3> 
+               <span class="status confirmado">Confirmado</span>
+               </div> <div class="inscricao-info"> 
+                <div class="info-item"> 
+                  <i class="fa-regular fa-calendar"></i> 
+                  <p>22/06/2025</p>
+                 </div> 
+                 <div class="info-item"> 
+                  <i class="fa-solid fa-location-dot"></i> 
+                  <p>Raízes do Bem - Rua Amarindo de Oliveira, 998 - SP</p> 
+                </div>
+               </div>
+                <div class="inscricao-actions"> 
+                  <button class="btn-cancelar">Cancelar</button>
+                 </div> 
+                </div> 
+                <div class="inscricao-card">
+                   <div class="inscricao-header">
+                     <h3>Participação com Mutirão</h3>
+                      <span class="status concluido">Concluído</span> 
+                    </div> <div class="inscricao-info"> 
+                      <div class="info-item"> 
+                        <i class="fa-regular fa-calendar"></i> 
+                        <p>15/03/2025</p> 
+                      </div>
+                         <div class="info-item"> 
+                          <i class="fa-solid fa-location-dot"></i> 
+                          <p>Green Earth - Rua Pascoal Alves, 709 - SP</p> 
+                        </div> 
+                      </div> 
+                      <div class="inscricao-actions"> 
+                        <button class="btn-certificado">Baixar Certificado</button> 
+                      </div> </div> <div class="inscricao-card">
+                         <div class="inscricao-header"> 
+                          <h3>Feira Cultural Juvenil</h3> 
+                          <span class="status concluido">Concluído</span> 
+                        </div> 
+                        <div class="inscricao-info"> 
+                          <div class="info-item">
+                             <i class="fa-regular fa-calendar"></i> 
+                             <p>22/08/2024</p>
+                             </div>
+                              <div class="info-item">
+                                 <i class="fa-solid fa-location-dot"></i>
+                                  <p>Green Earth - Rua Pascoal Alves, 709 - SP</p> 
+                                </div>
+                               </div> 
+                               <div class="inscricao-actions"> 
+                                <button class="btn-certificado">Baixar Certificado</button> 
+                              </div>
+                             </div> 
+                            </div> 
+                          </div>
+                            <div class="conteudo-abas" id="conteudo-doacoes">
+  <div class="doacoes-container">
+    <div class="doacao-card">
+      <div class="doacao-header">
+        <div class="doacao-info">
+          <img src="../assets/img/imgdoacao.png" alt="Imagem da ONG" class="doacao-img">
+          <div>
+            <h3>Laços de Sabedoria</h3>
+            <p class="descricao-doacao">
+              🧺 Itens necessários: Fraldas geriátricas / Roupas / Mantas / Produtos de higiene + 4 itens
+            </p>
           </div>
+        </div>
+        <span class="status ativa">Ativa</span>
+      </div>
 
-          <!-- Certificados -->
-          <div class="conteudo-item" id="certificados">
-            <div class="secao">
-              <h2>Certificados</h2>
-              <p>Lista de certificados obtidos em atividades voluntárias.</p>
-            </div>
-          </div>
+      <div class="doacao-actions">
+        <button class="btn-cancelar">Cancelar</button>
+        <button class="btn-detalhes" data-doacao="lacos-sabedoria">Detalhes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-          <!-- Pedidos -->
-          <div class="conteudo-item" id="pedidos">
-            <div class="secao">
-              <h2>Pedidos</h2>
-              <p>Todos os pedidos realizados pelo usuário aparecerão aqui.</p>
+<!-- Modal para Detalhes da Doação -->
+<div id="modalDoacao" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Detalhes da Doação</h2>
+      <span class="close-modal">&times;</span>
+    </div>
+    
+    <div class="modal-body">
+      <div class="doacao-detalhes-header">
+        <div class="ong-info-modal">
+          <img src="../assets/img/iconelacos.png" alt="Laços de Sabedoria" class="ong-logo-modal">
+          <div>
+            <h3>Laços de Sabedoria</h3>
+            <p class="ong-descricao-modal">Organização dedicada ao cuidado de idosos em situação de vulnerabilidade</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalhes-section">
+        <h4><i class="fas fa-box-open"></i> Itens Selecionados para Doação</h4>
+        <div class="itens-lista-modal">
+          <div class="item-doacao-modal selecionado">
+            <i class="fas fa-check-circle"></i>
+            <span>2 Mantas</span>
+          </div>
+          <div class="item-doacao-modal">
+            <i class="far fa-circle"></i>
+            <span>Produtos de higiene</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalhes-section">
+        <h4><i class="fas fa-truck"></i> Informações de Entrega</h4>
+        <div class="info-grid-modal">
+          <div class="info-card-modal">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Endereço para entrega</strong>
+              <p>Av. Edgar Monteiro, 776 – São Paulo – SP</p>
             </div>
           </div>
+          
+          <div class="info-card-modal">
+            <i class="far fa-clock"></i>
+            <div>
+              <strong>Dias e horário</strong>
+              <p>Segunda à Sábado – 09:00 às 18:00</p>
+            </div>
+          </div>
+          
+          <div class="info-card-modal">
+            <i class="fas fa-clipboard-check"></i>
+            <div>
+              <strong>Instruções de entrega</strong>
+              <p>Deixar doações com Amélia Faria</p>
+            </div>
+          </div>
+          
+          <div class="info-card-modal urgente">
+            <i class="far fa-calendar-alt"></i>
+            <div>
+              <strong>Prazo para entrega</strong>
+              <p>Ideal entregar até: <strong>30/10/2025</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalhes-section">
+        <h4><i class="fas fa-phone-alt"></i> Contato para Dúvidas</h4>
+        <div class="contato-grid-modal">
+          <div class="contato-item-modal">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Telefone/WhatsApp</strong>
+              <p>(11) 91278-9043</p>
+            </div>
+          </div>
+          
+          <div class="contato-item-modal">
+            <i class="far fa-envelope"></i>
+            <div>
+              <strong>E-mail</strong>
+              <p>contato@lacossabedoria.com.br</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Certificados -->
+<div class="conteudo-item" id="certificados">
+  <div class="secao">
+    <div class="secao-header">
+      <img src="../assets/img/certificados.png" alt="Ícone" class="secao-icone" />
+      <h2>Meus Certificados</h2>
+    </div>
+
+    <div class="certificados-container">
+      <!-- Certificado 1 -->
+      <div class="certificado-card">
+        <div class="certificado-header">
+          <div class="certificado-info">
+            <h3>Participação com Mutirão</h3>
+            <p class="ong-name">Green Earth</p>
+            <p class="horas-voluntariadas">42 horas voluntariadas</p>
+          </div>
+          <span class="certificado-status">Disponível</span>
+        </div>
+        
+        <div class="certificado-details">
+          <div class="certificado-data">
+            <i class="far fa-calendar"></i>
+            <span>Emitido em: 30/10/2025</span>
+          </div>
+        </div>
+        
+        <div class="certificado-actions">
+          <button class="btn-certificado">
+            <i class="fas fa-download"></i>
+            Baixar PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Certificado 2 -->
+      <div class="certificado-card">
+        <div class="certificado-header">
+          <div class="certificado-info">
+            <h3>Feira Cultural Juvenil</h3>
+            <p class="ong-name">Green Earth</p>
+            <p class="horas-voluntariadas">5 horas voluntariadas</p>
+          </div>
+          <span class="certificado-status">Disponível</span>
+        </div>
+        
+        <div class="certificado-details">
+          <div class="certificado-data">
+            <i class="far fa-calendar"></i>
+            <span>Emitido em: 30/10/2025</span>
+          </div>
+        </div>
+        
+        <div class="certificado-actions">
+          <button class="btn-certificado">
+            <i class="fas fa-download"></i>
+            Baixar PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Certificado 3 -->
+      <div class="certificado-card">
+        <div class="certificado-header">
+          <div class="certificado-info">
+            <h3>Ajuda com Resgatados</h3>
+            <p class="ong-name">Patinhas Felizes</p>
+            <p class="horas-voluntariadas">12 horas voluntariadas</p>
+          </div>
+          <span class="certificado-status">Disponível</span>
+        </div>
+        
+        <div class="certificado-details">
+          <div class="certificado-data">
+            <i class="far fa-calendar"></i>
+            <span>Emitido em: 30/10/2025</span>
+          </div>
+        </div>
+        
+        <div class="certificado-actions">
+          <button class="btn-certificado">
+            <i class="fas fa-download"></i>
+            Baixar PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pedidos -->
+<div class="conteudo-item" id="pedidos">
+
+  <!-- Seção Meus Pedidos -->
+  <div class="secao-pedidos">
+    <div class="secao-header">
+      <img src="../assets/img/pedidos.png" alt="Ícone" class="secao-icone" />
+      <h2>Meus Pedidos</h2>
+    </div>
+
+    <div class="pedido-card">
+      <div class="pedido-info">
+        <img src="../assets/img/Camiseta_feminina.png" alt="Produto" class="pedido-img" />
+        <div class="pedido-detalhes">
+          <p class="pedido-nome"><strong>Camiseta Feminina</strong></p>
+          <p>Cor: Branco</p>
+          <p>Tamanho: M</p>
+        </div>
+      </div>
+      <div class="pedido-extra">
+        <p><strong>Nº Pedido:</strong> #128234</p>
+        <p><strong>Data da compra:</strong> 26/06/2025</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seção Acompanhar Pedido -->
+  <div class="secao-rastreio">
+    <div class="secao-header">
+      <img src="../assets/img/icone-info.png" alt="Ícone" class="secao-icone" />
+      <h2>Acompanhe o status do seu pedido</h2>
+    </div>
+
+    <div class="rastreio-conteudo">
+      <p><strong>Nº RASTREIO:</strong> NDC32786908</p>
+      <p>Insira o Nº do rastreio no site oficial dos Correios</p>
+      <a href="https://www.correios.com.br/" target="_blank" class="btn-correios">
+        SITE CORREIOS
+      </a>
+    </div>
+  </div>
+
+</div>
 
           <!-- Endereço -->
       <div class="conteudo-item" id="endereco">
@@ -239,19 +534,108 @@
 
 
 
-          <!-- Configurações -->
-          <div class="conteudo-item" id="config">
-            <div class="secao">
-              <h2>Configurações</h2>
-              <p>Aqui você pode alterar suas configurações de conta.</p>
-            </div>
+
+<!-- Configurações -->
+<div class="conteudo-item" id="config">
+  <div class="secao-header">
+    <img src="../assets/img/config.png" alt="Ícone" class="secao-icone" />
+    <h2>Configurações</h2>
+  </div>
+
+  <div class="config-container">
+    <!-- PRIVACIDADE -->
+    <div class="config-item">
+      <h3>Privacidade</h3>
+      <div class="config-box">
+        <label>Permitir que vejam meu perfil</label>
+        <select>
+          <option>Todos</option>
+          <option>Apenas Organizações</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- NOTIFICAÇÕES -->
+    <div class="config-item">
+      <h3>Notificações</h3>
+      <div class="config-box">
+        <label>Novas vagas na minha área</label>
+        <select>
+          <option>Imediatamente</option>
+          <option>Diariamente</option>
+          <option>Semanalmente</option>
+          <option>Nenhuma</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- SENHA -->
+    <div class="config-item">
+      <h3>Senha</h3>
+      <div class="config-box">
+        <p>Gostaria de redefinir sua senha?</p>
+        <button class="btn btn-redefinir-senha">Redefinir Senha</button>
+      </div>
+    </div>
+
+    <!-- GERENCIAR CONTA -->
+    <div class="config-item">
+      <h3>Gerenciar Conta</h3>
+      <div class="config-box">
+        <button class="btn excluir">Excluir conta permanentemente</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Redefinir Senha - MOVER PARA FORA, ANTES DO FECHAMENTO DO BODY -->
+<div id="modalSenha" class="modal">
+  <div class="modal-content modal-pequeno">
+    <div class="modal-header">
+      <h2>Redefinir sua senha</h2>
+      <span class="close-modal">&times;</span>
+    </div>
+    
+    <div class="modal-body">
+      <form id="formRedefinirSenha">
+        <!-- Senha Atual -->
+        <div class="input-group">
+          <label for="senhaAtual">Senha Atual</label>
+          <div class="input-com-icone">
+            <input type="password" id="senhaAtual" placeholder="Digite sua senha atual" required>
+            <i class="fas fa-lock"></i>
           </div>
+        </div>
+
+        <!-- Nova Senha -->
+        <div class="input-group">
+          <label for="novaSenha">Nova Senha</label>
+          <div class="input-com-icone">
+            <input type="password" id="novaSenha" placeholder="Digite sua nova senha" required>
+            <i class="fas fa-key"></i>
+          </div>
+        </div>
+
+        <!-- Confirmar Nova Senha -->
+        <div class="input-group">
+          <label for="confirmarSenha">Confirmar Nova Senha</label>
+          <div class="input-com-icone">
+            <input type="password" id="confirmarSenha" placeholder="Confirme sua nova senha" required>
+            <i class="fas fa-key"></i>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-modal btn-cancelar">Cancelar</button>
+          <button type="submit" class="btn-modal btn-confirmar">Redefinir Senha</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
           <!-- Sair -->
           <div class="conteudo-item" id="sair">
-            <div class="secao">
-              <h2>Sair</h2>
-              <p>Clique aqui para sair da sua conta.</p>
             </div>
           </div>
         </div>
