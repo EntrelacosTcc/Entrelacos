@@ -771,145 +771,258 @@ body {
   }
 }
 
-/* ============================================= */
-/*  RESPONSIVIDADE - ATÉ 820px (TABLET)         */
-/* ============================================= */
 @media (max-width: 822px) {
-  .fundo-loja {
-    padding: 80px 5%;
+  .hero {
+    padding: 60px 20px;
+    height: auto;
   }
 
-  .fundo-loja h1 {
-    font-size: 2rem;
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
   }
 
-  .fundo-loja p {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
     font-size: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
-  .beneficios-loja {
-    flex-wrap: wrap;
+  .stats {
     justify-content: center;
-    gap: 30px;
-    padding: 30px 5%;
+    gap: 40px;
   }
 
-  .beneficios-loja-box {
-    width: 180px;
-    height: 90px;
-  }
-
-  .beneficios-loja-box img {
-    width: 35px;
-  }
-
-  .beneficios-loja-box p {
-    font-size: 13px;
-  }
-
-  .produtos-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 25px;
-    padding: 10px;
-  }
-
-  .produtos-card {
+  .hero-image {
+    width: 100%;
     height: 300px;
-    padding: 12px;
   }
 
-  .img-container {
-    width: 170px;
-    height: 150px;
+  /* Cards “Como Funciona” */
+  .Bcards {
+    gap: 50px 60px;
+    margin-top: 0;
   }
 
-  .img-container img {
-    max-width: 160px;
-    max-height: 140px;
+  .cards {
+    width: 250px;
+    min-height: 140px;
   }
 
-  .produto-info .nome {
+  /* “Para quem é” */
+  .green {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .green > h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .checks {
+    gap: 25px 50px;
+    padding: 20px;
+  }
+
+  .txt {
+    width: 320px;
+    height: auto;
+    font-size: 15px;
+    padding: 10px 15px;
+  }
+
+  /* Benefícios - leve respiro */
+  .benefits-container {
+    gap: 40px;
+    padding: 0 30px;
+  }
+
+  .pink-cards {
+    margin-top: 0;
+    padding: 18px;
+  }
+
+  .card-header h3 {
     font-size: 15px;
   }
 
-  .produto-info .preco {
-    font-size: 14px;
+  /* Carrossel */
+  .car-container {
+    width: 95%;
   }
 
-  .btn-ver-mais {
-    height: 40px;
-    font-size: 14px;
+  .car-viewport {
+    width: 100%;
+  }
+
+  #bnt-left,
+  #bnt-right {
+    top: 120px;
+    font-size: 2rem;
+  }
+
+  /* Bloco verde final */
+  .green.rev {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .btncont {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .bnf-c {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* Vídeo */
+  .vd {
+    width: 90%;
+    height: 300px;
+  }
+
+  /* FAQ */
+  .perguntasEach {
+    width: 90%;
+  }
+
+  /* Contato */
+  .contact-section {
+    gap: 25px;
   }
 }
 
-/* ============================================= */
-/*  RESPONSIVIDADE - ATÉ 480px (MOBILE)         */
-/* ============================================= */
 @media (max-width: 480px) {
-  .fundo-loja {
-    padding: 60px 5%;
+  .hero {
+    padding: 50px 10px;
   }
 
-  .fundo-loja h1 {
-    font-size: 1.6rem;
+  .hero-text h1 {
+    font-size: 1.8rem;
   }
 
-  .fundo-loja p {
-    font-size: 0.95rem;
+  .stats {
+    flex-direction: column;
+    gap: 15px;
   }
 
-  .beneficios-loja {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px 5%;
+  .hero-image {
+    height: 250px;
   }
 
-  .beneficios-loja-box {
-    width: 45%;
-    height: 90px;
-    margin-bottom: 10px;
+  /* Cards “Como Funciona” */
+  .Bcards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 10px;
   }
 
-  .beneficios-loja-box img {
-    width: 35px;
+  .cards {
+    width: 100%;
+    max-width: 320px;
   }
 
-  .beneficios-loja-box p {
-    font-size: 13px;
+  /* “Para quem é” */
+  .green {
+    padding: 40px 15px;
   }
 
-  .produtos-grid {
+  .green > h2 {
+    font-size: 1.7rem;
+  }
+
+  .txt {
+    width: 100%;
+    font-size: 14px;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  /* Benefícios — 2 em 2 */
+  .benefits-container {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    padding: 10px;
+    gap: 25px;
+    padding: 0 15px;
   }
 
-  .produtos-card {
-    height: 280px;
-    padding: 10px;
+  .pink-cards {
+    padding: 15px;
+    min-height: 150px;
   }
 
-  .img-container {
-    width: 150px;
-    height: 130px;
-  }
-
-  .img-container img {
-    max-width: 140px;
-    max-height: 120px;
-  }
-
-  .produto-info .nome {
+  .card-header h3 {
     font-size: 14px;
   }
 
-  .produto-info .preco {
+  .pink-cards p {
     font-size: 13px;
   }
 
-  .btn-ver-mais {
-    height: 38px;
-    font-size: 13px;
+  /* Depoimentos */
+  .car-container {
+    width: 100%;
+  }
+
+  .car-cards {
+    min-width: 260px;
+    height: auto;
+  }
+
+  #bnt-left,
+  #bnt-right {
+    font-size: 1.8rem;
+    top: 100px;
+  }
+
+  /* Bloco verde final */
+  .btncont {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .btn {
+    width: 240px;
+    height: 55px;
+  }
+
+  .bnf-c {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Vídeo */
+  .vd {
+    width: 100%;
+    height: 220px;
+  }
+
+  /* FAQ */
+  .titulo-faq h2 {
+    font-size: 1.8rem;
+  }
+
+  .perguntasEach {
+    width: 95%;
+  }
+
+  .perguntaVisivel {
+    font-size: 14px;
+  }
+
+  /* Contato */
+  .contact-card,
+  .form-card {
+    width: 100%;
   }
 }
