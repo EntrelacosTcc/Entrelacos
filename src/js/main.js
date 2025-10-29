@@ -1,7 +1,9 @@
 const navbarPath = "/src/components/navbar.html";
 const footerPath = "/src/components/footer.html";
 const vagaPath = "/src/components/vaga.html";
+const doacaoPath = "/src/components/doacao.html";
 
+// NAVBAR PATH
 fetch(navbarPath)
   .then(response => response.text())
   .then(data => {
@@ -10,6 +12,8 @@ fetch(navbarPath)
   })
   .catch(err => console.error("Erro ao carregar navbar:", err));
 
+
+// FOOTER PATH
 fetch(footerPath)
   .then(response => response.text())
   .then(data => {
@@ -18,18 +22,31 @@ fetch(footerPath)
   })
   .catch(err => console.error("Erro ao carregar footer:", err));
 
+
+// VAGA PATH
 fetch(vagaPath)
   .then(response => response.text())
   .then(data => {
-    // Pega todos os elementos com a classe 'vaga'
     const vagas = document.getElementsByClassName("vaga");
     
-    // Percorre todos os elementos e injeta o HTML
     Array.from(vagas).forEach(vaga => {
       vaga.innerHTML = data;
     });
   })
   .catch(err => console.error("Erro ao carregar vaga:", err));
+
+
+// DOACAO PATH
+fetch(doacaoPath)
+  .then(response => response.text())
+  .then(data => {
+    const doacao = document.getElementsByClassName("doacao-container");
+    
+    Array.from(doacao).forEach(doacao => {
+      doacao.innerHTML = data;
+    });
+  })
+  .catch(err => console.error("Erro ao carregar pedido de doação:", err));
 
   // Dropdown
 function initNavbarDropdown() {

@@ -155,9 +155,13 @@ h1{
 
 /* DOACAO */
 
+.opcaoDoacao h3{
+  margin-bottom: 50px;
+}
+
 .doacao-container{
   width: 100%;
-  margin-top: 50px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
