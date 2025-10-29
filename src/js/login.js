@@ -26,8 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
         alert(`Bem-vindo(a), ${nomeUsuario}!`);
         console.log("Usuário logado:", userCredential.user);
 
-        // redirecionar
-        // window.location.href = "home.html";
+        // redirecionar após login
+      window.location.href = "../perfil-users/perfilusuario.html";
+
       } catch (error) {
         console.error("Erro no login:", error);
 
@@ -64,8 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
         alert(`Bem-vindo(a), ${user.displayName || "Usuário"}!`);
         console.log("Usuário logado com Google:", user);
 
-        // redirecionar
-        // window.location.href = "home.html";
+        // redirecionar após login com Google
+       window.location.href = "../perfil-users/perfilusuario.html";
+
       } catch (error) {
         console.error("Erro no login com Google:", error);
 
