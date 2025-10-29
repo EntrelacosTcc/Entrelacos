@@ -513,3 +513,157 @@
     border: none;
     border-radius: 10px;
 }
+
+
+@media (max-width: 992px) {
+
+  .parceiraSocial-container {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .escolha-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .escolha-content {
+    margin: 60px 20px;
+    text-align: center;
+  }
+
+  .escolha-image {
+    width: 100%;
+    height: 300px;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .indices-container {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .indices-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-indice img {
+    width: 60%;
+  }
+
+  .valores-indice {
+    margin: 50px 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .respContent-cointainer {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 30px;
+  }
+
+  .responsabilidade-image img {
+    width: 300px;
+  }
+
+  .beneficio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 20px;
+  }
+
+  .tabela-metas {
+    width: 100%;
+  }
+
+  #content-slide {
+    width: 90%;
+  }
+
+  .formContato-container {
+    margin: 40px;
+  }
+
+  .formContato-container form {
+    width: 100%;
+  }
+}
+
+/* --- Celulares (até 768px) --- */
+@media (max-width: 768px) {
+
+  h1, h2 {
+    font-size: 1.6rem;
+  }
+
+  .escolha-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .valores-indice {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .beneficio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .responsabilidade-container h3 {
+    margin: 0 40px 30px;
+    font-size: 1rem;
+  }
+
+  .responsabilidade-image img {
+    width: 250px;
+  }
+
+  .depoimentos-conteiner {
+    height: auto;
+    margin: 20px;
+  }
+
+  #bnt-left, #bnt-right {
+    /* display: none; Esconde setas no mobile */
+  }
+
+  .block {
+    width: 260px;
+    height: auto;
+  }
+
+  .formContato-container {
+    margin: 20px;
+    height: auto;
+    
+   
+  }
+
+  .formContato-container input,
+  .formContato-container textarea {
+    width: 90%;
+   margin: 20px;
+   
+  }
+
+  .form-checkbox {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .formContato-container button {
+    width: 150px;
+  }
+}
