@@ -22,8 +22,14 @@
     <section>
     <div class="info-ong">
       <br><br><br>
-        <h1 id="nome_ong">Nome ONG</h1>
+        <h1 id="nome_ong">Raízes do Futuro</h1>
         <p>ONG dedicada à educação ambiental de crianças e jovens em comunidades rurais e periféricas. </p>
+
+      <div class="tags-causas">
+        <div class="causa">Educação</div>
+        <div class="causa">Meio Ambiente</div>
+        <div class="causa">Social</div>
+      </div>
 
     </div>
 
@@ -35,8 +41,8 @@
     <button onclick="mostrarOpcao('opcao1')" class="option-btn">Sobre</button>
     <button onclick="mostrarOpcao('opcao2')" class="option-btn">Vagas</button>
     <button onclick="mostrarOpcao('opcao3')" class="option-btn">Doações</button>
-    <button onclick="mostrarOpcao('opcao4')" class="option-btn">Postagens</button>
-    <button onclick="mostrarOpcao('opcao5')" class="option-btn">Avaliações</button>
+    <!-- <button onclick="mostrarOpcao('opcao4')" class="option-btn">Postagens</button>
+    <button onclick="mostrarOpcao('opcao5')" class="option-btn">Avaliações</button> -->
   </div>
 
   <div id="opcao1" class="opcao visivel">
@@ -82,7 +88,7 @@
           </div>
           <div class="dados">
             <p>Telefone</p>
-            <p id="telefone_ong">11 99999999</p>
+            <p id="telefone_ong">11 99879-9877</p>
           </div>
         </div>
         
@@ -98,41 +104,45 @@
 
     <div class="grid-vagas">
         <vaga-item
+            imagem="../assets/img/exVaga1.png"
             titulo="Auxiliar de Horta Comunitária"
-            ong="ONG Verde Vida"
+            ong="Raízes do Futuro"
             causas="Meio Ambiente, Educação"
-            descricao="Auxiliar no preparo do solo, plantio e cuidados..."
+            descricao="Auxiliar no preparo do solo, plantio e cuidados recorrentes da horta, promovendo educação ambiental com as crianças."
             localizacao="SP"
             frequencia="Recorrente"
             carga-horaria="2h Semanais"
         ></vaga-item>
+
         <vaga-item
-            imagem="../assets/img/criancas2.svg"
-            titulo="Professor Voluntário"
-            ong="Educa Brasil"
-            causas="Educação, Crianças"
-            descricao="Dar aulas de reforço para crianças carentes..."
-            localizacao="RJ"
-            frequencia="Semanal"
+            imagem="../assets/img/exVaga2.png"
+            titulo="Pintura de Mural Temático"
+            ong="Raízes do Futuro"
+            causas="Educação, Social"
+            descricao=" Coordenar a pintura de mural com mensagens e ilustrações sobre o meio ambiente, feitos pelas crianças com orientação."
+            localizacao="SP"
+            frequencia="Recorrente"
             carga-horaria="4h Semanais"
         ></vaga-item>
 
         <vaga-item
-            titulo="Auxiliar em Abrigo"
-            ong="Casa do Caminho"
-            causas="Animais, Proteção Social"
-            descricao="Cuidar de animais abandonados..."
-            localizacao="MG"
-            frequencia="Fins de Semana"
-            carga-horaria="3h Semanais"
+            imagem="../assets/img/exVaga3.png"
+            titulo="Feira Sustentável"
+            ong="Raízes do Futuro"
+            causas="Ambiental, Educacional, Social"
+            descricao="Ajudar na organização da nossa feira com produtos recicláveis, palestras e exposições sobre sustentabilidade."
+            localizacao="SP"
+            frequencia="Pontual"
+            carga-horaria="3h"
         ></vaga-item>
 
         <vaga-item
-            titulo="Auxiliar em Abrigo"
-            ong="Casa do Caminho"
-            causas="Animais, Proteção Social"
-            descricao="Cuidar de animais abandonados..."
-            localizacao="MG"
+            imagem="../assets/img/exVaga4.png"
+            titulo="Aulas de Ecociência"
+            ong="Raízes do Futuro"
+            causas="Social"
+            descricao="Preparar aulas práticas e dinâmicas sobre ecologia e biodiversidade para diferentes faixas etárias."
+            localizacao="SP"
             frequencia="Fins de Semana"
             carga-horaria="3h Semanais"
         ></vaga-item>
@@ -152,14 +162,14 @@
 
   </div>
 
-  <div id="opcao4" class="opcao">
+  <!-- <div id="opcao4" class="opcao">
     <h2 class="opcao-titulo">Nossas Postagens</h2>
   </div>
 
   <div id="opcao5" class="opcao">
     <h2 class="opcao-titulo">Avaliações</h2>
     <h3>Veja as avaliações de voluntarios sobre a ONG.</h3>
-  </div>
+  </div> -->
 
   </section>
 

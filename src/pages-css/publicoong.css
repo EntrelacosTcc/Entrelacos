@@ -1,7 +1,9 @@
 .bgImg-hero{
     width: 100%;
     height: 300px;
-    background-color: rgb(185, 185, 185);
+    background-image: url(../assets/img/bg-raizesDoFuturo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .profileImg-hero{
@@ -10,7 +12,9 @@
     left: 50px;
     width: 150px;
     height: 150px;
-    background-color: rgb(224, 224, 224);
+    background-image: url(../assets/img/raizesDoFuturo.png);
+    background-size: cover;
+    background-color: rgb(26, 8, 8);
     border-radius: 100%;
 }
 
@@ -33,13 +37,18 @@ h1{
     margin-bottom: 25px;
 }
 
+.tags-causas{
+  display: flex;
+  gap: 20px;
+}
+
 .line{
-    margin-left: 60px;
-    margin-right: 60px;
+    margin: 20px 60px 0 60px;
     width: auto;
     height: 1px;
     background-color: #09625D;
 }
+
 
 /* OPCOES */
 
@@ -99,7 +108,7 @@ h1{
   }
 
   .sobre-ong{
-    width: 570px;
+    width: 650px;
   }
 
   .sobre-ong h2, .contato h2{
