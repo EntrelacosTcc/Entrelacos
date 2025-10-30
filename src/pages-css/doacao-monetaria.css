@@ -1,10 +1,5 @@
-body {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
 
+/* Hero */
 .hero-img {
   position: relative;
   height: 370px;
@@ -30,31 +25,29 @@ body {
   flex-direction: column;
   text-align: center;
   color: #fff;
-  font-family: "Inter";
 }
 
 .hero-txt h1 {
   font-size: 2.8rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .hero-txt h2 {
   font-size: 1.8rem;
-  font-weight: 100;
-  margin-top: 0;
+  font-weight: 400;
+  margin: 0;
 }
 
 .hero-txt p {
-  max-width: 794px;
-  line-height: 1.44;
-  font-weight: 400;
+  max-width: 760px;
+  line-height: 1.5;
   font-size: 1rem;
+  margin-top: 20px;
 }
 
 /* QUEM SOMOS */
-
 .quemSomos {
-  color: rgba(10, 57, 55, 1);
+  color: #0a3937;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,117 +60,107 @@ body {
   border: none;
 }
 
-.txt-quemSomos {
-  text-align: center;
-  max-width: 1113px;
-  line-height: 1.58;
-  margin: 50px auto 20px;
-  font-size: 16px;
-  font-family: "Inter";
-  font-weight: 400;
-}
-
 .quemSomos h2 {
   text-align: center;
   padding-top: 50px;
   font-weight: 600;
   font-size: 36px;
   margin-bottom: 20px;
-  font-family: "Inter";
 }
 
-/* PORQUE SUA DOAÇÃO IMPORTA */
+.txt-quemSomos {
+  text-align: center;
+  max-width: 1100px;
+  line-height: 1.6;
+  margin: 50px auto 20px;
+  font-size: 16px;
+}
 
-.doacao {
+/* DOAÇÃO */
+.doacao-importa {
+  width: 100%; 
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(62, 180, 174, 0.3);
-  margin-top: 70px;
+  justify-content: center;
+  background-color: rgba(62, 180, 174, 0.15);
+  padding: 80px 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-.doacao h2 {
-  text-align: center;
-  color: rgba(10, 57, 55, 1);
-  padding-top: 50px;
-  font-family: "Inter";
+.doacao-importa h2 {
+  color: #0a3937;
+  font-weight: 600;
+  font-size: 32px;
   margin-bottom: 20px;
 }
 
-.doacao hr {
+.doacao-importa hr {
   background-color: #3EB4AE;
-  width: 393px;
+  width: 380px;
   height: 5px;
   border: none;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .text-doacao {
-  text-align: center;
-  max-width: 1072px;
-  line-height: 1.5;
-  margin: 0 auto;
+  max-width: 950px;
+  line-height: 1.6;
   font-size: 18px;
-  font-family: "Inter";
-  font-weight: 400;
+  color: #0a3937;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
+/* Cards da explicação dentro da seção de doação */
 .container-cards {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  padding: 60px 80px;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+  box-sizing: border-box;
 }
 
 .card {
-  flex: 1;
   background-color: rgba(62, 180, 174, 0.15);
   border-radius: 16px;
-  box-sizing: border-box;
-  padding: 15px;
-  align-items: center;
+  padding: 20px;
   width: 260px;
-  height: 250px;
+  height: 260px;
+  text-align: center;
+}
+
+.card img {
+  width: 80px;
+  margin-bottom: 10px;
 }
 
 .title-card {
-  text-align: center;
-  font-size: 15px;
-  font-weight: 400;
-  font-family: "Inter";
-  color: rgba(10, 57, 55, 1);
+  font-size: 16px;
+  font-weight: 600;
+  color: #0a3937;
 }
 
 .txt-card {
   font-size: 14px;
+  color: #0a3937;
   text-align: justify;
-  font-weight: 400;
-  color: rgba(10, 57, 55, 1);
 }
 
-/* Seção dos dois cards */
+/* Cards de valores e formulário */
 .cont-cardsv {
   display: flex;
   gap: 80px;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 100px;
   padding: 40px 20px;
 }
 
-/* Título comum aos cards */
-.title-valor {
-  display: flex;
-  position: relative;
-  text-align: center;
-  margin-bottom: 25px;
-  font-weight: 600;
-  font-size: 28px;
-  color: #0a3937;
-}
-
-/* CARD 1 - Valores */
+/* CARD 1 */
 .card-valor {
   width: 410px;
   height: 540px;
@@ -187,11 +170,18 @@ body {
   background: #fff;
 }
 
+.title-valor {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 28px;
+  color: #0a3937;
+}
+
 .cont-valores {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px 90px;
-
   margin-bottom: 14px;
 }
 
@@ -205,7 +195,6 @@ body {
   display: flex;
   height: 51px;
   width: 122px;
-  border: 0;
   justify-content: center;
   align-items: center;
   border-radius: 6px;
@@ -218,10 +207,9 @@ body {
 
 .valores:hover {
   transform: translateY(-2px);
-border-color: 1px solid #0a3937;
+  border: 1px solid #0a3937;
 }
 
-/* Input e textos do card 1 */
 .input-valor {
   width: 320px;
   height: 60px;
@@ -239,17 +227,15 @@ border-color: 1px solid #0a3937;
   text-align: left;
   margin-top: 20px;
   padding-left: 32px;
-  font-weight: 400;
   color: #0a3937;
 }
 
 .txt-explica {
   font-size: 18px;
-  text-align: left;
   padding-left: 32px;
   max-width: 360px;
-  text-align: justify;
   color: #666;
+  text-align: justify;
 }
 
 /* CARD 2 */
@@ -266,20 +252,12 @@ border-color: 1px solid #0a3937;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  margin-top: 10px;
 }
+
 .form-dados label {
   font-size: 16px;
   color: #0a3937;
   font-weight: 600;
-}
-
-.form-dados > label:nth-of-type(1)::after,
-.form-dados > label:nth-of-type(2)::after,
-.form-dados > label:nth-of-type(3)::after {
-  content: "*";
-  color: red;
-  font-weight: bold;
 }
 
 .form-dados input {
@@ -309,21 +287,20 @@ border-color: 1px solid #0a3937;
   height: 48px;
   background-color: #3eb4ae;
   border: none;
-  padding: 12px 20px;
   border-radius: 5px;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: 0.3s ease;
 }
 
 .btn-pagamento:hover {
   background-color: #2b8d87;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* Termos e botão final */
 .termos {
   display: flex;
   align-items: flex-start;
@@ -348,7 +325,6 @@ border-color: 1px solid #0a3937;
   justify-content: center;
 }
 
-/* Botão */
 .btn-doacao {
   width: 280px;
   margin-top: 20px;
@@ -366,5 +342,4 @@ border-color: 1px solid #0a3937;
 .btn-doacao:hover {
   background-color: #2a8f8a;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
