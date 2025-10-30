@@ -1,0 +1,229 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #F5F5F5;
+}
+
+/* Navbar Lateral */
+.navbarProfile {
+    position: relative;
+    width: 250px;
+    background-color: #fff;
+    color: #09625D;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.navbar-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.253);
+    text-align: center;
+}
+
+.navbar-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+    margin-top: 40px;
+}
+
+.navbar-header h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #09625D;
+}
+
+.navBg{
+    width: 100%;
+    height: 100px;
+    background-color: #00000046;
+}
+
+.navProfile{
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    width: 70px;
+    height: 70px;
+    background-color: #09625D;
+    border-radius: 50px;
+}
+
+.nav-links {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.nav-item:hover {
+    background-color: #09625d57;
+    border-left: 4px solid #09625D;
+}
+
+.nav-item.active {
+    background-color: #09625dc2;
+    color: #fff;
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    width: 30px;
+    margin-right: 15px;
+}
+
+.nav-text {
+    font-size: 1rem;
+}
+
+/* Conteúdo Principal */
+.content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-header {
+    margin-top: -40px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+.content-body {
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .navbarProfile {
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        padding: 0;
+    }
+
+    .navbar-header {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex: 1;
+        padding: 0;
+        justify-content: space-around;
+    }
+
+    .nav-item {
+        flex-direction: column;
+        padding: 10px 5px;
+        border-left: none;
+        border-top: 4px solid transparent;
+        flex: 1;
+        text-align: center;
+    }
+
+    .nav-item:hover {
+        border-left: none;
+        border-top: 4px solid #3498db;
+    }
+
+    .nav-item.active {
+        border-left: none;
+        border-top: 4px solid #3498db;
+    }
+
+    .nav-icon {
+        margin-right: 0;
+        margin-bottom: 5px;
+        font-size: 1.4rem;
+    }
+
+    .nav-text {
+        font-size: 0.75rem;
+    }
+
+    .content {
+        padding: 20px;
+        padding-bottom: 90px;
+        /* Espaço para o navbar inferior */
+    }
+}
+
+/* OPCOES */
+
+.opcoesPerfil{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: left;
+}
+
+.option-btn {
+    margin: 10px 0 30px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    font-size: 1.1rem;
+  }
+
+  .option-btn:hover{
+    color: #09625D;
+    transition: 0.2s;
+  }
+
+  .opcao {
+    margin: 10px;
+    display: none;
+  }
+
+  .opcao.visivel {
+    display: block; 
+  }
+
+  .opcao label{
+    font-size: 1.1rem;
+    color: #000;
+  }
+
+  .opcao input{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 70%;
+    padding: 10px;
+    border: 2px solid #09625D;
+    border-radius: 8px;
+  }
+
+  .opcao p{
+    font-size: 0.8rem;
+    margin-top: -10px;
+    color: #333;
+  }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Admin ONG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../pages-css/perfilong.css">
+
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <!-- Navbar Lateral -->
+    <nav class="navbarProfile">
+        <div class="navbar-header">
+            <div class="navBg"></div>
+            <div class="navProfile"></div>
+            <h1>Raízes do Futuro</h1>
+            <h3>Painel Administrativo</h3>
+        </div>
+        <div class="nav-links">
+            <div class="nav-item active" data-content="perfil">
+                <i class="fas fa-user nav-icon"></i>
+                <span class="nav-text">Perfil</span>
+            </div>
+            <div class="nav-item" data-content="endereco">
+                <i class="fas fa-map-marker-alt nav-icon"></i>
+                <span class="nav-text">Endereço</span>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+
+        <div class="content-body">
+            <div id="perfil-content" class="content-section">
+
+                <div class="opcoesPerfil">
+                    <button onclick="mostrarOpcao('opcao1')" class="option-btn">Sobre</button>
+                    <button onclick="mostrarOpcao('opcao2')" class="option-btn">Vagas</button>
+                    <button onclick="mostrarOpcao('opcao3')" class="option-btn">Doações</button>
+
+                </div>
+
+                <div id="opcao1" class="opcao visivel">
+                    <label for="">Descrição</label><br>
+                    <input type="text"><br>
+                    <p>Descreva as principais finalidades e propósitos da ONG.</p>
+                </div>
+
+                <div id="opcao2" class="opcao">
+                    <label for="">Endereço</label><br>
+                    <input type="text"><br>
+
+                    <label for="">Email de Contato</label><br>
+                    <input type="text"><br>
+
+                    <label for="">Telefone</label><br>
+                    <input type="number"><br>
+                </div>
+
+            </div>
+
+            <div id="endereco-content" class="content-section" style="display: none;">
+
+            </div>
+
+        </div>
+    </main>
+
+    <script src="/src/js/main.js"></script>
+    <script>
+        // Navegação entre as seções
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function () {
+                // Remove a classe active de todos os itens
+                document.querySelectorAll('.nav-item').forEach(navItem => {
+                    navItem.classList.remove('active');
+                });
+
+                // Adiciona a classe active ao item clicado
+                this.classList.add('active');
+
+                // Obtém o conteúdo a ser exibido
+                const contentId = this.getAttribute('data-content') + '-content';
+
+                // Oculta todos os conteúdos
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                // Exibe o conteúdo selecionado
+                document.getElementById(contentId).style.display = 'block';
+
+                // Atualiza o título e descrição
+                updateContentHeader(this);
+            });
+        });
+        
+        function mostrarOpcao(id) {
+
+            document.querySelectorAll('.opcao').forEach(el => el.classList.remove('visivel'));
+
+            document.getElementById(id).classList.add('visivel');
+        }
+
+    </script>
+</body>
+
+</html>
