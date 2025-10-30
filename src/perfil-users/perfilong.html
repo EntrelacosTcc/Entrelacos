@@ -27,10 +27,27 @@
                 <i class="fas fa-user nav-icon"></i>
                 <span class="nav-text">Perfil</span>
             </div>
-            <div class="nav-item" data-content="endereco">
-                <i class="fas fa-map-marker-alt nav-icon"></i>
-                <span class="nav-text">Endereço</span>
+            <div class="nav-item" data-content="vagas">
+                <i class="fa-solid fa-table-list nav-icon"></i>
+                <span class="nav-text">Vagas</span>
             </div>
+            <div class="nav-item" data-content="doacoes">
+                <i class="fa-solid fa-hand-holding-heart nav-icon"></i>
+                <span class="nav-text">Doações</span>
+            </div>
+            <div class="nav-item" data-content="postagens">
+                <i class="fa-solid fa-images nav-icon"></i>
+                <span class="nav-text">Postagens</span>
+            </div>
+            <div class="nav-item" data-content="config">
+                <i class="fa-solid fa-gear nav-icon"></i>
+                <span class="nav-text">Configurações</span>
+            </div>
+            <div class="nav-item" data-content="sair">
+                <i class="fa-solid fa-right-from-bracket nav-icon"></i>
+                <span class="nav-text">Sair</span>
+            </div>
+            
 
         </div>
     </nav>
@@ -47,15 +64,18 @@
                     <button onclick="mostrarOpcao('opcao3', this)" class="option-btn">Doações</button>
                 </div>
 
-            <!------------- OPCAO PERFIL -------------->
+                <!------------- OPCAO INFOS-GERAIS -------------->
 
                 <div id="opcao1" class="opcao visivel">
 
                     <label for="">Descrição</label><br>
                     <input type="text"><br>
                     <p>Descreva as principais finalidades e propósitos da ONG.</p>
-                    
+
                 </div>
+
+
+                <!------------- OPCAO CONTATO -------------->
 
                 <div id="opcao2" class="opcao">
                     <label for="">Endereço</label><br>
@@ -68,11 +88,15 @@
                     <input type="number"><br>
                 </div>
 
+
+                <!------------- OPCAO MIDIAS SOCIAIS -------------->
+
+
             </div>
 
-            <div id="endereco-content" class="content-section" style="display: none;">
+            <!-- NAVBAR CONTENT 2 -->
 
-            </div>
+            <div id="endereco-content" class="content-section" style="display: none;"></div>
 
         </div>
     </main>
