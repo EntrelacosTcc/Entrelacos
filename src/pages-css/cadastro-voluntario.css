@@ -137,7 +137,7 @@ body{
 .centralized-items button{
     background-color: #8B2E5E;
     color: #fff;
-    width: 400px;
+    width: 200px;
     height: 50px;
     border: none;
     border-radius: 15px;
@@ -260,9 +260,6 @@ textarea{
     }
   }
 
-  /* ================================
-   RESPONSIVIDADE - até 820px
-================================ */
 @media (max-width: 820px) {
     body {
       display: flex;
@@ -273,6 +270,14 @@ textarea{
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      height: 120vh;
+    }
+
+    .cadastro-container{
+      margin-top: 19vh; margin-bottom: 19vh;
+      padding-top: 30px;
+      width: 110%;
+      overflow-y: scroll;
     }
   
     .container {
@@ -313,10 +318,7 @@ textarea{
       margin-top: 20px;
     }
   }
-  
-  /* ================================
-     RESPONSIVIDADE - até 480px
-  ================================ */
+
   @media (max-width: 480px) {
     body {
       padding: 20px;
