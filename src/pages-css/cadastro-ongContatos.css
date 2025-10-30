@@ -23,7 +23,7 @@ body{
 
 .cadastro-container {
     width: 400px; 
-    padding-top: 30vh;
+    padding-top: -190px;
 }
 
 .cadastro-container form{
@@ -93,7 +93,7 @@ body{
 .centralized-items button{
     background-color: #8B2E5E;
     color: #fff;
-    width: 150px;
+    width: 400px;
     height: 50px;
     border: none;
     border-radius: 15px;
