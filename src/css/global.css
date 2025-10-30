@@ -60,6 +60,7 @@ textarea {
   position: fixed;
   top: 0;
   left: 0;
+  height: 80px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -489,7 +490,7 @@ i {
   width: 120px;
   height: 120px;
   border-radius: 10px;
-  background-color: #a1a1a1;
+  background-image: url(../assets/img/raizesDoacao.webp);
   object-fit: cover;                
 }
 
@@ -574,6 +575,14 @@ i {
 
 .mobile-menu{
   display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
 }
 
 /*  */

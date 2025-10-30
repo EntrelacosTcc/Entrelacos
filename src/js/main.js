@@ -41,7 +41,7 @@ class VagaComponent extends HTMLElement {
         <div class="vagas">
             ${imagemHTML}
             <h3>${this.getAttribute('titulo')}</h3>
-            <h4>${this.getAttribute('ong')}</h4>
+            <a href="src/perfil-users/publicoong.html"><h4>${this.getAttribute('ong')}</h4></a>
             <div class="tags-vagas">
                 ${this.getCausas()}
             </div>
