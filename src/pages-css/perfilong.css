@@ -189,8 +189,10 @@ body {
     padding: 8px 12px;
     cursor: pointer;
     border: none;
-    background-color: #fff;
+    background: none;
     font-size: 1.1rem;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
   }
 
   .option-btn:hover{
@@ -218,7 +220,7 @@ body {
     height: 40px;
     width: 70%;
     padding: 10px;
-    border: 2px solid #09625D;
+    border: 2px solid #05625d;
     border-radius: 8px;
   }
 
@@ -227,3 +229,10 @@ body {
     margin-top: -10px;
     color: #333;
   }
+
+.option-btn.ativo {
+    border-bottom: 2px solid #05625d; /* cor do destaque */
+    font-weight: 600;
+    color: #05625d;
+}
+

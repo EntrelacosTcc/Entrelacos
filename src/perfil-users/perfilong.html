@@ -42,16 +42,19 @@
             <div id="perfil-content" class="content-section">
 
                 <div class="opcoesPerfil">
-                    <button onclick="mostrarOpcao('opcao1')" class="option-btn">Sobre</button>
-                    <button onclick="mostrarOpcao('opcao2')" class="option-btn">Vagas</button>
-                    <button onclick="mostrarOpcao('opcao3')" class="option-btn">Doações</button>
-
+                    <button onclick="mostrarOpcao('opcao1', this)" class="option-btn ativo">Sobre</button>
+                    <button onclick="mostrarOpcao('opcao2', this)" class="option-btn">Vagas</button>
+                    <button onclick="mostrarOpcao('opcao3', this)" class="option-btn">Doações</button>
                 </div>
 
+            <!------------- OPCAO PERFIL -------------->
+
                 <div id="opcao1" class="opcao visivel">
+
                     <label for="">Descrição</label><br>
                     <input type="text"><br>
                     <p>Descreva as principais finalidades e propósitos da ONG.</p>
+                    
                 </div>
 
                 <div id="opcao2" class="opcao">
@@ -102,12 +105,14 @@
                 updateContentHeader(this);
             });
         });
-        
-        function mostrarOpcao(id) {
 
+        function mostrarOpcao(id, botao) {
             document.querySelectorAll('.opcao').forEach(el => el.classList.remove('visivel'));
-
             document.getElementById(id).classList.add('visivel');
+
+
+            document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('ativo'));
+            botao.classList.add('ativo');
         }
 
     </script>
