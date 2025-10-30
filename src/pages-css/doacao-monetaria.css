@@ -343,3 +343,160 @@
   background-color: #2a8f8a;
   transform: translateY(-2px);
 }
+
+@media (max-width: 992px) {
+  .hero-txt h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-txt h2 {
+    font-size: 1.4rem;
+  }
+
+  .txt-quemSomos {
+    font-size: 15px;
+    padding: 0 20px;
+  }
+
+  .container-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    max-width: 320px;
+  }
+
+  .cont-cardsv {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-valor, .card-pay {
+    width: 90%;
+    height: auto;
+  }
+
+  .botoes-pagamento {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .btn-pagamento {
+    width: 100%;
+  }
+
+  .termos {
+    margin-top: 80px;
+  }
+}
+
+/* Celulares grandes (até 768px) */
+@media (max-width: 768px) {
+  .hero-img {
+    height: 320px;
+  }
+
+  .hero-txt h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-txt h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero-txt p {
+    font-size: 0.9rem;
+    padding: 0 20px;
+  }
+
+  .quemSomos hr,
+  .doacao-importa hr {
+    width: 200px;
+    height: 4px;
+  }
+
+  .doacao-importa h2 {
+    font-size: 26px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .card img {
+    width: 70px;
+  }
+
+  .card-valor {
+    padding: 20px;
+  }
+
+  .card-pay {
+    padding: 20px;
+  }
+
+  .txt-apoio, .txt-explica {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .input-valor {
+    width: 90%;
+  }
+
+  .btn-doacao {
+    width: 100%;
+  }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+  .hero-img {
+    height: 260px;
+  }
+
+  .hero-txt h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-txt h2 {
+    font-size: 1rem;
+  }
+
+  .txt-quemSomos {
+    font-size: 14px;
+  }
+
+  .doacao-importa h2 {
+    font-size: 22px;
+  }
+
+  .text-doacao {
+    font-size: 15px;
+  }
+
+  .valores {
+    width: 100px;
+    height: 45px;
+  }
+
+  .cont-valores {
+    gap: 20px 40px;
+  }
+
+  .termos {
+    font-size: 11px;
+  }
+
+  .btn-pagamento {
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .btn-doacao {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
