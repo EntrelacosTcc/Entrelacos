@@ -59,18 +59,31 @@
             <div id="perfil-content" class="content-section">
 
                 <div class="opcoesPerfil">
-                    <button onclick="mostrarOpcao('opcao1', this)" class="option-btn ativo">Sobre</button>
-                    <button onclick="mostrarOpcao('opcao2', this)" class="option-btn">Vagas</button>
-                    <button onclick="mostrarOpcao('opcao3', this)" class="option-btn">Doações</button>
+                    <button onclick="mostrarOpcao('opcao1', this)" class="option-btn ativo">Informações Gerais</button>
+                    <button onclick="mostrarOpcao('opcao2', this)" class="option-btn">Contato</button>
                 </div>
 
                 <!------------- OPCAO INFOS-GERAIS -------------->
 
                 <div id="opcao1" class="opcao visivel">
 
-                    <label for="">Descrição</label><br>
-                    <input type="text"><br>
-                    <p>Descreva as principais finalidades e propósitos da ONG.</p>
+                    <label for="">Descrição</label>
+                    <input type="text">
+                    <p>Descreva as principais finalidades e propósitos da ONG.</p><br>
+
+                    <label for="">Causas de Atuação</label>
+                    <select name="" id=""></select>
+                    <p>OBS: Escolha até três causas que representem o foco principal da atuação da ONG</p><br>
+
+                    <label for="">Classificação</label>
+                    <select name="" id=""></select>
+                    <p>Como sua ONG se classifica?</p><br>
+
+                    <label for="">Endereço</label>
+                    <input type="text">
+                    <p>[  ]Permitir a exibição do endereço na página da ONG</p><br>
+
+                    <button>Salvar alterações</button>
 
                 </div>
 
@@ -78,14 +91,20 @@
                 <!------------- OPCAO CONTATO -------------->
 
                 <div id="opcao2" class="opcao">
-                    <label for="">Endereço</label><br>
-                    <input type="text"><br>
+                    <label for="">Telefone</label>
+                    <input type="number">
+                    <p>Preencha com um número de WhatsApp para facilitar sua comunicação com os voluntários</p><br>
 
-                    <label for="">Email de Contato</label><br>
-                    <input type="text"><br>
+                    <label for="">Email de Contato</label>
+                    <input type="text">
+                    <p>Utilize um email de contato ativo</p><br>
 
-                    <label for="">Telefone</label><br>
-                    <input type="number"><br>
+                    <label for="">Instagram</label>
+                    <input type="text">
+                    <p></p><br>
+
+                    <button>Salvar alterações</button>
+
                 </div>
 
 
