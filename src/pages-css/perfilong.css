@@ -146,7 +146,6 @@ body {
     display: none;
     flex-direction: column;
     height: 100%;
-    /* opcional, mas ajuda se o container tiver altura fixa */
 }
 
 .opcao.visivel {
@@ -254,7 +253,6 @@ body {
     .content {
         padding: 20px;
         padding-bottom: 90px;
-        /* Espaço para o navbar inferior */
     }
 
     .content-body {
