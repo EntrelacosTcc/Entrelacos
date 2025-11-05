@@ -115,6 +115,11 @@ body {
     box-shadow: 0 4px 6px #09625d3b;
 }
 
+.content-section h2{
+    margin: 15px 10px;
+    font-weight: 200;
+    font-size: 1.6rem;
+}
 
 /* OPCOES */
 
@@ -131,7 +136,7 @@ body {
     cursor: pointer;
     border: none;
     background: none;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     border-bottom: 2px solid transparent;
     transition: 0.3s;
 }
@@ -180,7 +185,7 @@ body {
     color: #05625d;
 }
 
-.opcao button {
+.btnSalvar, .createForm {
     align-self: flex-end;
     margin-top: auto;
     padding: 10px 16px;
@@ -191,6 +196,14 @@ body {
     cursor: pointer;
 }
 
+.create-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.createForm{
+    font-size: 1rem;
+}
 
 /* Responsividade */
 @media (max-width: 825px) {
@@ -232,12 +245,12 @@ body {
 
     .nav-item:hover {
         border-left: none;
-        border-top: 4px solid #3498db;
+        border-top: 4px solid #09625D;
     }
 
     .nav-item.active {
         border-left: none;
-        border-top: 4px solid #3498db;
+        border-top: 4px solid #09625D;
     }
 
     .nav-icon {
@@ -262,6 +275,11 @@ body {
     .opcao input,
     .opcao select {
         width: 100%;
+    }
+
+    .option-btn{
+        gap: 0;
+        font-size: 1.1rem;
     }
 
 }
