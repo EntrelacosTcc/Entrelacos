@@ -3,25 +3,47 @@
     padding: 0;
 }
 
-body{
+body {
     display: flex;
+    overflow: hidden; /* impede o body de rolar */
+    height: 100vh;
 }
 
-.right-side { 
-    max-height: 100vh;
-    overflow-y:scroll;
+
+.left-side {
     width: 50%;
-    min-height: 100vh;
+    height: 100vh;
+    background-image: url(../assets/img/login-bc.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    box-sizing: border-box;
-    padding: 40px;
+    align-items: center;
+    color: #fff;
+    position: fixed; 
+    top: 0;
+    left: 0;
 }
+
+.right-side {
+    width: 50%;
+    margin-left: 50%; 
+    height: 100vh;
+    overflow-y: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 60px 40px;
+}
+
+
 
 .cadastro-container {
     width: 400px; 
-    padding-top: -190px;
+    top: 190px;
     
 }
 
@@ -152,19 +174,23 @@ textarea{
 
 /* LEFT SIDE */
 
-.left-side{
+.left-side {
     width: 50%;
-    min-height: 100vh;
-    max-height: 100vh;
+    height: 100vh;
     background-image: url(../assets/img/login-bc.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
+    position: fixed; 
+    top: 0;
+    left: 0;
 }
+
 
 .left-side h2{
     font-size: 2.8rem;
