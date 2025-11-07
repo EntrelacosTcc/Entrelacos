@@ -469,6 +469,7 @@ i {
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 0.75rem;
+  width: fit-content;
 }
 
 /* PEDIDO DE DOACAO */
