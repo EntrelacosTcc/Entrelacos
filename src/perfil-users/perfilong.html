@@ -47,7 +47,7 @@
                 <i class="fa-solid fa-right-from-bracket nav-icon"></i>
                 <span class="nav-text">Sair</span>
             </div>
-            
+
 
         </div>
     </nav>
@@ -69,19 +69,20 @@
 
                     <label for="">Descrição</label>
                     <input type="text">
-                    <p>Descreva as principais finalidades e propósitos da ONG.</p><br>
+                    <p class="inputP">Descreva as principais finalidades e propósitos da ONG.</p><br>
 
                     <label for="">Causas de Atuação</label>
                     <select name="" id=""></select>
-                    <p>OBS: Escolha até três causas que representem o foco principal da atuação da ONG</p><br>
+                    <p class="inputP">OBS: Escolha até três causas que representem o foco principal da atuação da ONG
+                    </p><br>
 
                     <label for="">Classificação</label>
                     <select name="" id=""></select>
-                    <p>Como sua ONG se classifica?</p><br>
+                    <p class="inputP">Como sua ONG se classifica?</p><br>
 
                     <label for="">Endereço</label>
                     <input type="text">
-                    <p>[  ]Permitir a exibição do endereço na página da ONG</p><br>
+                    <p class="inputP">[ ]Permitir a exibição do endereço na página da ONG</p><br>
 
                     <button class="btnSalvar">Salvar alterações</button>
 
@@ -93,15 +94,16 @@
                 <div id="opcao2" class="opcao">
                     <label for="">Telefone</label>
                     <input type="number">
-                    <p>Preencha com um número de WhatsApp para facilitar sua comunicação com os voluntários</p><br>
+                    <p class="inputP">Preencha com um número de WhatsApp para facilitar sua comunicação com os
+                        voluntários</p><br>
 
                     <label for="">Email de Contato</label>
                     <input type="text">
-                    <p>Utilize um email de contato ativo</p><br>
+                    <p class="inputP">Utilize um email de contato ativo</p><br>
 
                     <label for="">Instagram</label>
                     <input type="text">
-                    <p></p><br>
+                    <p class="inputP"></p><br>
 
                     <button class="btnSalvar">Salvar alterações</button>
 
@@ -128,14 +130,18 @@
                                 <p>Data de Criação</p>
                                 <div class="status-vaga">Status</div>
                             </div>
-                            <button id="gerenciamento-btn" class="gerenciarBtn nav-item" data-content="gerenciamento">Gerenciar</button>
+                            <button id="gerenciamento-btn" class="gerenciarBtn nav-item"
+                                data-content="gerenciamento">Gerenciar</button>
                         </div>
 
                     </div>
 
                 </div>
-            
+
             </div>
+
+
+            <!------------------------ VAGAS GERENCIAMENTO ---------------->
 
             <div id="gerenciamento-content" class="content-section" style="display: none;">
                 <div class="gerenciamento-header">
@@ -150,13 +156,92 @@
                 <div class="main-vaga">
                     <div class="main-vagaImg"></div>
                     <div class="main-vagaDetails">
-                        <h2>Nome Vaga</h2>
-                        <p>Detalhes da vaga</p>
+                        <h2>Alimentação de Animais de Rua</h2>
+                        <p>Alimentar animais de rua é um ato de cuidado. Precisamos de voluntários para ajudar a oferecer ração e água a cães e gatos abandonados.</p>
                         <div class="causa">Animal</div>
                     </div>
                 </div>
-                
-                
+
+                <div class="vagas-informacoes">
+
+                    <h3 class="vagaTitle">Sobre a vaga:</h3>
+                    <p class="sobreVagaTxt">O voluntário atua alimentando cães e gatos em situação de rua, garantindo
+                        água limpa e ração em
+                        pontos estratégicos da comunidade. Além do cuidado básico, observa sinais de doenças ou
+                        ferimentos
+                        e pode encaminhar os animais para atendimento. A ação pode ocorrer em praças, ruas, feiras ou
+                        próximos a instituições parceiras.
+                    </p>
+
+                    <div class="vaga-li">
+                        <div class="vaga-li-content">
+                            <i class="fa-solid fa-circle circleVaga"></i>
+                            <span>Atuação: </span>
+                            <p>Presencial</p>
+                        </div>
+                        <div class="vaga-li-content">
+                            <i class="fa-solid fa-circle circleVaga"></i>
+                            <span>Frequência: </span>
+                            <p>Pontual</p>
+                        </div>
+                    </div>
+
+                    <h3 class="vagaTitle">O que será realizado:</h3>
+
+                    <div class="vaga-li-content">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Alimentar cães e gatos de rua com ração</p>
+                    </div>
+                    <div class="vaga-li-content">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Oferecer sachê para animais desidratados</p>
+                    </div>
+                    <div class="vaga-li-content">
+                        <i class="fa-solid fa-check"></i>
+                        <p>Se necessário, acolher animais necessitados e levá-los até nossa ONG</p>
+                    </div>
+
+                    <h3 class="vagaTitle">Requisitos:</h3>
+
+                    <div class="vaga-li-content">
+                        <i class="fa-solid fa-circle circleVaga"></i>
+                        <p>Ter um cuidado maior com animais assustados</p>
+                    </div>
+                    <div class="vaga-li-content">
+                        <i class="fa-solid fa-circle circleVaga"></i>
+                        <p>Ter paciência e empatia eplos animais.</p>
+                    </div>
+
+
+                    <div class="datasVaga-container">
+                        <h3 class="vagaTitle">Datas Disponíveis</h3>
+
+                        <div class="datasVaga-content">
+
+                            <button class="dataBtn">22/10</button>
+                            <button class="dataBtn">23/10</button>
+                            <button class="dataBtn">24/10</button>
+
+
+                            <div class="vaga-li-content">
+                                <span>Endereço: </span>
+                                <p>Rua Amarindo de Oliveira, 998 - SP</p>
+                            </div>
+                            <div class="vaga-li-content">
+                                <span>Horário: </span>
+                                <p>Das 9:00 às 13:00</p>
+                            </div>
+                            <div class="vaga-li-content">
+                                <span>Voluntários Inscritos: </span>
+                                <p>7/15</p>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
             </div>
 
 
@@ -170,7 +255,7 @@
                     <button class="createForm">+ Criar Novo Pedido</button>
 
                 </div>
-            
+
             </div>
 
 

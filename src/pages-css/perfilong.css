@@ -173,7 +173,7 @@ body {
     border-radius: 8px;
 }
 
-.opcao p {
+.inputP {
     font-size: 0.8rem;
     margin-top: -10px;
     color: #333;
@@ -270,29 +270,29 @@ body {
 
 /* DETALHES DA VAGA */
 
-.gerenciamento-header{
+.gerenciamento-header {
     display: flex;
-   align-items: center;
-   justify-content: left;
+    align-items: center;
+    justify-content: left;
 }
 
-.gerenciamento-title{
+.gerenciamento-title {
     display: flex;
     align-items: center;
     flex: 1;
 }
 
-.gerenciamento-title i{
+.gerenciamento-title i {
     max-width: 50px;
 }
 
-.gerenciamento-title i:hover{
+.gerenciamento-title i:hover {
     color: #09625D;
     background: none;
     transition: 0.2s;
 }
 
-.cancelVagaBtn{
+.cancelVagaBtn {
     padding: 5px 15px;
     height: fit-content;
     border: 2px solid rgb(255, 72, 72);
@@ -301,36 +301,119 @@ body {
     color: red;
 }
 
-.main-vaga{
+.main-vaga {
     padding: 10px 30px 30px;
     display: flex;
     gap: 50px;
-    border-bottom: 2px solid #09625D;
 }
 
-.main-vagaImg{
+.main-vagaImg {
     height: 170px;
     width: 250px;
     background-color: #00000041;
+    border-radius: 15px;
+    flex-shrink: 0;
 }
 
-.main-vagaDetails{
+.main-vagaDetails {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.main-vagaDetails h2{
+.main-vagaDetails h2 {
     margin: 0;
 }
 
+.vaga-option {
+    font-size: 1.2rem;
+}
+
+.vagas-informacoes{
+    margin-top: 20px;
+}
+
+.vagaTitle {
+    width: 100%;
+    border-bottom: 2px solid #09625D;
+    color: #09625D;
+    padding-bottom: 5px;
+    margin: 20px 0 25px;
+    font-size: 1.4rem;
+    font-weight: 100;
+}
+
+.sobreVagaTxt {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.vaga-li{
+    display: flex;
+    gap: 50px;
+}
+
+.vaga-li-content{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.vaga-li-content i{
+    color: #09625D;
+}
+
+.circleVaga{
+    font-size: 8px;
+}
+
+.vaga-li-content span {
+    color: #09625D;
+}
+
+.datasVaga-container{
+    margin-top: 40px;
+    width: 100%;
+    border: 2px solid #09625D;
+    border-radius: 10px;
+}
+
+.datasVaga-container h3{
+    margin: 0;
+    padding: 10px 5px;
+    font-size: 1.3rem;
+}
+
+.datasVaga-content{
+    padding: 10px;
+}
+
+.dataBtn{
+    margin-bottom: 10px;
+    padding: 5px 8px;
+    color: #09625D;
+    background-color: #C3F4EE;
+    border: 1px solid #09625D;
+    border-radius: 5px;
+}
+
+.dataBtn:hover{
+    background-color: #158a84;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.datasVaga-content .vaga-li-content{
+    margin-bottom: 5px;
+}
 
 
 /* Responsividade */
 
-@media (max-width: 980px){
+@media (max-width: 980px) {
 
-    .vagas-container{
+    .vagas-container {
         display: flex;
         justify-content: center;
         align-items: center;
