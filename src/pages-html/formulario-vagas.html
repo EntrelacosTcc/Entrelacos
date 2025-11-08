@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png">
+  <title>Informações sobre a Vaga</title>
+   <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href= "../pages-css/formulario-vagas.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="form-container">
+    <h2>Informações sobre a Vaga</h2>
+    <p class="subtitle">Preencha as informações sobre a vaga a ser criada</p>
+
+    <label for="nome">Nome da vaga</label>
+    <input type="text" id="nome" placeholder="Insira um nome simples e objetivo.">
+
+    <label for="visao">Visão Geral</label>
+    <textarea id="visao" placeholder="Descreva as principais finalidades e objetivos da vaga."></textarea>
+
+    <label for="sobre">Sobre a vaga</label>
+    <textarea id="sobre" placeholder="Descreva em mais detalhes a função e seu propósito."></textarea>
+
+    <div class="image-section">
+      <label>Imagem da Vaga</label>
+      <div class="image-preview" id="imagePreview" onclick="document.getElementById('fileInput').click()">
+        <span>Clique para adicionar uma imagem</span>
+        <img id="previewImg" src="" alt="" style="display:none;">
+      </div>
+      <input type="file" id="fileInput" accept="image/*">
+      <p class="small-text">Adicione uma imagem que represente visualmente esta vaga.</p>
+    </div>
+
+    <div class="causas">
+      <label for="causas">Causas de atuação da Vaga</label>
+      <select id="causas">
+        <option selected disabled>Selecionar</option>
+        <option>Animal</option>
+        <option>Meio Ambiente</option>
+        <option>Educação</option>
+        <option>Social</option>
+        <option>Saúde</option>
+        <option>Cultura</option>
+        <option>Humanitária</option>
+        <option>Religiosa</option>
+        <option>Mulheres</option>
+        <option>LGBTQIAP+</option>
+        <option>Crianças e adolescentes</option>
+        <option>Idosos</option>
+        <option>PCD</option>
+
+      </select>
+    </div>
+
+    <label for="responsavel">Responsável pela vaga</label>
+    <input type="text" id="responsavel" placeholder="Nome do responsável.">
+
+    <div class="button-container">
+      <button>Seguinte</button>
+    </div>
+  </div>
+   
+    <script src="../js/main.js"></script>
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const previewImg = document.getElementById('previewImg');
+    const imagePreview = document.getElementById('imagePreview');
+
+    fileInput.addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function() {
+          previewImg.src = reader.result;
+          previewImg.style.display = 'block';
+          imagePreview.querySelector('span').style.display = 'none';
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+  
+</body>
+</html>
