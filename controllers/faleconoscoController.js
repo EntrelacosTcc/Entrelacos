@@ -1,4 +1,4 @@
-const Faleconosco = require('../models/Faleconosco'); // ← Note o "c" minúsculo
+const Faleconosco = require('../models/Faleconosco'); 
 
 exports.createMensagem = (req, res) => {
   console.log('📩 Dados recebidos:', req.body);
