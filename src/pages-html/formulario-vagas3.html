@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png">
+    <title>Informações Vagas</title>
+    <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href= "../pages-css/formulario-vagas.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+<div class="form-container">
+  <h2>Informações sobre a Vaga</h2>
+  <p class="subtitle">Preencha as informações sobre a vaga a ser criada</p>
+
+  
+  <label>Tarefas do Voluntário:</label>
+  <p class="small-text">Liste as funções que serão realizadas pelo voluntário.</p>
+  <input type="text" id="input-tarefa" placeholder="Escreva aqui" />
+  <ul id="lista-tarefas" class="lista-itens"></ul>
+
+  
+  <label>Requisitos</label>
+  <p class="small-text">Liste quais são os requisitos aos voluntários para que realizem a atividade.</p>
+  <input type="text" id="input-requisito" placeholder="Escreva aqui" />
+  <ul id="lista-requisitos" class="lista-itens"></ul>
+
+  
+  <label>Classificação etária da vaga</label>
+  <p class="small-text">Selecione uma das opções abaixo</p>
+
+  <div class="classificacao-container">
+    <div class="classificacao-box">
+      <i class="fas fa-users"></i>
+      <strong>Voluntariado Familiar</strong>
+      <p class="small-text">Menores de 18 anos podem participar, desde que acompanhados por um responsável adulto.</p>
+    </div>
+
+    <div class="classificacao-box">
+      <i class="fas fa-user-tie"></i>
+      <strong>Destinada a maiores de 18 anos</strong>
+      <p class="small-text">Esta vaga é exclusiva para voluntários com 18 anos ou mais.</p>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button id="">Criar vaga</button>
+  </div>
+</div>
+
+    <script src="../js/main.js"></script>
+<script>
+  function adicionarItem(inputId, listaId) {
+    const input = document.getElementById(inputId);
+    const lista = document.getElementById(listaId);
+    const texto = input.value.trim();
+
+    if (texto !== "") {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <span><i class="fas fa-check"></i> ${texto}</span>
+        <span class="remove">&times;</span>
+      `;
+      lista.appendChild(li);
+      input.value = "";
+
+      li.querySelector(".remove").addEventListener("click", () => {
+        li.remove();
+      });
+    }
+  }
+
+  document.getElementById("input-tarefa").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      adicionarItem("input-tarefa", "lista-tarefas");
+    }
+  });
+
+  document.getElementById("input-requisito").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      adicionarItem("input-requisito", "lista-requisitos");
+    }
+  });
+</script>
+
+
+
+</body>
+</html>

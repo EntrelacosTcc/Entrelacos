@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png">
+    <title>Informações Vagas</title>
+    <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href= "../pages-css/formulario-vagas.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+    <div class="form-container">
+  <h2>Informações sobre a Vaga</h2>
+  <p class="subtitle">Preencha as informações sobre a vaga a ser criada</p>
+
+ 
+  <label>Formato de Trabalho</label>
+  <p class="small-text">Selecione uma das opções abaixo</p>
+  <div class="radio-group">
+    <label class="radio-option">
+      <input type="radio" name="formato" value="presencial">
+      <span>Presencial</span>
+    </label>
+    <label class="radio-option">
+      <input type="radio" name="formato" value="remoto">
+      <span>Remoto</span>
+    </label>
+  </div>
+
+
+  <label>Disponibilidade</label>
+  <p class="small-text">Selecione uma das opções abaixo</p>
+
+  <div class="option-box">
+    <label class="option-item">
+      <input type="radio" name="disponibilidade" value="pontual">
+      <div>
+        <strong>Pontual</strong>
+        <p>Essa opção é ideal para quem deseja contribuir de forma ocasional, participando de ações específicas sem a necessidade de um compromisso contínuo.</p>
+      </div>
+    </label>
+  </div>
+
+
+  <div class="option-box">
+    <label class="option-item">
+      <input type="radio" name="disponibilidade" value="recorrente">
+      <div>
+        <strong>Recorrente</strong>
+        <p>Essa opção permite encontros regulares, como semanais ou mensais, garantindo continuidade no apoio e maior envolvimento com o projeto.</p>
+
+        <div class="inline-fields">
+          <div>
+            <label>Frequência</label>
+            <select>
+              <option></option>
+              <option>Diário</option>
+              <option>Semanal</option>
+              <option>Mensal</option>
+            </select>
+          </div>
+          <div>
+            <label>&nbsp;</label>
+            <select>
+                 <option></option>
+              <option>1 vez</option>
+              <option>2 vezes</option>
+              <option>3 vezes</option>
+              <option>4 vezes</option>
+              <option>5 vezes ou +</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="inline-fields">
+          <div>
+            <label>Carga horária</label>
+            <select>
+                 <option></option>
+                <option>1 Hora</option>
+                 <option>2 Horas</option>
+                  <option>3 Horas</option>
+                   <option>4 Horas</option>
+                     <option>5 Horas</option>
+                      <option>6 Horas</option>
+                       <option>7 Horas</option>
+                        <option>8 Horas ou +</option>
+            </select>
+          </div>
+          <div>
+            <label>&nbsp;</label>
+            <select>
+                <option></option>
+              <option>Horário flexível</option>
+              <option>Horário fixo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="inline-fields">
+          <div>
+            <label>Início</label>
+            <input type="date" >
+          </div>
+          <div>
+            <label>Término</label>
+            <input type="date" >
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
+
+  <div class="button-container">
+    <button>Seguinte</button>
+  </div>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>
