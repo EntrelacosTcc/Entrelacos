@@ -121,17 +121,17 @@
                     <h2>Vagas</h2>
                     <button class="createForm">+ Criar Nova Vaga</button>
 
-                    <div class="vagas-container">
+                    <div class="vagasDoacoes-container">
 
-                        <div class="vaga-box">
+                        <div class="vagaDoacao-box">
                             <div class="vagaImage"></div>
-                            <div class="vagaInfo">
+                            <div class="vagaDoacaoInfo">
                                 <h3>Nome da Vaga</h3>
                                 <p>Data de Criação</p>
-                                <div class="status-vaga">Status</div>
+                                <div class="status-vagaDoacao">Status</div>
                             </div>
                             <button id="gerenciamento-btn" class="gerenciarBtn nav-item"
-                                data-content="gerenciamento">Gerenciar</button>
+                                data-content="gerenciamentoVaga">Gerenciar</button>
                         </div>
 
                     </div>
@@ -143,9 +143,9 @@
 
             <!------------------------ VAGAS GERENCIAMENTO ---------------->
 
-            <div id="gerenciamento-content" class="content-section" style="display: none;">
-                <div class="gerenciamento-header">
-                    <div class="gerenciamento-title">
+            <div id="gerenciamentoVaga-content" class="content-section" style="display: none;">
+                <div class="gerenciamentoVaga-header">
+                    <div class="gerenciamentoVaga-title">
                         <i class="fa-solid fa-arrow-left nav-item" data-content="vagas" style="font-size: 22px;"></i>
                         <h2>Detalhes da vaga</h2>
                     </div>
@@ -257,6 +257,21 @@
 
                     <h2>Pedidos de Doação</h2>
                     <button class="createForm">+ Criar Novo Pedido</button>
+
+                    <div class="vagasDoacoes-container">
+
+                        <div class="vagaDoacao-box">
+                            <div class="doacaoImage"></div>
+                            <div class="vagaDoacaoInfo">
+                                <h3>Nome do Pedido de Doacao</h3>
+                                <p>Itens necessários: Ração / Mantas / Fórmula PetMilk / Produtos de limpeza</p>
+                                <div class="status-vagaDoacao">Status</div>
+                            </div>
+                            <button id="gerenciamento-btn" class="gerenciarBtn nav-item gerenciarDoacao"
+                                data-content="gerenciamentoDoacao">Gerenciar</button>
+                        </div>
+
+                    </div>
 
                 </div>
 

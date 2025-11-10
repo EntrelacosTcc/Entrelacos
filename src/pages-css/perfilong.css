@@ -209,8 +209,9 @@ body {
 
 /* VAGAS - CONTAINER */
 
-.vagas-container {
+.vagasDoacoes-container {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     margin: 20px 0;
     padding: 30px;
@@ -218,11 +219,12 @@ body {
     height: fit-content;
 }
 
-.vaga-box {
+.vagaDoacao-box {
     display: flex;
     gap: 10px;
     width: 100%;
     height: 140px;
+    min-height: fit-content;
     border: 2px solid #09625D;
     border-radius: 10px;
 }
@@ -232,9 +234,20 @@ body {
     width: 190px;
     background-color: #00000054;
     border-radius: 8px 0 0 8px;
+    flex-shrink: 0;
 }
 
-.vagaInfo {
+.doacaoImage {
+    margin: auto 15px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 1px solid #09625D;
+    flex-shrink: 0;
+    background-color: #00000054;
+}
+
+.vagaDoacaoInfo {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -243,7 +256,7 @@ body {
     flex-grow: 1;
 }
 
-.vagaInfo p {
+.vagaDoacaoInfo p {
     flex-grow: 1;
 }
 
@@ -257,7 +270,12 @@ body {
     color: #09625D;
 }
 
-.status-vaga {
+.gerenciarDoacao{
+    background: none;
+    color: #09625D;
+}
+
+.status-vagaDoacao {
     border: 1px solid #09625D;
     border-radius: 15px;
     color: #09625D;
@@ -421,13 +439,13 @@ body {
 
 @media (max-width: 980px) {
 
-    .vagas-container {
+    .vagasDoacoes-container {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .vaga-box {
+    .vagaDoacao-box {
         flex-direction: column;
         height: fit-content;
         width: 230px;
@@ -441,7 +459,7 @@ body {
         border-radius: 8px 8px 0 0;
     }
 
-    .vagaInfo {
+    .vagaDoacaoInfo {
         flex-direction: column;
         align-items: center;
         margin: 0;
@@ -452,7 +470,7 @@ body {
         margin-top: -7px;
     }
 
-    .status-vaga {
+    .status-vagaDoacao {
         margin-top: 10px;
     }
 
