@@ -303,11 +303,88 @@
                                 data-content="gerenciamentoDoacao">Gerenciar</button>
                         </div>
 
-                    </div>
+                        </div>
 
-                </div>
+                        </div>
 
-            </div>
+                        </div>
+ 
+                        <!-------------- DOACOES -------------->
+
+<div id="postagens-content" class="content-section" style="display: none;">
+
+  <!-- <div class="create-content">
+    <h2></h2>
+    <button id="btn-open-modal" class="btn-primary">
+      <i class="fa-solid fa-pen-to-square"></i> Criar Nova Postagem
+    </button>
+  </div> -->
+
+   <!-- FEED -->
+      <section id="feedView" class="feed-section margem-global">
+        <h2>Postagens</h2>
+        <div class="container-button">
+        <button id="btn-open-modal" class="btn-primary">
+          <i class="fa-solid fa-pen-to-square"></i> Fazer Postagem
+        </button>
+</div>
+        <div id="posts" class="posts" aria-live="polite"></div>
+      </section>
+
+
+      </section>
+    </main>
+
+    <!-- Modal de criar postagem -->
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card" role="document">
+        <h3>Criar nova postagem</h3>
+
+        <div class="post-options" role="tablist">
+          <div class="post-option active" data-type="text" tabindex="0">Texto</div>
+          <div class="post-option" data-type="image" tabindex="0">Imagem</div>
+        </div>
+
+        <!-- Texto -->
+        <div id="text-post" class="post-type">
+          <textarea id="post-content" rows="4" placeholder="Divida suas experiências e inspire outros membros da comunidade..."></textarea>
+          <div class="modal-note">
+            <strong>Observação:</strong> Compartilhe seus projetos, ideias e histórias — sua iniciativa pode inspirar muitas pessoas!💫
+          </div>
+        </div>
+
+        <!-- Imagem -->
+        <div id="image-post" class="post-type hidden">
+          <p>Selecione uma imagem:</p>
+
+          <div class="image-upload">
+            <label for="post-image" class="file-label">
+              <i class="fa-solid fa-image"></i> Escolher imagem
+            </label>
+            <input type="file" id="post-image" accept="image/*" hidden />
+          </div>
+
+          <div id="image-preview" class="image-preview hidden" aria-hidden="true">
+            <img id="preview-img" src="" alt="Prévia da imagem" />
+            <button id="remove-image" class="remove-img" title="Remover imagem">×</button>
+          </div>
+
+          
+      <textarea id="image-caption" rows="3" placeholder="(Opcional) Escreva algo sobre sua imagem..."></textarea>
+        
+    <div class="modal-note">
+            <strong>Observação:</strong> Compartilhe seus projetos, ideias e histórias — sua iniciativa pode inspirar muitas pessoas!💫
+          </div>
+    </div>
+
+        <div class="modal-actions">
+          <button id="btn-cancel" class="btn-secondary">Cancelar</button>
+          <button id="btn-post" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Publicar</button>
+        </div>
+      </div>
+    </div>
+</div>
+
 
 
         </div>

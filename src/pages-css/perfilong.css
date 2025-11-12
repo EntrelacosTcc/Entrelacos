@@ -510,6 +510,317 @@ label {
     margin-top: 15px;
 }
 
+/* css postagem */
+.feed-section {
+  padding: 40px 0;
+}
+
+.feed-section h2 {
+  color: var(--purple-dark);
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.btn-primary {
+  background: #09625d;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  margin-bottom: 30px;
+}
+
+.btn-primary:hover {
+  background: #3eb4ae;
+}
+
+.container-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/* Posts */
+.posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza as postagens no meio */
+  gap: 20px;
+  width: 750px; 
+  margin: 0 auto; /* garante centralização */
+}
+
+
+.post {
+  background: #d1ecea5f;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #abe2df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  color: #05625d;
+  font-weight: bold;
+}
+
+.post-author {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #05625d;
+}
+
+.post-date {
+  color: grey;
+  font-size: 0.9rem;
+}
+
+.post-content {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.post-image {
+  max-width: 700px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: center; /* centraliza o grupo */
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+  margin-top: 10px;
+  position: relative; /* permite posicionar o like */
+}
+
+/* Like separado na esquerda */
+.post-action.like-action {
+  position: absolute;
+  left: 0; /* encosta o like na borda esquerda */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: gray;
+  transition: color 0.3s;
+}
+
+/* Estilos padrão pros outros botões */
+.post-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: gray;
+  transition: color 0.3s;
+  min-width: 70px;
+  padding: 5px 0;
+}
+
+.post-action i {
+  font-size: 1.4rem;
+  width: 20px;
+  text-align: left;
+}
+
+.post-action span {
+  display: inline-block;
+  width: 28px;
+  margin-left: 5px;
+  text-align: left;
+}
+
+.post-action:hover {
+  color: #09625D;
+}
+
+.post-action.active,
+.post-action.active i {
+  color: #ED3333;
+}
+
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  margin-top: 60px;
+  max-width: 600px;
+  max-height: 80vh;      
+  overflow-y: auto;      
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.modal-card h3 {
+  color: var(--purple-dark);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.post-options {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-option {
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.post-option.active {
+  background: #05625d;
+  color: #fff;
+  font-weight: 600;
+}
+
+.modal textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+  resize: none;
+  font-family: inherit;
+}
+
+.image-upload {
+  margin-top: 15px;
+}
+
+.file-label {
+  display: inline-block;
+  background: #3eb4ae;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.file-label:hover {
+  background: #05625d;
+}
+
+.image-preview {
+  margin-top: 15px;
+  position: relative;
+}
+
+.image-preview img {
+  width: 100%;
+  border-radius: 8px;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.remove-img {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.modal-note {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.btn-secondary {
+  background: #ddd;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 100px;
+  cursor: pointer;
+  height: 40px;
+}
+
+
+/* Quebra de texto */
+.posts p,
+.posts div {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
 /* RESPONSIVIDADE */
 
 @media (max-width: 980px) {
