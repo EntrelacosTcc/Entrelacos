@@ -1,0 +1,146 @@
+
+.container {
+  border-radius: 16.81px;
+  border: 3px solid rgba(9, 98, 93, 1);
+  box-shadow: 0 4px 20px rgba(9, 98, 93, 0.25);
+  width: 1000px;
+  height: 819px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 24px;
+  margin: 40px auto;
+  background: #fff;
+}
+
+.dados {
+  border-radius: 12px;
+  border: 3px solid rgba(9, 98, 93, 1);
+  box-shadow: 0 4px 4px rgba(9, 98, 93, 0.15);
+  width: 773px;
+  height: 493px;
+  padding: 20px;
+  margin-top: 20px;
+  background: #fff;
+}
+
+.dados p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.topico {
+  display: inline-block;
+  width: 180px;
+  font-size: 24px;
+}
+
+
+.valor {
+  display: inline-block;
+  font-size: 18px;
+  max-width: 500px;
+  white-space: normal;
+  vertical-align: top;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(9, 98, 93, 1);
+  width: 735.29px;
+  margin: 18px auto;
+  border-radius: 2px;
+}
+
+.titulo {
+  font-size: 36px;
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.subTitulo {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 24px;
+}
+
+.botao {
+  display: block;
+  width: 643px;
+  height: 57px;
+  margin-top: 5%;
+  margin-left: 5px;
+  background-color: rgba(9, 98, 93, 1);
+  border: 3px solid;
+  border-radius: 8.42px;
+  font-size: 20px;
+  color: white;
+}
+
+.items {
+  display: flex;
+  gap: 24px;          
+  flex-wrap: wrap;     
+  align-items: flex-start;
+  padding: 12px 0;
+}
+
+/* caixa principal */
+.item {
+  position: relative;
+  background: #fff;
+  border: 2px solid rgba(9,98,93,1);
+  border-radius: 14px;
+  padding: 16px 20px 16px 36px; 
+  min-width: 300px;    
+  box-shadow: 0 4px 10px rgba(9,98,93,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+.item::before {
+  content: "";
+  position: absolute;
+  left: 12px;       
+  top: 12px;
+  bottom: 12px;
+  width: 8px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #b93b62, #962e52); 
+}
+
+/* título (ex.: Cobertor) */
+.item-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* linha com quantidade e tipo, separados */
+.item-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  font-size: 15px;
+  color: #333;
+}
+
+/* deixar o texto mais sutil no label (opcional) */
+.item-details strong {
+  font-weight: 600;
+}
+
+/* ajustes responsivos */
+@media (max-width: 760px) {
+  .items { gap: 12px; }
+  .item { min-width: 100%; padding-left: 32px; }
+}

@@ -13,6 +13,18 @@
 </head>
 
 <body>
+      <!-- API VLibras -->
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
     <div id="navbar"></div>
     <!-- Navbar Lateral -->
     <nav class="navbarProfile">
@@ -71,10 +83,30 @@
                     <input type="text">
                     <p class="inputP">Descreva as principais finalidades e propósitos da ONG.</p><br>
 
-                    <label for="">Causas de Atuação</label>
-                    <select name="" id=""></select>
-                    <p class="inputP">OBS: Escolha até três causas que representem o foco principal da atuação da ONG
-                    </p><br>
+                     <!-- Causas de Interesse -->
+            <div class="secao">
+              <div class="secao-header">
+            <label for="">Causas de Atuação</label>
+              </div>
+              <div class="causas-checkboxes">
+                <!-- 13 opções -->
+                <label><input type="checkbox" value="Animal"> Animal</label>
+                <label><input type="checkbox" value="Social"> Social</label>
+                <label><input type="checkbox" value="Ambiental"> Ambiental</label>
+                <label><input type="checkbox" value="Educacional"> Educacional</label>
+                <label><input type="checkbox" value="Saúde"> Saúde</label>
+                <label><input type="checkbox" value="Cultural"> Cultural</label>
+                <label><input type="checkbox" value="Humanitária"> Humanitária</label>
+                <label><input type="checkbox" value="Religiosa"> Religiosa</label>
+                <label><input type="checkbox" value="Mulheres"> Mulheres</label>
+                <label><input type="checkbox" value="LGBTQIA+"> LGBTQIA+</label>
+                <label><input type="checkbox" value="Crianças e Adolescentes"> Crianças e Adolescentes</label>
+                <label><input type="checkbox" value="Idosos"> Idosos</label>
+                <label><input type="checkbox" value="PCD"> PCD</label>
+              </div>
+              <h4>Selecionadas (máx. 3):</h4>
+              <div class="causas-tags" id="perfilCausas"></div>
+            </div>
 
                     <label for="">Classificação</label>
                     <select name="" id=""></select>
@@ -282,6 +314,8 @@
     </main>
 
     <script src="/src/js/main.js"></script>
+
+    <script src="/src/js/perfil-ong.js"></script>
     <script>
         // Navegação entre as seções
         document.querySelectorAll('.nav-item').forEach(item => {

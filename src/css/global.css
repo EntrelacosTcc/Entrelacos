@@ -835,6 +835,11 @@ a{
     background-color: white;
 }
 
+#sienna-widget {
+  z-index: 999999 !important;
+}
+
+
   /* Ajustes específicos para 480px */
   @media (max-width: 480px) {
     .search-bar {
