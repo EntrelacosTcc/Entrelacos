@@ -831,6 +831,10 @@ a{
     display: none;
   }
 
+  input, label, textarea, select {
+    background-color: white;
+}
+
   /* Ajustes específicos para 480px */
   @media (max-width: 480px) {
     .search-bar {

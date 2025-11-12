@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido Doação</title>
+  <link rel="stylesheet" href="/src/css/global.css">
+  <link rel="stylesheet" type="text/css" href="/src/pages-css/formulario-doacao.css">
+</head>
+
+<body>
+<div id="navbar"></div>
+  <div class="container">
+
+    <div class="formulario">
+
+      <p class="titulo">Solicitação de doação</p>
+      <p class="subTitulo">Preencha as informações sobre o pedido de doação a ser criado</p>
+
+      <form>
+
+        <img src="img/Group 209.svg" alt="">
+
+        <br>
+
+        <label for="pedido" class="input-titulo">Título do Pedido</label>
+        <input type="text" class="tituloPedido" name="tituloPedido" placeholder="Campanha de Inverno">
+        <p class="insercao">Insira um título simples e objetivo.</p>
+
+        <label for="descricao" class="input-descricao">Descrição</label>
+        <input type="text" class="descricao" name="descricao"
+          placeholder="Ajude a manter nossos cães e gatos aquecidos neste inverno! Estamos arrecadando itens essenciais para garantir conforto e proteção aos animais resgatados do frio.">
+        <p class="insercao">Descreva brevemente sobre o propósito deste pedido.</p>
+
+        <br>
+
+        <p class="topico">Prazo de Recebimento</p>
+
+        <section class="caixa-recorrente">
+          <label class="opcao">
+            <input type="radio" class="recorrente" name="tipo">
+            <span class="checkmark"></span>
+            Recorrente
+          </label>
+          <p>Esta opção indica que o item é de necessidade contínua para a ONG, devendo estar disponível de forma
+            permanente ou em intervalos regulares.</p>
+        </section>
+
+        <section class="caixa-pontual">
+          <label class="opcao">
+            <input type="radio" class="pontual" name="tipo">
+            <span class="checkmark"></span> Pontual
+          </label>
+          <p>Esta opção refere-se a uma demanda específica, sendo necessária apenas uma única vez ou em caráter
+            excepcional.</p>
+          <p style="font-weight: bold;">Prazo de Entrega: <button class="prazo-entrega">22/11/2025 </button></p>
+        </section>
+
+        <br>
+
+        <label for="responsavel" class="responsavel">Responsável pelo pedido</label>
+        <select id="responsavel" name="responsavel" class="responsavelPedido">
+          <option value="">Selecione...</option>
+          <option value="user1">Anna Azevedo</option>
+          <option value="user2">Willian Figueredo</option>
+        </select>
+        <br>
+
+        <p class="aviso">Selecione o responsável pelo pedido.</p>
+        <hr>
+
+        <p class="item">Itens Necessários</p>
+        <p class="topico">Adicionar Item</p>
+
+        <section class="linha-itens">
+
+          <section class="campo">
+            <label for="nome" class="label-itemNome">Nome do Item</label>
+            <input type="text" id="nomeItem" name="nome" class="input-item">
+          </section>
+
+          <section class="campo">
+            <label for="quantidade" class="label-item">Quantidade</label>
+            <input type="text" id="quantidade" name="quantidade" class="input-item">
+          </section>
+
+          <section class="campo">
+            <label for="tipo" class="label-item">Tipo</label>
+            <select id="tipo" name="tipo" class="input-item">
+              <option value="instrumento">Instrumento</option>
+              <option value="roupa">Roupa</option>
+            </select>
+          </section>
+
+        </section>
+
+        <button class="add">Adicionar</button>
+        <button class="seguinte">Seguinte</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
