@@ -274,5 +274,4 @@ function previewImage(input, div) {
 }
 
 /* --- Inicialização --- */
-document.getElementById("postagens-content").style.display = "block";
 renderFeed();
