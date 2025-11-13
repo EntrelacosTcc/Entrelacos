@@ -45,6 +45,7 @@ body {
     background-color: #00000046;
 }
 
+/* icone profile */
 .navProfile {
     margin-top: -30px;
     margin-bottom: 10px;
@@ -53,6 +54,19 @@ body {
     background-color: #cecece;
     border-radius: 50px;
     border: 1px solid #09625D;
+}
+
+.navBg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navProfile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* garante que a imagem fique redonda */
 }
 
 .nav-links {
@@ -538,6 +552,22 @@ label {
   background: #3eb4ae;
 }
 
+#btn-post {
+  background: #8b2e5e;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  margin-bottom: 30px;
+}
+
+.btn-primary:hover {
+  background: #3eb4ae;
+}
+
 .container-button {
   display: flex;
   justify-content: flex-end;
@@ -548,10 +578,10 @@ label {
 .posts {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza as postagens no meio */
+  align-items: center; 
   gap: 20px;
-  width: 750px; 
-  margin: 0 auto; /* garante centralização */
+  width: 760px; 
+  margin: 0 auto; 
 }
 
 
@@ -592,6 +622,7 @@ label {
 .post-date {
   color: grey;
   font-size: 0.9rem;
+  margin-top: 5px;
 }
 
 .post-content {

@@ -248,6 +248,31 @@ function createPost(content, image) {
   saveToStorage();
 }
 
+// Upload Imagem de Perfil e Capa
+const bgDiv = document.getElementById('bgUpload');
+const bgInput = document.getElementById('bgInput');
+const profileDiv = document.getElementById('profileUpload');
+const profileInput = document.getElementById('profileInput');
+
+// Quando clicar na div, abre o seletor de arquivo
+bgDiv.addEventListener('click', () => bgInput.click());
+profileDiv.addEventListener('click', () => profileInput.click());
+
+// Quando o usuário escolher uma imagem, exibe dentro da div
+bgInput.addEventListener('change', () => previewImage(bgInput, bgDiv));
+profileInput.addEventListener('change', () => previewImage(profileInput, profileDiv));
+
+function previewImage(input, div) {
+  const file = input.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      div.innerHTML = `<img src="${e.target.result}" alt="Imagem">`;
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
 /* --- Inicialização --- */
 document.getElementById("postagens-content").style.display = "block";
 renderFeed();
