@@ -299,23 +299,23 @@ body {
 
 /* DETALHES DA VAGA */
 
-.gerenciamento-header {
+.gerenciamentoVaga-header {
     display: flex;
     align-items: center;
     justify-content: left;
 }
 
-.gerenciamento-title {
+.gerenciamentoVaga-title {
     display: flex;
     align-items: center;
     flex: 1;
 }
 
-.gerenciamento-title i {
+.gerenciamentoVaga-title i {
     max-width: 50px;
 }
 
-.gerenciamento-title i:hover {
+.gerenciamentoVaga-title i:hover {
     color: #09625D;
     background: none;
     transition: 0.2s;
@@ -890,7 +890,7 @@ label {
         margin-top: 10px;
     }
 
-    .gerenciamento-header {
+    .gerenciamentoVaga-header {
         flex-direction: column;
     }
 
@@ -922,7 +922,7 @@ label {
         display: block;
     }
 
-    .gerenciamento-header {
+    .gerenciamentoVaga-header {
         align-items: start;
     }
 }
