@@ -1,20 +1,19 @@
-// main.js - Código completo e corrigido
-
-// Função para carregar a página inicial (se necessário)
+// --------------------------
+// Função para carregar Home
+// --------------------------
 function carregarHome() {
-    // Esta função deve ser implementada se você estiver usando
-    // uma abordagem de Single Page Application (SPA)
-    // Se não estiver usando SPA, pode ser removida
     console.log("Página inicial carregada");
 }
 
-// Carregar detalhes do produto
+// -------------------------------------------------------
+// Função principal para carregar produto pela URL
+// -------------------------------------------------------
 async function carregarProduto(id_produto) {
     try {
         console.log("Carregando produto ID:", id_produto);
-        
+
         const response = await fetch(`/api/produtos/${id_produto}`);
-        
+
         if (!response.ok) {
             if (response.status === 404) {
                 throw new Error('Produto não encontrado');
@@ -22,129 +21,63 @@ async function carregarProduto(id_produto) {
                 throw new Error(`Erro ${response.status}: ${response.statusText}`);
             }
         }
-        
+
         const produto = await response.json();
-        console.log("Dados do produto recebidos:", produto);
+        console.log("Produto recebido:", produto);
 
-        // Verificar se o produto precisa de seleção de tamanho
-    const precisaTamanho = produto.precisa_tamanho && produto.tamanhos_disponiveis;
-        
-        // Preencher o template com os dados do produto
+        const precisaTamanho = produto.precisa_tamanho && produto.tamanhos_disponiveis;
+
+        // --------------------------------
+        // Montando o HTML do produto
+        // --------------------------------
         document.getElementById('produto-container').innerHTML = `
+            <section class="produto-container">
+                <div class="produto-lateral">
+                    <div class="img-lateral">
+                        <img src="${produto.imagem_lateral}" alt="${produto.nome_produto}" id="small-img">
+                    </div>
+                </div>
 
+                <div class="produto-principal">
+                    <img src="${produto.imagem}" alt="${produto.nome_produto}" id="MainImg">
+                </div>
 
-              <section class="produto-container">
+                <div class="produto-info">
+                    <h1>${produto.nome_produto}</h1>
+                    <h3>R$ ${Number(produto.preco).toFixed(2)}</h3>
 
-    <div class="produto-lateral">
-      <div class="img-lateral">
-        <img src="${produto.imagem_lateral}" alt="produto.nome" id="small-img">
-      </div>
-    </div>
+                    ${precisaTamanho ? gerarSeletorTamanhos(produto) : ""}
 
-    <div class="produto-principal">
-      <img src="${produto.imagem}" alt="produto.nome" id="MainImg">
-    </div>
-
-    <div class="produto-info">
-      <h1>${produto.nome_produto}</h1>
-      <h3>R$ ${Number(produto.preco).toFixed(2)}</h3>
-
-
-
-      ${precisaTamanho ? gerarSeletorTamanhos(produto) : ''}
-      <br>
-
-      <button class="btn-comprar">Comprar</button>
-
-    </div>
-  </section>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </section>
         `;
-        
+
         document.title = `${produto.nome_produto} - Minha Loja`;
 
+        // --------------------------------
+        // Descrição
+        // --------------------------------
+        preencherDescricaoProduto(produto);
 
-    // Preencher descrição do produto
-    preencherDescricaoProduto(produto);
+        // --------------------------------
+        // Troca de imagem ao clicar
+        // --------------------------------
+        const mainImg = document.getElementById("MainImg");
+        const smallImg = document.getElementById("small-img");
 
-// Função para processar os tamanhos
-function processarTamanhos(tamanhosData) {
-    if (!tamanhosData) return [];
-    
-    // Array
-    if (Array.isArray(tamanhosData)) {
-        return tamanhosData;
-    }
-    
-    // Se é string JSON, tenta parsear
-    if (typeof tamanhosData === 'string') {
-        try {
-            // Tenta parsear como JSON primeiro
-            const parsed = JSON.parse(tamanhosData);
-            if (Array.isArray(parsed)) {
-                return parsed;
-            }
-        } catch (e) {
-            // Se falhar no parse JSON, trata como string separada por vírgulas
-            console.log('Tentando converter string separada por vírgulas:', tamanhosData);
-            return tamanhosData.split(',').map(t => t.trim());
-        }
-    }
-    
-    console.error('Formato de tamanhos não reconhecido:', tamanhosData);
-    return [];
-}
-
-// Trocar imagem principal ao clicar na imagem pequena
-
-const mainImg = document.getElementById("MainImg");
-  const smallImg = document.getElementById("small-img");
-
-  smallImg.addEventListener("click", () => {
-    let trocarImagem = mainImg.src;
-
-    mainImg.src = smallImg.src;
-    smallImg.src = trocarImagem;
-  });
-
-
-// Gerar seletor de tamanhos
-function gerarSeletorTamanhos(produto) {
-    try {
-        const tamanhos = processarTamanhos(produto.tamanhos_disponiveis);
-        console.log('Tamanhos processados:', tamanhos);
-        
-        if (tamanhos.length === 0) {
-            return '<p>Nenhum tamanho disponível</p>';
-        }
-        
-        let html = `
-            <h3>Tamanhos:</h3>
-            <div class="opcoes-tamanhos">
-        `;
-        
-        tamanhos.forEach((tamanho, index) => {
-            html += `
-                <input type="radio" id="tamanho${tamanho}" name="tamanho" 
-                       value="${tamanho}" class="tamanhos" ${index === 0 ? 'checked' : ''}>
-                <label for="tamanho${tamanho}">${tamanho}</label>
-            `;
+        smallImg.addEventListener("click", () => {
+            let trocarImagem = mainImg.src;
+            mainImg.src = smallImg.src;
+            smallImg.src = trocarImagem;
         });
-        
-        html += `
-            </div>
-            <p class="erro-tamanho" id="erro-tamanho" style="display: none; color: red; margin-top: 5px;">
-                Selecione um tamanho
-            </p>
-            <br>
-        `;
-        
-        return html;
-    } catch (error) {
-        console.error('Erro ao gerar seletor de tamanhos:', error);
-        return '<p>Erro ao carregar tamanhos disponíveis</p>';
-    }
-}
-        
+
+        // --------------------------------
+        // Adicionar ao carrinho
+        // --------------------------------
+        const btnComprar = document.querySelector(".btn-comprar");
+        btnComprar.addEventListener("click", () => adicionarAoCarrinho(produto));
+
     } catch (error) {
         console.error("Erro ao carregar produto:", error);
         document.getElementById('produto-container').innerHTML = `
@@ -157,59 +90,150 @@ function gerarSeletorTamanhos(produto) {
     }
 }
 
-// Preencher descrição do produto
-function preencherDescricaoProduto(produto) {
-    if (produto.descricao) {
-        document.getElementById('descricao-conteudo').innerHTML = 
-            `
-            <p>${produto.descricao.replace(/\n/g, '</p><p>')}</p>
-            <br>
-            <p>${produto.caracteristicas.replace(/\n/g, '</p><p>')}</p>
-            `;
-    }
-    
-    // Esconder seção de medidas se não for roupa
-    if (!produto.precisa_tamanho) {
-        document.querySelector('[data-target="medidas"]').style.display = 'none';
-    }
-}
+// -----------------------------------------------------------
+// Função para transformar o campo de tamanhos em array
+// -----------------------------------------------------------
+function processarTamanhos(tamanhosData) {
+    if (!tamanhosData) return [];
+    if (Array.isArray(tamanhosData)) return tamanhosData;
 
-
-// Carregar página com base na URL
-function carregarPagina() {
-    const path = window.location.pathname;
-    console.log("Carregando página:", path);
-    
-    if (path === '/') {
-        carregarHome();
-    } else if (path.startsWith('/produto/')) {
-        const productId = path.split('/produto/')[1];
-        if (productId && !isNaN(productId)) {
-            carregarProduto(productId);
-        } else {
-            document.getElementById('produto-container').innerHTML = `
-                <div class="error">
-                    <h2>ID de produto inválido</h2>
-                    <p>O ID do produto na URL é inválido.</p>
-                    <a href="/">Voltar para a home</a>
-                </div>
-            `;
+    if (typeof tamanhosData === "string") {
+        try {
+            const parsed = JSON.parse(tamanhosData);
+            if (Array.isArray(parsed)) return parsed;
+        } catch (e) {
+            return tamanhosData.split(",").map(t => t.trim());
         }
     }
+    return [];
 }
 
-// Inicializar apenas se estivermos na página de produto
-if (window.location.pathname.startsWith('/produto/')) {
-    // Esperar o DOM estar totalmente carregado
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log("DOM carregado, inicializando...");
-            window.addEventListener('popstate', carregarPagina);
+// -----------------------------------------------------
+// Geração do seletor de tamanhos
+// -----------------------------------------------------
+function gerarSeletorTamanhos(produto) {
+    const tamanhos = processarTamanhos(produto.tamanhos_disponiveis);
+    if (tamanhos.length === 0) return `<p>Nenhum tamanho disponível</p>`;
+
+    let html = `
+        <h3>Tamanhos:</h3>
+        <div class="opcoes-tamanhos">
+    `;
+
+    tamanhos.forEach((tamanho, i) => {
+        html += `
+            <input type="radio" 
+                   id="tamanho${tamanho}" 
+                   name="tamanho" 
+                   value="${tamanho}" 
+                   ${i === 0 ? "checked" : ""}>
+            <label for="tamanho${tamanho}">${tamanho}</label>
+        `;
+    });
+
+    html += `
+        </div>
+        <p class="erro-tamanho" id="erro-tamanho" style="display:none;color:red;margin-top:5px;">
+            Selecione um tamanho
+        </p>
+    `;
+    return html;
+}
+
+// -----------------------------------------------------
+// Preencher descrição
+// -----------------------------------------------------
+function preencherDescricaoProduto(produto) {
+    if (produto.descricao) {
+        document.getElementById("descricao-conteudo").innerHTML = `
+            <p>${produto.descricao.replace(/\n/g, "</p><p>")}</p>
+            <br>
+            <p>${produto.caracteristicas.replace(/\n/g, "</p><p>")}</p>
+        `;
+    }
+    if (!produto.precisa_tamanho) {
+        const medidas = document.querySelector("[data-target='medidas']");
+        if (medidas) medidas.style.display = "none";
+    }
+}
+
+// ---------------------------------------------------------
+// ADICIONAR AO CARRINHO (UID ÚNICO)
+// ---------------------------------------------------------
+function adicionarAoCarrinho(produto) {
+    let tamanhoSelecionado = null;
+
+    if (produto.precisa_tamanho) {
+        const seletor = document.querySelector("input[name='tamanho']:checked");
+        if (!seletor) {
+            document.getElementById("erro-tamanho").style.display = "block";
+            return;
+        }
+        tamanhoSelecionado = seletor.value;
+    }
+
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    //  UID único: garante que cada item sem tamanho seja separado
+    const uid = produto.precisa_tamanho
+        ? `${produto.id}-${tamanhoSelecionado}`
+        : `${produto.id}-${Date.now()}-${Math.floor(Math.random()*1000)}`;
+
+    carrinho.push({
+        uid,
+        id: produto.id,
+        nome: produto.nome_produto,
+        preco: Number(produto.preco),
+        quantidade: 1,
+        imagem: produto.imagem,
+        caracteristicas: {
+            tamanho: tamanhoSelecionado || null
+        }
+    });
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+ mostrarPopup(produto.nome_produto);
+
+}
+
+// -----------------------------------------------------
+// Detectar página atual e carregar conteúdo
+// -----------------------------------------------------
+function carregarPagina() {
+    const path = window.location.pathname;
+
+    if (path === "/") {
+        carregarHome();
+    } else if (path.startsWith("/produto/")) {
+        const productId = path.split("/produto/")[1];
+        carregarProduto(productId);
+    }
+}
+
+// -----------------------------------------------------
+// Inicializando se estivermos em página de produto
+// -----------------------------------------------------
+if (window.location.pathname.startsWith("/produto/")) {
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => {
+            window.addEventListener("popstate", carregarPagina);
             carregarPagina();
         });
     } else {
-        console.log("DOM já carregado, inicializando...");
-        window.addEventListener('popstate', carregarPagina);
+        window.addEventListener("popstate", carregarPagina);
         carregarPagina();
     }
 }
+
+// popoup de sucesso ao adicionar ao carrinho
+
+function mostrarPopup(nomeProduto) {
+    const popup = document.getElementById('popup-sucesso');
+    popup.textContent = `"${nomeProduto}" adicionado ao carrinho! ✅`;
+    popup.classList.add('show');
+
+    setTimeout(() => {
+        popup.classList.remove('show');
+    }, 5000);
+}
+

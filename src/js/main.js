@@ -8,6 +8,7 @@ fetch(navbarPath)
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
     initNavbarDropdown();
+    updateCartIcon(); // <<< atualiza o ícone do carrinho quando a navbar carregar
   })
   .catch(err => console.error("Erro ao carregar navbar:", err));
 
@@ -17,54 +18,84 @@ fetch(footerPath)
   .then(response => response.text())
   .then(data => {
     document.getElementById("footer").innerHTML = data;
-    initNavbarDropdown(); // ou outra função se quiser para footer
+    initNavbarDropdown();
   })
   .catch(err => console.error("Erro ao carregar footer:", err));
 
+
+
+// ===============================
+// SISTEMA DE CARRINHO
+// ===============================
+
+// Salvar no localStorage
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+  cart.push(product);
+
+  localStorage.setItem("carrinho", JSON.stringify(cart));
+
+  updateCartIcon();
+}
+
+
+// Atualizar o número do carrinho no ícone
+function updateCartIcon() {
+  const cart = JSON.parse(localStorage.getItem("carrinho")) || [];
+  const countElement = document.getElementById("cart-count");
+
+  if (countElement) {
+    countElement.textContent = cart.length;
+  }
+}
+
+
+
 // COMPONENTE VAGA
 class VagaComponent extends HTMLElement {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    connectedCallback() {
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render() {
-        const imagem = this.getAttribute('imagem');
-        const imagemHTML = imagem 
-            ? `<img src="${imagem}" alt="${this.getAttribute('titulo')}" class="vaga-img">`
-            : `<div class="vaga-img"></div>`;
+  render() {
+    const imagem = this.getAttribute('imagem');
+    const imagemHTML = imagem 
+      ? `<img src="${imagem}" alt="${this.getAttribute('titulo')}" class="vaga-img">`
+      : `<div class="vaga-img"></div>`;
 
-        this.innerHTML = `
-        <div class="vagas">
-            ${imagemHTML}
-            <h3>${this.getAttribute('titulo')}</h3>
-            <a href="src/perfil-users/publicoong.html"><h4>${this.getAttribute('ong')}</h4></a>
-            <div class="tags-vagas">
-                ${this.getCausas()}
-            </div>
-            <p>${this.getAttribute('descricao')}</p>
-            <div class="vagas-info">
-                <div class="dados-vaga"><i class="fa-solid fa-location-dot fa-lg"></i>${this.getAttribute('localizacao')}</div>
-                <div class="dados-vaga"><i class="fa-solid fa-calendar"></i>${this.getAttribute('frequencia')}</div>
-                <div class="dados-vaga"><i class="fa-solid fa-clock"></i>${this.getAttribute('carga-horaria')}</div>
-            </div>
-            <center><button>Participe</button></center>
+    this.innerHTML = `
+    <div class="vagas">
+        ${imagemHTML}
+        <h3>${this.getAttribute('titulo')}</h3>
+        <a href="src/perfil-users/publicoong.html"><h4>${this.getAttribute('ong')}</h4></a>
+        <div class="tags-vagas">
+            ${this.getCausas()}
         </div>
-        `;
-    }
+        <p>${this.getAttribute('descricao')}</p>
+        <div class="vagas-info">
+            <div class="dados-vaga"><i class="fa-solid fa-location-dot fa-lg"></i>${this.getAttribute('localizacao')}</div>
+            <div class="dados-vaga"><i class="fa-solid fa-calendar"></i>${this.getAttribute('frequencia')}</div>
+            <div class="dados-vaga"><i class="fa-solid fa-clock"></i>${this.getAttribute('carga-horaria')}</div>
+        </div>
+        <center><button>Participe</button></center>
+    </div>
+    `;
+  }
 
-    getCausas() {
-        const causas = this.getAttribute('causas');
-        if (causas) {
-            return causas.split(',').map(causa => 
-                `<div class="causa">${causa.trim()}</div>`
-            ).join('');
-        }
-        return '';
+  getCausas() {
+    const causas = this.getAttribute('causas');
+    if (causas) {
+      return causas.split(',').map(causa => 
+          `<div class="causa">${causa.trim()}</div>`
+      ).join('');
     }
+    return '';
+  }
 }
 
 customElements.define('vaga-item', VagaComponent);
@@ -82,7 +113,9 @@ fetch(doacaoPath)
   })
   .catch(err => console.error("Erro ao carregar pedido de doação:", err));
 
-  // Dropdown
+
+
+// Dropdown
 function initNavbarDropdown() {
   document.querySelectorAll('.dropdown').forEach(dropdown => {
     const btn = dropdown.querySelector('.dropdown-btn');
@@ -90,7 +123,6 @@ function initNavbarDropdown() {
 
     if (!btn || !content) return;
 
-    // Hover no container inteiro (resolve o "sumir")
     dropdown.addEventListener('mouseenter', () => {
       dropdown.classList.add('show');
     });
@@ -99,7 +131,6 @@ function initNavbarDropdown() {
       dropdown.classList.remove('show');
     });
 
-    // Extra: toggle por clique (funciona no celular)
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       dropdown.classList.toggle('show');
@@ -130,7 +161,6 @@ function toggleMenu() {
   }
 }
 
-// Botão de saída (X)
 document.addEventListener("click", (e) => {
   if (e.target.closest(".menu-saida")) {
     document.querySelector(".mobile-menuContainer").style.display = "none";
@@ -145,6 +175,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
+
 // API Sienna
 if (!document.querySelector('script[src="https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js"]')) {
   const s = document.createElement("script");
@@ -155,10 +186,9 @@ if (!document.querySelector('script[src="https://cdn.jsdelivr.net/npm/sienna-acc
   document.body.appendChild(s);
 }
 
+
 // API Vlibras
-
 if (!document.querySelector('script[src="https://vlibras.gov.br/app/vlibras-plugin.js"]')) {
-
   const container = document.createElement("div");
   container.setAttribute("vw", "");
   container.classList.add("enabled");
@@ -187,3 +217,21 @@ if (!document.querySelector('script[src="https://vlibras.gov.br/app/vlibras-plug
 
   document.body.appendChild(script);
 }
+
+
+
+// animação scroll
+window.addEventListener('DOMContentLoaded', () => {
+  const elementos = document.querySelectorAll('.animar-scroll');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('mostrar');
+        observer.unobserve(entry.target); 
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elementos.forEach(el => observer.observe(el));
+});

@@ -8,4 +8,4 @@ const mainImg = document.getElementById("MainImg");
     smallImg.src = trocarImagem;
   });
 
-  
+
