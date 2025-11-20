@@ -110,6 +110,27 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'Servidor funcionando' });
 });
 
+app.get("/api/buscar", (req, res) => {
+  const termo = req.query.q || "";
+
+  const sql = `
+    SELECT * FROM produtos
+    WHERE nome LIKE ?
+       OR categoria LIKE ?
+       OR descricao LIKE ?
+  `;
+
+  db.query(
+    sql,
+    [`%${termo}%`, `%${termo}%`, `%${termo}%`],
+    (err, resultado) => {
+      if (err) return res.status(500).json({ erro: "Erro no servidor" });
+      res.json(resultado);
+    }
+  );
+});
+
+
 // Iniciar servidor
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {

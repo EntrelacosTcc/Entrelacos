@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../pages-css/login.css">
+</head>
+<body>
+  <section class="left-side">
+    <div class="login-container">
+
+      <form id="formLogin">
+        <h1>Login</h1>
+
+        <label for="email">E-mail</label><br>
+        <input type="email" id="email" required><br>
+
+        <label for="senha">Senha</label><br>
+        <input type="password" id="senha" required><br>
+
+        <p><a href="#">Esqueceu sua senha?</a></p>
+
+        <div class="centralized-items">
+          <!-- Botão Google -->
+          <div class="icons" title="Entrar com Google">
+            <img src="../assets/img/google.png" alt="Login com Google" id="btnGoogle">
+          </div>
+
+          <!-- Botão Entrar -->
+          <a href="carrinho-endereco.html"></a><button type="button" id="btnLogin">Entrar</button>
+        </div>
+
+        <p>Não possui uma conta? <a id="cadastrolink" href="./cadastro-loja.html">Cadastre-se</a></p>
+      </form>
+
+    </div>
+  </section>
+
+  <section class="right-side">
+    <h2>Bem-vindo ao Entrelaços</h2>
+    <h3>Conectando pessoas, ideias e propósitos.</h3>
+  </section>
+
+  <!-- Seu script principal -->
+  <script type="module" src="../js/login-loja.js"></script>
+
+  <!-- API de acessibilidade -->
+  <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+</body>
+</html>

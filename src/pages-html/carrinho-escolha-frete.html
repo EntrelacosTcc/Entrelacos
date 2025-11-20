@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../pages-css/carrinho-escolha-frete.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <main class="carrinho-container">
+
+      <!-- BOX DO CARRINHO -->
+      <section class="carrinho-box">
+        <h1 class="titulo-carrinho">Entrega</h1>
+
+        <table class="carrinho-tabela">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Características</th>
+              <th>Quantidade</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- O JS vai preencher o carrinho aqui -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- RESUMO AO LADO -->
+<aside class="resumo-box">
+
+  <div class="card card-cupom">
+    <h3>Possui cupom?</h3>
+    <input type="text" placeholder="Digite seu cupom" />
+    <button>Aplicar</button>
+  </div>
+
+  <!-- =============================
+       ESCOLHA DE FRETE
+       Adicione aqui, antes do total
+  ============================= -->
+  <div class="frete-container">
+    <h3>Escolha seu frete</h3>
+    <div class="frete-opcoes">
+  <input type="radio" name="frete" id="frete-sedex" value="15" />
+  <label for="frete-sedex">Sedex - R$ 15,00</label>
+
+  <input type="radio" name="frete" id="frete-pac" value="20" />
+  <label for="frete-pac">PAC - R$ 20,00</label>
+</div>
+
+  </div>
+
+  <div class="card card-total">
+    <h3>Resumo</h3>
+    <div class="linha-total">
+      <span>Subtotal</span>
+      <span>R$ 0,00</span>
+    </div>
+    <div class="linha-total">
+      <span>Frete</span>
+      <span>R$ 0,00</span>
+    </div>
+    <hr />
+    <div class="linha-total totalzao">
+      <span>Total</span>
+      <strong>R$ 0,00</strong>
+    </div>
+    <button class="btn-finalizar"><a href="carrinho-escolha-pagamento.html">Finalizar Compra</a></button>
+  </div>
+
+</aside>
+
+
+    </main>
+
+
+    </section>
+
+   
+    <div id="footer"></div>
+
+    <script src="/src/js/carrinho-escolha-frete.js"></script>
+    <script src="/src/js/main.js"></script>
+  </body>
+</html>

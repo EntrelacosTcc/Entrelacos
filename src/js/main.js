@@ -235,3 +235,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
   elementos.forEach(el => observer.observe(el));
 });
+
+

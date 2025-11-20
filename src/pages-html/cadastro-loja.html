@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png">
+    <title>Cadastro Ong</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../pages-css/cadastro-voluntario.css">
+</head>
+<body>
+
+    <section class="left-side">
+
+    <h2>Bem-vindo ao Entrelaços</h2>
+    <h3>Laços que sustentam, inspiram e acolhem.</h3>
+
+</section>
+
+<section class="right-side">
+    <div class="cadastro-container">
+
+    <form>
+    <h1>Cadastre-se</h1>
+
+        <label>Nome</label>
+        <input type="text" id="nome" required="required"><br>
+
+         <label>E-mail</label>
+         <input type="email" id="email" required="required"><br>
+
+         <label>Senha</label>
+         <input type="password" id="senha" required="required"><br>
+
+                         <label for="senha">Confirme sua Senha</label><br>
+        <input type="password" id="senha" required><br>
+
+
+         <div class="input-icon">
+            <label>Estado</label>
+            <img src="../assets/img/icon-localizacao.png" alt="">
+         </div>
+         <select name="cidade" required="required">
+            <option value="" data-default disabled selected></option>
+            <option value="SP">São Paulo</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+            <option value="EX">Estrangeiro</option>        
+         </select>
+
+         <label>Como conheceu nossa plataforma?</label>
+         <select name="comoConheceu" required="required">
+            <option value="" data-default disabled selected></option>
+            <option value="">Através do site oficial</option>
+            <option value="">Redes sociais</option>
+            <option value="">Indicação de amigos ou familiares</option>
+            <option value="">Palestras ou apresentações</option>
+            <option value="">Navegando online</option>
+            <option value="">Outro</option>
+         </select>
+
+        <div class="termos">
+            <div class="checkbox">
+                <input type="checkbox" class="checkbox-square" required>
+                <label>Termos de privacidade</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" class="checkbox-square" required>
+                <label>Termos de uso</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" class="checkbox-square" required>
+                <label>Consentimento do tratamento de dados pessoais</label>
+            </div>
+        </div>
+
+        <div class="centralized-items">
+
+        <a href="./cadastro-lojaConcluido.html">
+            <button type="button" id="btnCadastrar">Cadastrar</button>
+        </a>
+
+        <p>Já tem uma conta criada?<a href="./login-loja.html">Login</a></p>
+        </div>
+      
+    </form>
+    </div>
+
+</section>
+
+<script type="module" src="../js/cadastro.js"></script>
+
+<!-- API de acessibilidade -->
+<script
+src="https://website-widgets.pages.dev/dist/sienna.min.js"
+defer
+></script>
+
+
+</body>
+</html>

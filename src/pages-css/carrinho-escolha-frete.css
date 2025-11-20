@@ -45,9 +45,10 @@ body {
 
 .titulo-carrinho {
   margin-bottom: 20px;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--primaria-escura);
+  text-align: center;
 }
 
 .carrinho-tabela {
@@ -194,154 +195,55 @@ body {
 }
 
 /* ==========================
-   CARROSSEL + VANTAGENS
+   FRETE OPÇÕES
 ========================== */
-/* LOJA */
-
-.loja-container{
-  margin-bottom: 100px;
-}
-
-
-/* CARROSSEL LOJA */
-
-.produtos-container{
-  position: relative;
+.frete-opcoes {
   display: flex;
-  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-#content-slide{
-  display: flex;
-  height: 350px;
-  width: 1060px;
-  align-items: center;
-
-  overflow-x: auto;          
-  scroll-behavior: smooth;                
-
-  margin: 0 auto;           
-  border-radius: 12px;      
-}
-
-
-#bnt-left, #bnt-right{
-  position: absolute;
-  top: 250px;
-  margin-left: 60px;
-  margin-right: 60px;
-  color: #8b2e5e;
-
+.frete-opcoes label {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--cinza-claro);
+  border-radius: 10px;
   cursor: pointer;
-  user-select: none;
-  z-index: 10;               
-}
-
-#bnt-right{
-  right: 0;
-}
-
-.produto{
-  background-color: #f4dce4;
-  border: 3px solid #8b2e5e;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: auto;         
-  height: 320px;
-  padding: 10px;
-  margin: 0px 25px;       
-  
   text-align: center;
-  flex-shrink: 0;    
-  border-radius: 20px;
-  font-size: 0.85rem;
-}
-
-.produto-imagem{
-  width: 190px;
-  height: 170px;
-  background-color: white;
-  border: 1px solid #8b2e5e;
-  border-radius: 10px;
-  margin: 0 auto 10px auto;
+  background-color: var(--branco);
+  transition: all 0.2s ease;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-.produto-imagem img {
-  max-width: 180px;
-  max-height: 160px;
-  object-fit: contain;
+.frete-opcoes label:hover {
+  border-color: var(--primaria-media);
+  background-color: var(--primaria-clara);
 }
 
-.produto-info {
-  margin-bottom: 10px;
+.frete-opcoes input[type="radio"] {
+  display: none; /* escondendo o input real */
 }
 
-.produto-info .nome {
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 3px;
+.frete-opcoes input[type="radio"]:checked + span {
+  border-color: var(--primaria-media);
+  background-color: var(--primaria-media);
+  color: var(--branco);
 }
 
-.produto-info .preco {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--destaque-rosa-escuro);
+.frete-opcoes span {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
 }
 
-.produto button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--destaque-rosa);
-  color: #fff;
-  width: 90%;
-  height: 45px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 0 auto;
+.frete-opcoes input[type="radio"]:checked + label {
+  border-color: var(--primaria-media);
+  background-color: var(--primaria-clara);
+  color: black;
 }
 
-#content-slide::-webkit-scrollbar{
-  display: none;
-}
-
-h2 {
-    text-align: center;
-    color: #09625D;
-    margin-bottom: 30px;
-}
-
-.vantagens-container {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 100px;
-    justify-content: center;
-    align-items: center;
-}
-
-.vantagens-cards {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-}
-
-.vantagem-card {
-width: 280px;
-height: 120px;
-border: 2px solid #09625D;
-border-radius: 10px;
-padding: 30px 20px;
-margin-bottom: 50px;
-}
-
-.vantagem-card h3 {
-    margin-top: 0;
-    font-size: 18px;
-    color: #8B2E5E
-}

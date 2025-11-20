@@ -1,0 +1,165 @@
+/* ==========================
+   VARIÁVEIS DE CORES
+========================== */
+:root {
+  --primaria-escura: #09625d;
+  --primaria-media: #3eb4ae;
+  --primaria-clara: #d3fffd;
+  --primaria-escura-2: #0a3937;
+  --destaque-rosa: #8b2e5e;
+  --destaque-rosa-claro: #f4dce4;
+  --destaque-rosa-vivo: #b43eaa;
+  --branco: #ffffff;
+  --branco-fundo: #fffafa;
+  --cinza-claro: #d7d7d7;
+  --cinza-escuro: #444444;
+}
+
+/* ==========================
+   RESET & BODY
+========================== */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: var(--branco-fundo);
+}
+
+/* ==========================
+   CARRINHO
+========================== */
+.carrinho-container {
+  max-width: 1200px;
+  min-height: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+}
+
+.carrinho-box, .resumo-box {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 25px;
+  border: 2px solid var(--cinza-claro);
+}
+
+.carrinho-box {
+    height: 100%;
+}
+
+.resumo-box {
+    height: 300px;
+}
+
+.titulo-carrinho {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primaria-escura);
+  text-align: center;
+}
+
+
+/* Pagamentos */
+.pagamento-container {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 25px;
+  margin-top: 15px;
+  align-items: stretch;
+}
+
+.pagamento-container {
+    height: 80%;
+}
+
+/* COLUNA DE OPÇÕES */
+.pagamento-opcoes {
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid var(--cinza-claro);
+  padding-right: 15px;
+  height: 100%;
+}
+
+/* Cada opção vira um "item de menu" */
+.pagamento-opcoes label {
+  padding: 15px 10px;
+  border-bottom: 1px solid var(--cinza-claro);
+  cursor: pointer;
+  transition: .2s;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+/* Último item não precisa de borda */
+.pagamento-opcoes label:last-child {
+  border-bottom: none;
+}
+
+/* Ocultar o radio */
+.pagamento-opcoes input {
+  display: none;
+}
+
+/* Quando selecionado */
+.pagamento-opcoes input:checked + span {
+  background: var(--primaria-clara);
+  border: 1px solid #09625d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;        
+  width: 100%;       
+  border-radius: 6px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+
+/* ÁREA DO CONTEÚDO */
+.pagamento-detalhes {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  min-height: 200px; /* só pra ficar mais bonito */
+}
+
+
+/* ==========================
+   RESUMO
+========================== */
+.resumo-box .card {
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--primaria-escura);
+}
+
+.card input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--cinza-claro);
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.linha-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  margin-top: 20px;
+}
+
+.totalzao strong {
+  font-size: 20px;
+  color: var(--destaque-rosa);
+}
+
+
