@@ -49,7 +49,7 @@ body {
 }
 
 .resumo-box {
-    height: 300px;
+    height: 270px;
 }
 
 .titulo-carrinho {
@@ -74,6 +74,12 @@ body {
     height: 80%;
 }
 
+.pagamento-box h3{
+    margin-bottom: 20px;
+    color: var(--primaria-media);
+    text-align: center;
+}
+
 /* COLUNA DE OPÇÕES */
 .pagamento-opcoes {
   display: flex;
@@ -83,7 +89,31 @@ body {
   height: 100%;
 }
 
-/* Cada opção vira um "item de menu" */
+.btn-finalizar {
+  margin: 15px auto 0 auto;
+  width: 100%;
+  padding: 12px;
+  background: var(--primaria-media);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-finalizar:hover {
+  background: var(--primaria-escura);
+}
+
+
+.btn-finalizar a {
+  text-decoration: none;
+  color: var(--branco);
+}
+
 .pagamento-opcoes label {
   padding: 15px 10px;
   border-bottom: 1px solid var(--cinza-claro);
@@ -94,12 +124,10 @@ body {
   align-items: center;
 }
 
-/* Último item não precisa de borda */
 .pagamento-opcoes label:last-child {
   border-bottom: none;
 }
 
-/* Ocultar o radio */
 .pagamento-opcoes input {
   display: none;
 }
@@ -124,8 +152,158 @@ body {
   padding-left: 20px;
   display: flex;
   align-items: center;
-  min-height: 200px; /* só pra ficar mais bonito */
+  min-height: 200px;
 }
+
+/* Cartão de Crédito */
+
+#pagCartao input, 
+#pagCartao select {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--cinza-claro);
+  font-size: 14px;
+}
+
+.linha-cartao {
+  display: flex;
+  gap: 15px;
+}
+
+.linha-cartao div {
+  flex: 1;
+}
+
+#resultadoParcelas {
+  margin-top: 8px;
+  font-weight: bold;
+  color: var(--primaria-escura);
+}
+
+.campo-cartao {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+  margin-bottom: 15px;
+}
+
+.campo-cartao label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.campo-cartao input {
+  width: 300px; 
+  padding: 8px;
+  font-size: 16px;
+}
+
+/* PIX */
+
+#pagPix {
+  padding: 20px;
+  text-align: center;
+}
+
+.titulo-pix {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.campo-pix {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-copiar {
+  margin-top: 12px;
+  padding: 10px;
+  width: 100%;
+  background: #44b6a1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-copiar:hover {
+  opacity: 0.9;
+}
+
+.titulo-qrcode {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.qrcode {
+  width: 180px;
+  margin-top: 10px;
+}
+
+/* BOLETO */
+#pagBoleto {
+  padding: 20px;
+  text-align: center;
+}
+
+.titulo-boleto {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  margin-top: -150px;
+}
+
+.btn-gerar-boleto {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #000;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+/* Observação */
+.obs-boleto {
+  margin-top: 30px;
+  font-size: 13px;
+  color: #333;
+}
+
+.btn-finalizar-boleto {
+  margin: 15px auto 0 auto;
+  width: 100%;
+  padding: 12px;
+  background: var(--primaria-media);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.btn-finalizar-boleto:hover {
+  background: var(--primaria-escura);
+}
+
+.btn-finalizar-boleto a {
+  text-decoration: none;
+  color: var(--branco);
+}
+
 
 
 /* ==========================
