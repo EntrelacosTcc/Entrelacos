@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../pages-css/carrinho-escolha-pagamento.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <main class="carrinho-container">
+      <!-- BOX DO CARRINHO -->
+      <section class="carrinho-box">
+       <h1 class="titulo-carrinho">Pagamento</h1>
+
+       <div class="pagamento-container">
+
+  <!-- MENU LATERAL -->
+  <aside class="pagamento-opcoes">
+    
+    <label>
+      <input type="radio" name="pagamento" value="pix" onclick="mostrarPagamento('pagPix')">
+      <span>PIX</span>
+    </label>
+    
+    <label>
+      <input type="radio" name="pagamento" value="cartao" onclick="mostrarPagamento('pagCartao')">
+      <span>Cartão de Crédito</span>
+    </label>
+    
+    <label>
+      <input type="radio" name="pagamento" value="boleto" onclick="mostrarPagamento('pagBoleto')">
+      <span>Boleto</span>
+    </label>
+
+  </aside>
+
+  <!-- ÁREA QUE TROCA -->
+  <div class="pagamento-detalhes">
+
+    <!-- Mensagem padrão -->
+    <div class="pagDefault pagamento-box">
+      <p>Selecione uma forma de pagamento</p>
+    </div>
+
+    <!-- PIX -->
+    <div id="pagPix" class="pagamento-box" style="display:none">
+      <h3>Pagar com PIX</h3>
+      <p>O QR Code será gerado ao finalizar a compra.</p>
+    </div>
+
+    <!-- CARTÃO -->
+    <div id="pagCartao" class="pagamento-box" style="display:none">
+      <h3>Cartão de Crédito</h3>
+      <p>Insira os dados do seu cartão na próxima etapa.</p>
+    </div>
+
+    <!-- BOLETO -->
+    <div id="pagBoleto" class="pagamento-box" style="display:none">
+      <h3>Boleto Bancário</h3>
+      <p>O boleto será gerado após confirmar o pedido.</p>
+    </div>
+
+  </div>
+
+</div>
+
+      </section>
+     
+
+      <!-- RESUMO AO LADO -->
+<aside class="resumo-box">
+  </div>
+
+  <div class="card card-total">
+    <h3>Resumo</h3>
+    <div class="linha-total">
+      <span>Subtotal</span>
+      <span>R$ 0,00</span>
+    </div>
+    <div class="linha-total">
+      <span>Frete</span>
+      <span>R$ 0,00</span>
+    </div>
+    <hr />
+    <div class="linha-total totalzao">
+      <span>Total</span>
+      <strong>R$ 0,00</strong>
+    </div>
+  </div>
+
+</aside>
+
+
+    </main>
+
+
+    </section>
+
+   
+    <div id="footer"></div>
+
+    <script src="/src/js/carrinho-escolha-pagamento.js"></script>
+    <script src="/src/js/main.js"></script>
+  </body>
+</html>

@@ -15,16 +15,212 @@
   <body>
     <div id="navbar"></div>
 
+    <main class="carrinho-container">
+
+      <!-- BOX DO CARRINHO -->
+      <section class="carrinho-box">
+        <h1 class="titulo-carrinho">Meu Carrinho</h1>
+
+        <table class="carrinho-tabela">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Características</th>
+              <th>Quantidade</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- O JS vai preencher o carrinho aqui -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- RESUMO AO LADO -->
+      <aside class="resumo-box">
+
+        <div class="card card-cupom">
+          <h3>Possui cupom?</h3>
+          <input type="text" placeholder="Digite seu cupom" />
+          <button>Aplicar</button>
+        </div>
+
+        <div class="card card-frete">
+          <h3>Calcular Frete</h3>
+          <input type="text" placeholder="Digite seu CEP" />
+          <button>Buscar</button>
+        </div>
+
+        <div class="card card-total">
+          <h3>Resumo</h3>
+          <div class="linha-total">
+            <span>Subtotal</span>
+            <span>R$ 0,00</span>
+          </div>
+          <div class="linha-total">
+            <span>Frete</span>
+            <span>R$ 0,00</span>
+          </div>
+          <hr />
+          <div class="linha-total totalzao">
+            <span>Total</span>
+            <strong>R$ 0,00</strong>
+          </div>
+          <button class="btn-finalizar"><a href="login-loja.html">Finalizar Compra</a></button>
+        </div>
+
+      </aside>
+
+    </main>
+
+
+  <!-- PRODUTOS -->
+
+       <div class="produtos-container"> 
+    <h2>Combinam perfeitamente!</h2>
+        <i id="bnt-left" class="fa-solid fa-angle-left fa-3x" onclick="direcao(1, 266)"></i>
+    
+        <div id="content-slide">
+    
+          <div class="produto">
+            <div class="produto-imagem">
+              <img src="../assets/img/Camiseta_feminina.png" alt="camiseta feminina">
+            </div>
+
+            <div class="produto-info">
+              <p class="nome">Camiseta Feminina</p>
+              <p class="preco">R$84.90</p>
+            </div>
+            <button>Comprar Agora</button>
+
+        </div>
+    
+          <div class="produto">
+
+            <div class="produto-imagem">
+              <img src="../assets/img/Camiseta-Masculina.png" alt="camiseta masculina">
+            </div>
+
+            <div class="produto-info">
+              <p class="nome">Camiseta Masculina</p>
+              <p class="preco">R$84.90</p>
+            </div>
+            <button>Comprar Agora</button>
+    
+          </div>
+    
+          <div class="produto">
+  
+            <div class="produto-imagem">
+              <img src="../assets/img/Chaveiro.png" alt="chaveiro">
+            </div>
+
+            <div class="produto-info">
+              <p class="nome">Chaveiro</p>
+              <p class="preco">R$14.90</p>
+            </div>
+            <button>Comprar Agora</button>
+    
+          </div>
+    
+          <div class="produto">
+    
+            <div class="produto-imagem">
+              <img src="../assets/img/Garrafa2.png" alt="garrafa modelo 2">
+            </div>
+
+            <div class="produto-info">
+              <p class="nome">Garrafa</p>
+              <p class="preco">R$49.90</p>
+            </div>
+            <button>Comprar Agora</button>
+  
+          </div>
+    
+          <div class="produto">
+    
+            <div class="produto-imagem">
+              <img src="../assets/img/Colar.png" alt="colar">
+            </div>
+
+            <div class="produto-info">
+              <p class="nome">Colar</p>
+              <p class="preco">R$49.90</p>
+            </div>
+            <button>Comprar Agora</button>
+  
+          </div>
+    
+
+          <div class="produto">
+    
+            <div class="produto-imagem">
+              <img src="../assets/img/Broche.png" alt="broche">
+            </div>
+
+            <div class="produto-info">
+              <p class="nome">Broche</p>
+              <p class="preco">R$9.90</p>
+            </div>
+            <button>Comprar Agora</button>
+  
+          </div>
+    
+
+          <div class="produto">
+    
+            <div class="produto-imagem">
+              <img src="../assets/img/Moletom-Feminino.png" alt="moletom feminino">
+            </div>
+
+            <div class="produto-info">
+              <p class="nome">Moletom Feminino</p>
+              <p class="preco">R$104.90</p>
+            </div>
+            <button>Comprar Agora</button>
+  
+          </div>
+    
+
+        </div>
+    
+        <i id="bnt-right" class="fa-solid fa-angle-right fa-3x" onclick="direcao(2, 266)"></i>
+    
+      </div>
+
+    </div>
+    <!-- VANTAGENS -->
+    <div class="vantagens-coluna">
+      <h2>Vantagens para você</h2>
+      <div class="vantagens-cards">
+        <div class="vantagem-card">
+          <h3>Entrega para todo o Brasil</h3>
+          <p>Conforto de receber onde estiver.</p>
+        </div>
+        <div class="vantagem-card">
+          <h3>Preços que cabem no bolso</h3>
+          <p>Ofertas especiais o tempo todo.</p>
+        </div>
+        <div class="vantagem-card">
+          <h3>Produtos de alta qualidade</h3>
+          <p>Confiabilidade garantida.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+    </section>
+
    
     <div id="footer"></div>
 
-    <!-- API de acessibilidade -->
-    <script
-      src="https://website-widgets.pages.dev/dist/sienna.min.js"
-      defer
-    ></script>
 
-    <script src="/src/js/perfilusuario.js"></script>
+
+
+    <script src="/src/js/carrinho.js"></script>
     <script src="/src/js/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,249 @@
+/* ==========================
+   VARIÁVEIS DE CORES
+========================== */
+:root {
+  --primaria-escura: #09625d;
+  --primaria-media: #3eb4ae;
+  --primaria-clara: #d3fffd;
+  --primaria-escura-2: #0a3937;
+  --destaque-rosa: #8b2e5e;
+  --destaque-rosa-claro: #f4dce4;
+  --destaque-rosa-vivo: #b43eaa;
+  --branco: #ffffff;
+  --branco-fundo: #fffafa;
+  --cinza-claro: #d7d7d7;
+  --cinza-escuro: #444444;
+}
+
+/* ==========================
+   RESET & BODY
+========================== */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: var(--branco-fundo);
+}
+
+/* ==========================
+   CARRINHO
+========================== */
+.carrinho-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+}
+
+.carrinho-box, .resumo-box {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 25px;
+  border: 2px solid var(--cinza-claro);
+}
+
+.titulo-carrinho {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primaria-escura);
+  text-align: center;
+}
+
+.carrinho-tabela {
+  width: 100%;
+  border-collapse: collapse;
+    border-radius: 10px;
+}
+
+.carrinho-tabela th {
+  text-align: left;
+  background: var(--destaque-rosa-claro);
+  padding: 12px;
+  font-weight: 600;
+  color: var(--primaria-escura-2);
+}
+
+.carrinho-tabela td {
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--cinza-claro);
+}
+
+.produto-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.produto-img {
+  width: 90px;
+  height: 90px;
+  background: var(--destaque-rosa-claro);
+  border-radius: 10px;
+}
+.produto-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.produto-img img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+
+.produto-info h2 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--primaria-escura);
+}
+
+.produto-info p {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: var(--cinza-escuro);
+}
+
+.quantidade-box {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--cinza-claro);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.quantidade-box button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--destaque-rosa-claro);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.quantidade-box span {
+  padding: 0 10px;
+}
+
+.preco {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--destaque-rosa);
+}
+
+.btn-finalizar {
+  margin-top: 15px;
+  padding: 12px;
+  background: var(--destaque-rosa);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-finalizar a {
+  text-decoration: none;
+  color: var(--branco);
+}
+
+/* ==========================
+   RESUMO
+========================== */
+.resumo-box .card {
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: var(--primaria-escura);
+}
+
+.card input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--cinza-claro);
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.card button {
+  width: 100%;
+  padding: 10px;
+  background: var(--primaria-media);
+  border: none;
+  border-radius: 6px;
+  color: var(--branco);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.linha-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.totalzao strong {
+  font-size: 20px;
+  color: var(--destaque-rosa);
+}
+
+/* ==========================
+   FRETE OPÇÕES
+========================== */
+.frete-opcoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.frete-opcoes label {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--cinza-claro);
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--branco);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.frete-opcoes label:hover {
+  border-color: var(--primaria-media);
+  background-color: var(--primaria-clara);
+}
+
+.frete-opcoes input[type="radio"] {
+  display: none; /* escondendo o input real */
+}
+
+.frete-opcoes input[type="radio"]:checked + span {
+  border-color: var(--primaria-media);
+  background-color: var(--primaria-media);
+  color: var(--branco);
+}
+
+.frete-opcoes span {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.frete-opcoes input[type="radio"]:checked + label {
+  border-color: var(--primaria-media);
+  background-color: var(--primaria-clara);
+  color: black;
+}
+

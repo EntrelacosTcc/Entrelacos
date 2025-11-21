@@ -1,0 +1,117 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr{
+    background-color: #09625D;
+    height: 2px;
+    border: none;
+    margin: 15px 0;
+}
+
+.resumoConteiner{
+    width: 600px;
+    border: 2px solid #09625D;
+    border-radius: 20px;
+    padding: 20px 70px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.resumoConteiner h2, .resumoConteiner h3{
+    text-align: center;
+}
+
+.resumoConteiner h2{
+    margin: 0 15px;
+    font-size: 1.5rem;
+}
+
+.resumoConteiner h3{
+    font-weight: 300;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.item-box{
+    display: flex;
+    align-items: center;
+    height: 55px;
+    min-height: fit-content;
+    padding: 5px 10px 5px 3px;
+    border: 2px solid #09625D;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.decorationItem{
+    width: 5px;
+    height: 90%;
+    background-color: #8B2E5E;
+    border-radius: 10px;
+}
+
+.itemDetails{
+    flex: 1;
+}
+
+.item-box p{
+    margin: 5px;
+}
+
+.qntTipo-container{
+    display: flex;
+    gap: 40px;
+}
+
+.itemHeader{
+    display: flex;
+}
+
+.itemHeader p{
+    flex: 1;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.resumoDetails{
+    border: 2px solid #09625D;
+    border-radius: 15px;
+    background-color: rgba(13, 151, 144, 0.116);
+    padding: 25px 20px 30px;
+}
+
+.resumoSection{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 5px;
+}
+
+.resumoButtons{
+    margin-top: 20px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resumoButtons button{
+    width: 400px;
+    height: 30px;
+}
+
+#voltar{
+    border: 2px solid #09625D;
+    background: none;
+    color: #09625D;
+    border-radius: 5px;
+}
+
+#concluir{
+    background-color: #09625D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}

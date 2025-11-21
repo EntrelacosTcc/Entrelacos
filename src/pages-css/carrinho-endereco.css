@@ -1,0 +1,139 @@
+/* ==========================
+   VARIÁVEIS DE CORES
+========================== */
+:root {
+  --primaria-escura: #09625d;
+  --primaria-media: #3eb4ae;
+  --primaria-clara: #d3fffd;
+  --primaria-escura-2: #0a3937;
+  --destaque-rosa: #8b2e5e;
+  --destaque-rosa-claro: #f4dce4;
+  --destaque-rosa-vivo: #b43eaa;
+  --branco: #ffffff;
+  --branco-fundo: #fffafa;
+  --cinza-claro: #d7d7d7;
+  --cinza-escuro: #444444;
+}
+
+/* ==========================
+   CARRINHO
+========================== */
+.carrinho-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+}
+
+.carrinho-box, .resumo-box {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 25px;
+  border: 2px solid var(--cinza-claro);
+}
+
+.titulo-carrinho {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primaria-escura);
+  text-align: center;
+}
+
+/* ENDEREÇO */
+
+/* Seção Endereço */
+.endereco-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.endereco-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.endereco-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+#btnSalvarEndereco {
+  height: 40px;
+  width: 180px;
+  margin-top: 40px;
+  padding: 10px 20px;
+  background-color: #09625d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  font-size: 16px;
+}
+
+#btnSalvarEndereco:hover {
+  background-color: #3eb4ae;
+}
+
+.info-endereco {
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #09625d;
+  padding: 20px;
+}
+
+
+/* ==========================
+   RESUMO
+========================== */
+.resumo-box .card {
+  margin-bottom: 20px;
+}
+
+.resumo-box {
+    height: 350px;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: var(--primaria-escura);
+}
+
+.card input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--cinza-claro);
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.card button {
+  width: 100%;
+  padding: 10px;
+  background: var(--primaria-media);
+  border: none;
+  border-radius: 6px;
+  color: var(--branco);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.linha-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.totalzao strong {
+  font-size: 20px;
+  color: var(--destaque-rosa);
+}
+

@@ -72,6 +72,7 @@ body{
 
 .produto-info h1, .produto-info h3{
   font-weight: 500;
+  margin-bottom: 50px;
 }
 
 
@@ -381,4 +382,27 @@ th{
   border-radius: 10px;
   cursor: pointer;
   margin: 0 auto;
+}
+
+ /* popup sucesso */
+
+ .popup-sucesso {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: #3EB4AE;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(-20px);
+    z-index: 1000;
+}
+.popup-sucesso.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }

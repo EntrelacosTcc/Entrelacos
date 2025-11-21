@@ -1,0 +1,347 @@
+/* ==========================
+   VARIÁVEIS DE CORES
+========================== */
+:root {
+  --primaria-escura: #09625d;
+  --primaria-media: #3eb4ae;
+  --primaria-clara: #d3fffd;
+  --primaria-escura-2: #0a3937;
+  --destaque-rosa: #8b2e5e;
+  --destaque-rosa-claro: #f4dce4;
+  --destaque-rosa-vivo: #b43eaa;
+  --branco: #ffffff;
+  --branco-fundo: #fffafa;
+  --cinza-claro: #d7d7d7;
+  --cinza-escuro: #444444;
+}
+
+/* ==========================
+   RESET & BODY
+========================== */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: var(--branco-fundo);
+}
+
+/* ==========================
+   CARRINHO
+========================== */
+.carrinho-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+}
+
+.carrinho-box, .resumo-box {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 25px;
+  border: 2px solid var(--cinza-claro);
+}
+
+.titulo-carrinho {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primaria-escura);
+}
+
+.carrinho-tabela {
+  width: 100%;
+  border-collapse: collapse;
+    border-radius: 10px;
+}
+
+.carrinho-tabela th {
+  text-align: left;
+  background: var(--destaque-rosa-claro);
+  padding: 12px;
+  font-weight: 600;
+  color: var(--primaria-escura-2);
+}
+
+.carrinho-tabela td {
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--cinza-claro);
+}
+
+.produto-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.produto-img {
+  width: 90px;
+  height: 90px;
+  background: var(--destaque-rosa-claro);
+  border-radius: 10px;
+}
+.produto-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.produto-img img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+
+.produto-info h2 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--primaria-escura);
+}
+
+.produto-info p {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: var(--cinza-escuro);
+}
+
+.quantidade-box {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--cinza-claro);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.quantidade-box button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--destaque-rosa-claro);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.quantidade-box span {
+  padding: 0 10px;
+}
+
+.preco {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--destaque-rosa);
+}
+
+.btn-finalizar {
+  margin-top: 15px;
+  padding: 12px;
+  background: var(--destaque-rosa);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-finalizar a {
+  text-decoration: none;
+  color: var(--branco);
+}
+
+/* ==========================
+   RESUMO
+========================== */
+.resumo-box .card {
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: var(--primaria-escura);
+}
+
+.card input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--cinza-claro);
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.card button {
+  width: 100%;
+  padding: 10px;
+  background: var(--primaria-media);
+  border: none;
+  border-radius: 6px;
+  color: var(--branco);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.linha-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.totalzao strong {
+  font-size: 20px;
+  color: var(--destaque-rosa);
+}
+
+/* ==========================
+   CARROSSEL + VANTAGENS
+========================== */
+/* LOJA */
+
+.loja-container{
+  margin-bottom: 100px;
+}
+
+
+/* CARROSSEL LOJA */
+
+.produtos-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#content-slide{
+  display: flex;
+  height: 350px;
+  width: 1060px;
+  align-items: center;
+
+  overflow-x: auto;          
+  scroll-behavior: smooth;                
+
+  margin: 0 auto;           
+  border-radius: 12px;      
+}
+
+
+#bnt-left, #bnt-right{
+  position: absolute;
+  top: 250px;
+  margin-left: 60px;
+  margin-right: 60px;
+  color: #8b2e5e;
+
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;               
+}
+
+#bnt-right{
+  right: 0;
+}
+
+.produto{
+  background-color: #f4dce4;
+  border: 3px solid #8b2e5e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;         
+  height: 320px;
+  padding: 10px;
+  margin: 0px 25px;       
+  
+  text-align: center;
+  flex-shrink: 0;    
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.produto-imagem{
+  width: 190px;
+  height: 170px;
+  background-color: white;
+  border: 1px solid #8b2e5e;
+  border-radius: 10px;
+  margin: 0 auto 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.produto-imagem img {
+  max-width: 180px;
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.produto-info {
+  margin-bottom: 10px;
+}
+
+.produto-info .nome {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.produto-info .preco {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--destaque-rosa-escuro);
+}
+
+.produto button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--destaque-rosa);
+  color: #fff;
+  width: 90%;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+#content-slide::-webkit-scrollbar{
+  display: none;
+}
+
+h2 {
+    text-align: center;
+    color: #09625D;
+    margin-bottom: 30px;
+}
+
+.vantagens-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.vantagens-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.vantagem-card {
+width: 280px;
+height: 120px;
+border: 2px solid #09625D;
+border-radius: 10px;
+padding: 30px 20px;
+margin-bottom: 50px;
+}
+
+.vantagem-card h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #8B2E5E
+}

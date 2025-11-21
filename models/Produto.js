@@ -1,71 +1,93 @@
 const db = require('../config/database');
 
 class Produto {
-    static getAll(callback) {
-        db.query('SELECT * FROM produto ORDER BY nome_produto', (error, results) => {
-            if (error) return callback(error);
-            
-            // Converter campos JSON se necessário
+    static async getAll(callback) {
+        try {
+            const [results] = await db.query('SELECT * FROM produto ORDER BY nome_produto');
+
+            // Converter JSON se necessário
             const produtos = results.map(produto => {
                 if (produto.especificacoes && typeof produto.especificacoes === 'string') {
                     try {
                         produto.especificacoes = JSON.parse(produto.especificacoes);
                     } catch (e) {
-                        console.error('Erro ao parsear especificacoes:', e);
                         produto.especificacoes = {};
                     }
                 }
                 return produto;
             });
-            
+
             callback(null, produtos);
-        });
+        } catch (error) {
+            callback(error);
+        }
     }
-    
-    static getById(id_produto, callback) {
-        db.query('SELECT * FROM produto WHERE id_produto = ?', [id_produto], (error, results) => {
-            if (error) return callback(error);
-            
+
+    static async getById(id_produto, callback) {
+        try {
+            const [results] = await db.query('SELECT * FROM produto WHERE id_produto = ?', [id_produto]);
+
             if (results.length === 0) {
                 return callback(null, null);
             }
-            
+
             const produto = results[0];
-            
-            // Converter campos JSON se necessário
+
             if (produto.especificacoes && typeof produto.especificacoes === 'string') {
                 try {
                     produto.especificacoes = JSON.parse(produto.especificacoes);
                 } catch (e) {
-                    console.error('Erro ao parsear especificacoes:', e);
                     produto.especificacoes = {};
                 }
             }
-            
+
             callback(null, produto);
-        });
-    }
-    
-    static create(novoProduto, callback) {
-        // Converter especificações para JSON string se for objeto
-        if (novoProduto.especificacoes && typeof novoProduto.especificacoes === 'object') {
-            novoProduto.especificacoes = JSON.stringify(novoProduto.especificacoes);
+        } catch (error) {
+            callback(error);
         }
-        
-        db.query('INSERT INTO produto SET ?', novoProduto, callback);
     }
-    
-    static update(id_produto, produtoData, callback) {
-        // Converter especificações para JSON string se for objeto
-        if (produtoData.especificacoes && typeof produtoData.especificacoes === 'object') {
-            produtoData.especificacoes = JSON.stringify(produtoData.especificacoes);
+
+    static async create(novoProduto, callback) {
+        try {
+            if (novoProduto.especificacoes && typeof novoProduto.especificacoes === 'object') {
+                novoProduto.especificacoes = JSON.stringify(novoProduto.especificacoes);
+            }
+
+            const [results] = await db.query('INSERT INTO produto SET ?', novoProduto);
+            callback(null, results);
+        } catch (error) {
+            callback(error);
         }
-        
-        db.query('UPDATE produto SET ? WHERE id_produto = ?', [produtoData, id_produto], callback);
     }
-    
-    static delete(id_produto, callback) {
-        db.query('DELETE FROM produto WHERE id_produto = ?', [id_produto], callback);
+
+    static async update(id_produto, produtoData, callback) {
+        try {
+            if (produtoData.especificacoes && typeof produtoData.especificacoes === 'object') {
+                produtoData.especificacoes = JSON.stringify(produtoData.especificacoes);
+            }
+
+            const [results] = await db.query(
+                'UPDATE produto SET ? WHERE id_produto = ?',
+                [produtoData, id_produto]
+            );
+
+            callback(null, results);
+        } catch (error) {
+            callback(error);
+        }
+    }
+
+    static async delete(id_produto, callback) {
+        try {
+            const [results] = await db.query(
+                'DELETE FROM produto WHERE id_produto = ?',
+                [id_produto]
+            );
+
+            callback(null, results);
+        } catch (error) {
+            callback(error);
+        }
     }
 }
 

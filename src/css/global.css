@@ -547,6 +547,18 @@ i {
   z-index: 900;
 }
 
+/* animação de scroll */
+.animar-scroll {
+  opacity: 0;
+  transform: translateY(50px); 
+  transition: all 0.8s ease-out;
+}
+
+.animar-scroll.mostrar {
+  opacity: 1;
+  transform: translateY(0); 
+}
+
 /* ====== MENU LATERAL (ESCONDIDO POR PADRÃO) ====== */
 .mobile-menuContainer {
   display: none;
