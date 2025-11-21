@@ -8,6 +8,7 @@ hr{
     background-color: #09625D;
     height: 2px;
     border: none;
+    margin: 15px 0;
 }
 
 .resumoConteiner{
@@ -15,6 +16,8 @@ hr{
     border: 2px solid #09625D;
     border-radius: 20px;
     padding: 20px 70px;
+    margin-top: 40px;
+    margin-bottom: 30px;
 }
 
 .resumoConteiner h2, .resumoConteiner h3{
@@ -22,13 +25,14 @@ hr{
 }
 
 .resumoConteiner h2{
-    margin-bottom: 0;
+    margin: 0 15px;
     font-size: 1.5rem;
 }
 
 .resumoConteiner h3{
     font-weight: 300;
-    margin-top: 0;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 .item-box{
@@ -68,7 +72,7 @@ hr{
 
 .itemHeader p{
     flex: 1;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 0;
 }
 
@@ -76,12 +80,13 @@ hr{
     border: 2px solid #09625D;
     border-radius: 15px;
     background-color: rgba(13, 151, 144, 0.116);
-    padding: 10px 20px 30px;
+    padding: 25px 20px 30px;
 }
 
 .resumoSection{
     display: flex;
     gap: 30px;
+    margin-bottom: 5px;
 }
 
 .resumoButtons{
