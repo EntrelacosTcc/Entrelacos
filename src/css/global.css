@@ -860,3 +860,30 @@ a{
     }
   }
 }
+
+/* Estilos para o dropdown do usuário no navbar */
+.user-dropdown a:hover {
+    background-color: #f5f5f5;
+}
+
+.user-dropdown a.logout-btn:hover {
+    background-color: #ffeaea;
+}
+
+/* Estilo para o ícone do usuário no navbar */
+.user-navbar-info:hover {
+    opacity: 0.8;
+}
+
+/* Proteção para páginas que requerem autenticação */
+.auth-required {
+    display: none;
+}
+
+.authenticated .auth-required {
+    display: block;
+}
+
+.authenticated .auth-hidden {
+    display: none;
+}

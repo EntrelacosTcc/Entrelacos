@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const esqueceuSenha = document.querySelector('a[href="#"]');
 
   // Função para buscar perfil do usuário
-  async function fetchUserProfile(token) {
+  async function fetchOngProfile(token) {
     try {
-      const response = await fetch('http://localhost:3002/api/profile', {
+      const response = await fetch('http://localhost:3002/api/profileOng', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Função para registrar usuário no backend
-  async function registerUserInBackend(uid, email, nome) {
+  async function registerOngInBackend(uid, email, nome_ong) {
     try {
-      const response = await fetch('http://localhost:3002/api/register-user', {
+      const response = await fetch('http://localhost:3002/api/register-Ong', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify({
           uid: uid,
           email: email,
-          nome: nome,
-          data_nascimento: null
+          nome_ong: nome,
+
         })
       });
 
@@ -63,39 +63,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Função para salvar perfil do usuário
-  function saveUserProfile(profile) {
-    localStorage.setItem('userProfile', JSON.stringify(profile));
+  function saveOngProfile(profile) {
+    localStorage.setItem('ongProfile', JSON.stringify(profile));
     console.log('Perfil salvo no localStorage:', profile);
   }
 
   // Função principal de login
-  async function handleLogin(user, token) {
+  async function handleLogin(ong, token) {
     try {
       // Verificar se o usuário já está registrado no backend
       let profile;
       try {
-        profile = await fetchUserProfile(token);
+        profile = await fetchOngProfile(token);
         console.log('Perfil encontrado:', profile);
       } catch (error) {
         console.log('Usuário não encontrado no backend, registrando...');
-        const nome = user.displayName || user.email.split('@')[0];
-        await registerUserInBackend(user.uid, user.email, nome);
+        const nome = ong.displayName || ong.email.split('@')[0];
+        await registerOngInBackend(ong.uid, ong.email, nome);
         
         // Buscar perfil após registro
-        profile = await fetchUserProfile(token);
+        profile = await fetchOngProfile(token);
       }
 
       // Salvar dados do usuário
-      saveUserProfile(profile);
+      saveOngProfile(profile);
       
       // Atualizar navbar (se estiver disponível)
-      if (typeof updateNavbarWithUser === 'function') {
-        updateNavbarWithUser(profile);
+      if (typeof updateNavbarWithOng === 'function') {
+        updateNavbarWithOng(profile);
       }
       
       // Redirecionar
-      alert(`Bem-vindo(a), ${user.displayName || "Usuário"}!`);
-      window.location.href = "../perfil-users/perfilusuario.html";
+      alert(`Bem-vindo(a), ${ong.displayName || "Usuário"}!`);
+      window.location.href = "../perfil-ongs/perfilusuario.html";
 
     } catch (error) {
       console.error('Erro no processo de login:', error);
@@ -116,12 +116,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         console.log('Tentando login com:', email);
-        const userCredential = await signInWithEmailAndPassword(auth, email, senha);
-        const user = userCredential.user;
-        const token = await user.getIdToken();
+        const ongCredential = await signInWithEmailAndPassword(auth, email, senha);
+        const ong = ongCredential.ong;
+        const token = await ong.getIdToken();
         
-        console.log('Login Firebase OK, UID:', user.uid);
-        await handleLogin(user, token);
+        console.log('Login Firebase OK, UID:', ong.uid);
+        await handleLogin(ong, token);
 
       } catch (error) {
         console.error("Erro completo no login:", error);
@@ -136,11 +136,11 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         console.log('Iniciando login Google...');
         const result = await signInWithPopup(auth, provider);
-        const user = result.user;
-        const token = await user.getIdToken();
+        const ong = result.ong;
+        const token = await ong.getIdToken();
         
-        console.log('Login Google OK, UID:', user.uid);
-        await handleLogin(user, token);
+        console.log('Login Google OK, UID:', ong.uid);
+        await handleLogin(ong, token);
 
       } catch (error) {
         console.error("Erro completo no login Google:", error);
@@ -184,7 +184,7 @@ function handleAuthError(error) {
     case "auth/invalid-email":
       alert("O e-mail digitado não é válido.");
       break;
-    case "auth/user-not-found":
+    case "auth/ong-not-found":
       alert("Usuário não encontrado. Faça o cadastro primeiro.");
       break;
     case "auth/too-many-requests":
@@ -193,7 +193,7 @@ function handleAuthError(error) {
     case "auth/network-request-failed":
       alert("Erro de conexão. Verifique sua internet.");
       break;
-    case "auth/popup-closed-by-user":
+    case "auth/popup-closed-by-ong":
       alert("Login cancelado. Tente novamente.");
       break;
     default:

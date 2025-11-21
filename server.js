@@ -1,120 +1,64 @@
+// server.js
 const express = require('express');
-const cors = require('cors'); 
+const cors = require('cors');
 const path = require('path');
+require('dotenv').config();
+const admin = require('firebase-admin');
+
+
 const app = express();
 
-// Configurar CORS
-app.use(cors()); 
+// CORS
+app.use(cors());
 
-app.use((req, res, next) => {
-  if (req.url.endsWith('.css')) {
-    res.setHeader('Content-Type', 'text/css');
-  }
-  next();
-});
+// limites para aceitar imagens base64
+app.use(express.json({ limit: '12mb' }));
+app.use(express.urlencoded({ limit: '12mb', extended: true }));
 
-// Middleware para configurar MIME types corretamente
+// MIME middleware (opcional)
 app.use((req, res, next) => {
   const ext = path.extname(req.url);
-  switch (ext) {
-    case '.css':
-      res.setHeader('Content-Type', 'text/css');
-      break;
-    case '.js':
-      res.setHeader('Content-Type', 'application/javascript');
-      break;
-    case '.svg':
-      res.setHeader('Content-Type', 'image/svg+xml');
-      break;
-    case '.png':
-      res.setHeader('Content-Type', 'image/png');
-      break;
-    case '.jpg':
-    case '.jpeg':
-      res.setHeader('Content-Type', 'image/jpeg');
-      break;
-    case '.html':
-      res.setHeader('Content-Type', 'text/html');
-      break;
+  if (ext) {
+    switch (ext) {
+      case '.css': res.setHeader('Content-Type', 'text/css'); break;
+      case '.js': res.setHeader('Content-Type', 'application/javascript'); break;
+      case '.svg': res.setHeader('Content-Type', 'image/svg+xml'); break;
+      case '.png': res.setHeader('Content-Type', 'image/png'); break;
+      case '.jpg':
+      case '.jpeg': res.setHeader('Content-Type', 'image/jpeg'); break;
+      case '.html': res.setHeader('Content-Type', 'text/html'); break;
+    }
   }
   next();
 });
 
-app.get("/produto", (req, res) => {
-  res.sendFile(path.join(__dirname, "produtos-loja", "produto.html"));
-});
-
-// SERVIR ARQUIVOS ESTÁTICOS
+// servir estáticos (ajuste caminhos se necessário)
 app.use(express.static(path.join(__dirname)));
-app.use(express.json());
-
-app.use(express.static(path.join(__dirname, "src")));
-
-// Servir AMBAS as pastas CSS
-app.use('/css', express.static(path.join(__dirname, 'css')));        
-app.use('/pages-css', express.static(path.join(__dirname, 'pages-css'))); 
-
+app.use(express.static(path.join(__dirname, 'src')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/pages-html', express.static(path.join(__dirname, 'pages-html')));
 app.use('/produtos-loja', express.static(path.join(__dirname, 'produtos-loja')));
 
-
-// Middleware para parsear JSON
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Rotas para páginas HTML
-app.get('/index.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-    // FALE-CONOSCO
-
-app.get('src/pages-html/fale-conosco.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src/pages-html/fale-conosco.html'));
-});
-
-    // SOBRE
-
-app.get('/pages-html/sobre.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages-html/sobre.html'));
-});
-
-    // ONGS
-
-app.get('/pages-html/ONGS.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages-html/ONGS.html'));
-});
-
-app.get('/pages-html/loja.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages-html/loja.html'));
-});
-
-app.get('/produto/:id_produto', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src/produtos-loja/produto.html'));
-});
-
 // rotas API
-const faleconoscoRoutes = require('./routes/faleconosco');
-app.use('/api/faleconosco', faleconoscoRoutes);
+const profileRoutes = require('./routes/perfilusuario');
+app.use('/api/profile', profileRoutes);
 
-const SobreongsRoutes = require('./routes/sobreongs');
-app.use('/api/Sobreongs', SobreongsRoutes);
+// outros endpoints que você já tem (ex.: usuario, produtos...)
+const usuarioRoutes = require('./routes/usuario');
+app.use('/api/usuario', usuarioRoutes);
 
-const produtoRoutes = require('./routes/produtoRoutes');
-app.use('/api/produtos', produtoRoutes);
+// health
+app.get('/health', (req, res) => res.json({ status: 'OK' }));
 
-// Rota de health check
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Servidor funcionando' });
+// fallback api 404
+app.use('/api/*', (req, res) => {
+  console.log(`Rota API não encontrada: ${req.method} ${req.originalUrl}`);
+  res.status(404).json({ error: `Rota ${req.method} ${req.originalUrl} não encontrada` });
 });
 
-// Iniciar servidor
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
-  console.log("✅ Servidor rodando na porta ${PORT}");
-  console.log("🌐 Home: http://localhost:${PORT}/index.html");
-  console.log("🌐 Home: http://localhost:${PORT}/produto/:id_produto");
-  console.log("🔧 Health check: http://localhost:${PORT}/health");
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
