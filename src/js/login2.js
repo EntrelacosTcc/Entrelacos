@@ -1,3 +1,5 @@
+// @ts-nocheck
+export const __force_browser_module = true;
 
 // login.js
 import { auth } from "./firebase.js";
