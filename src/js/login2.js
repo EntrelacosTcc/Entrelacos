@@ -1,4 +1,3 @@
-// Obrigatório para o Vercel não converter para require()
 
 // login.js
 import { auth } from "./firebase.js";
