@@ -1,6 +1,4 @@
 // @ts-nocheck
-export const __force_browser_module = true;
-window.exports = {}; // <-- impede crash se o bundler inserir exports
 
 
 // login.js
