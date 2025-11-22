@@ -4,7 +4,7 @@ window.exports = {}; // <-- impede crash se o bundler inserir exports
 
 
 // login.js
-import { auth, provider } from "./firebase.js";
+import { auth } from "./firebase.js";
 import { 
   signInWithEmailAndPassword, 
   signInWithPopup, 
