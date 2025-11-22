@@ -13,7 +13,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
 // Configurar provedor Google
-const provider = new GoogleAuthProvider();
 
 document.addEventListener("DOMContentLoaded", () => {
   const btnLogin = document.getElementById("btnLogin");
