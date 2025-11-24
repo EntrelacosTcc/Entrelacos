@@ -351,9 +351,6 @@ function toggleMenu() {
   menu.classList.contains("open") ? closeMenu() : openMenu();
 }
 
-
-
-
 // =============================================
 // ACESSIBILIDADE SIENNA API Vlibras
 // =============================================

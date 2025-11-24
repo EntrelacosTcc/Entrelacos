@@ -795,6 +795,11 @@ a{
     line-height: 1.5;
   }
 
+  #noClick{
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
   /* Top menu botão sair */
   .top-menu {
     width: 100%;
