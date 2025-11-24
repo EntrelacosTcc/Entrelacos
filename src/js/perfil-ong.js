@@ -248,17 +248,14 @@ function createPost(content, image) {
   saveToStorage();
 }
 
-// Upload Imagem de Perfil e Capa
 const bgDiv = document.getElementById('bgUpload');
 const bgInput = document.getElementById('bgInput');
 const profileDiv = document.getElementById('profileUpload');
 const profileInput = document.getElementById('profileInput');
 
-// Quando clicar na div, abre o seletor de arquivo
 bgDiv.addEventListener('click', () => bgInput.click());
 profileDiv.addEventListener('click', () => profileInput.click());
 
-// Quando o usuário escolher uma imagem, exibe dentro da div
 bgInput.addEventListener('change', () => previewImage(bgInput, bgDiv));
 profileInput.addEventListener('change', () => previewImage(profileInput, profileDiv));
 
@@ -273,5 +270,46 @@ function previewImage(input, div) {
   }
 }
 
-/* --- Inicialização --- */
 renderFeed();
+
+
+
+// CARDS DE DOAÇÃO
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const container = document.getElementById('pedidosDoacoes-container');
+
+    if (!container) {
+        console.error("Container #pedidosDoacoes-container não encontrado.");
+        return;
+    }
+
+    const pedidos = JSON.parse(localStorage.getItem('todosPedidos')) || [];
+
+    if (pedidos.length === 0) {
+        container.innerHTML = "<p>Nenhum pedido cadastrado.</p>";
+        return;
+    }
+
+    container.innerHTML = "";
+
+    pedidos.forEach(pedido => {
+        const itensEmLinha = pedido.itens.map(i => i.nome).join(' / ');
+
+        const div = document.createElement('div');
+        div.classList.add('vagaDoacao-box');
+
+        div.innerHTML = `
+            <div class="doacaoImage"></div>
+
+            <div class="vagaDoacaoInfo">
+                <h3>${pedido.nome}</h3>
+                <p>Itens necessários: ${itensEmLinha}</p>
+                <div class="status-vagaDoacao">${pedido.prazo}</div>
+            </div>
+        `;
+
+        container.appendChild(div);
+    });
+});

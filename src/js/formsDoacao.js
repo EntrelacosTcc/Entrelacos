@@ -64,7 +64,7 @@ btnAdicionar.addEventListener('click', () => {
   document.getElementById('tipo').value = 'unidade(s)';
 });
 
-// Seleciona apenas os inputs do formulário principal
+// Seleciona inputs do formulário principal
 const inputsFormulario = document.querySelectorAll(
   '#tituloPedido, #descricaoPedido, #prazoPedido, #responsavelPedido'
 );
@@ -79,12 +79,13 @@ inputsFormulario.forEach(input => {
 
 // Limita input de data para hoje ou futuro
 const inputData = document.getElementById('prazoPedido');
-const hojeStr = new Date().toISOString().split('T')[0]; // formato YYYY-MM-DD
+const hojeStr = new Date().toISOString().split('T')[0];
 inputData.setAttribute('min', hojeStr);
 
 // Botão de resumo
 btnResumo.addEventListener('click', () => {
-  // Verifica se todos os inputs do formulário principal estão preenchidos
+
+  // Verifica se inputs estão preenchidos
   for (let input of inputsFormulario) {
     if (!input.value) {
       alert('Por favor, preencha todos os campos antes de continuar.');
@@ -93,10 +94,10 @@ btnResumo.addEventListener('click', () => {
     }
   }
 
-  // Verifica se a data é válida (igual ou maior que hoje)
+  // Valida data
   const dataSelecionada = new Date(document.getElementById('prazoPedido').value);
   const hoje = new Date();
-  hoje.setHours(0,0,0,0); // só data
+  hoje.setHours(0,0,0,0);
   dataSelecionada.setHours(0,0,0,0);
 
   if (dataSelecionada < hoje) {
@@ -105,17 +106,32 @@ btnResumo.addEventListener('click', () => {
     return;
   }
 
-  // Salva os dados do formulário principal antes de ir para a próxima página
+  // Salva dados finais do formulário
   inputsFormulario.forEach(input => {
     formData[input.name || input.id] = input.value;
   });
   localStorage.setItem('formDoacao', JSON.stringify(formData));
 
+  // 🔥 NOVO: salva este pedido dentro de "todosPedidos"
+  let pedidos = JSON.parse(localStorage.getItem('todosPedidos')) || [];
+
+  const novoPedido = {
+    nome: formData.tituloPedido,
+    descricao: formData.descricaoPedido,
+    prazo: formData.prazoPedido,
+    responsavel: formData.responsavelPedido,
+    itens: itens
+  };
+
+  pedidos.push(novoPedido);
+
+  localStorage.setItem('todosPedidos', JSON.stringify(pedidos));
+
   // Vai para a página de resumo
   window.location.href = '../pages-html/formulario-doacaoResumo.html';
 });
 
-// Validação de quantidade para itens
+// Validação da quantidade
 const inputQuantidade = document.getElementById('quantidade');
 inputQuantidade.addEventListener('input', () => {
   if (inputQuantidade.value < 0) {

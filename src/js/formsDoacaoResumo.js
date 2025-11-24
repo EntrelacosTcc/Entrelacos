@@ -1,4 +1,3 @@
-    // Puxando dados do formulário principal
     const formData = JSON.parse(localStorage.getItem('formDoacao')) || {};
 
     document.getElementById('resumoTitulo').textContent = formData.tituloPedido || '-';
@@ -6,7 +5,6 @@
     document.getElementById('resumoPrazo').textContent = formData.prazoPedido || '-';
     document.getElementById('resumoResponsavel').textContent = formData.responsavelPedido || '-';
 
-    // Puxando itens adicionados
     const resumoDiv = document.getElementById('resumoItens');
     const itens = JSON.parse(localStorage.getItem('itensDoacao')) || [];
 

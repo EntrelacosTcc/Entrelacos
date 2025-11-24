@@ -295,38 +295,25 @@
                 <div class="create-content">
 
                     <h2>Pedidos de Doação</h2>
-                    <button class="createForm">+ Criar Novo Pedido</button>
+                    <button class="createForm"><a href="../pages-html/formulario-doacao.html">+ Criar Novo Pedido</a></button>
 
-                    <div class="vagasDoacoes-container">
+                    <div id="pedidosDoacoes-container">
+</div>
 
-                        <div class="vagaDoacao-box">
-                            <div class="doacaoImage"></div>
-                            <div class="vagaDoacaoInfo">
-                                <h3>Nome do Pedido de Doacao</h3>
-                                <p>Itens necessários: Ração / Mantas / Fórmula PetMilk / Produtos de limpeza</p>
-                                <div class="status-vagaDoacao">Status</div>
-                            </div>
-                            <button id="gerenciamento-btn" class="gerenciarBtn nav-item gerenciarDoacao"
-                                data-content="gerenciamentoDoacao">Gerenciar</button>
-                        </div>
-
-                    </div>
-
-                </div>
 
             </div>
 
 
             <!-- GERENCIAMENTO DAS DOAÇÕES -->
 
-            <div id="gerenciamentoDoacao-content" class="content-section" style="display: none">
+            <!-- <div id="gerenciamentoDoacao-content" class="content-section" style="display: none">
                 <div class="gerenciamento-header">
                     <div class="gerenciamento-title">
                         <i class="fa-solid fa-arrow-left nav-item" data-content="doacoes" style="font-size: 22px;"></i>
                         <h2>Detalhes da vaga</h2>
                     </div>
 
-                    <button class="cancelVagaBtn">Desativar Pedido</button>
+                    <button class="cancelVagaBtn">Cancelar Pedido</button>
                 </div>
 
                 <div class="main-doacao">
@@ -337,7 +324,7 @@
                             Qualquer ajuda é bem-vinda</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-------------- POSTAGENS -------------->
 
@@ -420,33 +407,39 @@
     </div>
     </main>
 
+
+    <div id="overlayDoacao" class="overlayDoacao hidden">
+    <div class="overlayContent">
+        <h2 id="overlayTitulo"></h2>
+        <p><strong>Itens:</strong> <span id="overlayItens"></span></p>
+        <p><strong>Prazo:</strong> <span id="overlayPrazo"></span></p>
+
+        <button id="btnCancelarDoacao" class="btnCancelar">Cancelar Doação</button>
+        <button id="btnFecharOverlay" class="btnFechar">Fechar</button>
+    </div>
+</div>
+
+
     <script src="/src/js/main.js"></script>
 
     <script src="/src/js/perfil-ong.js"></script>
     <script>
-        // Navegação entre as seções
+
         document.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', function () {
-                // Remove a classe active de todos os itens
                 document.querySelectorAll('.nav-item').forEach(navItem => {
                     navItem.classList.remove('active');
                 });
-
-                // Adiciona a classe active ao item clicado
                 this.classList.add('active');
 
-                // Obtém o conteúdo a ser exibido
                 const contentId = this.getAttribute('data-content') + '-content';
 
-                // Oculta todos os conteúdos
                 document.querySelectorAll('.content-section').forEach(section => {
                     section.style.display = 'none';
                 });
 
-                // Exibe o conteúdo selecionado
                 document.getElementById(contentId).style.display = 'block';
 
-                // Atualiza o título e descrição
                 updateContentHeader(this);
             });
         });
