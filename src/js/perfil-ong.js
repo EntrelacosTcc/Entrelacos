@@ -274,8 +274,6 @@ renderFeed();
 
 
 
-// CARDS DE DOAÇÃO
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const container = document.getElementById('pedidosDoacoes-container');
@@ -302,33 +300,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
         div.innerHTML = `
             <div class="doacaoImage"></div>
-
             <div class="vagaDoacaoInfo">
                 <h3>${pedido.nome}</h3>
                 <p>Itens necessários: ${itensEmLinha}</p>
                 <div class="status-vagaDoacao">Até ${pedido.prazo}</div>
             </div>
-
             <button class="cancelarPedidoBtn" data-id="${pedido.id}">Cancelar Pedido</button>
         `;
 
         container.appendChild(div);
     });
 
-document.addEventListener("click", function(e) {
-  if (e.target.classList.contains("cancelarPedidoBtn")) {
-    const id = Number(e.target.dataset.id);
+    // Cancelar pedido
+    document.addEventListener("click", function(e) {
+      if (e.target.classList.contains("cancelarPedidoBtn")) {
+        const id = Number(e.target.dataset.id);
 
-    // Remove do localStorage
-    let pedidos = JSON.parse(localStorage.getItem("todosPedidos")) || [];
-    pedidos = pedidos.filter(p => p.id !== id);
-    localStorage.setItem("todosPedidos", JSON.stringify(pedidos));
+        let pedidos = JSON.parse(localStorage.getItem("todosPedidos")) || [];
+        pedidos = pedidos.filter(p => p.id !== id);
+        localStorage.setItem("todosPedidos", JSON.stringify(pedidos));
 
-    // Remove da tela
-    const box = e.target.closest(".vagaDoacao-box");
-    if (box) box.remove();
-  }
-});
-
+        const box = e.target.closest(".vagaDoacao-box");
+        if (box) box.remove();
+      }
+    });
 
 });

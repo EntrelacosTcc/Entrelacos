@@ -1,14 +1,13 @@
+localStorage.removeItem('itensDoacao');
+localStorage.removeItem('formDoacao');
+
+let itens = [];    
+let formData = {};   
+
 const btnAdicionar = document.getElementById('btnAdicionar');
 const lista = document.getElementById('listaItens');
 const btnResumo = document.getElementById('btnResumo');
 
-// Itens da doação
-let itens = JSON.parse(localStorage.getItem('itensDoacao')) || [];
-
-// Dados do formulário principal
-let formData = JSON.parse(localStorage.getItem('formDoacao')) || {};
-
-// Renderiza os itens adicionados
 function renderizarItens() {
   lista.innerHTML = '';
   itens.forEach((item, index) => {
@@ -30,7 +29,6 @@ function renderizarItens() {
     lista.appendChild(box);
   });
 
-  // Botões de apagar
   document.querySelectorAll('.btn-apagar').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const index = e.target.getAttribute('data-index');
@@ -43,7 +41,7 @@ function renderizarItens() {
 
 renderizarItens();
 
-// Adicionar novo item
+// ADICIONAR NOVO ITEM
 btnAdicionar.addEventListener('click', () => {
   const nome = document.getElementById('nomeItem').value;
   const quantidade = document.getElementById('quantidade').value;
@@ -58,18 +56,16 @@ btnAdicionar.addEventListener('click', () => {
   localStorage.setItem('itensDoacao', JSON.stringify(itens));
   renderizarItens();
 
-  // Limpa os inputs de adicionar item
   document.getElementById('nomeItem').value = '';
   document.getElementById('quantidade').value = '';
   document.getElementById('tipo').value = 'unidade(s)';
 });
 
-// Seleciona inputs do formulário principal
+// FORMULÁRIO PRINCIPAL
 const inputsFormulario = document.querySelectorAll(
   '#tituloPedido, #descricaoPedido, #prazoPedido, #responsavelPedido'
 );
 
-// Salva dados do formulário principal automaticamente
 inputsFormulario.forEach(input => {
   input.addEventListener('input', () => {
     formData[input.name || input.id] = input.value;
@@ -77,15 +73,15 @@ inputsFormulario.forEach(input => {
   });
 });
 
-// Limita input de data para hoje ou futuro
+// Limita input
 const inputData = document.getElementById('prazoPedido');
 const hojeStr = new Date().toISOString().split('T')[0];
 inputData.setAttribute('min', hojeStr);
 
-// Botão de resumo
+
+// BOTÃO DE RESUMO
 btnResumo.addEventListener('click', () => {
 
-  // Verifica se inputs estão preenchidos
   for (let input of inputsFormulario) {
     if (!input.value) {
       alert('Por favor, preencha todos os campos antes de continuar.');
@@ -106,34 +102,35 @@ btnResumo.addEventListener('click', () => {
     return;
   }
 
-  // Salva dados finais do formulário
+  // Atualiza formData
   inputsFormulario.forEach(input => {
     formData[input.name || input.id] = input.value;
   });
-  localStorage.setItem('formDoacao', JSON.stringify(formData));
 
-  // 🔥 NOVO: salva este pedido dentro de "todosPedidos"
+  // Salva pedido para resumo temporário
+  localStorage.setItem('pedidoAtual', JSON.stringify({
+    formData: formData,
+    itens: itens
+  }));
+
+  // Salva no histórico de todos os pedidos
   let pedidos = JSON.parse(localStorage.getItem('todosPedidos')) || [];
-
   const novoPedido = {
-    id: Date.now(), 
+    id: Date.now(),
     nome: formData.tituloPedido,
     descricao: formData.descricaoPedido,
     prazo: formData.prazoPedido,
     responsavel: formData.responsavelPedido,
     itens: itens
   };
-
-  
   pedidos.push(novoPedido);
-
   localStorage.setItem('todosPedidos', JSON.stringify(pedidos));
 
-  // Vai para a página de resumo
   window.location.href = '../pages-html/formulario-doacaoResumo.html';
 });
 
-// Validação da quantidade
+// VALIDAÇÃO DA QUANTIDADE
+
 const inputQuantidade = document.getElementById('quantidade');
 inputQuantidade.addEventListener('input', () => {
   if (inputQuantidade.value < 0) {
