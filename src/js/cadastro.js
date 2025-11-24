@@ -4,7 +4,7 @@ import {
   createUserWithEmailAndPassword, 
   updateProfile,
   sendEmailVerification 
-} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Script de cadastro carregado!");
