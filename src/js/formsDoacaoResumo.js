@@ -44,5 +44,5 @@
     });
 
     document.getElementById('concluir').addEventListener('click', () => {
-      alert('Pedido concluído com sucesso!');
+      window.location.href = '../perfil-users/perfilong.html'
     });

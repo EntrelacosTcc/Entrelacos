@@ -116,6 +116,7 @@ btnResumo.addEventListener('click', () => {
   let pedidos = JSON.parse(localStorage.getItem('todosPedidos')) || [];
 
   const novoPedido = {
+    id: Date.now(), 
     nome: formData.tituloPedido,
     descricao: formData.descricaoPedido,
     prazo: formData.prazoPedido,
@@ -123,6 +124,7 @@ btnResumo.addEventListener('click', () => {
     itens: itens
   };
 
+  
   pedidos.push(novoPedido);
 
   localStorage.setItem('todosPedidos', JSON.stringify(pedidos));

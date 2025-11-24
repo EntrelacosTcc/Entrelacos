@@ -4,6 +4,14 @@ body {
     background-color: #F5F5F5;
 }
 
+a{
+  text-decoration: none;
+}
+
+.a-form{
+  color: white;
+}
+
 /* Navbar Lateral */
 .navbarProfile {
     position: fixed;
@@ -449,24 +457,7 @@ label, select, input, textarea {
     background-color: #fff;
 }
 
-/* GERENCIAMENTO DAS DOAÇOES */
 
-.main-doacao{
-  border-bottom: 2px solid #09625D;
-}
-
-.main-doacao h2{
-  margin: 0;
-}
-
-.main-doacaoImg{
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
-  border: 1px solid #09625D;
-  background-color: #00000041;
-  flex-shrink: 0;
-}
 
 /* ===============================
    CAUSAS CHECKBOXES
@@ -590,6 +581,28 @@ label {
 .container-button {
   display: flex;
   justify-content: flex-end;
+}
+
+
+/* DOACOES */
+
+
+#pedidosDoacoes-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 50px 20px 15px;
+}
+
+.cancelarPedidoBtn {
+    background: none;
+    color: rgb(255, 78, 78);
+    border: 1px solid rgb(255, 78, 78);
+    padding: 4px 5px;
+    margin: 15px 10px;
+    height: fit-content;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 
