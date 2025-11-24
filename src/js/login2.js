@@ -8,7 +8,7 @@ import {
   signInWithPopup, 
   GoogleAuthProvider,
   sendPasswordResetEmail 
-} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
 // Configurar provedor Google
 
