@@ -295,22 +295,11 @@
                 <div class="create-content">
 
                     <h2>Pedidos de Doação</h2>
-                    <button class="createForm">+ Criar Novo Pedido</button>
+                    <button class="createForm">
+                        <a class="a-form" href="../pages-html/formulario-doacao.html">+ Criar Novo Pedido</a>
+                    </button>
 
-                    <div class="vagasDoacoes-container">
-
-                        <div class="vagaDoacao-box">
-                            <div class="doacaoImage"></div>
-                            <div class="vagaDoacaoInfo">
-                                <h3>Nome do Pedido de Doacao</h3>
-                                <p>Itens necessários: Ração / Mantas / Fórmula PetMilk / Produtos de limpeza</p>
-                                <div class="status-vagaDoacao">Status</div>
-                            </div>
-                            <button id="gerenciamento-btn" class="gerenciarBtn nav-item gerenciarDoacao"
-                                data-content="gerenciamentoDoacao">Gerenciar</button>
-                        </div>
-
-                    </div>
+                    <div id="pedidosDoacoes-container"></div>
 
                 </div>
 
@@ -424,29 +413,22 @@
 
     <script src="/src/js/perfilong.js"></script>
     <script>
-        // Navegação entre as seções
+
         document.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', function () {
-                // Remove a classe active de todos os itens
                 document.querySelectorAll('.nav-item').forEach(navItem => {
                     navItem.classList.remove('active');
                 });
-
-                // Adiciona a classe active ao item clicado
                 this.classList.add('active');
 
-                // Obtém o conteúdo a ser exibido
                 const contentId = this.getAttribute('data-content') + '-content';
 
-                // Oculta todos os conteúdos
                 document.querySelectorAll('.content-section').forEach(section => {
                     section.style.display = 'none';
                 });
 
-                // Exibe o conteúdo selecionado
                 document.getElementById(contentId).style.display = 'block';
 
-                // Atualiza o título e descrição
                 updateContentHeader(this);
             });
         });

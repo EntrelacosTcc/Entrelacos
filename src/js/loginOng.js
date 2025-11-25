@@ -1,4 +1,4 @@
-// loginOng.js
+// loginOng.js (ATUALIZADO - Verificação no MySQL antes do login)
 import { auth } from "./firebase.js";
 import { 
   signInWithEmailAndPassword, 
@@ -15,7 +15,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const googleBtn = document.getElementById("btnGoogle");
   const esqueceuSenha = document.querySelector('a[href="#"]');
 
-  // Função para buscar perfil da ONG
+  // 🔹 NOVA FUNÇÃO: Verificar se ONG existe no MySQL pelo email
+  async function checkOngExistsInDatabase(email) {
+    try {
+      console.log('🔍 Verificando se ONG existe no banco de dados...');
+      const response = await fetch(`http://localhost:3002/api/ong/check-email?email=${encodeURIComponent(email)}`);
+      
+      if (response.ok) {
+        const result = await response.json();
+        console.log('✅ Resposta da verificação:', result);
+        return result.exists;
+      } else {
+        console.error('❌ Erro ao verificar ONG no banco');
+        return false;
+      }
+    } catch (error) {
+      console.error('❌ Erro na verificação da ONG:', error);
+      return false;
+    }
+  }
+
+  // 🔹 MODIFICADA: Buscar perfil da ONG (apenas se existir no MySQL)
   async function fetchOngProfile(token) {
     try {
       console.log('🔍 Buscando perfil da ONG no backend...');
@@ -31,57 +51,17 @@ document.addEventListener("DOMContentLoaded", () => {
         return profile;
       } else if (response.status === 404) {
         console.log('❌ ONG não encontrada no backend');
-        return null;
+        throw new Error('ONG não cadastrada no sistema');
       } else {
         throw new Error(`Erro HTTP: ${response.status}`);
       }
     } catch (error) {
       console.error('❌ Erro ao buscar perfil da ONG:', error);
-      return null;
+      throw error;
     }
   }
 
-  // loginOng.js - função registerOngInBackend
-// No loginOng.js - função registerOngInBackend
-async function registerOngInBackend(uid, email, nome) {
-  try {
-    console.log('📝 Registrando ONG no backend...');
-    const response = await fetch('http://localhost:3002/api/ong/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        uid: uid,
-        email: email,
-        nome_ong: nome,
-        // ✅ ADICIONAR ESTADO PADRÃO para o registro automático
-        estado: 'SP', // ou outro estado padrão
-        // outros campos serão preenchidos posteriormente
-        perfil_oficial: null,
-        classificacao: null,
-        nome_responsavel: null,
-        cargo_responsavel: null,
-        cnpj: null,
-        descricao: null,
-        endereco: null,
-        causa: null
-      })
-    });
-
-    const result = await response.json();
-    
-    if (response.ok) {
-      console.log('✅ ONG registrada no backend:', result);
-      return result;
-    } else {
-      throw new Error(result.error || 'Erro ao registrar ONG no backend');
-    }
-  } catch (error) {
-    console.error('❌ Erro no registro backend:', error);
-    throw error;
-  }
-}
+  // 🔹 REMOVIDA: Função registerOngInBackend - Não vamos mais criar automaticamente
 
   // Função para salvar perfil da ONG
   function saveOngProfile(profile) {
@@ -89,25 +69,16 @@ async function registerOngInBackend(uid, email, nome) {
     console.log('💾 Perfil da ONG salvo no localStorage:', profile);
   }
 
-  // Função principal de login
+  // 🔹 MODIFICADA: Função principal de login com verificação
   async function handleLogin(user, token) {
     try {
       console.log('🔄 Iniciando processo de login...');
 
-      // Verificar se a ONG já está registrada no backend
-      let profile = await fetchOngProfile(token);
+      // 🔹 VERIFICAÇÃO CRÍTICA: Buscar perfil da ONG no MySQL
+      const profile = await fetchOngProfile(token);
       
       if (!profile) {
-        console.log('🆕 ONG não encontrada no backend, registrando...');
-        const nome = user.displayName || user.email.split('@')[0] || 'Nova ONG';
-        const registerResult = await registerOngInBackend(user.uid, user.email, nome);
-        
-        // Buscar perfil após registro
-        profile = await fetchOngProfile(token);
-        
-        if (!profile) {
-          throw new Error('Não foi possível obter o perfil após o registro');
-        }
+        throw new Error('ONG não encontrada no sistema. Faça o cadastro primeiro.');
       }
 
       // Salvar dados da ONG
@@ -124,14 +95,22 @@ async function registerOngInBackend(uid, email, nome) {
       // Redirecionar
       const ongName = profile.nome_ong || user.displayName || "ONG";
       alert(`✅ Bem-vindo(a), ${ongName}!`);
-      console.log('🚀 Redirecionando para perfil-ong.html...');
+      console.log('🚀 Redirecionando para perfilong.html...');
       
-      // Forçar redirecionamento
       window.location.href = "../perfil-users/perfilong.html";
 
     } catch (error) {
       console.error('❌ Erro no processo de login:', error);
-      alert('❌ Erro durante o login: ' + error.message);
+      
+      // 🔹 LOGOUT NO FIREBASE se a ONG não existe no MySQL
+      try {
+        await auth.signOut();
+        console.log('🚪 Usuário desconectado do Firebase (ONG não existe no MySQL)');
+      } catch (signOutError) {
+        console.error('Erro ao fazer logout:', signOutError);
+      }
+      
+      alert('❌ ' + error.message);
     }
   }
 
@@ -148,6 +127,13 @@ async function registerOngInBackend(uid, email, nome) {
 
       try {
         console.log('🔐 Tentando login com:', email);
+        
+        // 🔹 VERIFICAÇÃO PRÉVIA: Checar se ONG existe no MySQL antes do Firebase
+        const ongExists = await checkOngExistsInDatabase(email);
+        if (!ongExists) {
+          throw new Error('ONG não cadastrada. Faça o cadastro primeiro.');
+        }
+
         const userCredential = await signInWithEmailAndPassword(auth, email, senha);
         const user = userCredential.user;
         const token = await user.getIdToken();
@@ -176,6 +162,12 @@ async function registerOngInBackend(uid, email, nome) {
         console.log('✅ Login Google OK, UID:', user.uid);
         console.log('🔑 Token obtido:', token.substring(0, 20) + '...');
         
+        // 🔹 VERIFICAÇÃO PRÉVIA para Google também
+        const ongExists = await checkOngExistsInDatabase(user.email);
+        if (!ongExists) {
+          throw new Error('ONG não cadastrada. Faça o cadastro primeiro.');
+        }
+        
         await handleLogin(user, token);
 
       } catch (error) {
@@ -197,11 +189,17 @@ async function registerOngInBackend(uid, email, nome) {
       }
 
       try {
+        // 🔹 VERIFICAÇÃO: Só permitir redefinição se ONG existir
+        const ongExists = await checkOngExistsInDatabase(email);
+        if (!ongExists) {
+          throw new Error('ONG não cadastrada. Faça o cadastro primeiro.');
+        }
+
         await sendPasswordResetEmail(auth, email);
         alert("✅ E-mail de redefinição de senha enviado! Verifique sua caixa de entrada.");
       } catch (error) {
         console.error("❌ Erro ao enviar e-mail de redefinição:", error);
-        alert("❌ Erro ao enviar e-mail de redefinição. Verifique o e-mail digitado.");
+        alert("❌ " + error.message);
       }
     });
   }
@@ -233,23 +231,10 @@ function handleAuthError(error) {
       alert("❌ Login cancelado. Tente novamente.");
       break;
     default:
-      alert(`❌ Erro ao fazer login: ${error.message}`);
-  }
-}
-
-// Função para verificar se o usuário já está logado ao carregar a página
-export async function checkOngAuth() {
-  try {
-    const user = auth.currentUser;
-    if (user) {
-      console.log('🔍 Usuário já autenticado:', user.uid);
-      const token = await user.getIdToken();
-      await handleLogin(user, token);
-      return true;
-    }
-    return false;
-  } catch (error) {
-    console.error('❌ Erro ao verificar autenticação:', error);
-    return false;
+      if (error.message.includes('ONG não cadastrada')) {
+        alert(error.message);
+      } else {
+        alert(`❌ Erro ao fazer login: ${error.message}`);
+      }
   }
 }

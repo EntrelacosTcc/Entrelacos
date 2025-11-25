@@ -4,7 +4,7 @@ import {
   createUserWithEmailAndPassword, 
   updateProfile,
   sendEmailVerification 
-} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Script de cadastro carregado!");
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Registra usuário no backend MySQL
       console.log('Registrando usuário no backend...');
       
-      const response = await fetch('http://localhost:3002/api/register-user', {
+      const response = await fetch('http://localhost:3002/api/usuario', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -3,10 +3,13 @@ const router = express.Router();
 const UsuarioController = require('../controllers/usuarioController');
 const auth = require('../middlewares/auth');
 
-// rota pública para checar email (GET)
+// rota pública para checar email
 router.get('/check-email', UsuarioController.checkEmail);
 
-// rotas protegidas (exemplo: atualizar email a partir do painel — usamos auth)
-router.put('/update-email', auth, UsuarioController.updateEmail); // opcional
+// rota pública para registrar usuário
+router.post('/', UsuarioController.registerUser);
+
+// rota protegida (ex.: atualizar email)
+router.put('/update-email', auth, UsuarioController.updateEmail);
 
 module.exports = router;

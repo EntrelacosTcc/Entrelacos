@@ -42,17 +42,38 @@ app.use('/pages-html', express.static(path.join(__dirname, 'pages-html')));
 app.use('/produtos-loja', express.static(path.join(__dirname, 'produtos-loja')));
 
 // Rotas para páginas HTML
-app.get('/index.html', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
-app.get('/pages-html/fale-conosco.html', (req, res) => res.sendFile(path.join(__dirname, 'src/pages-html/fale-conosco.html')));
-app.get('/pages-html/sobre.html', (req, res) => res.sendFile(path.join(__dirname, 'pages-html/sobre.html')));
-app.get('/pages-html/ONGS.html', (req, res) => res.sendFile(path.join(__dirname, 'pages-html/ONGS.html')));
-app.get('/pages-html/loja.html', (req, res) => res.sendFile(path.join(__dirname, 'pages-html/loja.html')));
-app.get('/produto/:id_produto', (req, res) => res.sendFile(path.join(__dirname, 'src/produtos-loja/produto.html')));
+app.get('/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+    // FALE-CONOSCO
+app.get('src/pages-html/fale-conosco.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src/pages-html/fale-conosco.html'));
+});
+    // SOBRE
+app.get('/pages-html/sobre.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages-html/sobre.html'));
+});
+    // ONGS
+app.get('/pages-html/ongs.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages-html/ongs.html'));
+});
+app.get('/pages-html/loja.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages-html/loja.html'));
+});
+app.get('/produto/:id_produto', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/produtos-loja/produto.html'));
+});
 
 // server.js - Adicione esta parte ANTES das rotas
 console.log('🔄 Carregando rotas...');
 
 // Rotas API
+const sobreongsRoutes = require('./routes/sobreongs');
+app.use('/api/Sobreongs', sobreongsRoutes);
+
+const faleconoscoRoutes = require('./routes/faleconosco');
+app.use('/api/faleconosco', faleconoscoRoutes);
+
 const produtoRoutes = require('./routes/produtoRoutes');
 app.use('/api/produtos', produtoRoutes);
 console.log('✅ Rotas de produtos carregadas');

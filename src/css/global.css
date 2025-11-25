@@ -559,24 +559,6 @@ i {
   transform: translateY(0); 
 }
 
-/* ====== MENU LATERAL (ESCONDIDO POR PADRÃO) ====== */
-.mobile-menuContainer {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 65%;
-  max-width: 300px;
-  background-color: var(--secundaria-azul-claro);
-  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-  z-index: 1000;
-  transition: all 0.3s ease;
-  overflow-y: auto;
-}
-
-/* ########################## */
-
 .repeticaoParaResponsividade{
   display: none;
 }
@@ -598,8 +580,6 @@ a{
   text-decoration: none;
 }
 
-/*  */
-/* ====== RESPONSIVO MOBILE & TABLET ====== */
 @media (max-width: 820px) {
 
   .repeticaoParaResponsividade{
@@ -730,32 +710,52 @@ a{
   border-radius: 20px;
   outline: none;
 }
-  /*  */
-  
 
-  /* Esconde versão desktop desses botões */
   .nav-menu .cart-icon,
   .nav-menu .enter-btn {
     display: none;
   }
 
-  /* Mobile menu container */
   .mobile-menuContainer {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    background-color: var(--secundaria-azul-claro);
-    width: 70%;
-    height: 100vh;
-    padding: 20px;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
-    overflow-y:scroll;
-    z-index: 10001;
-  }
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 100vh;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  background-color: var(--secundaria-azul-claro);
 
-  /* Mobile menu interno */
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1), opacity 0.35s ease;
+  z-index: 10002;
+  overflow-y: auto;
+}
+
+.mobile-menuContainer.open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 9000;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
   .mobile-menu {
     display: flex;
     justify-content: flex-start;
@@ -793,6 +793,11 @@ a{
     font-size: 14px;
     margin-top: 10px;
     line-height: 1.5;
+  }
+
+  #noClick{
+    opacity: 0.8;
+    cursor: not-allowed;
   }
 
   /* Top menu botão sair */

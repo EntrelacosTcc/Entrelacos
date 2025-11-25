@@ -109,7 +109,7 @@ function loadDoacaoComponents() {
 
 
 // =============================================
-// COMPONENTE VAGA
+// COMPONENTE VAGA (CORRIGIDO)
 // =============================================
 class VagaItem extends HTMLElement {
     constructor() {
@@ -307,30 +307,50 @@ function initMobileMenu() {
     console.log('📱 Inicializando menu mobile...');
 }
 
-function toggleMenu() {
-    const menu = document.querySelector(".mobile-menuContainer");
-    const overlay = document.querySelector(".overlay");
+document.addEventListener("DOMContentLoaded", () => {
+  const menu = document.querySelector(".mobile-menuContainer");
+  const overlay = document.querySelector(".overlay");
 
-    if (!menu || !overlay) return;
+  if (menu) menu.style.display = "";
+  if (overlay) overlay.style.display = "";
 
-    const isOpen = menu.style.display === "block";
-    menu.style.display = isOpen ? "none" : "block";
-    overlay.style.display = isOpen ? "none" : "block";
-    document.body.style.overflow = isOpen ? "auto" : "hidden";
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".menu-saida")) {
+      e.preventDefault();
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (e.target.classList && e.target.classList.contains("overlay")) {
+      closeMenu();
+    }
+  });
+});
+
+function openMenu() {
+  const menu = document.querySelector(".mobile-menuContainer");
+  const overlay = document.querySelector(".overlay");
+  if (!menu || !overlay) return;
+  menu.classList.add("open");
+  overlay.classList.add("show");
+  document.body.style.overflow = "hidden";
 }
 
-document.addEventListener("click", (e) => {
-    if (e.target.closest(".menu-saida") || e.target.classList.contains("overlay")) {
-        const menu = document.querySelector(".mobile-menuContainer");
-        const overlay = document.querySelector(".overlay");
+function closeMenu() {
+  const menu = document.querySelector(".mobile-menuContainer");
+  const overlay = document.querySelector(".overlay");
+  if (!menu || !overlay) return;
+  menu.classList.remove("open");
+  overlay.classList.remove("show");
+  document.body.style.overflow = "auto";
+}
 
-        if (menu && overlay) {
-            menu.style.display = "none";
-            overlay.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-    }
-});
+function toggleMenu() {
+  const menu = document.querySelector(".mobile-menuContainer");
+  if (!menu) return;
+  menu.classList.contains("open") ? closeMenu() : openMenu();
+}
 
 // =============================================
 // ACESSIBILIDADE SIENNA API Vlibras

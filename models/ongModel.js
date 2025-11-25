@@ -41,23 +41,24 @@ class OngModel {
     }
   }
 
-  static async checkEmailExists(email, excludeOngId = null) {
-    try {
-      let query = 'SELECT id_ong FROM ong WHERE email = ?';
-      const params = [email];
-      
-      if (excludeOngId) {
-        query += ' AND id_ong != ?';
-        params.push(excludeOngId);
-      }
-      
-      const [rows] = await db.execute(query, params);
-      return rows.length > 0;
-    } catch (error) {
-      console.error('Erro ao verificar email:', error);
-      throw error;
+// models/ongModel.js - Método checkEmailExists
+static async checkEmailExists(email, excludeOngId = null) {
+  try {
+    let query = 'SELECT id_ong FROM ong WHERE email = ?';
+    const params = [email];
+    
+    if (excludeOngId) {
+      query += ' AND id_ong != ?';
+      params.push(excludeOngId);
     }
+    
+    const [rows] = await db.execute(query, params);
+    return rows.length > 0;
+  } catch (error) {
+    console.error('Erro ao verificar email:', error);
+    throw error;
   }
+}
 
   static async create(ongData) {
     try {
