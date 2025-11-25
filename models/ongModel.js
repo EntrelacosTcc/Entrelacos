@@ -174,6 +174,45 @@ static async checkEmailExists(email, excludeOngId = null) {
       throw error;
     }
   }
+
+  static async findByFirebaseUid(firebaseUid) {
+    try {
+      const [rows] = await db.execute(
+        'SELECT * FROM ong WHERE firebase_uid = ?',
+        [firebaseUid]
+      );
+      return rows[0] || null;
+    } catch (error) {
+      console.error('Erro ao buscar ONG por Firebase UID:', error);
+      throw error;
+    }
+  }
+
+  static async update(ongId, updateData) {
+    try {
+      const fields = [];
+      const values = [];
+      
+      Object.keys(updateData).forEach(key => {
+        if (updateData[key] !== undefined) {
+          fields.push(`${key} = ?`);
+          values.push(updateData[key]);
+        }
+      });
+      
+      values.push(ongId);
+      
+      const [result] = await db.execute(
+        `UPDATE ong SET ${fields.join(', ')} WHERE id_ong = ?`,
+        values
+      );
+      
+      return result;
+    } catch (error) {
+      console.error('Erro ao atualizar ONG:', error);
+      throw error;
+    }
+  }
 }
 
 module.exports = OngModel;

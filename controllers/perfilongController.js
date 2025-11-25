@@ -1,4 +1,3 @@
-// controllers/perfilongController.js
 const OngModel = require('../models/ongModel');
 const PerfilOngModel = require('../models/perfilongModel');
 const db = require('../config/database');
@@ -9,7 +8,7 @@ class PerfilOngController {
   // ----------------------------- GET PROFILE -----------------------------
   static async getProfile(req, res) {
     try {
-      const firebaseUid = req.userId; // Usando req.userId do middleware auth
+      const firebaseUid = req.userId;
 
       const profile = await PerfilOngModel.getCompleteProfile(firebaseUid);
       if (!profile) return res.status(404).json({ error: 'ONG não encontrada' });
@@ -25,14 +24,13 @@ class PerfilOngController {
   // ----------------------------- UPDATE PROFILE -----------------------------
   static async updateProfile(req, res) {
     try {
-      const firebaseUid = req.userId; // Usando req.userId do middleware auth
+      const firebaseUid = req.userId;
 
       const ong = await OngModel.findByFirebaseUid(firebaseUid);
       if (!ong) return res.status(404).json({ error: 'ONG não encontrada' });
 
       const {
         nome_ong,
-        resumo,
         causas_atuacao,
         classificacao,
         endereco,
@@ -62,8 +60,10 @@ class PerfilOngController {
           return res.status(409).json({ error: 'Email já em uso' });
         }
 
+        // Atualizar no Firebase Auth
         await admin.auth().updateUser(firebaseUid, { email: novoEmail });
 
+        // Atualizar no banco de dados
         await db.execute(
           'UPDATE ong SET email = ? WHERE id_ong = ?',
           [novoEmail, ong.id_ong]
@@ -71,49 +71,44 @@ class PerfilOngController {
       }
 
       // ----------------------- UPDATE TABELA ONG -----------------------
-      await OngModel.update(ong.id_ong, {
-        nome_ong: nome_ong ?? null,
-        descricao: descricao ?? null,
-        endereco: endereco ?? null,
-        classificacao: classificacao ?? null,
-        nome_responsavel: nome_responsavel ?? null,
-        cargo_responsavel: cargo_responsavel ?? null,
-        cnpj: cnpj ?? null,
-        causa: causa ?? null,
-        estado: estado ?? null
+      // Preparar dados para atualização na tabela ong
+      const updateOngData = {
+        nome_ong: nome_ong ?? ong.nome_ong,
+        descricao: descricao ?? ong.descricao,
+        endereco: endereco ?? ong.endereco,
+        classificacao: classificacao ?? ong.classificacao,
+        nome_responsavel: nome_responsavel ?? ong.nome_responsavel,
+        cargo_responsavel: cargo_responsavel ?? ong.cargo_responsavel,
+        cnpj: cnpj ?? ong.cnpj,
+        causa: causa ?? ong.causa,
+        estado: estado ?? ong.estado,
+        telefone: telefone ?? ong.telefone,
+        website: website ?? ong.website,
+        facebook: facebook ?? ong.facebook,
+        instagram: instagram ?? ong.instagram
+      };
+
+      // Remover campos undefined
+      Object.keys(updateOngData).forEach(key => {
+        if (updateOngData[key] === undefined) {
+          delete updateOngData[key];
+        }
       });
 
-      // ----------------------- UPDATE OU CREATE PERFIL -----------------------
-      const existing = await PerfilOngModel.findByOngId(ong.id_ong);
+      await OngModel.update(ong.id_ong, updateOngData);
 
-      if (existing) {
-        await PerfilOngModel.update(ong.id_ong, {
-          resumo,
-          causas_atuacao,
-          classificacao,
-          endereco
-        });
+      // ----------------------- UPDATE PERFIL_ONG (CAUSAS) -----------------------
+      const existingPerfil = await PerfilOngModel.findByOngId(ong.id_ong);
+
+      if (existingPerfil) {
+        // Atualizar causas
+        await PerfilOngModel.update(ong.id_ong, causas_atuacao);
       } else {
-        await PerfilOngModel.create({
-          id_ong: ong.id_ong,
-          resumo,
-          causas_atuacao,
-          classificacao,
-          endereco
-        });
+        // Criar perfil_ong se não existir
+        await PerfilOngModel.create(ong.id_ong, causas_atuacao);
       }
 
-      // ----------------------- UPDATE CONTATO -----------------------
-      if (telefone || email || website || facebook || instagram) {
-        await PerfilOngModel.updateContactInfo(ong.id_ong, {
-          telefone: telefone || null,
-          email: email || null,
-          website: website || null,
-          facebook: facebook || null,
-          instagram: instagram || null
-        });
-      }
-
+      // Buscar perfil atualizado
       const updated = await PerfilOngModel.getCompleteProfile(firebaseUid);
       return res.json(updated);
 
@@ -126,7 +121,7 @@ class PerfilOngController {
   // ----------------------------- GET CONTACT INFO -----------------------------
   static async getContactInfo(req, res) {
     try {
-      const firebaseUid = req.userId; // Usando req.userId do middleware auth
+      const firebaseUid = req.userId;
 
       const ong = await OngModel.findByFirebaseUid(firebaseUid);
       if (!ong) return res.status(404).json({ error: 'ONG não encontrada' });
@@ -143,16 +138,38 @@ class PerfilOngController {
   // ----------------------------- UPDATE CONTACT INFO -----------------------------
   static async updateContactInfo(req, res) {
     try {
-      const firebaseUid = req.userId; // Usando req.userId do middleware auth
+      const firebaseUid = req.userId;
 
       const ong = await OngModel.findByFirebaseUid(firebaseUid);
       if (!ong) return res.status(404).json({ error: 'ONG não encontrada' });
 
       const { telefone, email, website, facebook, instagram } = req.body;
 
+      // Atualizar email se fornecido e diferente
+      if (email && email !== ong.email) {
+        // Verificar se email já está em uso
+        const [rows] = await db.execute(
+          'SELECT id_ong FROM ong WHERE email = ? AND id_ong != ?',
+          [email, ong.id_ong]
+        );
+
+        if (rows.length > 0) {
+          return res.status(409).json({ error: 'Email já em uso' });
+        }
+
+        // Atualizar no Firebase Auth
+        await admin.auth().updateUser(firebaseUid, { email });
+
+        // Atualizar no banco
+        await db.execute(
+          'UPDATE ong SET email = ? WHERE id_ong = ?',
+          [email, ong.id_ong]
+        );
+      }
+
+      // Atualizar outros contatos
       await PerfilOngModel.updateContactInfo(ong.id_ong, {
         telefone: telefone || null,
-        email: email || null,
         website: website || null,
         facebook: facebook || null,
         instagram: instagram || null

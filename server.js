@@ -67,6 +67,10 @@ app.get('/produto/:id_produto', (req, res) => {
 // server.js - Adicione esta parte ANTES das rotas
 console.log('🔄 Carregando rotas...');
 
+// Importar rotas do perfil ONG
+// const perfilOngRoutes = require('./routes/perfilongRoutes');
+// app.use('/api/ong', perfilOngRoutes);
+
 // Rotas API
 const sobreongsRoutes = require('./routes/sobreongs');
 app.use('/api/Sobreongs', sobreongsRoutes);
