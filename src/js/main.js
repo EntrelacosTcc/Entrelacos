@@ -107,17 +107,11 @@ function loadDoacaoComponents() {
     }
 }
 
+
 // =============================================
 // COMPONENTE VAGA
 // =============================================
-
 class VagaItem extends HTMLElement {
-    constructor() {
-        super();
-    }
-}
-
-class VagaComponent extends HTMLElement {
     constructor() {
         super();
     }
@@ -128,7 +122,7 @@ class VagaComponent extends HTMLElement {
 
     render() {
         const imagem = this.getAttribute('imagem');
-        const imagemHTML = imagem
+        const imagemHTML = imagem 
             ? `<img src="${imagem}" alt="${this.getAttribute('titulo')}" class="vaga-img">`
             : `<div class="vaga-img"></div>`;
 
@@ -153,12 +147,16 @@ class VagaComponent extends HTMLElement {
 
     getCausas() {
         const causas = this.getAttribute('causas');
-        return causas
-            ? causas.split(',').map(c => `<div class="causa">${c.trim()}</div>`).join('')
-            : '';
+        if (causas) {
+            return causas.split(',').map(causa => 
+                `<div class="causa">${causa.trim()}</div>`
+            ).join('');
+        }
+        return '';
     }
 }
 
+// Registrar componente apenas uma vez
 if (!customElements.get('vaga-item')) {
     customElements.define('vaga-item', VagaItem);
 }

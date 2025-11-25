@@ -25,20 +25,20 @@
     <h1>Cadastre-se</h1>
 
         <label>Nome de usuário</label>
-        <input type="text" required="required"><br>
+        <input type="text" required="required" id="nome"><br>
 
          <label>E-mail</label>
-         <input type="email" required="required"><br>
+         <input type="email" required="required" id="email"><br>
 
          <label>Senha</label>
-         <input type="password" required="required"><br>
+         <input type="password" required="required" id="senha"><br>
 
 
          <div class="input-icon">
             <label>Estado</label>
             <img src="../assets/img/icon-localizacao.png" alt="">
          </div>
-         <select name="cidade" required="required">
+         <select name="cidade" required="required" id="estado">
             <option value="" data-default disabled selected></option>
             <option value="SP">São Paulo</option>
             <option value="AC">Acre</option>
@@ -97,8 +97,8 @@
         </div>
 
         <div class="centralized-items">
-            <a href="./cadastro-voluntarioConcluido.html">
-                <button type="button" id="btnContinuar">Cadastrar</button>
+            <a href="./login-ong.html">
+                <button type="button" id="btnCadastrar">Cadastrar</button>
             </a>
             </div>
           
@@ -112,6 +112,7 @@
       src="https://website-widgets.pages.dev/dist/sienna.min.js"
       defer
     ></script>
+    <script type="module" src="../js/cadastroOng.js"></script>
     
     </body>
     

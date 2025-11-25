@@ -95,20 +95,20 @@
                         </div>
                         <div class="causas-checkboxes">
                             <!-- 13 opções -->
-                            <label><input type="checkbox" value="Animal"> Animal</label>
-                            <label><input type="checkbox" value="Social"> Social</label>
-                            <label><input type="checkbox" value="Ambiental"> Ambiental</label>
-                            <label><input type="checkbox" value="Educacional"> Educacional</label>
-                            <label><input type="checkbox" value="Saúde"> Saúde</label>
-                            <label><input type="checkbox" value="Cultural"> Cultural</label>
-                            <label><input type="checkbox" value="Humanitária"> Humanitária</label>
-                            <label><input type="checkbox" value="Religiosa"> Religiosa</label>
-                            <label><input type="checkbox" value="Mulheres"> Mulheres</label>
-                            <label><input type="checkbox" value="LGBTQIA+"> LGBTQIA+</label>
-                            <label><input type="checkbox" value="Crianças e Adolescentes"> Crianças e
+                            <label><input type="checkbox" value="Animal" id="causas_atuacao"> Animal</label>
+                            <label><input type="checkbox" value="Social" id="causas_atuacao"> Social</label>
+                            <label><input type="checkbox" value="Ambiental" id="causas_atuacao"> Ambiental</label>
+                            <label><input type="checkbox" value="Educacional" id="causas_atuacao"> Educacional</label>
+                            <label><input type="checkbox" value="Saúde" id="causas_atuacao"> Saúde</label>
+                            <label><input type="checkbox" value="Cultural" id="causas_atuacao"> Cultural</label>
+                            <label><input type="checkbox" value="Humanitária" id="causas_atuacao"> Humanitária</label>
+                            <label><input type="checkbox" value="Religiosa" id="causas_atuacao"> Religiosa</label>
+                            <label><input type="checkbox" value="Mulheres" id="causas_atuacao"> Mulheres</label>
+                            <label><input type="checkbox" value="LGBTQIA+" id="causas_atuacao"> LGBTQIA+</label>
+                            <label><input type="checkbox" value="Crianças e Adolescentes" id="causas_atuacao"> Crianças e
                                 Adolescentes</label>
-                            <label><input type="checkbox" value="Idosos"> Idosos</label>
-                            <label><input type="checkbox" value="PCD"> PCD</label>
+                            <label><input type="checkbox" value="Idosos" id="causas_atuacao"> Idosos</label>
+                            <label><input type="checkbox" value="PCD" id="causas_atuacao"> PCD</label>
                         </div>
                         <h4>Selecionadas (máx. 3):</h4>
                         <div class="causas-tags" id="perfilCausas"></div>
@@ -422,7 +422,7 @@
 
     <script src="/src/js/main.js"></script>
 
-    <script src="/src/js/perfil-ong.js"></script>
+    <script src="/src/js/perfilong.js"></script>
     <script>
         // Navegação entre as seções
         document.querySelectorAll('.nav-item').forEach(item => {
@@ -461,6 +461,26 @@
         }
 
     </script>
+    <!-- No final do perfilong.html, antes do </body> -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🔍 Verificando perfil da ONG no localStorage...');
+    const ongProfile = localStorage.getItem('ongProfile');
+    
+    if (ongProfile) {
+        console.log('✅ Perfil da ONG encontrado:', JSON.parse(ongProfile));
+    } else {
+        console.log('❌ Nenhum perfil de ONG encontrado no localStorage');
+        console.log('📋 Itens no localStorage:', Object.keys(localStorage));
+        
+        // Redirecionar para login se não tiver perfil
+        setTimeout(() => {
+            alert('❌ Sessão expirada. Faça login novamente.');
+            window.location.href = './login-ong.html';
+        }, 1000);
+    }
+});
+</script>
 </body>
 
 </html>

@@ -24,7 +24,7 @@
     <h1>Informações da ONG</h1>
 
          <label>Classificação</label><br>
-         <select name="classificacao" required>
+         <select name="classificacao" required id="classificacao">
             <option value="" selected disabled>Selecione a Classificação da sua ONG</option>
             <option value="instituto">Instituto</option>
             <option value="Associação">Associação</option>
@@ -33,17 +33,15 @@
 
          </select><br>
 
-         <label>Nome</label><br>
-        <input type="text" placeholder="Digite seu nome completo"><br>
 
          <label>Descreva sua ONG</label><br>
-         <textarea  name="mensagem" rows="4" cols="52"  placeholder="Faça uma descrição do trabalho da sua ONG" ></textarea><br>
+         <textarea  name="mensagem" rows="4" cols="52"  placeholder="Faça uma descrição do trabalho da sua ONG" id="descricao"></textarea><br>
 
         <label>Endereço</label><br>
-        <input type="text" placeholder="Digite seu endereço"><br>
+        <input type="text" placeholder="Digite seu endereço" id="endereco"><br>
 
          <label>Causas</label><br>
-         <select name="causas"  required="required">
+         <select name="causas"  required="required" id="causas">
             <option value="causa" selected disabled>Selecione a causa que mais define sua ONG</option>
             <option value="Animal">Animal</option>
             <option value="Social">Social</option>
@@ -62,13 +60,13 @@
          </select><br>
 
         <label>Responsavél pela ONG</label><br>
-        <input type="text" placeholder="Digite o nome do responsável pela ONG"><br>
+        <input type="text" placeholder="Digite o nome do responsável pela ONG" id="nome_responsavel"><br>
              
         <label>Cargo do responsavél</label><br>
-        <input type="text" placeholder="Digite o cargo do responsável pela ONG"><br>
+        <input type="text" placeholder="Digite o cargo do responsável pela ONG" id="cargo_responsavel"><br>
 
         <label>CNPJ</label><br>
-        <input type="number" placeholder="00.000.000/0000-00"><br>
+        <input type="number" placeholder="00.000.000/0000-00" id="cnpj"><br>
 
         <div class="centralized-items">
 
@@ -87,6 +85,8 @@
 src="https://website-widgets.pages.dev/dist/sienna.min.js"
 defer
 ></script>
+<script type="module" src="../js/cadastro-ong.js"></script>
+
 
 </body>
 </html>
