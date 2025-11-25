@@ -305,7 +305,7 @@
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  margin-top: 280px;
+  margin-top: 30px;
   font-size: 12px;
   color: #333;
 }
@@ -342,6 +342,86 @@
 .btn-doacao:hover {
   background-color: #2a8f8a;
   transform: translateY(-2px);
+}
+
+
+/* Form cartão oculto inicialmente */
+.form-cartao {
+  margin-top: 30px;
+  display: none;
+  flex-direction: column;
+  gap: 22px;
+  animation: fadeIn 0.3s ease;
+}
+
+.form-pix {
+  margin-top: 25px;
+}
+
+.pix-titulo {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 600;
+  color: #0a3937;
+  margin-bottom: 30px;
+}
+
+.pix-instrucoes {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0;
+  font-size: 16px;
+  color: #0a3937;
+}
+
+.pix-icon {
+  font-size: 28px;
+}
+
+#pixCodigo {
+  width: 85%;
+  height: 40px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #0a3937;
+  margin-top: 10px;
+}
+
+.btn-copiar {
+  margin-top: 15px;
+  background-color: #3eb4ae;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-copiar:hover {
+  background-color: #2a8f8a;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.linha-dupla {
+  display: flex;
+  gap: 40px;
+}
+
+.linha-dupla div {
+  flex: 1;
+}
+
+/* Botão ativo */
+.btn-pagamento.ativo {
+  background-color: #2b8d87 !important;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 992px) {

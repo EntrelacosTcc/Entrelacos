@@ -132,7 +132,56 @@
             <button type="button" class="btn-pagamento">PIX</button>
           </div>
 
-          <div class="termos">
+
+           <!-- FORMULÁRIO EXTRA — CARTÃO DE CRÉDITO -->
+             <div class="form-cartao" id="formCartao">
+
+                <label>Número do cartão</label>
+                <input type="text" id="numCartao" placeholder="0000 0000 0000 0000" maxlength="19">
+
+                <label>Nome impresso no cartão</label>
+                <input type="text" id="nomeCartao" placeholder="NOME">
+
+                <div class="linha-dupla">
+                  <div>
+                  <label>Vencimento (mês/ano)</label>
+                  <input type="text" id="validade" placeholder="00/00" maxlength="5">
+                    </div>
+
+                <div>
+                    <label>CVV</label>
+                   <input type="text" id="cvv" placeholder="000" maxlength="3">
+               </div>
+              </div>
+             </div>
+                <!-- FORMULÁRIO EXTRA — PIX  -->
+             <div class="form-pix" id="formPix" style="display:none;">
+
+               <p class="pix-titulo">Siga as instruções e faça um pix</p>
+
+                <div class="pix-instrucoes">
+
+                  <p>Clique em Finalizar Pedido para gerar o código e QR code de pagamento. Depois, faça o pix no app que você desejar.</p>
+                 </div>
+
+
+                 <!-- Tela 2 – código e QR -->
+              <div id="pixResultado" style="display:none; margin-top:20px; text-align:center;">
+                <h3>CÓDIGO PIX</h3>
+                <input id="pixCodigo" type="text" readonly>
+
+                  <button class="btn-copiar" id="btnCopiar">COPIAR CÓDIGO</button>
+
+                  <p style="margin-top:20px;">QR CODE</p>
+                  <img id="pixQrCode" src="" width="200">
+                 </div>
+
+                 <div class="cont-btn-doacao">
+                     <button type="button" class="btn-doacao" id="btnGerarPix">Finalizar Pedido</button>
+                </div>
+             </div>
+
+             <div class="termos">
             <input type="checkbox" id="aceite" name="aceite" required>
             <label for="aceite">
               Concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a>.
@@ -143,6 +192,9 @@
           <div class="cont-btn-doacao">
             <button type="submit" class="btn-doacao">Confirmar Doação</button>
           </div>
+
+         
+
         </form>
       </div>
     </div>
@@ -154,6 +206,96 @@
   <!-- API de acessibilidade -->
   <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
   <script src="../js/main.js"></script>
+  <script>
+  const btnCartao = document.querySelectorAll('.btn-pagamento')[0];
+  const btnPix = document.querySelectorAll('.btn-pagamento')[1];
+  const formCartao = document.getElementById('formCartao');
+
+  // Função para ativar botão selecionado
+  function ativar(btn) {
+    document.querySelectorAll('.btn-pagamento').forEach(b => b.classList.remove('ativo'));
+    btn.classList.add('ativo');
+  }
+
+  btnCartao.addEventListener('click', () => {
+    ativar(btnCartao);
+    formCartao.style.display = "flex";  
+  });
+
+  btnPix.addEventListener('click', () => {
+    ativar(btnPix);
+    formCartao.style.display = "none";
+  });
+
+  // --- Máscaras ---
+  const numCartao = document.getElementById("numCartao");
+  numCartao.addEventListener("input", function () {
+    let valor = this.value.replace(/\D/g, "");
+    valor = valor.replace(/(\d{4})(?=\d)/g, "$1 ");
+    this.value = valor;
+  });
+
+  const validade = document.getElementById("validade");
+  validade.addEventListener("input", function () {
+    let v = this.value.replace(/\D/g, "");
+    if (v.length >= 3) {
+      v = v.replace(/(\d{2})(\d{1,2})/, "$1/$2");
+    }
+    this.value = v;
+  });
+
+  const cvv = document.getElementById("cvv");
+  cvv.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "");
+  });
+
+  // -------- PIX --------
+const btnPix2 = document.getElementById("btnGerarPix");
+const pixResultado = document.getElementById("pixResultado");
+const pixCodigoInput = document.getElementById("pixCodigo");
+const pixQrCode = document.getElementById("pixQrCode");
+const btnCopiar = document.getElementById("btnCopiar");
+
+function gerarChavePix() {
+  const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let chave = "00020126BR.GOV.BCB.PIX.";
+  for (let i = 0; i < 32; i++) {
+    chave += letras[Math.floor(Math.random() * letras.length)];
+  }
+  return chave;
+}
+
+btnPix2.addEventListener("click", () => {
+  const chave = gerarChavePix();
+  pixCodigoInput.value = chave;
+
+  pixQrCode.src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
+    encodeURIComponent(chave);
+
+  pixResultado.style.display = "block";
+});
+
+// Copiar código PIX
+btnCopiar.addEventListener("click", () => {
+  pixCodigoInput.select();
+  document.execCommand("copy");
+  alert("Código PIX copiado!");
+});
+
+btnCartao.addEventListener('click', () => {
+  formCartao.style.display = "flex";
+  formPix.style.display = "none";
+});
+
+btnPix.addEventListener('click', () => {
+  formCartao.style.display = "none";
+  formPix.style.display = "block";
+});
+
+
+</script>
+
 
 </body>
 </html>
