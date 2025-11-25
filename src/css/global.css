@@ -800,7 +800,6 @@ a{
     cursor: not-allowed;
   }
 
-  /* Top menu botão sair */
   .top-menu {
     width: 100%;
     display: flex;
@@ -828,7 +827,6 @@ a{
     font-size: 16px;
   }
 
-  /* Botão de saída específico */
   .menu-saida {
     position: absolute;
     top: 20px;
@@ -843,7 +841,6 @@ a{
     cursor: pointer;
   }
 
-  /* Overlay */
   .overlay {
     display: none;
   }
@@ -856,8 +853,6 @@ a{
   z-index: 999999 !important;
 }
 
-
-  /* Ajustes específicos para 480px */
   @media (max-width: 480px) {
     .search-bar {
       width: 50%;
@@ -878,7 +873,6 @@ a{
   }
 }
 
-/* Estilos para o dropdown do usuário no navbar */
 .user-dropdown a:hover {
     background-color: #f5f5f5;
 }
@@ -887,12 +881,10 @@ a{
     background-color: #ffeaea;
 }
 
-/* Estilo para o ícone do usuário no navbar */
 .user-navbar-info:hover {
     opacity: 0.8;
 }
 
-/* Proteção para páginas que requerem autenticação */
 .auth-required {
     display: none;
 }
