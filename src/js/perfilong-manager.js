@@ -71,9 +71,9 @@ class PerfilOngManager {
 
 //   $('#email').value = profile.email || '';
 //   $('#telefone').value = profile.telefone || '';
-//   $('#dataNascimento').value = profile.data_nascimento ? profile.data_nascimento.split('T')[0] : '';
-//   $('#cpf').value = profile.cpf || '';
-//   $('#nome').value = profile.nome || '';
+//   $('#instagram').value = profile.instagram || '';
+//   $('#endereco').value = profile.endereco || '';
+//   $('#nome_ong').value = profile.nome_ong || '';
 //   $('#descricao').value = profile.descricao || '';
 
 //   if (profile.foto) {
