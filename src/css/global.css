@@ -580,6 +580,10 @@ a{
   text-decoration: none;
 }
 
+.doacaoBtn a{
+  color: #fff;
+}
+
 @media (max-width: 820px) {
 
   .repeticaoParaResponsividade{
