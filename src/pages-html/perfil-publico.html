@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png">
+    <link rel="stylesheet" href="../pages-css/perfil-publico.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Perfil Público</title>
+</head>
+<body>
+
+     <!-- API VLibras -->
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+  <div id="navbar"></div>
+  
+   <!-- Container principal -->
+    <div class="main-container">
+
+        <!-- Container do perfil -->
+        <div class="profile-container">
+            <img src="profile-photo.jpg" alt="Helena Santos" class="profile-photo">
+            <div class="profile-info">
+                <h1>Helena Santos</h1>
+                <p class="volunteer-status">Voluntária desde 2022</p>
+                <p>Apaixonada por projetos sociais e educação. Gosto de colaborar em iniciativas que geram impacto positivo.</p>
+                <div class="stats">
+                    <div><strong>12</strong> Atuação em ONGs</div>
+                    <div><strong>48h</strong> Tempo Voluntário</div>
+                    <div><strong>24</strong> Itens Doados</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container das causas de interesse -->
+        <div class="interests-container">
+            <h2><i class="fas fa-heart"></i> Causas de Interesse</h2>
+            <div class="tags">
+                <span><i class="fas fa-paw"></i> Animal</span>
+                <span><i class="fas fa-book-open"></i> Educação</span>
+                <span><i class="fas fa-users"></i> Social</span>
+            </div>
+        </div>
+
+        <!-- Container das últimas participações -->
+        <div class="participations-container">
+            <h2><i class="fas fa-history"></i> Últimas Participações</h2>
+            <div class="participation">
+                <h3><i class="fas fa-paw"></i> Cuidador de Animais</h3>
+                <p><strong>22/08/2024</strong> - 4 Horas</p>
+                <p>Cuidados básicos com cães e gatos resgatados, incluindo alimentação e limpeza dos espaços.</p>
+            </div>
+            <div class="participation">
+                <h3><i class="fas fa-car"></i> Carona Solidária</h3>
+                <p><strong>22/08/2024</strong> - 4 Horas</p>
+                <p>Transporte solidário para pessoas em situação de vulnerabilidade.</p>
+            </div>
+        </div>
+
+    </div>
+   
+</body>
+<script src="../js/main.js"></script>
+</html>
