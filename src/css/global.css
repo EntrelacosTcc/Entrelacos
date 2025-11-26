@@ -74,15 +74,15 @@ textarea {
   height: 50px;
 }
 
-.search-bar {
+/* .search-bar {
   flex: 1;
   margin: 0 20px;
   position: relative;
   display: flex;
   align-items: center;
-}
+} */
 
-.search-bar .search-icon {
+/* .search-bar .search-icon {
   position: absolute;
   left: 10px;
   font-size: 15px;
@@ -95,8 +95,8 @@ textarea {
   padding: 8px 12px 8px 35px;
   border: none;
   border-radius: 20px;
-  outline: none;
-}
+  outline: none; 
+} */
 
 .nav-menu {
   display: flex;
