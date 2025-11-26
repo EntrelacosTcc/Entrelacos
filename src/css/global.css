@@ -366,7 +366,24 @@ i {
   display: none;
 }
 
+/*  */
+.voltar{
+  position: fixed;
+  margin: 7px;  
+  transition: 1s;
+  z-index: 2000;
+}
 
+.voltar img{
+  height: 60px;
+  width: 60px;
+}
+
+.voltar:hover{
+  transform: translate(1.2rem);
+  cursor: pointer;
+
+}
 
 /* VAGAS */
 
