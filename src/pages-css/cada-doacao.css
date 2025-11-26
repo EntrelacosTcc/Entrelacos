@@ -66,6 +66,10 @@ h2, h3, p{
     padding-left: 8px;
 }
 
+.doacao .checkbox input{
+    cursor: pointer;
+}
+
 .doacao button, .containerColcluirDoacao button{
     background-color: #09625D;
     padding: 10px;
