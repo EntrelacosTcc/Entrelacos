@@ -243,7 +243,7 @@ function updateNavbarWithUser(profile) {
         <div class="user-navbar-info" style="display: flex; align-items: center; gap: 8px; cursor: pointer; justify-content: center;">
             <img src="${profile.foto || '/src/assets/img/default-avatar.png'}"
                  style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #4CAF50;">
-            <span style="color: #000; font-weight: 500; font-size: 10px;">${firstName}</span>
+            <span style="color: #fff; font-weight: 500; font-size: 10px;">${firstName}</span>
         </div>
     `;
 
