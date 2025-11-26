@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png">
+    <title>Vaga Criada com Sucesso</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #3eb4ae;
+        --secondary-color: #8b2e5e;
+        --accent-color: #0A3937;
+        --light-bg: #f8f9fa;
+        --text-dark: #333;
+        --text-light: #fff;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+      
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--light-bg);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+      
+      .success-container {
+        display: flex;
+        justify-content: center; 
+        align-items: center;    
+        min-height: calc(100vh - 100px); 
+        padding: 20px;           
+      }
+
+      .success-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        padding: 40px 30px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        text-align: center;
+      }
+
+      .success-card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      .success-icon {
+        font-size: 4rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .success-card h1 {
+        margin: 0;
+        font-weight: 600;
+        font-size: 1.75rem;
+        color: var(--accent-color);
+        margin-bottom: 15px;
+      }
+
+      .success-card p {
+        color: #666;
+        margin-bottom: 25px;
+        font-size: 1rem;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      button {
+        border-radius: 20px;
+        width: 100%;
+        height: 52px;
+        margin: 0;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        width: 100%;
+      }
+
+      button:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.7s;
+      }
+
+      button:hover:before {
+        left: 100%;
+      }
+
+      .primary-button {
+        background-color: var(--primary-color);
+        color: var(--text-light);
+        border: none;
+      }
+
+      .primary-button:hover {
+        background-color: #2d9c96;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(62, 180, 174, 0.3);
+      }
+
+      .secondary-button {
+        background-color: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+      }
+
+      .secondary-button:hover {
+        background-color: #f0f9f8;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(62, 180, 174, 0.2);
+      }
+
+      .icon {
+        font-size: 1.2rem;
+      }
+
+      .back-link {
+        margin-top: 20px;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: var(--transition);
+      }
+
+      .back-link:hover {
+        color: var(--accent-color);
+      }
+
+      /* Responsividade */
+      @media (max-width: 576px) {
+        .success-card {
+          padding: 30px 20px;
+          border-radius: 12px;
+        }
+        
+        .success-card h1 {
+          font-size: 1.5rem;
+        }
+        
+        button {
+          height: 48px;
+          font-size: 0.95rem;
+        }
+        
+        .success-icon {
+          font-size: 3rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+      <!-- API VLibras -->
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+    <div id="navbar"></div>
+
+    <div class="success-container">
+      <div class="success-card">
+        <i class="fas fa-check-circle success-icon"></i>
+        <h1>Vaga Criada com Sucesso!</h1>
+        <p>Sua vaga de voluntariado foi publicada com sucesso e agora está visível para os voluntários em nossa plataforma.</p>
+        
+        <div class="button-container">
+          <a href="/src/pages-html/criar-vaga.html">
+            <button class="primary-button">
+              <i class="fas fa-plus icon"></i>
+              Criar Nova Vaga
+            </button>
+          </a>
+
+          <a href="../../index.html">
+            <button class="secondary-button">
+              <i class="fas fa-home icon"></i>
+              Voltar para o Início
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <!-- API de acessibilidade -->
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+
+    <script src="../js/carrossel.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/sobreongs.js"></script>
+  </body>
+</html>
