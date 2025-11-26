@@ -1,0 +1,138 @@
+.hero {
+    width: 100%;
+    background-image: linear-gradient(rgba(7, 37, 37, 0.4),
+            rgba(8, 62, 62, 0.9)), url(../assets/img/fundoVagas.png);
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.text {
+    color: #A6FCF7;
+    text-align: center;
+}
+
+.text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.causas {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #065F5B;
+}
+
+/* CAUSAS */
+
+.causas-conteiner {
+    background-color: #05625d36;
+    height: 350px;
+    margin: 0px 60px 60px 60px;
+}
+
+.causas-conteiner h2 {
+    color: #05625D;
+}
+
+.causas-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.causas-container h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #05625D;
+}
+
+#content-slide {
+    display: flex;
+    height: 350px;
+    width: 1100px;
+    align-items: center;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+
+#bnt-left,
+#bnt-right {
+    position: absolute;
+    top: 260px;
+    margin-left: 60px;
+    margin-right: 60px;
+    color: #0A3937;
+
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+}
+
+#bnt-right {
+    right: 0;
+}
+
+.block {
+    width: 240px;
+    height: 200px;
+    padding: 10px;
+    margin: 0px 22px;
+    border: 1px solid #0A3937;
+    background-color: #d3fffd;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: 0.5s ease;
+    box-shadow: 0 12px 10px rgba(0, 0, 0, 0.12);
+}
+
+.block:hover {
+    transform: translateY(-5px);
+}
+
+.topo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block .icone {
+    font-size: 120px;
+    object-fit: cover;
+    margin-top: 5px;
+}
+
+.texto {
+    font-size: 1.3rem;
+    margin-top: 3px;
+    color: #0A3937;
+    padding: 12px;
+    margin-bottom: 5px;
+}
+
+#content-slide::-webkit-scrollbar {
+    display: none;
+}
+
+#content-slide {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#content-slide::-webkit-scrollbar {
+    display: none;
+}
