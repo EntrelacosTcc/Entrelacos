@@ -8,31 +8,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../pages-css/vaga-especifica.css">
+    <link rel="stylesheet" href="../pages-css/vagas-info.css">
 </head>
+
 
 <body>
 
     <div id="navbar"></div>
 
+    <!-- HERO DINÂMICO -->
     <section class="vaga-hero">
+
         <section class="vaga-header">
             <div class="infoVaga-header">
-                <h1>Instrutor de Música Comunitária</h1>
-                <p>Oferecer aulas de instrumentos musicais ou canto para crianças e adolescentes.</p>
+                <h1 id="vaga-titulo">Carregando...</h1>
+                <p id="vaga-visao"></p>
 
-                <button>Quero Participar</button>
+<button onclick="window.location.href='../pages-html/confirmacao-vaga.html'">
+    Quero Participar
+</button>
             </div>
-            <div class="imgVaga-header"></div>
+            <div class="imgVaga-header" id="vaga-imagem"></div>
         </section>
 
-        <section class="causa-tags">
-            <div class="causa">Educacional</div>
-            <div class="causa">Social</div>
+        <section class="causa-tags" id="vaga-tags">
+            <!-- tags dinâmicas -->
         </section>
 
     </section>
 
+    <!-- CONTEÚDO -->
     <section class="vagaDetails-container">
 
         <div class="opcoesPerfil">
@@ -40,27 +45,19 @@
             <button onclick="mostrarOpcao('opcao2', this)" class="option-btn">Contato</button>
         </div>
 
-        <!------------- OPCAO INFOS-GERAIS -------------->
-
+        <!-- ABA 1 -->
         <div id="opcao1" class="opcao visivel">
 
             <div class="sobre-vaga">
                 <h2>Sobre a vaga:</h2>
-                <p>O voluntário atua oferecendo oficinas de música para crianças, adolescentes ou até mesmo adultos da
-                    comunidade, com foco no aprendizado acessível e inclusivo. Ele pode ensinar noções básicas de teoria
-                    musical, ritmo, canto ou instrumentos como violão, teclado, percussão ou flauta, dependendo da sua
-                    especialidade. Além da parte técnica, o instrutor promove o desenvolvimento da sensibilidade
-                    artística,
-                    da autoestima e da expressão pessoal por meio da música. As aulas podem acontecer em escolas
-                    públicas,
-                    centros comunitários, abrigos ou ao ar livre.</p>
+                <p id="vaga-sobre"></p>
             </div>
 
             <div class="ongPerfil">
                 <div class="perfilImg"></div>
                 <div class="perfilDados">
                     <span>ONG Responsável:</span>
-                    <p>Raízes do Futuro</p>
+                    <p id="vaga-ong">Carregando...</p>
                 </div>
             </div>
 
@@ -68,95 +65,72 @@
                 <div class="vaga-li-content">
                     <i class="fa-solid fa-circle circleVaga"></i>
                     <span>Atuação: </span>
-                    <p>Presencial</p>
+                    <p id="vaga-formato"></p>
                 </div>
                 <div class="vaga-li-content">
                     <i class="fa-solid fa-circle circleVaga"></i>
-                    <span>Frequência: </span>
-                    <p>Pontual</p>
+                    <span>Classificação Etária: </span>
+                    <p id="vaga-etaria"></p>
                 </div>
             </div>
 
             <h3 class="vagaTitle">O que será realizado:</h3>
 
-            <div class="vaga-li-content">
-                <i class="fa-solid fa-check"></i>
-                <p>Alimentar cães e gatos de rua com ração</p>
-            </div>
-            <div class="vaga-li-content">
-                <i class="fa-solid fa-check"></i>
-                <p>Oferecer sachê para animais desidratados</p>
-            </div>
-            <div class="vaga-li-content">
-                <i class="fa-solid fa-check"></i>
-                <p>Se necessário, acolher animais necessitados e levá-los até nossa ONG</p>
-            </div>
+            <div id="vaga-tarefas"></div>
 
             <h3 class="vagaTitle">Requisitos:</h3>
 
-            <div class="vaga-li-content">
-                <i class="fa-solid fa-circle circleVaga"></i>
-                <p>Ter um cuidado maior com animais assustados</p>
-            </div>
-            <div class="vaga-li-content">
-                <i class="fa-solid fa-circle circleVaga"></i>
-                <p>Ter paciência e empatia eplos animais.</p>
-            </div>
+            <div id="vaga-requisitos"></div>
 
+           <div class="datasVaga-container">
+    <h3 class="vagaTitle">Mais Informações</h3>
 
-            <div class="datasVaga-container">
-                <h3 class="vagaTitle">Datas Disponíveis</h3>
+    <div class="vaga-li-content">
+        <span>Data: </span>
+        <p id="vaga-data"></p>
+    </div>
 
-                <div class="datasVaga-content">
+    <div class="vaga-li-content">
+        <span>Endereço: </span>
+        <p id="vaga-endereco"></p>
+    </div>
 
-                    <button class="dataBtn">22/10</button>
-                    <button class="dataBtn">23/10</button>
-                    <button class="dataBtn">24/10</button>
+   
+</div>
 
+        </div>
 
-                    <div class="vaga-li-content">
-                        <span>Endereço: </span>
-                        <p>Rua Amarindo de Oliveira, 998 - SP</p>
+        <!-- ABA CONTATO -->
+        <div id="opcao2" class="opcao">
+            <div class="contato-box">
+                <h3>Contato</h3>
+                <div class="contato-item">
+                    <i class="fa-solid fa-envelope contato-icone"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        talentolivre@gmail.com
                     </div>
-                    <div class="vaga-li-content">
-                        <span>Horário: </span>
-                        <p>Das 9:00 às 13:00</p>
-                    </div>
-                    <div class="vaga-li-content">
-                        <span>Voluntários Inscritos: </span>
-                        <p>7/15</p>
-                    </div>
-
                 </div>
-
-
             </div>
-
-
-
-            <!-- OPCAO 2 -->
-
-            <div id="opcao2" class="opcao">
-                <h2>kncdjn</h2>
-            </div>
+        </div>
 
     </section>
 
-
     <div id="footer"></div>
 
+    <script src="../js/vagas-info.js"></script>
 
-    <script src="../js/main.js"></script>
     <script>
         function mostrarOpcao(id, botao) {
             document.querySelectorAll('.opcao').forEach(el => el.classList.remove('visivel'));
             document.getElementById(id).classList.add('visivel');
 
-
             document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('ativo'));
             botao.classList.add('ativo');
         }
     </script>
+
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
