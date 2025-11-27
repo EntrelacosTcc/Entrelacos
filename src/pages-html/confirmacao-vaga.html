@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Inscrição Voluntária</title>
+  
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #fbf9f7;
+      --card-bg: #ffffff;
+      --accent: #0f6b61;
+      --accent-2: #1e8f83;
+      --muted: #6b6b6b;
+      --input-border: #0f6b61;
+      --success: #0f705d;
+      --shadow: 0 6px 18px rgba(15,107,97,0.08);
+      --radius-card: 28px;
+      --radius-input: 12px;
+      --max-width: 720px;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg) 0%, #f7f6f5 100%);
+      color: #123;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      width: 100%;
+      max-width: var(--max-width);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      border: 2px solid rgba(15,107,97,0.07);
+      padding: 44px 56px;
+      box-sizing: border-box;
+      position: relative;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .card.hidden {
+      display: none;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border-radius: calc(var(--radius-card) - 8px);
+      pointer-events: none;
+      box-shadow: 0 4px 0 rgba(15,107,97,0.04);
+    }
+
+    .breadcrumb {
+      color: var(--accent-2);
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .breadcrumb .active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(15,107,97,0.06), rgba(15,107,97,0.02));
+      margin: 10px 0 22px 0;
+      border-radius: 1px;
+    }
+
+    h1.title {
+      margin: 0 0 22px 0;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    form {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: #234;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: var(--radius-input);
+      border: 2px solid var(--input-border);
+      outline: none;
+      font-size: 15px;
+      box-sizing: border-box;
+      background: transparent;
+      color: #0b2b2a;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--accent-2);
+      box-shadow: 0 0 0 3px rgba(15,107,97,0.1);
+    }
+
+    input::placeholder {
+      color: rgba(15,107,97,0.35);
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 12px 0 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+    }
+
+    .btns {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .btn-primary {
+      border: none;
+      background: var(--accent);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 0 rgba(15,107,97,0.15);
+      transition: transform 0.1s ease, background-color 0.2s ease;
+    }
+
+    .btn-secondary {
+      border: 2px solid var(--input-border);
+      background: transparent;
+      color: var(--input-border);
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 0.1s ease, background-color 0.2s ease;
+    }
+
+    .btn-primary:hover, .btn-secondary:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 0 rgba(15,107,97,0.15);
+    }
+
+    .btn-secondary:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-2);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(15,107,97,0.05);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      color: #8b8b8b;
+      font-size: 13px;
+    }
+
+    /* Estilos para a tela de resumo */
+    .summary-section {
+      margin-bottom: 25px;
+    }
+
+    .summary-title {
+      font-size: 16px;
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .summary-card {
+      background: #c7e6e1;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+    .summary-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .summary-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .summary-icon {
+      width: 22px;
+      opacity: 0.9;
+    }
+
+    /* Estilos para a tela de conclusão */
+    .check-circle {
+      width: 70px;
+      margin: 0 auto 15px;
+      display: block;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .next-steps {
+      margin-top: 25px;
+    }
+
+    .next-steps-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .next-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .next-step-icon {
+      width: 20px;
+      margin-top: 3px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    /* Responsividade */
+    @media (max-width: 640px) {
+      .card { 
+        padding: 28px 20px; 
+        border-radius: 18px; 
+      }
+      
+      form { 
+        max-width: 100%; 
+      }
+      
+      .btns {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div id="navbar"></div>
+  <div class="page">
+    <!-- Tela 1: Confirmação -->
+    <section id="confirmation-screen" class="card fade-in" aria-labelledby="titulo">
+      <div class="breadcrumb">
+        <span class="active">Confirmação</span> → <span>Resumo</span> → <span>Conclusão</span>
+      </div>
+      <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <h1 id="titulo" class="title">Confirme sua Inscrição</h1>
+
+      <form id="confirmForm" autocomplete="on" novalidate>
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input id="nome" name="nome" type="text" placeholder="Lara Gonçalves de Almeida" required />
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input id="telefone" name="telefone" type="tel" placeholder="11 99999-9999" inputmode="tel" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="lauragoncalves@gmail.com" required />
+        </div>
+
+        <div class="checkbox-row">
+          <input id="consent" type="checkbox" checked required />
+          <label for="consent" style="margin:0; font-weight:600; color: #234;">Aceito os termos de consentimento</label>
+        </div>
+
+        <div class="btns" role="group" aria-label="Ações do formulário">
+          <button type="submit" class="btn-primary">Continuar</button>
+          <button type="button" class="btn-secondary" id="cancelBtn">Cancelar</button>
+        </div>
+
+        <div class="footer-note" aria-hidden="true">
+          &nbsp;
+        </div>
+      </form>
+    </section>
+
+    <!-- Tela 2: Resumo -->
+    <section id="summary-screen" class="card hidden" aria-labelledby="resumo-titulo">
+      <div class="breadcrumb">
+        <span>Confirmação</span> → <span class="active">Resumo</span> → <span>Conclusão</span>
+      </div>
+      <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <h1 id="resumo-titulo" class="title">Resumo</h1>
+
+      <div class="summary-section">
+        <h2 class="summary-title">Atividade Voluntária</h2>
+        <div class="summary-card">
+          <div class="summary-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/685/685384.png" class="summary-icon" alt="Ícone de atividade">
+            <div>
+              <strong>Instrutor de música comunitária</strong><br>
+              ONG Talento Livre
+            </div>
+          </div>
+
+          <div class="summary-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" class="summary-icon" alt="Ícone de calendário">
+            <div>
+              <strong>Data a combinar</strong><br>
+              Horário a combinar
+            </div>
+          </div>
+
+          <div class="summary-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" class="summary-icon" alt="Ícone de localização">
+            <div>
+              ONG Talento Livre<br>
+              Rua Augusto Gil, 123 - São Paulo/SP
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-section">
+        <h2 class="summary-title">Seu perfil</h2>
+        <div class="summary-card">
+          <div class="summary-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" class="summary-icon" alt="Ícone de pessoa">
+            <div>
+              <strong>Nome Completo</strong><br>
+              <span id="summary-name">Nome Completo</span>
+            </div>
+          </div>
+
+          <div class="summary-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" class="summary-icon" alt="Ícone de telefone">
+            <div>
+              <strong>Telefone</strong><br>
+              <span id="summary-phone">11 99999-9999</span>
+            </div>
+          </div>
+
+          <div class="summary-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" class="summary-icon" alt="Ícone de e-mail">
+            <div>
+              <strong>E-mail</strong><br>
+              <span id="summary-email">nome@gmail.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="btns" role="group" aria-label="Ações do resumo">
+        <button type="button" class="btn-primary" id="confirmBtn">Confirmar</button>
+        <button type="button" class="btn-secondary" id="editBtn">Editar Minhas Informações</button>
+      </div>
+    </section>
+
+    <!-- Tela 3: Conclusão -->
+    <section id="completion-screen" class="card hidden" aria-labelledby="conclusao-titulo">
+      <div class="breadcrumb">
+        <span>Confirmação</span> → <span>Resumo</span> → <span class="active">Conclusão</span>
+      </div>
+      <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" class="check-circle" alt="Ícone de confirmação">
+
+      <h1 id="conclusao-titulo" class="title">Inscrição Confirmada!</h1>
+      <p class="subtitle">Obrigado por se voluntariar. Sua ajuda vai fazer a diferença!</p>
+
+      <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <div class="next-steps">
+        <h2 class="next-steps-title">Próximos Passos:</h2>
+        
+        <div class="next-step-item">
+          <img class="next-step-icon" src="https://cdn-icons-png.flaticon.com/512/709/709624.png" alt="Ícone de mensagem">
+          <span>Você receberá uma mensagem por E-mail/WhatsApp com detalhes em até 24h</span>
+        </div>
+
+        <div class="next-step-item">
+          <img class="next-step-icon" src="https://cdn-icons-png.flaticon.com/512/1827/1827933.png" alt="Ícone de manual">
+          <span>Tem dúvidas quanto ao voluntariado? Acesse o <a href="#">manual do voluntário</a> para se preparar</span>
+        </div>
+      </div>
+
+      <div class="btns" role="group" aria-label="Ações da conclusão">
+     <button type="button" class="btn-primary" id="finishBtn" onclick="window.location.href='http://localhost:3002/index.html'">
+    Concluir
+</button>
+
+
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Elementos das telas
+    const confirmationScreen = document.getElementById('confirmation-screen');
+    const summaryScreen = document.getElementById('summary-screen');
+    const completionScreen = document.getElementById('completion-screen');
+    
+    // Elementos do formulário
+    const confirmForm = document.getElementById('confirmForm');
+    const nomeInput = document.getElementById('nome');
+    const telefoneInput = document.getElementById('telefone');
+    const emailInput = document.getElementById('email');
+    const consentCheckbox = document.getElementById('consent');
+    
+    // Elementos do resumo
+    const summaryName = document.getElementById('summary-name');
+    const summaryPhone = document.getElementById('summary-phone');
+    const summaryEmail = document.getElementById('summary-email');
+    
+    // Botões
+    const cancelBtn = document.getElementById('cancelBtn');
+    const confirmBtn = document.getElementById('confirmBtn');
+    const editBtn = document.getElementById('editBtn');
+    const finishBtn = document.getElementById('finishBtn');
+    
+    // Função para alternar entre telas
+    function showScreen(screenToShow) {
+      // Esconder todas as telas
+      confirmationScreen.classList.add('hidden');
+      summaryScreen.classList.add('hidden');
+      completionScreen.classList.add('hidden');
+      
+      // Mostrar a tela desejada
+      screenToShow.classList.remove('hidden');
+      screenToShow.classList.add('fade-in');
+      
+      // Focar no primeiro elemento interativo da tela para acessibilidade
+      setTimeout(() => {
+        const firstInteractive = screenToShow.querySelector('button, input, select');
+        if (firstInteractive) firstInteractive.focus();
+      }, 300);
+    }
+    
+    // Função para atualizar o resumo com os dados do formulário
+    function updateSummary() {
+      summaryName.textContent = nomeInput.value || '—';
+      summaryPhone.textContent = telefoneInput.value || '—';
+      summaryEmail.textContent = emailInput.value || '—';
+    }
+    
+    // Função para validar o formulário
+    function validateForm() {
+      const errors = [];
+      
+      if (!nomeInput.value.trim()) {
+        errors.push('Nome completo é obrigatório');
+        nomeInput.focus();
+      }
+      
+      if (!telefoneInput.value.trim()) {
+        errors.push('Telefone é obrigatório');
+        if (!errors.length) telefoneInput.focus();
+      }
+      
+      if (!emailInput.value.trim()) {
+        errors.push('E-mail é obrigatório');
+        if (!errors.length) emailInput.focus();
+      } else if (!/^\S+@\S+\.\S+$/.test(emailInput.value)) {
+        errors.push('E-mail inválido');
+        if (!errors.length) emailInput.focus();
+      }
+      
+      if (!consentCheckbox.checked) {
+        errors.push('É necessário aceitar os termos de consentimento');
+        if (!errors.length) consentCheckbox.focus();
+      }
+      
+      return errors;
+    }
+    
+    // Event Listeners
+    
+    // Envio do formulário de confirmação
+    confirmForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const errors = validateForm();
+      
+      if (errors.length > 0) {
+        alert('Por favor, corrija os seguintes erros:\n\n• ' + errors.join('\n• '));
+        return;
+      }
+      
+      updateSummary();
+      showScreen(summaryScreen);
+    });
+    
+    // Botão cancelar
+    cancelBtn.addEventListener('click', function() {
+      if (confirm('Deseja cancelar a inscrição? Todos os dados serão perdidos.')) {
+        confirmForm.reset();
+        // Em uma aplicação real, você poderia redirecionar para a página inicial
+        alert('Inscrição cancelada.');
+      }
+    });
+    
+    // Botão confirmar no resumo
+    confirmBtn.addEventListener('click', function() {
+      // Simular envio para o servidor
+      // Em uma aplicação real, você faria uma requisição AJAX aqui
+      
+      // Mostrar tela de conclusão
+      showScreen(completionScreen);
+    });
+    
+    // Botão editar no resumo
+    editBtn.addEventListener('click', function() {
+      showScreen(confirmationScreen);
+    });
+    
+    // Botão concluir
+    finishBtn.addEventListener('click', function() {
+      // Em uma aplicação real, você poderia redirecionar para a página inicial
+      alert('Obrigado por se voluntariar!');
+      confirmForm.reset();
+      showScreen(confirmationScreen);
+    });
+    
+    // Validação em tempo real
+    nomeInput.addEventListener('blur', function() {
+      if (!this.value.trim()) {
+        this.style.borderColor = '#e74c3c';
+      } else {
+        this.style.borderColor = '';
+      }
+    });
+    
+    emailInput.addEventListener('blur', function() {
+      if (this.value && !/^\S+@\S+\.\S+$/.test(this.value)) {
+        this.style.borderColor = '#e74c3c';
+      } else {
+        this.style.borderColor = '';
+      }
+    });
+    
+    // Formatação automática do telefone
+    telefoneInput.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      
+      if (value.length > 11) {
+        value = value.substring(0, 11);
+      }
+      
+      if (value.length > 6) {
+        value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+      } else if (value.length > 2) {
+        value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+      } else if (value.length > 0) {
+        value = value.replace(/(\d{0,2})/, '($1');
+      }
+      
+      e.target.value = value;
+    });
+    
+    // Inicialização
+    document.addEventListener('DOMContentLoaded', function() {
+      // Garantir que a tela de confirmação seja a primeira a aparecer
+      showScreen(confirmationScreen);
+    });
+  </script>
+ <!-- API de acessibilidade -->
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>
