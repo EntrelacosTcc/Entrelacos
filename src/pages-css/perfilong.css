@@ -252,7 +252,9 @@ a{
 .vagaImage {
     height: 100%;
     width: 190px;
-    background-color: #00000054;
+    background-image: url(../assets/img/vagapet.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 8px 0 0 8px;
     flex-shrink: 0;
 }
@@ -347,7 +349,9 @@ a{
 .main-vagaImg {
     height: 170px;
     width: 250px;
-    background-color: #00000041;
+    background-image: url(../assets/img/vagapet.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 15px;
     flex-shrink: 0;
 }
