@@ -247,3 +247,133 @@ body {
   color: black;
 }
 
+@media (max-width: 1024px) {
+
+  .carrinho-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .resumo-box {
+    height: auto;
+  }
+}
+
+/* --- Telas até 768px (tablets menores / celulares grandes) --- */
+@media (max-width: 768px) {
+
+  .carrinho-container {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .produto-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .produto-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .quantidade-box button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .produto-info h2 {
+    font-size: 16px;
+  }
+
+  .carrinho-tabela th,
+  .carrinho-tabela td {
+    padding: 10px;
+  }
+
+  .frete-opcoes {
+    flex-direction: column;
+  }
+}
+
+/* --- Telas até 600px (celulares) --- */
+@media (max-width: 600px) {
+
+  .titulo-carrinho {
+    font-size: 18px;
+  }
+
+  .carrinho-container {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .produto-item {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .produto-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .preco {
+    font-size: 16px;
+  }
+
+  .btn-finalizar {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .linha-total strong {
+    font-size: 18px;
+  }
+
+  .frete-opcoes label {
+    padding: 10px;
+  }
+}
+
+/* --- Telas até 480px (celulares pequenos) --- */
+@media (max-width: 480px) {
+
+  .produto-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .produto-info p {
+    font-size: 13px;
+  }
+
+  .quantidade-box span {
+    padding: 0 6px;
+  }
+
+  .produto-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .carrinho-tabela th {
+    font-size: 14px;
+  }
+
+  .carrinho-tabela td {
+    font-size: 14px;
+  }
+
+  .resumo-box,
+  .carrinho-box {
+    padding: 15px;
+  }
+
+  .card button {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+

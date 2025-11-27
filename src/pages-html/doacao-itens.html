@@ -9,22 +9,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../pages-css/doacao-itens.css">
   </head>
 <body>
-  <!-- API VLibras -->
-<div vw class="enabled">
-  <div vw-access-button class="active"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
-  </div>
-</div>
-
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-<script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
-</script>
 <div id="navbar"></div>
     
 <section class="hero-container">
@@ -111,12 +98,31 @@
 
 </section>
 
+
+<div class="pedidoDoacao-container">
+  <h2>Seja um doador</h2>
+  <!-- Pedido de Doação 1 -->
+  <doacao-item
+      imagem="../assets/img/raizesDoFuturo.png"
+      titulo="Materiais para Horta"
+      descricao="Pessoal, estamos precisando de alguns materiais como regadores, pás e arados para a realização de atividades com as crianças."
+      link="../pages-html/cada-doacao.html"
+  ></doacao-item>
+
+  <!-- Pedido de Doação 2 -->
+  <doacao-item
+      imagem="../assets/img/iconeanimal.png"
+      titulo="Roupas e Brinquedos"
+      descricao="Estamos arrecadando roupas e brinquedos para crianças em situação de vulnerabilidade."
+      link="../pages-html/cada-doacao.html"
+  ></doacao-item>
+</div>
+</div>
 <div id="footer"></div>
 
-    <!-- API de acessibilidade -->
-    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
     
 <script src="/src/js/main.js"></script>
+<script src="/src/js/doacao.js"></script>
 
 </body>
 </html>

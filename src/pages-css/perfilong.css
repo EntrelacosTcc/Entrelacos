@@ -536,14 +536,11 @@ label {
 
 /* css postagem */
 .feed-section {
-  padding: 40px 0;
+  padding: 0 0 40px;
 }
 
 .feed-section h2 {
   color: var(--purple-dark);
-  margin-bottom: 20px;
-  font-size: 2.2rem;
-  text-align: center;
 }
 
 .btn-primary {
@@ -883,6 +880,208 @@ label {
 .hidden {
   display: none !important;
 }
+
+
+/* CONFIGURAÇÕES */
+
+.config-item {
+  border: 1px solid #09625D;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.config-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #09625d;
+}
+
+.config-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.config-box label {
+  font-size: 0.9rem;
+  color: #0a3937;
+}
+
+.btn {
+  background: #09625d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+/* Modal Redefinir Senha */
+
+.modal-content {
+  background-color: white;
+  margin: 2% auto;
+  padding: 0;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 95vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+} 
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 2px solid #e9ecef;
+  background: #f8f9fa;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-header h2 {
+  color: #09625D;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-modal {
+  font-size: 28px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
+} 
+
+.close-modal:hover {
+  color: #333;
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+#config-content .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-pequeno {
+  max-width: 800px;
+  margin: 10% auto;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #09625D;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.input-com-icone {
+  position: relative;
+}
+
+.input-com-icone input {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.input-com-icone input:focus {
+  outline: none;
+  border-color: #09625D;
+  box-shadow: 0 0 0 2px rgba(29, 133, 98, 0.1);
+}
+
+.input-com-icone i {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.btn-modal {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-cancelar {
+  background: #f8f9fa;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.btn-cancelar:hover {
+  background: #e9ecef;
+}
+
+.btn-confirmar {
+  background: #09625D;
+  color: white;
+}
+
+.btn-confirmar:hover {
+  background: #09625D;
+}
+
+.input-group .error {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  display: none;
+}
+
+.input-group.error input {
+  border-color: #dc3545;
+}
+
+.input-group.success input {
+  border-color: #09625D;
+} 
+
 
 /* RESPONSIVIDADE */
 

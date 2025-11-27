@@ -129,8 +129,8 @@ class VagaItem extends HTMLElement {
         this.innerHTML = `
         <div class="vagas">
             ${imagemHTML}
-            <h3>${this.getAttribute('titulo')}</h3>
-            <a href="src/perfil-users/publicoong.html"><h4>${this.getAttribute('ong')}</h4></a>
+            <span>${this.getAttribute('titulo')}</span>
+            <a href="../perfil-users/publicoong.html"><h4>${this.getAttribute('ong')}</h4></a>
             <div class="tags-vagas">
                 ${this.getCausas()}
             </div>
@@ -140,7 +140,7 @@ class VagaItem extends HTMLElement {
                 <div class="dados-vaga"><i class="fa-solid fa-calendar"></i>${this.getAttribute('frequencia')}</div>
                 <div class="dados-vaga"><i class="fa-solid fa-clock"></i>${this.getAttribute('carga-horaria')}</div>
             </div>
-            <center><button>Participe</button></center>
+            <center><button><a href="../pages-html/link aq" style="color: #fff">Participe</a></button></center>
         </div>
         `;
     }
@@ -243,7 +243,7 @@ function updateNavbarWithUser(profile) {
         <div class="user-navbar-info" style="display: flex; align-items: center; gap: 8px; cursor: pointer; justify-content: center;">
             <img src="${profile.foto || '/src/assets/img/default-avatar.png'}"
                  style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #4CAF50;">
-            <span style="color: #ffffffff; font-weight: 500; font-size: 10px;">${firstName}</span>
+            <span style="color: #fff; font-weight: 500; font-size: 10px;">${firstName}</span>
         </div>
     `;
 
@@ -371,6 +371,27 @@ function addUserDropdown(authItem, profile) {
     });
 }
 
+function updateNavbarWithOng(profile) {
+    const authItem = document.getElementById('auth-item');
+    const enterBtn = document.querySelector('.enter-btn');
+
+    if (!authItem || !enterBtn) return;
+
+    const firstName = profile.nome_ong ? profile.nome_ong.split(' ')[0] : 'ONG';
+
+    enterBtn.innerHTML = `
+        <div class="user-navbar-info" style="display: flex; align-items: center; gap: 8px; cursor: pointer; justify-content: center;">
+            <img src="${profile.profileImage || '/src/assets/img/default-avatar.png'}"
+                 style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #4CAF50;">
+            <span style="color: #fff; font-weight: 500; font-size: 10px;">${firstName}</span>
+        </div>
+    `;
+
+    const authLink = authItem.querySelector('a');
+    if (authLink) authLink.href = "/src/perfil-users/perfilong.html";
+
+    addOngDropdown(authItem, profile);
+}
 
 function addOngDropdown(authItem, profile) {
     const existing = authItem.querySelector('.user-dropdown');
@@ -461,8 +482,9 @@ function openMenu() {
   const menu = document.querySelector(".mobile-menuContainer");
   const overlay = document.querySelector(".overlay");
   if (!menu || !overlay) return;
+
   menu.classList.add("open");
-  overlay.classList.add("show");
+  overlay.classList.add("open");   // <-- CORRIGIDO
   document.body.style.overflow = "hidden";
 }
 
@@ -470,16 +492,19 @@ function closeMenu() {
   const menu = document.querySelector(".mobile-menuContainer");
   const overlay = document.querySelector(".overlay");
   if (!menu || !overlay) return;
+
   menu.classList.remove("open");
-  overlay.classList.remove("show");
+  overlay.classList.remove("open"); // <-- CORRIGIDO
   document.body.style.overflow = "auto";
 }
 
 function toggleMenu() {
   const menu = document.querySelector(".mobile-menuContainer");
   if (!menu) return;
+
   menu.classList.contains("open") ? closeMenu() : openMenu();
 }
+
 
 // =============================================
 // ACESSIBILIDADE SIENNA API Vlibras

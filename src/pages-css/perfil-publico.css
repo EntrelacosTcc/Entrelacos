@@ -25,7 +25,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-bottom: 30px; /* Espaçamento entre os containers */
+    margin-bottom: 30px; 
+    display: flex;
+   align-items: center;
 }
 
 /* Imagem do perfil */
@@ -34,18 +36,19 @@ body {
     width: 100px;
     height: 100px;
     margin-right: 20px;
+  
 }
 
 .profile-info h1 {
     font-size: 28px;
-    color: #2c6f5d;
     margin-bottom: 10px;
 }
 
 .volunteer-status {
     font-size: 16px;
     color: #7f8e8b;
-    margin-bottom: 10px;
+   
+    
 }
 
 .profile-info p {
@@ -56,8 +59,16 @@ body {
 
 .stats {
     display: flex;
+
     gap: 30px;
     font-size: 16px;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    background-color: #e3f7f4;
+    border-radius: 20px;
+    
+    width: 520px;
+    
 }
 
 .stats div {
@@ -65,13 +76,12 @@ body {
     color: #2c6f5d;
 }
 
-/* Container das causas de interesse */
 .interests-container {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-bottom: 30px; /* Espaçamento entre os containers */
+    margin-bottom: 30px;
 }
 
 .interests-container h2 {
@@ -96,7 +106,7 @@ body {
     gap: 5px;
 }
 
-/* Container das últimas participações */
+
 .participations-container {
     background-color: #fff;
     border-radius: 10px;

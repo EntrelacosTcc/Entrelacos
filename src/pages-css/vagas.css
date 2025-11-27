@@ -1,0 +1,394 @@
+.hero {
+    width: 100%;
+    background-image: linear-gradient(rgba(7, 37, 37, 0.4),
+            rgba(8, 62, 62, 0.9)), url(../assets/img/fundoVagas.png);
+    height: 350px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.text {
+    color: #A6FCF7;
+    text-align: center;
+}
+
+.text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.causas {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #065F5B;
+}
+
+/* CAUSAS */
+
+.causas-container {
+    height: 350px;
+    margin: 0px 60px 60px 60px;
+}
+
+.causas-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.causas-container h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #05625D;
+}
+
+#content-slide {
+    display: flex;
+    height: 350px;
+    width: 1020px;
+    align-items: center;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    margin: 0 auto;
+    border-radius: 12px;
+        white-space: nowrap; 
+}
+
+
+#bnt-left,
+#bnt-right {
+    position: absolute;
+    top: 50%;
+    color: #0A3937;
+    cursor: pointer;
+    user-select: none;
+    z-index: 20;
+    margin-top: 50px;
+}
+
+#bnt-left {
+    left: -40px;
+}
+
+#bnt-right {
+    right: -40px; 
+}
+
+.block {
+    width: 210px;
+    height: 160px;
+    padding: 10px;
+    margin: 0px 22px;
+    border: 1px solid #0A3937;
+    background-color: #d3fffd;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: flex;      
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: 0.5s ease;
+    box-shadow: 0 12px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+.block:hover {
+    transform: translateY(-5px);
+}
+
+.topo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.block .icone {
+    font-size: 70px;
+    object-fit: cover;
+    margin-top: 5px;
+}
+
+.texto {
+    font-size: 1.3rem;
+    margin-top: 3px;
+    color: #0A3937;
+    padding: 12px;
+    margin-bottom: 5px;
+}
+
+#content-slide::-webkit-scrollbar {
+    display: none;
+}
+
+#content-slide {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#content-slide::-webkit-scrollbar {
+    display: none;
+}
+
+.linha {
+  border: none;         
+  height: 1px;         
+  background-color: #05625D; 
+  margin: 20px auto;     
+  width: 60%;
+  margin-top: -20px;
+}
+
+.oportunidades {
+    color: #05625D;
+    margin-left: 60px;
+}
+
+/* VAGAS */
+.vagas-container {
+  margin: 0 60px;       
+  display: flex;
+  align-items: center;
+}
+
+.titulo-vagas {
+  display: flex;
+  align-items: center;  
+  gap: 15px;           
+  margin: 20px 0;      
+}
+
+.bolinha {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;           
+  background-color: #A6FCF7;   
+  display: flex;
+  align-items: center;      
+  justify-content: center; 
+  flex-shrink: 0;        
+}
+
+.bolinha i {
+  color: #258C87;        
+  font-size: 20px;
+  line-height: 1;     
+  margin: 0;              
+  display: block;          
+  text-align: center;
+}
+
+.vagas span{
+  margin: 5px 10px;
+  font-size: 1.1rem;
+  color: rgb(0, 0, 0);
+}
+
+
+.titulo-vagas h3 {
+  position: relative;
+  font-size: 1.5rem;
+  color: #05625D;
+  margin: 0;
+  padding-bottom: 5px; 
+}
+
+.titulo-vagas h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;              
+  width: 100%;
+  background-color: #05625D;  
+  border-radius: 2px;         
+}
+
+/* VAGAS */
+/* VAGAS DE VOLUNTARIADO */
+
+.vagasVoluntariado-container {
+  margin-bottom: 50px;
+}
+
+.vagasVoluntariado-container h2 {
+  text-align: center;
+  color: #05625d;
+  margin-top: 40px;
+}
+
+.vagas-txt {
+  background-color: #3eb4ae;
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px 25px;
+  border-radius: 0 30px 30px 0;
+  margin: 40px 0;
+  display: inline-block; 
+}
+
+.vagas-carrossel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px; 
+}
+
+.grid-vagas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+/* TABLETS – até 1024px */
+@media (max-width: 1024px) {
+    #content-slide {
+        width: 90%;
+    }
+
+    .causas-container {
+        margin: 0 30px 40px 30px;
+    }
+
+    #bnt-left {
+        left: -20px;
+    }
+
+    #bnt-right {
+        right: -20px;
+    }
+
+    .vagas-container {
+        margin: 0 30px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* CELULARES GRANDES – até 820px */
+@media (max-width: 820px) {
+    .hero {
+        height: 250px;
+    }
+
+    .text h1 {
+        font-size: 1.8rem;
+    }
+
+    .causas-container {
+        margin: 0 20px 40px 20px;
+    }
+
+    #content-slide {
+        width: 100%;
+        height: auto;
+    }
+
+    .block {
+        width: 180px;
+        margin: 0 12px;
+    }
+
+    #bnt-left, #bnt-right {
+        display: none; /* oculta setas em telas pequenas */
+    }
+
+    .vagas-container {
+        margin: 0 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titulo-vagas h3 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+}
+
+/* CELULARES MENORES – até 600px */
+@media (max-width: 600px) {
+
+    .text h1 {
+        font-size: 1.5rem;
+    }
+
+    .causas-container h2 {
+        font-size: 1.6rem;
+    }
+
+    #content-slide {
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    .block {
+        width: 160px;
+        height: 150px;
+        margin: 0 10px;
+    }
+
+    .texto {
+        font-size: 1.1rem;
+        padding: 6px;
+    }
+
+    .vagas-txt {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    .grid-vagas {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* CELULARES PEQUENOS – até 480px */
+@media (max-width: 480px) {
+
+    .hero {
+        height: 200px;
+    }
+
+    .text h1 {
+        font-size: 1.3rem;
+    }
+
+    .causas-container {
+        margin: 0 10px 30px 10px;
+    }
+
+    .block {
+        width: 140px;
+        height: 140px;
+    }
+
+    .texto {
+        font-size: 1rem;
+    }
+
+    .bolinha {
+        width: 32px;
+        height: 32px;
+    }
+
+    .bolinha i {
+        font-size: 16px;
+    }
+
+    .titulo-vagas h3 {
+        font-size: 1.1rem;
+    }
+}
+

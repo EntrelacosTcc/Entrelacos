@@ -67,8 +67,8 @@
                 <i class="fa-solid fa-gear nav-icon"></i>
                 <span class="nav-text">Configurações</span>
             </div>
-            <div class="logout-btn" >
-                <div class="nav-item" data-content="sair" >
+            <div class="logout-btn">
+                <div class="nav-item" data-content="sair">
                     <i class="fa-solid fa-right-from-bracket nav-icon"></i>
                     <span class="nav-text">Sair</span>
                 </div>
@@ -114,8 +114,7 @@
                             <label><input type="checkbox" value="Religiosa" name="causas_atuacao"> Religiosa</label>
                             <label><input type="checkbox" value="Mulheres" name="causas_atuacao"> Mulheres</label>
                             <label><input type="checkbox" value="LGBTQIA+" name="causas_atuacao"> LGBTQIA+</label>
-                            <label><input type="checkbox" value="Crianças e Adolescentes" name="causas_atuacao"> Crianças e
-                                Adolescentes</label>
+                            <label><input type="checkbox" value="Crianças e Adolescentes" name="causas_atuacao"> Crianças e Adolescentes</label>
                             <label><input type="checkbox" value="Idosos" name="causas_atuacao"> Idosos</label>
                             <label><input type="checkbox" value="PCD" name="causas_atuacao"> PCD</label>
                         </div>
@@ -356,16 +355,71 @@
                 </div>
             </div>
 
+
+            <div id="config-content" class="content-section" style="display: none;">
+                <h2>Configurações</h2>
+
+                <div class="config-item">
+                    <h3>Senha</h3>
+                    <div class="config-box">
+                        <p>Gostaria de redefinir sua senha?</p>
+                        <button class="btn btn-redefinir-senha">Redefinir Senha</button>
+                    </div>
+                </div>
+
+                <div id="modalSenha" class="modal">
+                    <div class="modal-content modal-pequeno">
+                        <div class="modal-header">
+                            <h2>Redefinir sua senha</h2>
+                            <span class="close-modal">&times;</span>
+                        </div>
+
+                        <div class="modal-body">
+                            <form id="formRedefinirSenha">
+                                <!-- Senha Atual -->
+                                <div class="input-group">
+                                    <label for="senhaAtual">Senha Atual</label>
+                                    <div class="input-com-icone">
+                                        <input type="password" id="senhaAtual" placeholder="Digite sua senha atual"
+                                            required>
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Nova Senha -->
+                                <div class="input-group">
+                                    <label for="novaSenha">Nova Senha</label>
+                                    <div class="input-com-icone">
+                                        <input type="password" id="novaSenha" placeholder="Digite sua nova senha"
+                                            required>
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Confirmar Nova Senha -->
+                                <div class="input-group">
+                                    <label for="confirmarSenha">Confirmar Nova Senha</label>
+                                    <div class="input-com-icone">
+                                        <input type="password" id="confirmarSenha" placeholder="Confirme sua nova senha"
+                                            required>
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                </div>
+
+                                <div class="modal-actions">
+                                    <button type="button" class="btn-modal btn-cancelar">Cancelar</button>
+                                    <button type="submit" class="btn-modal btn-confirmar">Redefinir Senha</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
             <!-------------- POSTAGENS -------------->
 
             <div id="postagens-content" class="content-section" style="display: none;">
-
-                <!-- <div class="create-content">
-    <h2></h2>
-    <button id="btn-open-modal" class="btn-primary">
-      <i class="fa-solid fa-pen-to-square"></i> Criar Nova Postagem
-    </button>
-  </div> -->
 
                 <!-- FEED -->
                 <section id="feedView" class="feed-section margem-global">
