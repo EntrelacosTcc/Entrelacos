@@ -190,3 +190,114 @@
 .datasVaga-content .vaga-li-content {
     margin-bottom: 5px;
 }
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+
+/* Tablets e telas médias */
+@media (max-width: 992px) {
+
+    .vaga-hero {
+        margin: 0 40px;
+        padding: 0 20px;
+    }
+
+    .vaga-header {
+        gap: 40px;
+        padding-top: 60px;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .imgVaga-header {
+        width: 300px;
+        height: 220px;
+    }
+
+    .infoVaga-header {
+        flex: none;
+        width: 100%;
+    }
+
+    .infoVaga-header p {
+        width: 100%;
+    }
+
+    .vagaDetails-container {
+        margin: 20px 40px 50px;
+    }
+
+    .vaga-li {
+        gap: 20px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+    .vaga-hero {
+        margin: 0 20px;
+        padding: 0 10px;
+    }
+
+    .vaga-header {
+        padding-top: 40px;
+        gap: 20px;
+    }
+
+    .imgVaga-header {
+        width: 100%;
+        max-width: 280px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .infoVaga-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .infoVaga-header p {
+        font-size: 1rem;
+    }
+
+    .opcoesPerfil {
+        justify-content: center;
+    }
+
+    .option-btn {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
+
+    .vagaDetails-container {
+        margin: 20px 20px 40px;
+    }
+
+    .vaga-li {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .datasVaga-container h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Smartphones pequenos */
+@media (max-width: 420px) {
+
+    .infoVaga-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .vagaTitle {
+        font-size: 1.2rem;
+    }
+
+    .dataBtn {
+        padding: 5px 6px;
+        font-size: 0.9rem;
+    }
+}
