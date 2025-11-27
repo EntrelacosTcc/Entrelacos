@@ -403,8 +403,9 @@ function openMenu() {
   const menu = document.querySelector(".mobile-menuContainer");
   const overlay = document.querySelector(".overlay");
   if (!menu || !overlay) return;
+
   menu.classList.add("open");
-  overlay.classList.add("show");
+  overlay.classList.add("open");   // <-- CORRIGIDO
   document.body.style.overflow = "hidden";
 }
 
@@ -412,16 +413,19 @@ function closeMenu() {
   const menu = document.querySelector(".mobile-menuContainer");
   const overlay = document.querySelector(".overlay");
   if (!menu || !overlay) return;
+
   menu.classList.remove("open");
-  overlay.classList.remove("show");
+  overlay.classList.remove("open"); // <-- CORRIGIDO
   document.body.style.overflow = "auto";
 }
 
 function toggleMenu() {
   const menu = document.querySelector(".mobile-menuContainer");
   if (!menu) return;
+
   menu.classList.contains("open") ? closeMenu() : openMenu();
 }
+
 
 // =============================================
 // ACESSIBILIDADE SIENNA API Vlibras
