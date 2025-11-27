@@ -143,3 +143,106 @@
 .buttons {
     margin-bottom: 40px;
 }
+
+/* ===========================
+     RESPONSIVIDADE
+=========================== */
+
+/* Telas até 900px */
+@media (max-width: 900px) {
+    .containerDoacao {
+        width: 90%;
+        height: auto;
+        padding: 30px;
+        margin-top: 10%;
+    }
+
+    .section {
+        margin: 40px 40px 0 40px;
+    }
+
+    .cols {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .col {
+        width: 100%;
+    }
+
+    .btn1, .btn2 {
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Telas até 600px */
+@media (max-width: 600px) {
+    .containerDoacao {
+        padding: 25px;
+    }
+
+    .containerDoacao h2 {
+        font-size: 17px;
+    }
+
+    .containerDoacao p {
+        font-size: 14px;
+    }
+
+    .section {
+        margin: 30px 20px 0 20px;
+        padding-top: 20px;
+    }
+
+    .section-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title-row h3,
+    .section-content h3 {
+        font-size: 16px;
+    }
+
+    .section-content p {
+        font-size: 14px;
+    }
+
+    .success-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .success-icon img {
+        width: 50%;
+    }
+}
+
+/* Telas até 420px */
+@media (max-width: 420px) {
+    .containerDoacao {
+        padding: 20px;
+        border-radius: 25px;
+    }
+
+    .section {
+        margin: 20px 10px 0 10px;
+    }
+
+    .title-row img {
+        width: 22px;
+    }
+
+    .btn1, .btn2 {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
