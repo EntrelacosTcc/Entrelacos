@@ -340,4 +340,148 @@ body {
   color: var(--destaque-rosa);
 }
 
+@media (max-width: 1024px) {
+
+  .carrinho-container {
+    grid-template-columns: 1fr;
+  }
+
+  .resumo-box {
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .pagamento-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .pagamento-opcoes {
+    border-right: none;
+    border-bottom: 2px solid var(--cinza-claro);
+    padding-bottom: 20px;
+  }
+
+  .pagamento-detalhes {
+    padding-left: 0;
+  }
+
+  .campo-cartao input {
+    width: 100%;
+  }
+}
+
+/* --- Telas até 768px (tablets e celulares grandes) --- */
+@media (max-width: 768px) {
+
+  .carrinho-container {
+    margin: 20px auto;
+    gap: 20px;
+  }
+
+  .pagamento-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pagamento-opcoes {
+    border-bottom: 2px solid var(--cinza-claro);
+    padding-bottom: 15px;
+  }
+
+  .pagamento-opcoes label {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .pagamento-detalhes {
+    margin-top: 15px;
+  }
+
+  .linha-cartao {
+    flex-direction: column;
+  }
+
+  #pagPix, #pagBoleto {
+    padding: 10px;
+  }
+
+  .qrcode {
+    width: 150px;
+  }
+
+  .titulo-boleto {
+    margin-top: 10px;
+  }
+}
+
+/* --- Telas até 600px (celulares padrão) --- */
+@media (max-width: 600px) {
+
+  .carrinho-box,
+  .resumo-box {
+    padding: 18px;
+  }
+
+  .titulo-carrinho {
+    font-size: 18px;
+  }
+
+  .pagamento-opcoes label {
+    font-size: 14px;
+  }
+
+  .btn-finalizar,
+  .btn-finalizar-boleto {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .campo-cartao input {
+    font-size: 14px;
+  }
+
+  #pagPix .campo-pix {
+    font-size: 13px;
+  }
+
+  .btn-copiar {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* --- Telas até 480px (celulares pequenos) --- */
+@media (max-width: 480px) {
+
+  .carrinho-container {
+    padding: 0 10px;
+  }
+
+  .pagamento-opcoes label {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  #pagPix, #pagBoleto {
+    padding: 10px;
+  }
+
+  .qrcode {
+    width: 120px;
+  }
+
+  .titulo-boleto {
+    font-size: 16px;
+  }
+
+  .btn-gerar-boleto {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .campo-cartao input {
+    width: 100%;
+  }
+}
+
 
