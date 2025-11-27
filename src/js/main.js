@@ -129,8 +129,8 @@ class VagaItem extends HTMLElement {
         this.innerHTML = `
         <div class="vagas">
             ${imagemHTML}
-            <h3>${this.getAttribute('titulo')}</h3>
-            <a href="src/perfil-users/publicoong.html"><h4>${this.getAttribute('ong')}</h4></a>
+            <span>${this.getAttribute('titulo')}</span>
+            <a href="../perfil-users/publicoong.html"><h4>${this.getAttribute('ong')}</h4></a>
             <div class="tags-vagas">
                 ${this.getCausas()}
             </div>
@@ -140,7 +140,7 @@ class VagaItem extends HTMLElement {
                 <div class="dados-vaga"><i class="fa-solid fa-calendar"></i>${this.getAttribute('frequencia')}</div>
                 <div class="dados-vaga"><i class="fa-solid fa-clock"></i>${this.getAttribute('carga-horaria')}</div>
             </div>
-            <center><button>Participe</button></center>
+            <center><button><a href="../pages-html/link aq" style="color: #fff">Participe</a></button></center>
         </div>
         `;
     }

@@ -185,6 +185,12 @@
   text-align: center;
 }
 
+.vagas span{
+  margin: 5px 10px;
+  font-size: 1.1rem;
+  color: rgb(0, 0, 0);
+}
+
 
 .titulo-vagas h3 {
   position: relative;
