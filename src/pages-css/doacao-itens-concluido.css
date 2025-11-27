@@ -1,0 +1,145 @@
+.containerDoacao {
+    width: 700px;
+    height: 740px;
+    background: white;
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 35.82px;
+    border: 1.5px solid rgba(10, 57, 55, 1);
+}
+
+.success-icon {
+    width: 95.84px;
+    height: 95.84px;
+    background: #3EB4AE;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-icon img {
+    width: 44.53px;
+    height: 42.84px;
+    height: auto;
+}
+
+.success-icon {
+    width: 95.84px;
+    height: 95.84px;
+    background: #3EB4AE;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-icon img {
+    width: 45%;
+    height: auto;
+}
+
+
+.containerDoacao h2 {
+    text-align: center;
+    color: rgba(10, 57, 55, 1);
+    font-size: 19px;
+    margin-top: 7%;
+}
+
+.containerDoacao p {
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    font-size: 15px;
+}
+
+.section {
+    padding-top: 25px;
+    border-top: solid 1px;
+    margin: 50px 70px 0px 70px;
+}
+
+.info-box {
+    margin: 20px 0;
+    font-size: 15px;
+    color: #444;
+}
+
+.btn1,
+.btn2 {
+    display: inline-block;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 13.46px;
+    background: rgba(62, 180, 174, 1);
+    color: white;
+    box-shadow: 0px 2.86px 2.86px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.cols {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col {
+    width: 30%;
+    min-width: 200px;
+}
+
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-row img {
+    width: 28px;
+    height: auto;
+}
+
+.title-row h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.section-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.section-content h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.section-content p {
+    text-align: left;
+    margin: 5px 0;
+}
+
+.section-content,
+.btn1,
+.btn2 {
+    margin-top: 10px;
+}
+
+.btn1 {
+    margin-right: 2%;
+    margin-left: 14%;
+}
+
+.btn2 {
+    margin-left: 5%;
+}
+
+.buttons {
+    margin-bottom: 40px;
+}
