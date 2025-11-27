@@ -31,12 +31,19 @@
         <div class="navbar-header">
             <div class="navBg" id="bgUpload">
                 <input type="file" id="bgInput" accept="image/*" style="display: none;">
+                <div class="upload-overlay">
+                    <i class="fas fa-camera"></i>
+                    <span>Alterar capa</span>
+                </div>
             </div>
 
             <div class="navProfile" id="profileUpload">
                 <input type="file" id="profileInput" accept="image/*" style="display: none;">
+                <div class="upload-overlay">
+                    <i class="fas fa-camera"></i>
+                </div>
             </div>
-            <h1>Raízes do Futuro</h1>
+            <h1 id="ongNomeHeader">Raízes do Futuro</h1>
             <h3>Painel Administrativo</h3>
         </div>
         <div class="nav-links">
@@ -60,8 +67,8 @@
                 <i class="fa-solid fa-gear nav-icon"></i>
                 <span class="nav-text">Configurações</span>
             </div>
-            <div class="logout-btn" >
-                <div class="nav-item" data-content="sair" >
+            <div class="logout-btn">
+                <div class="nav-item" data-content="sair">
                     <i class="fa-solid fa-right-from-bracket nav-icon"></i>
                     <span class="nav-text">Sair</span>
                 </div>
@@ -86,8 +93,8 @@
 
                 <div id="opcao1" class="opcao visivel">
 
-                    <label for="">Descrição</label>
-                    <input type="text">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" rows="4"></input>
                     <p class="inputP">Descreva as principais finalidades e propósitos da ONG.</p><br>
 
                     <!-- Causas de Interesse -->
@@ -97,34 +104,43 @@
                         </div>
                         <div class="causas-checkboxes">
                             <!-- 13 opções -->
-                            <label><input type="checkbox" value="Animal" id="causas_atuacao"> Animal</label>
-                            <label><input type="checkbox" value="Social" id="causas_atuacao"> Social</label>
-                            <label><input type="checkbox" value="Ambiental" id="causas_atuacao"> Ambiental</label>
-                            <label><input type="checkbox" value="Educacional" id="causas_atuacao"> Educacional</label>
-                            <label><input type="checkbox" value="Saúde" id="causas_atuacao"> Saúde</label>
-                            <label><input type="checkbox" value="Cultural" id="causas_atuacao"> Cultural</label>
-                            <label><input type="checkbox" value="Humanitária" id="causas_atuacao"> Humanitária</label>
-                            <label><input type="checkbox" value="Religiosa" id="causas_atuacao"> Religiosa</label>
-                            <label><input type="checkbox" value="Mulheres" id="causas_atuacao"> Mulheres</label>
-                            <label><input type="checkbox" value="LGBTQIA+" id="causas_atuacao"> LGBTQIA+</label>
-                            <label><input type="checkbox" value="Crianças e Adolescentes" id="causas_atuacao"> Crianças e
-                                Adolescentes</label>
-                            <label><input type="checkbox" value="Idosos" id="causas_atuacao"> Idosos</label>
-                            <label><input type="checkbox" value="PCD" id="causas_atuacao"> PCD</label>
+                            <label><input type="checkbox" value="Animal" name="causas_atuacao"> Animal</label>
+                            <label><input type="checkbox" value="Social" name="causas_atuacao"> Social</label>
+                            <label><input type="checkbox" value="Ambiental" name="causas_atuacao"> Ambiental</label>
+                            <label><input type="checkbox" value="Educacional" name="causas_atuacao"> Educacional</label>
+                            <label><input type="checkbox" value="Saúde" name="causas_atuacao"> Saúde</label>
+                            <label><input type="checkbox" value="Cultural" name="causas_atuacao"> Cultural</label>
+                            <label><input type="checkbox" value="Humanitária" name="causas_atuacao"> Humanitária</label>
+                            <label><input type="checkbox" value="Religiosa" name="causas_atuacao"> Religiosa</label>
+                            <label><input type="checkbox" value="Mulheres" name="causas_atuacao"> Mulheres</label>
+                            <label><input type="checkbox" value="LGBTQIA+" name="causas_atuacao"> LGBTQIA+</label>
+                            <label><input type="checkbox" value="Crianças e Adolescentes" name="causas_atuacao"> Crianças e Adolescentes</label>
+                            <label><input type="checkbox" value="Idosos" name="causas_atuacao"> Idosos</label>
+                            <label><input type="checkbox" value="PCD" name="causas_atuacao"> PCD</label>
                         </div>
                         <h4>Selecionadas (máx. 3):</h4>
                         <div class="causas-tags" id="perfilCausas"></div>
                     </div>
 
-                    <label for="">Classificação</label>
-                    <select name="" id=""></select>
+                    <label for="classificacao">Classificação</label>
+                    <select id="classificacao">
+                        <option value="">Selecione...</option>
+                        <option value="ONG">ONG</option>
+                        <option value="Associação">Associação</option>
+                        <option value="Fundação">Fundação</option>
+                        <option value="Instituto">Instituto</option>
+                    </select>
                     <p class="inputP">Como sua ONG se classifica?</p><br>
 
-                    <label for="">Endereço</label>
-                    <input type="text">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="endereco">
+                    <p class="inputP">
                     <p class="inputP">[ ]Permitir a exibição do endereço na página da ONG</p><br>
+                    </p><br>
 
-                    <button class="btnSalvar">Salvar alterações</button>
+                    <div class="salvarInformacoesGerais">
+                    <button class="btnSalvar" onclick="salvarInformacoesGerais()">Salvar alterações</button>
+                    </div>
 
                 </div>
 
@@ -132,20 +148,29 @@
                 <!------------- OPCAO CONTATO -------------->
 
                 <div id="opcao2" class="opcao">
-                    <label for="">Telefone</label>
-                    <input type="number">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone">
                     <p class="inputP">Preencha com um número de WhatsApp para facilitar sua comunicação com os
                         voluntários</p><br>
 
-                    <label for="">Email de Contato</label>
-                    <input type="text">
+                    <label for="email_contato">Email de Contato</label>
+                    <input type="email" id="email_contato">
                     <p class="inputP">Utilize um email de contato ativo</p><br>
 
-                    <label for="">Instagram</label>
-                    <input type="text">
+                    <label for="instagram">Instagram</label>
+                    <input type="text" id="instagram">
+                    
+                    <label for="website">Website</label>
+                    <input type="text" id="website">
+                    
+                    <label for="facebook">Facebook</label>
+                    <input type="text" id="facebook">
+                    
                     <p class="inputP"></p><br>
 
-                    <button class="btnSalvar">Salvar alterações</button>
+                    <div class="salvarContatos">
+                    <button class="btnSalvar" onclick="salvarContatos()">Salvar alterações</button>
+                    </div>
 
                 </div>
 
@@ -159,16 +184,18 @@
                 <div class="create-content">
 
                     <h2>Vagas</h2>
-                    <button class="createForm">+ Criar Nova Vaga</button>
+                   <button class="createForm" onclick="location.href='/pages-html/formulario-vagas.html'">
+    + Criar Nova Vaga
+</button>
 
                     <div class="vagasDoacoes-container">
 
                         <div class="vagaDoacao-box">
                             <div class="vagaImage"></div>
                             <div class="vagaDoacaoInfo">
-                                <h3>Nome da Vaga</h3>
-                                <p>Data de Criação</p>
-                                <div class="status-vagaDoacao">Status</div>
+                                <h3>Alimentação de Animais de Rua</h3>
+                                <p>Criada em 2025-10-20</p>
+                                <div class="status-vagaDoacao">Ativo</div>
                             </div>
                             <button id="gerenciamento-btn" class="gerenciarBtn nav-item"
                                 data-content="gerenciamentoVaga">Gerenciar</button>
@@ -330,16 +357,71 @@
                 </div>
             </div>
 
+
+            <div id="config-content" class="content-section" style="display: none;">
+                <h2>Configurações</h2>
+
+                <div class="config-item">
+                    <h3>Senha</h3>
+                    <div class="config-box">
+                        <p>Gostaria de redefinir sua senha?</p>
+                        <button class="btn btn-redefinir-senha">Redefinir Senha</button>
+                    </div>
+                </div>
+
+                <div id="modalSenha" class="modal">
+                    <div class="modal-content modal-pequeno">
+                        <div class="modal-header">
+                            <h2>Redefinir sua senha</h2>
+                            <span class="close-modal">&times;</span>
+                        </div>
+
+                        <div class="modal-body">
+                            <form id="formRedefinirSenha">
+                                <!-- Senha Atual -->
+                                <div class="input-group">
+                                    <label for="senhaAtual">Senha Atual</label>
+                                    <div class="input-com-icone">
+                                        <input type="password" id="senhaAtual" placeholder="Digite sua senha atual"
+                                            required>
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Nova Senha -->
+                                <div class="input-group">
+                                    <label for="novaSenha">Nova Senha</label>
+                                    <div class="input-com-icone">
+                                        <input type="password" id="novaSenha" placeholder="Digite sua nova senha"
+                                            required>
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Confirmar Nova Senha -->
+                                <div class="input-group">
+                                    <label for="confirmarSenha">Confirmar Nova Senha</label>
+                                    <div class="input-com-icone">
+                                        <input type="password" id="confirmarSenha" placeholder="Confirme sua nova senha"
+                                            required>
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                </div>
+
+                                <div class="modal-actions">
+                                    <button type="button" class="btn-modal btn-cancelar">Cancelar</button>
+                                    <button type="submit" class="btn-modal btn-confirmar">Redefinir Senha</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
             <!-------------- POSTAGENS -------------->
 
             <div id="postagens-content" class="content-section" style="display: none;">
-
-                <!-- <div class="create-content">
-    <h2></h2>
-    <button id="btn-open-modal" class="btn-primary">
-      <i class="fa-solid fa-pen-to-square"></i> Criar Nova Postagem
-    </button>
-  </div> -->
 
                 <!-- FEED -->
                 <section id="feedView" class="feed-section margem-global">
@@ -411,11 +493,13 @@
     </div>
     </main>
 
-    <script src="/src/js/main.js"></script>
+    
 
-    <script src="/src/js/perfilong.js"></script>
+<script src="/src/js/main.js"></script>
+
+    <script type="module" src="/src/js/perfilong.js"></script>
     <script src="/src/js/perfil-ong.js"></script>
-    <script src="/src/js/perfilong-manager.js"></script>
+    <!-- <script src="/src/js/perfilong-manager.js"></script> -->
     <script>
 
         document.querySelectorAll('.nav-item').forEach(item => {
@@ -447,7 +531,6 @@
         }
 
     </script>
-    <!-- No final do perfilong.html, antes do </body> -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🔍 Verificando perfil da ONG no localStorage...');

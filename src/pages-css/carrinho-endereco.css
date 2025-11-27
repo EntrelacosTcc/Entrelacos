@@ -90,9 +90,7 @@
 }
 
 
-/* ==========================
-   RESUMO
-========================== */
+
 .resumo-box .card {
   margin-bottom: 20px;
 }
@@ -135,5 +133,44 @@
 .totalzao strong {
   font-size: 20px;
   color: var(--destaque-rosa);
+}
+
+
+@media (max-width: 768px) {
+
+  /* LAYOUT GERAL */
+  .carrinho-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .resumo-box {
+    height: auto;
+  }
+
+  /* ENDEREÇO */
+  .endereco-row {
+    grid-template-columns: 1fr;
+  }
+
+  #btnSalvarEndereco {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .info-endereco {
+    padding: 15px;
+    height: auto;
+  }
+
+  /* BOXES */
+  .carrinho-box,
+  .resumo-box {
+    padding: 20px;
+  }
+
+  .titulo-carrinho {
+    font-size: 18px;
+  }
 }
 

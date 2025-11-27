@@ -1,0 +1,89 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer{
+    width: 100%;
+}
+
+form{
+    margin: 50px 0;
+    width: 550px;
+    height: fit-content;
+    padding: 40px 60px;
+    background-color: #FFFAFA;
+    border: 2px solid #062423;
+    border-radius: 20px;
+    box-shadow: 3px 2px 20px rgba(6, 36, 35, 0.281);
+}
+
+.passos{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border-bottom: 1px solid #09625D;
+    padding-bottom: 10px;
+}
+
+form h1{
+    color: #0F504D;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin: 15px 0 20px;
+}
+
+.inputs-form{
+    margin: 0 20px;
+}
+
+.inputSelect{
+    width: 100%;
+    border: 1.5px solid #09625D;
+    border-radius: 10px;
+    padding: 5px 10px;
+    height: 35px;
+    margin: 10px 0;
+}
+
+.buttons-container{
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+form button{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+select option{
+    background-color: none;
+    border: 1px solid #ccc;
+}
+
+.btnContinuar{
+    background-color: #09625D;
+    color: #fff;
+    border: none;
+}
+
+.btnContinuar:hover{
+    background-color: #0F504D;
+    transition: 0.4s;
+}
+
+.btnCancelar{
+    background: none;
+    color: #09625D;
+    border: 2px solid #09625D;
+}
+
+.blueSpan{
+    color: #09625D;
+}

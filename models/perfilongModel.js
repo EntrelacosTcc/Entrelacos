@@ -1,6 +1,8 @@
 const db = require('../config/database');
 
 class PerfilOngModel {
+
+  // busca por id da ong
   static async findByOngId(ongId) {
     const [rows] = await db.execute(
       `SELECT * FROM perfil_ong WHERE id_ong = ?`,
@@ -9,77 +11,101 @@ class PerfilOngModel {
     return rows[0] || null;
   }
 
-  static async create(ongId, causas_atuacao = null) {
-    const [result] = await db.execute(
-      `INSERT INTO perfil_ong (id_ong, causas_atuacao) VALUES (?, ?)`,
-      [ongId, causas_atuacao ? JSON.stringify(causas_atuacao) : null]
-    );
+  // cria um perfil COMPLETO (compatível com seu controller)
+static async create(data) {
+
+  const id_ong = Number(data.id_ong); // 🔥 força número SEMPRE
+  const resumo = data.resumo || null;
+  const classificacao = data.classificacao || null;
+  const endereco = data.endereco || null;
+
+  let causas_atuacao = null;
+
+  if (Array.isArray(data.causas_atuacao)) {
+    causas_atuacao = JSON.stringify(data.causas_atuacao);
+  } else if (typeof data.causas_atuacao === "string") {
+    causas_atuacao = data.causas_atuacao;
+  }
+  const [result] = await db.execute(
+    `INSERT INTO perfil_ong 
+      (id_ong, resumo, causas_atuacao, classificacao, endereco)
+     VALUES (?, ?, ?, ?, ?)`,
+    [
+      id_ong,
+      resumo,
+      causas_atuacao,
+      classificacao,
+      endereco
+    ]
+  );
+
+
     return result.insertId;
   }
 
-  static async update(ongId, causas_atuacao = null) {
+  // update completo
+  static async update({ id_ong, resumo, causas_atuacao, classificacao, endereco }) {
     await db.execute(
-      `UPDATE perfil_ong SET causas_atuacao = ? WHERE id_ong = ?`,
-      [causas_atuacao ? JSON.stringify(causas_atuacao) : null, ongId]
+      `UPDATE perfil_ong 
+       SET resumo = ?, 
+           causas_atuacao = ?, 
+           classificacao = ?, 
+           endereco = ?
+       WHERE id_ong = ?`,
+      [
+        resumo || null,
+        causas_atuacao ? JSON.stringify(causas_atuacao) : null,
+        classificacao || null,
+        endereco || null,
+        id_ong
+      ]
     );
   }
 
+  // perfil completo utilizado no updateProfile
   static async getCompleteProfile(firebaseUid) {
     try {
-      // Buscar dados da ONG e as causas do perfil_ong
       const [rows] = await db.execute(
-        `SELECT o.*, p.causas_atuacao 
+        `SELECT o.*, p.resumo, p.causas_atuacao, p.classificacao AS p_classificacao, p.endereco AS p_endereco
          FROM ong o
          LEFT JOIN perfil_ong p ON p.id_ong = o.id_ong
          WHERE o.firebase_uid = ?`,
         [firebaseUid]
       );
-      
+
       const row = rows[0];
       if (!row) return null;
 
-      // Parse das causas_atuacao se existir
       let causas_atuacao = [];
       if (row.causas_atuacao) {
-        try {
-          causas_atuacao = JSON.parse(row.causas_atuacao);
-        } catch (e) {
-          console.error('Erro ao parsear causas_atuacao:', e);
-        }
+        try { causas_atuacao = JSON.parse(row.causas_atuacao); } catch {}
       }
 
       return {
-        // Campos da tabela ong
         id_ong: row.id_ong,
         firebase_uid: row.firebase_uid,
         email: row.email,
         nome_ong: row.nome_ong,
         perfil_oficial: row.perfil_oficial,
-        classificacao: row.classificacao,
-        nome_responsavel: row.nome_responsavel,
-        cargo_responsavel: row.cargo_responsavel,
-        cnpj: row.cnpj,
-        descricao: row.descricao,
-        endereco: row.endereco,
+        classificacao: row.classificacao || row.p_classificacao,
+        descricao: row.resumo || row.descricao,
+        endereco: row.endereco || row.p_endereco,
         causa: row.causa,
         estado: row.estado,
         telefone: row.telefone,
         website: row.website,
         facebook: row.facebook,
         instagram: row.instagram,
-        created_at: row.created_at,
-        updated_at: row.updated_at,
-        // Campos da tabela perfil_ong
-        causas_atuacao: causas_atuacao
+        causas_atuacao
       };
-    } catch (error) {
-      console.error('Erro ao buscar perfil completo:', error);
-      throw error;
+    } catch (err) {
+      console.error('Erro ao buscar perfil completo:', err);
+      throw err;
     }
   }
 
+  // contatos
   static async updateContactInfo(ongId, contactData) {
-    // Esta função atualiza a tabela ong
     const { telefone, email, website, facebook, instagram } = contactData;
     
     await db.execute(
@@ -87,7 +113,6 @@ class PerfilOngModel {
       [telefone, website, facebook, instagram, ongId]
     );
 
-    // Se houver email, atualizamos também (mas cuidado, pois o email é usado para login)
     if (email) {
       await db.execute(
         `UPDATE ong SET email = ? WHERE id_ong = ?`,

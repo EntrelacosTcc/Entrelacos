@@ -1,133 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png">
-    <title>Informações Vagas</title>
-    <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href= "../pages-css/formulario-vagas.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png">
+  <title>Informações Vagas</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../pages-css/formulario-vagas.css">
+  
+  <style>
+    /* Estilos específicos para este formulário */
+    .radio-group {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      transition: all 0.2s;
+      flex: 1;
+    }
+
+    .radio-option:hover {
+      border-color: #c0c0c0;
+    }
+
+    .radio-option input {
+      margin-right: 10px;
+    }
+
+    .radio-option input:checked ~ span {
+      color: #2c5530;
+      font-weight: bold;
+    }
+
+    .option-box {
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .option-box:hover {
+      border-color: #c0c0c0;
+    }
+
+    .option-box.selected {
+      border-color: #2c5530;
+      background-color: #f0f7f0;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+    }
+
+    .option-item input {
+      margin-right: 12px;
+      margin-top: 3px;
+    }
+
+    .option-item div strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .option-item div p {
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
   <!-- API VLibras -->
-<div vw class="enabled">
-  <div vw-access-button class="active"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
-  </div>
-</div>
-
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-<script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
-</script>
-    <div id="navbar"></div>
-    <div class="form-container">
-  <h2>Informações sobre a Vaga</h2>
-  <p class="subtitle">Preencha as informações sobre a vaga a ser criada</p>
-
- 
-  <label>Formato de Trabalho</label>
-  <p class="small-text">Selecione uma das opções abaixo</p>
-  <div class="radio-group">
-    <label class="radio-option">
-      <input type="radio" name="formato" value="presencial">
-      <span>Presencial</span>
-    </label>
-    <label class="radio-option">
-      <input type="radio" name="formato" value="remoto">
-      <span>Remoto</span>
-    </label>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
   </div>
 
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script> new window.VLibras.Widget('https://vlibras.gov.br/app'); </script>
 
-  <label>Disponibilidade</label>
-  <p class="small-text">Selecione uma das opções abaixo</p>
+  <div id="navbar"></div>
 
-  <div class="option-box">
-    <label class="option-item">
-      <input type="radio" name="disponibilidade" value="pontual">
-      <div>
-        <strong>Pontual</strong>
-        <p>Essa opção é ideal para quem deseja contribuir de forma ocasional, participando de ações específicas sem a necessidade de um compromisso contínuo.</p>
-      </div>
-    </label>
-  </div>
+  <div class="form-container">
+    <h2>Informações sobre a Vaga</h2>
+    <p class="subtitle">Preencha as informações complementares</p>
 
+    <!-- FORMATO -->
+    <label>Formato de Trabalho</label>
+    <p class="small-text">Selecione uma das opções abaixo</p>
 
-  <div class="option-box">
-    <label class="option-item">
-      <input type="radio" name="disponibilidade" value="recorrente">
-      <div>
-        <strong>Recorrente</strong>
-        <p>Essa opção permite encontros regulares, como semanais ou mensais, garantindo continuidade no apoio e maior envolvimento com o projeto.</p>
+    <div class="radio-group">
+      <label class="radio-option">
+        <input type="radio" name="formato" value="Presencial">
+        <span>Presencial</span>
+      </label>
+      <label class="radio-option">
+        <input type="radio" name="formato" value="Remoto">
+        <span>Remoto</span>
+      </label>
+      <label class="radio-option">
+        <input type="radio" name="formato" value="Híbrido">
+        <span>Híbrido</span>
+      </label>
+    </div>
 
-        <div class="inline-fields">
-          <div>
-            <label>Frequência</label>
-            <select>
-              <option></option>
-              <option>Diário</option>
-              <option>Semanal</option>
-              <option>Mensal</option>
-            </select>
-          </div>
-          <div>
-            <label>&nbsp;</label>
-            <select>
-                 <option></option>
-              <option>1 vez</option>
-              <option>2 vezes</option>
-              <option>3 vezes</option>
-              <option>4 vezes</option>
-              <option>5 vezes ou +</option>
-            </select>
-          </div>
+    <!-- DISPONIBILIDADE -->
+    <label>Disponibilidade</label>
+    <p class="small-text">Selecione uma das opções abaixo</p>
+
+    <div class="option-box" id="pontual-box">
+      <label class="option-item">
+        <input type="radio" name="disponibilidade" value="Pontual">
+        <div>
+          <strong>Pontual</strong>
+          <p>Ideal para contribuições em ocasiões específicas.</p>
         </div>
+      </label>
+    </div>
 
-        <div class="inline-fields">
-          <div>
-            <label>Carga horária</label>
-            <select>
-                 <option></option>
-                <option>1 Hora</option>
-                 <option>2 Horas</option>
-                  <option>3 Horas</option>
-                   <option>4 Horas</option>
-                     <option>5 Horas</option>
-                      <option>6 Horas</option>
-                       <option>7 Horas</option>
-                        <option>8 Horas ou +</option>
-            </select>
-          </div>
-          <div>
-            <label>&nbsp;</label>
-            <select>
-                <option></option>
-              <option>Horário flexível</option>
-              <option>Horário fixo</option>
-            </select>
-          </div>
+    <div class="option-box" id="recorrente-box">
+      <label class="option-item">
+        <input type="radio" name="disponibilidade" value="Recorrente">
+        <div>
+          <strong>Recorrente</strong>
+          <p>Para contribuições regulares ao longo do tempo.</p>
         </div>
+      </label>
+    </div>
 
-        <div class="inline-fields">
-          <div>
-            <label>Início</label>
-            <input type="date" >
-          </div>
-          <div>
-            <label>Término</label>
-            <input type="date" >
-          </div>
-        </div>
-      </div>
-    </label>
+    <div class="button-container">
+      <button id="btnProximo">Seguinte</button>
+    </div>
   </div>
 
-  <div class="button-container">
-    <button>Seguinte</button>
-  </div>
-</div>
-<script src="../js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btnProximo = document.getElementById("btnProximo");
+      const pontualBox = document.getElementById("pontual-box");
+      const recorrenteBox = document.getElementById("recorrente-box");
+
+      // Seleção visual
+      document.querySelectorAll("input[name='disponibilidade']").forEach(input => {
+        input.addEventListener("change", () => {
+          pontualBox.classList.toggle("selected", input.value === "Pontual");
+          recorrenteBox.classList.toggle("selected", input.value === "Recorrente");
+        });
+      });
+
+      btnProximo.addEventListener("click", () => {
+        const formato = document.querySelector("input[name='formato']:checked")?.value || "";
+        const disponibilidade = document.querySelector("input[name='disponibilidade']:checked")?.value || "";
+
+        if (!formato || !disponibilidade) {
+          alert("Preencha o formato e a disponibilidade para continuar.");
+          return;
+        }
+
+        let vagaDados = JSON.parse(localStorage.getItem("vagaDados")) || {};
+
+        vagaDados.formato = formato;
+        vagaDados.disponibilidade = disponibilidade;
+
+        localStorage.setItem("vagaDados", JSON.stringify(vagaDados));
+
+        window.location.href = "formulario-vagas3.html";
+      });
+    });
+  </script>
+  
+  <!-- API de acessibilidade -->
+  <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>

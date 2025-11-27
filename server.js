@@ -98,6 +98,10 @@ const usuarioRoutes = require('./routes/usuario');
 app.use('/api/usuario', usuarioRoutes);
 console.log('✅ Rotas de usuário carregadas');
 
+
+
+const vagaRoutes = require('./routes/vaga');
+app.use('/api', vagaRoutes);
 // Healthcheck
 app.get('/health', (req, res) => res.json({ status: 'OK' }));
 

@@ -1,0 +1,303 @@
+.vaga-hero{
+    padding: 0 40px;
+    margin: 0 100px;
+    border-bottom: 1.5px solid #09625D;
+}
+
+.vaga-header{
+    display: flex;
+    gap: 100px;
+    padding-top: 80px;
+}
+
+.imgVaga-header{
+    background-color: rgb(147, 147, 147);
+    width: 350px;
+    height: 250px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.infoVaga-header{
+    flex: 1;
+}
+
+.infoVaga-header h1{
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.infoVaga-header p{
+    font-size: 1.2rem;
+    width: 470px;
+    margin-bottom: 50px;
+}
+
+.infoVaga-header button{
+    background-color: #09625D;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
+}
+
+.causa-tags{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+/* OPCOES VAGA */
+
+.opcoesPerfil {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: left;
+}
+
+.option-btn {
+    margin: 10px 0 30px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.option-btn:hover {
+    color: #09625D;
+    transition: 0.2s;
+}
+
+.opcao {
+    margin: 10px;
+    display: none;
+    flex-direction: column;
+    height: 100%;
+}
+
+.opcao.visivel {
+    display: flex;
+}
+
+.option-btn.ativo {
+    border-bottom: 2px solid #05625d;
+    font-weight: 600;
+    color: #05625d;
+}
+
+/* DETALHES DA VAGA */
+
+.vagaDetails-container{
+    margin: 20px 120px 50px;
+}
+
+.sobre-vaga h2{
+    margin: 0 0 30px;
+    font-weight: 300;
+    color: #09625D;
+}
+
+.ongPerfil{
+    margin: 40px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.perfilImg{
+    background-color: #09625D;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.perfilDados span{
+    color: #09625D;
+}
+
+.vagaTitle {
+    width: 100%;
+    border-bottom: 2px solid #09625D;
+    color: #09625D;
+    padding-bottom: 5px;
+    margin: 20px 0 25px;
+    font-size: 1.4rem;
+    font-weight: 100;
+}
+
+.vaga-li {
+    display: flex;
+    gap: 50px;
+}
+
+.vaga-li-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.vaga-li-content i {
+    color: #09625D;
+}
+
+.circleVaga {
+    font-size: 8px;
+}
+
+.vaga-li-content span {
+    color: #09625D;
+}
+
+.datasVaga-container {
+    margin-top: 40px;
+    width: 100%;
+    border: 2px solid #09625D;
+    border-radius: 10px;
+}
+
+.datasVaga-container h3 {
+    margin: 0;
+    padding: 10px 5px;
+    font-size: 1.3rem;
+}
+
+.datasVaga-content {
+    padding: 10px;
+}
+
+.dataBtn {
+    margin-bottom: 10px;
+    padding: 5px 8px;
+    color: #09625D;
+    background-color: #C3F4EE;
+    border: 1px solid #09625D;
+    border-radius: 5px;
+}
+
+.dataBtn:hover {
+    background-color: #158a84;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.datasVaga-content .vaga-li-content {
+    margin-bottom: 5px;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+
+/* Tablets e telas médias */
+@media (max-width: 992px) {
+
+    .vaga-hero {
+        margin: 0 40px;
+        padding: 0 20px;
+    }
+
+    .vaga-header {
+        gap: 40px;
+        padding-top: 60px;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .imgVaga-header {
+        width: 300px;
+        height: 220px;
+    }
+
+    .infoVaga-header {
+        flex: none;
+        width: 100%;
+    }
+
+    .infoVaga-header p {
+        width: 100%;
+    }
+
+    .vagaDetails-container {
+        margin: 20px 40px 50px;
+    }
+
+    .vaga-li {
+        gap: 20px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+    .vaga-hero {
+        margin: 0 20px;
+        padding: 0 10px;
+    }
+
+    .vaga-header {
+        padding-top: 40px;
+        gap: 20px;
+    }
+
+    .imgVaga-header {
+        width: 100%;
+        max-width: 280px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .infoVaga-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .infoVaga-header p {
+        font-size: 1rem;
+    }
+
+    .opcoesPerfil {
+        justify-content: center;
+    }
+
+    .option-btn {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
+
+    .vagaDetails-container {
+        margin: 20px 20px 40px;
+    }
+
+    .vaga-li {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .datasVaga-container h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Smartphones pequenos */
+@media (max-width: 420px) {
+
+    .infoVaga-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .vagaTitle {
+        font-size: 1.2rem;
+    }
+
+    .dataBtn {
+        padding: 5px 6px;
+        font-size: 0.9rem;
+    }
+}

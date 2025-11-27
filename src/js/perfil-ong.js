@@ -326,3 +326,206 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+// Redefinir Senha
+
+// Modal Redefinir Senha - VERSÃO CORRIGIDA
+document.addEventListener('DOMContentLoaded', function() {
+    // Verificar se o modal existe
+    const modalSenha = document.getElementById('modalSenha');
+    if (!modalSenha) {
+        console.error('Modal de senha não encontrado!');
+        return;
+    }
+
+    // Procurar o botão em TODO o documento
+    const btnRedefinirSenha = document.querySelector('.btn-redefinir-senha');
+    
+    console.log('Botão encontrado:', btnRedefinirSenha);
+    console.log('Modal encontrado:', modalSenha);
+
+    // Função para abrir modal
+    function abrirModalSenha() {
+        console.log('Abrindo modal...');
+        modalSenha.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        
+        // Limpar formulário ao abrir
+        const form = document.getElementById('formRedefinirSenha');
+        if (form) {
+            form.reset();
+            limparErros();
+        }
+    }
+    
+    // Função para fechar modal
+    function fecharModalSenha() {
+        modalSenha.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Abrir modal quando clicar no botão "Redefinir Senha"
+    if (btnRedefinirSenha) {
+        btnRedefinirSenha.addEventListener('click', function(e) {
+            e.preventDefault();
+            abrirModalSenha();
+        });
+    } else {
+        console.error('Botão redefinir senha não encontrado!');
+    }
+    
+    // Fechar modal - procurar elementos DENTRO do modal
+    const closeModal = modalSenha.querySelector('.close-modal');
+    const btnCancelar = modalSenha.querySelector('.btn-cancelar');
+    
+    if (closeModal) {
+        closeModal.addEventListener('click', fecharModalSenha);
+    }
+    
+    if (btnCancelar) {
+        btnCancelar.addEventListener('click', fecharModalSenha);
+    }
+    
+    // Fechar modal clicando fora
+    window.addEventListener('click', function(event) {
+        if (event.target === modalSenha) {
+            fecharModalSenha();
+        }
+    });
+    
+    // Fechar modal com ESC
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modalSenha.style.display === 'block') {
+            fecharModalSenha();
+        }
+    });
+    
+    // Validação do formulário
+    function limparErros() {
+        const errors = document.querySelectorAll('.error');
+        errors.forEach(error => {
+            error.style.display = 'none';
+        });
+        
+        const inputs = document.querySelectorAll('.input-group');
+        inputs.forEach(input => {
+            input.classList.remove('error', 'success');
+        });
+    }
+    
+    function mostrarErro(campo, mensagem) {
+        const inputGroup = campo.closest('.input-group');
+        let errorElement = inputGroup.querySelector('.error');
+        
+        if (!errorElement) {
+            errorElement = document.createElement('div');
+            errorElement.className = 'error';
+            inputGroup.appendChild(errorElement);
+        }
+        
+        errorElement.textContent = mensagem;
+        errorElement.style.display = 'block';
+        inputGroup.classList.add('error');
+        inputGroup.classList.remove('success');
+    }
+    
+    function mostrarSucesso(campo) {
+        const inputGroup = campo.closest('.input-group');
+        inputGroup.classList.remove('error');
+        inputGroup.classList.add('success');
+        
+        const errorElement = inputGroup.querySelector('.error');
+        if (errorElement) {
+            errorElement.style.display = 'none';
+        }
+    }
+    
+    // Validação em tempo real - só adicionar eventos se os campos existirem
+    const senhaAtual = document.getElementById('senhaAtual');
+    const novaSenha = document.getElementById('novaSenha');
+    const confirmarSenha = document.getElementById('confirmarSenha');
+    
+    if (senhaAtual) {
+        senhaAtual.addEventListener('blur', function() {
+            if (this.value.length < 6) {
+                mostrarErro(this, 'A senha deve ter pelo menos 6 caracteres');
+            } else {
+                mostrarSucesso(this);
+            }
+        });
+    }
+    
+    if (novaSenha) {
+        novaSenha.addEventListener('blur', function() {
+            if (this.value.length < 6) {
+                mostrarErro(this, 'A nova senha deve ter pelo menos 6 caracteres');
+            } else {
+                mostrarSucesso(this);
+            }
+        });
+    }
+    
+    if (confirmarSenha) {
+        confirmarSenha.addEventListener('blur', function() {
+            const novaSenhaValue = novaSenha ? novaSenha.value : '';
+            if (this.value !== novaSenhaValue) {
+                mostrarErro(this, 'As senhas não coincidem');
+            } else {
+                mostrarSucesso(this);
+            }
+        });
+    }
+    
+    // Envio do formulário
+    const formRedefinirSenha = document.getElementById('formRedefinirSenha');
+    if (formRedefinirSenha) {
+        formRedefinirSenha.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let valido = true;
+            
+            // Validar senha atual
+            if (senhaAtual && senhaAtual.value.length < 6) {
+                mostrarErro(senhaAtual, 'A senha atual é obrigatória');
+                valido = false;
+            }
+            
+            // Validar nova senha
+            if (novaSenha && novaSenha.value.length < 6) {
+                mostrarErro(novaSenha, 'A nova senha deve ter pelo menos 6 caracteres');
+                valido = false;
+            }
+            
+            // Validar confirmação
+            if (confirmarSenha && novaSenha && confirmarSenha.value !== novaSenha.value) {
+                mostrarErro(confirmarSenha, 'As senhas não coincidem');
+                valido = false;
+            }
+            
+            if (valido) {
+                // Simular envio para o servidor
+                const btnSubmit = this.querySelector('.btn-confirmar');
+                const textoOriginal = btnSubmit.innerHTML;
+                
+                btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redefinindo...';
+                btnSubmit.disabled = true;
+                
+                // Simular requisição AJAX
+                setTimeout(() => {
+                    btnSubmit.innerHTML = textoOriginal;
+                    btnSubmit.disabled = false;
+                    
+                    alert('Senha redefinida com sucesso!');
+                    fecharModalSenha();
+                    
+                    console.log('Senha redefinida:', {
+                        senhaAtual: senhaAtual ? senhaAtual.value : '',
+                        novaSenha: novaSenha ? novaSenha.value : ''
+                    });
+                    
+                }, 1500);
+            }
+        });
+    }
+});

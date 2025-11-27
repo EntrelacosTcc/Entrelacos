@@ -19,3 +19,4 @@ const provider = new GoogleAuthProvider();
 
 // Exportar para uso em outros scripts
 export { auth, provider, signInWithPopup, signInWithEmailAndPassword };
+export { firebaseConfig };

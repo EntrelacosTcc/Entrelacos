@@ -10,6 +10,8 @@ router.post('/register', OngController.registerOng);
 
 // Rotas protegidas
 router.get('/profile', auth, OngController.getOngProfile);
+router.put('/profile', auth, OngController.updateProfile);
 router.put('/update-email', auth, OngController.updateEmail);
+
 
 module.exports = router;

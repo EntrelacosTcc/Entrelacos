@@ -174,6 +174,21 @@ static async checkEmailExists(email, excludeOngId = null) {
       throw error;
     }
   }
+  static async update(id, data) {
+  const fields = Object.keys(data);
+  const values = Object.values(data);
+
+  if (fields.length === 0) return;
+
+  const setClause = fields.map(f => `${f} = ?`).join(', ');
+
+  const sql = `UPDATE ong SET ${setClause} WHERE id_ong = ?`;
+  
+  await db.execute(sql, [...values, id]);
+}
+
+
+
 
   static async findByFirebaseUid(firebaseUid) {
     try {
@@ -213,6 +228,39 @@ static async checkEmailExists(email, excludeOngId = null) {
       throw error;
     }
   }
+  static async getCompleteProfile(firebaseUid) {
+  const [rows] = await db.execute(
+    `SELECT 
+        o.id_ong,
+        o.firebase_uid,
+        o.email,
+        o.nome_ong,
+        o.classificacao,
+        o.descricao,
+        o.endereco,
+        o.causa,
+        o.estado,
+        o.nome_responsavel,
+        o.cargo_responsavel,
+        o.cnpj,
+        o.telefone,
+        o.website,
+        o.facebook,
+        o.instagram,
+        p.resumo,
+        p.causas_atuacao,
+        p.classificacao AS classificacao_perfil,
+        p.endereco AS endereco_perfil
+     FROM ong o
+     LEFT JOIN perfil_ong p ON p.id_ong = o.id_ong
+     WHERE o.firebase_uid = ?`,
+    [firebaseUid]
+  );
+
+  return rows[0] || null;
+}
+
+  
 }
 
 module.exports = OngModel;

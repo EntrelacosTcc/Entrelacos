@@ -5,7 +5,7 @@ import {
   signInWithPopup, 
   GoogleAuthProvider,
   sendPasswordResetEmail 
-} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
 // Configurar provedor Google
 const provider = new GoogleAuthProvider();
@@ -72,47 +72,54 @@ document.addEventListener("DOMContentLoaded", () => {
   // 🔹 MODIFICADA: Função principal de login com verificação
   async function handleLogin(user, token) {
     try {
-      console.log('🔄 Iniciando processo de login...');
+        console.log('🔄 Iniciando processo de login...');
 
-      // 🔹 VERIFICAÇÃO CRÍTICA: Buscar perfil da ONG no MySQL
-      const profile = await fetchOngProfile(token);
-      
-      if (!profile) {
-        throw new Error('ONG não encontrada no sistema. Faça o cadastro primeiro.');
-      }
+        // 🔹 VERIFICAÇÃO CRÍTICA: Buscar perfil da ONG no MySQL
+        const profile = await fetchOngProfile(token);
+        
+        if (!profile) {
+            throw new Error('ONG não encontrada no sistema. Faça o cadastro primeiro.');
+        }
 
-      // Salvar dados da ONG
-      saveOngProfile(profile);
-      
-      // Atualizar navbar (se estiver disponível)
-      if (typeof updateNavbarWithOng === 'function') {
-        console.log('🔧 Atualizando navbar...');
-        updateNavbarWithOng(profile);
-      } else {
-        console.log('ℹ️ Função updateNavbarWithOng não disponível');
-      }
-      
-      // Redirecionar
-      const ongName = profile.nome_ong || user.displayName || "ONG";
-      alert(`✅ Bem-vindo(a), ${ongName}!`);
-      console.log('🚀 Redirecionando para perfilong.html...');
-      
-      window.location.href = "../perfil-users/perfilong.html";
+        // 🔹 SALVAR TOKEN NO PERFIL (VERIFIQUE SE ESTÁ ASSIM):
+        console.log('💾 Salvando token no perfil...');
+        profile.firebase_token = token;
+        localStorage.setItem("ongToken", token);
+
+        // Salvar primeiro no localStorage
+        localStorage.setItem('ongProfile', JSON.stringify(profile));
+        // Depois chamar saveOngProfile se existir
+        if (typeof saveOngProfile === 'function') {
+            saveOngProfile(profile);
+        }
+        
+        // Atualizar navbar
+        if (typeof updateNavbarWithOng === 'function') {
+            console.log('🔧 Atualizando navbar...');
+            updateNavbarWithOng(profile);
+        }
+        
+        // Redirecionar
+        const ongName = profile.nome_ong || user.displayName || "ONG";
+        alert(`✅ Bem-vindo(a), ${ongName}!`);
+        console.log('🚀 Redirecionando para perfilong.html...');
+        
+        window.location.href = "../perfil-users/perfilong.html";
 
     } catch (error) {
-      console.error('❌ Erro no processo de login:', error);
-      
-      // 🔹 LOGOUT NO FIREBASE se a ONG não existe no MySQL
-      try {
-        await auth.signOut();
-        console.log('🚪 Usuário desconectado do Firebase (ONG não existe no MySQL)');
-      } catch (signOutError) {
-        console.error('Erro ao fazer logout:', signOutError);
-      }
-      
-      alert('❌ ' + error.message);
+        console.error('❌ Erro no processo de login:', error);
+        
+        // 🔹 LOGOUT NO FIREBASE se a ONG não existe no MySQL
+        try {
+            await auth.signOut();
+            console.log('🚪 Usuário desconectado do Firebase');
+        } catch (signOutError) {
+            console.error('Erro ao fazer logout:', signOutError);
+        }
+        
+        alert('❌ ' + error.message);
     }
-  }
+}
 
   // === LOGIN COM E-MAIL E SENHA ===
   if (btnLogin) {
@@ -160,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const token = await user.getIdToken();
         
         console.log('✅ Login Google OK, UID:', user.uid);
-        console.log('🔑 Token obtido:', token.substring(0, 20) + '...');
+        console.log('🔑 Token completo:', token);
         
         // 🔹 VERIFICAÇÃO PRÉVIA para Google também
         const ongExists = await checkOngExistsInDatabase(user.email);

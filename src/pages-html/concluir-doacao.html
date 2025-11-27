@@ -16,89 +16,93 @@
 
   <div id="navbar"></div>
 
-            <div class="navBg" id="bgUpload">
-                <input type="file" id="bgInput" accept="image/*" style="display: none;">
-            </div>
+           <div class="navBg" id="bgUpload">
+    <img src="../assets/img/bg-raizesDoFuturo.png" alt="Imagem de Fundo" class="bgImage">
+</div>
 
-            <div class="navProfile" id="profileUpload">
-                <input type="file" id="profileInput" accept="image/*" style="display: none;">
-            </div>
-
+<div class="navProfile" id="profileUpload">
+    <img src="../assets/img/raizesDoFuturo.png" alt="Imagem de Perfil" class="profileImage">
+</div>
             <div class="infoOng">
-                <h1 id="nome">Patas Unidas</h1>
+                <h1 id="nome">Raízes do Futuro</h1>
             </div>
-
+  <h2 class="resumo">Resumo da doação</h2>
             <div class="containerColcluirDoacao">
                 <div class="infoDoacao">
                     <div class="icon-text">
                         <img src="../assets/img/box.png" alt="caixa">
                         <h3>Itens selecionados para realizar doação</h3>
                     </div>
-                    <ul id="doacao" class="margin-left">
-                        <li>Cobertor</li>
-                        <li>Produtos de higiene</li>
-                    </ul>
-                    <div class="hr"></div>
-
-                    <div class="icon-text">
-                        <img src="../assets/img/map.png" alt="mapa">
-                        <h3>Endereço para entrega da doação</h3>
+                    <form>
+                        <ul id="doacao" class="margin-left">
+                            <li>Luvas de jardinagem para crianças</li>
+                            <li>
+Brinquedos educativos (jogos de tabuleiro, blocos de montar)</li>
+                        </ul>
+                        <div class="hr"></div>
+    
+                        <div class="icon-text">
+                            <img src="../assets/img/map.png" alt="mapa">
+                            <h3>Endereço para entrega da doação</h3>
+                        </div>
+                        <p id="enderecoOng">Av. Dep. Cantídio Sampaio, 4440 - São Paulo - SP</p>
+                        <div class="hr"></div>
+    
+                         <div class="container-map margin-left">
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.3287084799044!2d-46.7048306248945!3d-23.448604778877545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cefa2fb57c56e1%3A0xbace7804328d85e5!2sAv.%20Dep.%20Cant%C3%ADdio%20Sampaio%2C%204440%20-%20Vila%20Souza%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1764202786440!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                         </div>  
+                         <div class="hr"></div>
+    
+                         <div class="icon-text">
+                            <img src="../assets/img/clock.png" alt="relógio">
+                            <h3>Dias e horário  para entrega</h3>
+                        </div>
+                        <p id="horarioFuncionamentoOng">Segunda à Sábado - 09:00 às 18:00</p>
+                        <div class="hr"></div>
+    
+                        <div class="icon-text">
+                            <img src="../assets/img/user-check.png" alt="user-check">
+                            <h3>Instruções de entrega</h3>
+                        </div>
+                        <p id="instrucoesOng">Deixar doações com <span id="responsavelOng">Amélia Faria</span>(responsável pela ONG <span id="nome">Patas Unidas</span>)</p>
+                        <div class="hr"></div>
+    
+                        <div class="icon-text">
+                            <img src="../assets/img/edit.png" alt="user-check">
+                            <h3>Prazo para entrega</h3>
+                        </div>
+                        <p id="prazoDoacao">Ideal entregar até: 27/11/2025</p>
+                        <div class="hr"></div>
+    
+                         <div class="icon-text">
+                            <img src="../assets/img/phone.png" alt="user-check">
+                            <h3>Contato para dúvidas</h3>
+                        </div>
+                        <p>Caso tenha dúvidas sobre a entrega, entre em contato:</p>
+                        <p><span class="destaque">Telefone/WhatsApp: </span><span id="telOng">(11) 91278-9043</span></p>
+                        <p><span class="destaque">Email: </span><span id="emailOng">contato@patasunidas.com.br</span></p>
+                        <div class="hr1"></div>
+                        
+                        <div class="checkbox">
+                            <input type="checkbox" required>
+                            <p>Li e aceito os termos de uso</p>
+                        </div>
+    
                     </div>
-                    <p id="enderecoOng">Av. Dep. Cantídio Sampaio, 4440 - São Paulo - SP</p>
-                    <div class="hr"></div>
+    
+<div class="bntDoar1">
+  <button type="button" class="btnConfirmar" 
+          onclick="window.location.href='doacaoItens-concluido.html'">
+    Confirmar doação
+  </button>
+</div>
 
-                     <div class="container-map margin-left">
-                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.8112704802143!2d-46.6261115!3d-23.503306399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef6294502d96d%3A0xecbdeb2ea73c62c5!2sR.%20Volunt%C3%A1rios%20da%20P%C3%A1tria%2C%201926%20-%20Santana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002010-400!5e0!3m2!1spt-BR!2sbr!4v1755784599567!5m2!1spt-BR!2sbr" width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                     </div>  
-                     <div class="hr"></div>
-
-                     <div class="icon-text">
-                        <img src="../assets/img/clock.png" alt="relógio">
-                        <h3>Dias e horário  para entrega</h3>
-                    </div>
-                    <p id="horarioFuncionamentoOng">Segunda à Sábado - 09:00 às 18:00</p>
-                    <div class="hr"></div>
-
-                    <div class="icon-text">
-                        <img src="../assets/img/user-check.png" alt="user-check">
-                        <h3>Instruções de entrega</h3>
-                    </div>
-                    <p id="instrucoesOng">Deixar doações com <span id="responsavelOng">Amélia Faria</span>(responsável pela ONG <span id="nome">Patas Unidas</span>)</p>
-                    <div class="hr"></div>
-
-                    <div class="icon-text">
-                        <img src="../assets/img/edit.png" alt="user-check">
-                        <h3>Prazo para entrega</h3>
-                    </div>
-                    <p id="prazoDoacao">Ideal entregar até: 26/06/2025</p>
-                    <div class="hr"></div>
-
-                     <div class="icon-text">
-                        <img src="../assets/img/phone.png" alt="user-check">
-                        <h3>Contato para dúvidas</h3>
-                    </div>
-                    <p>Caso tenha dúvidas sobre a entrega, entre em contato:</p>
-                    <p><span class="destaque">Telefone/WhatsApp: </span><span id="telOng">(11) 91278-9043</span></p>
-                    <p><span class="destaque">Email: </span><span id="emailOng">contato@patasunidas.com.br</span></p>
-                    <div class="hr1"></div>
-                    
-                    <div class="checkbox">
-                        <input type="checkbox">
-                        <p>Li e aceito os termos de uso</p>
-                    </div>
-
-                </div>
-
-                 <div class="bntDoar">
-                   <button type="submit">Confirmar doação</button>
-                 </div>
+                    </form>
             </div>
   
 
     <div id="footer"></div>
 
-        <!-- API de acessibilidade -->
-    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
     <script src="../js/main.js"></script>
     <script src="../js/voluntarios.js"></script>
     <script src="../js/carrossel.js"></script>

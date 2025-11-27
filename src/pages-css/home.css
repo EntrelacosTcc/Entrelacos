@@ -12,6 +12,10 @@
   border-bottom: 1px solid var(--primaria-media-2); 
 }
 
+.grid-vagas span{
+  margin: 3px 10px;
+}
+
 .hero-content {
   max-width: 1200px;
   width: 100%;
