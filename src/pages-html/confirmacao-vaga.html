@@ -70,10 +70,11 @@
     .breadcrumb {
       color: var(--accent-2);
       font-weight: 600;
-      font-size: 14px;
+      font-size: 16px;
       margin-bottom: 12px;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
     }
 
@@ -84,7 +85,7 @@
 
     .divider {
       height: 1px;
-      background: linear-gradient(90deg, rgba(15,107,97,0.06), rgba(15,107,97,0.02));
+      background: linear-gradient(90deg, rgba(15, 107, 96, 0.185), rgba(15, 107, 96, 0.37));
       margin: 10px 0 22px 0;
       border-radius: 1px;
     }
@@ -236,7 +237,7 @@
     .summary-item {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 20px;
       margin-bottom: 15px;
     }
 
@@ -244,9 +245,9 @@
       margin-bottom: 0;
     }
 
-    .summary-icon {
-      width: 22px;
-      opacity: 0.9;
+    .summary-item i{
+      margin-top: 5px;
+      font-size: 20px;
     }
 
     /* Estilos para a tela de conclusão */
@@ -339,7 +340,7 @@
       <form id="confirmForm" autocomplete="on" novalidate>
         <div class="form-group">
           <label for="nome">Nome Completo</label>
-          <input id="nome" name="nome" type="text" placeholder="Lara Gonçalves de Almeida" required />
+          <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required />
         </div>
 
         <div class="form-group">
@@ -349,7 +350,7 @@
 
         <div class="form-group">
           <label for="email">E-mail</label>
-          <input id="email" name="email" type="email" placeholder="lauragoncalves@gmail.com" required />
+          <input id="email" name="email" type="email" placeholder="seuemail@gmail.com" required />
         </div>
 
         <div class="checkbox-row">
@@ -381,7 +382,7 @@
         <h2 class="summary-title">Atividade Voluntária</h2>
         <div class="summary-card">
           <div class="summary-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/685/685384.png" class="summary-icon" alt="Ícone de atividade">
+            <i class="fa-solid fa-box-archive"></i>
             <div>
               <strong>Instrutor de música comunitária</strong><br>
               ONG Talento Livre
@@ -389,7 +390,7 @@
           </div>
 
           <div class="summary-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" class="summary-icon" alt="Ícone de calendário">
+            <i class="fa-solid fa-calendar-days"></i>
             <div>
               <strong>Data a combinar</strong><br>
               Horário a combinar
@@ -397,7 +398,7 @@
           </div>
 
           <div class="summary-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" class="summary-icon" alt="Ícone de localização">
+            <i class="fa-solid fa-location-dot"></i>
             <div>
               ONG Talento Livre<br>
               Rua Augusto Gil, 123 - São Paulo/SP
@@ -410,7 +411,7 @@
         <h2 class="summary-title">Seu perfil</h2>
         <div class="summary-card">
           <div class="summary-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" class="summary-icon" alt="Ícone de pessoa">
+            <i class="fa-solid fa-user"></i>
             <div>
               <strong>Nome Completo</strong><br>
               <span id="summary-name">Nome Completo</span>
@@ -418,7 +419,7 @@
           </div>
 
           <div class="summary-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" class="summary-icon" alt="Ícone de telefone">
+            <i class="fa-solid fa-phone"></i>
             <div>
               <strong>Telefone</strong><br>
               <span id="summary-phone">11 99999-9999</span>
@@ -426,7 +427,7 @@
           </div>
 
           <div class="summary-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" class="summary-icon" alt="Ícone de e-mail">
+            <i class="fa-solid fa-envelope"></i>
             <div>
               <strong>E-mail</strong><br>
               <span id="summary-email">nome@gmail.com</span>
