@@ -218,7 +218,7 @@ btnPost.addEventListener("click", () => {
 
   if (type === "text") {
     const content = postContent.value.trim();
-    if (!content) return alert("Post criado com sucesso!");
+    if (!content) return alert("Post criado com sucesso");
     createPost(content, null);
   } else {
     const file = postImage.files[0];
