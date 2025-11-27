@@ -1,12 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
-
-h2, h3, p{
-    font-family: 'Poppins', sans-serif;
-}
 
 .containerDoacao{
     display: flex;
@@ -74,11 +65,11 @@ h2, h3, p{
 .doacao button, .containerColcluirDoacao input{
     background-color: #09625D;
     padding: 10px;
-    width: 20%;
+    width: 150px;
     border: none;
     color: #fff;
-    height: 8vh;
-    border-radius: 20px;
+    height: 50px;
+    border-radius: 30px;
     text-align: center;
     font-size: 1rem;
 }
@@ -89,6 +80,12 @@ h2, h3, p{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.resumo {
+    text-align: center;
+    color: #09625D;
+    font-weight: 400;
 }
 
 
@@ -108,15 +105,13 @@ h2, h3, p{
 }
 
 .infoOng h1{
-    font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-left: -88%;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: -74%;
 }
 
 .infoOng p, a{
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #000;
     padding-top: 15px;
 }
@@ -131,7 +126,7 @@ h2, h3, p{
 /*  */
 .navBg {
     width: 100%;
-    height: 20vh;
+    height: 300px;
     background-color: #00000046;
 }
 
@@ -139,11 +134,9 @@ h2, h3, p{
 .navProfile {
     margin-top: -30px;
     margin-bottom: 10px;
-    width: 100px;
-    height: 100px;
-    background-color: #cecece;
+    width: 150px;
+    height: 150px;
     border-radius: 50px;
-    border: 1px solid #09625D;
     margin-left: 5%;
 }
 
@@ -157,7 +150,7 @@ h2, h3, p{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%; /* garante que a imagem fique redonda */
+  border-radius: 50%; 
 }
 
 .container-map {
@@ -175,7 +168,7 @@ h2, h3, p{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 15vh;
+    margin-top: 20px;
     margin-bottom: 10vh;
 
 }
@@ -215,6 +208,7 @@ h2, h3, p{
 
 .infoDoacao p{
     line-height: 1.7;
+    font-size: 17px;
 }
 
 .infoDoacao .destaque{

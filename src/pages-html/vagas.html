@@ -1,128 +1,278 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png" />
+    <title>Vagas Voluntariado</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../pages-css/vagas.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png">
-  <title>Loja Entrelaços</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="../css/global.css" />
-  <link rel="stylesheet" href="../pages-css/vagas.css" />
-</head>
+  <body>
+    <div id="navbar"></div>
 
-<body>
-
-  <div id="navbar"></div>
-
-  <div class="hero">
-    <div class="text">
-      <h1>Vagas de Voluntariado</h1>
-      <p>Encontre oportunidades que combinam com seu tempo, habilidades e paixão por fazer a diferença</p>
+    <div class="hero">
+      <div class="text">
+        <h1>Vagas de Voluntariado</h1>
+        <p>
+          Encontre oportunidades que combinam com seu tempo, habilidades e
+          paixão por fazer a diferença
+        </p>
+      </div>
     </div>
+
+    <div class="causas">
+      <section class="causas-container animar-scroll">
+        <h2>Confira as causas mais acessadas</h2>
+        <i
+          id="bnt-left"
+          class="fa-solid fa-angle-left fa-3x"
+          onclick="direcao(1, 254)"
+        ></i>
+
+        <div id="content-slide">
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-paw icone"></i>
+              <h3 class="texto">Animal</h3>
+            </div>
+          </div>
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-people-group icone"></i>
+              <h3 class="texto">Social</h3>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-leaf icone"></i>
+              <h3 class="texto">Ambiental</h3>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-graduation-cap icone"></i>
+              <h3 class="texto">Educacional</h3>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-heart-pulse icone"></i>
+              <h3 class="texto">Saúde</h3>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-masks-theater icone"></i>
+              <h3 class="texto">Cultural</h3>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-hand-holding-heart icone"></i>
+              <h3 class="texto">Humanitária</h3>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-hands-praying icone"></i>
+              <h3 class="texto">Religiosa</h3>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-venus icone"></i>
+              <h3 class="texto">Mulheres</h3>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-rainbow icone"></i>
+              <h3 class="texto">LGBTQIA+</h3>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-children icone"></i>
+              <h3 class="texto">Infantojuvenil</h3>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-person-cane icone"></i>
+              <h3 class="texto">Idosos</h3>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="topo">
+              <i class="fa-solid fa-wheelchair icone"></i>
+              <h3 class="texto">PcD</h3>
+            </div>
+          </div>
+        </div>
+
+        <i
+          id="bnt-right"
+          class="fa-solid fa-angle-right fa-3x"
+          onclick="direcao(2, 254)"
+        ></i>
+      </section>
+    </div>
+
+    <hr class="linha">
+
+    <h2 class="oportunidades">Explore mais oportunidades</h2>
+
+<section class="vagas-container">
+  <div class="titulo-vagas">
+    <div class="bolinha">
+      <i class="fa-solid fa-lightbulb"></i>
+    </div>
+    <h3>Vagas relacionadas a você</h3>
   </div>
+</section>
 
-  <div class="causas">
+ <div class="vagasVoluntariado-container animar-scroll">
 
-    <section class="causas-container animar-scroll">
-      <h2>Confira as causas mais acessadas</h2>
-      <i id="bnt-left" class="fa-solid fa-angle-left fa-3x" onclick="direcao(1, 360)"></i>
+      <div class="vagas-carrossel">
+        <div class="grid-vagas">
+ <!-- Vaga 1: Causa Animal -->
+      <vaga-item
+          imagem="/src/assets/img/vagapet.jpg"
+          titulo="Adoção de Animais"
+          ong="Amigos dos Pets"
+          causas="Animal"
+          descricao="Auxiliar na organização de eventos de adoção e cuidados básicos dos animais, promovendo bem-estar e conscientização."
+          localizacao="SP"
+          frequencia="Recorrente"
+          carga-horaria="3h Semanais"
+      ></vaga-item>
 
-      <div id="content-slide">
+      <!-- Vaga 2: Causa Social -->
+      <vaga-item
+          imagem="/src/assets/img/vagaalfabetizacao.jpg"
+          titulo="Projeto de Alfabetização"
+          ong="Leitura para Todos"
+          causas="Social, Educacional"
+          descricao="Ajudar crianças e adolescentes a melhorar a leitura e escrita através de atividades lúdicas e oficinas educativas."
+          localizacao="SP"
+          frequencia="Recorrente"
+          carga-horaria="4h Semanais"
+      ></vaga-item>
 
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Social</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
-        <div class="block">
-          <div class="topo">
-            <i class="fa-solid fa-paw icone"></i>
-            <h3 class="texto">Animal</h3>
-          </div>
-        </div>
+      <!-- Vaga 3: Causa LGBTQIA+ -->
+      <vaga-item
+          imagem="/src/assets/img/vagalgbt.jpg"
+          titulo="Oficinas de Inclusão"
+          ong="Diversidade Viva"
+          causas="LGBTQIA+"
+          descricao="Auxiliar na condução de oficinas sobre inclusão e direitos LGBTQIA+, promovendo debates e atividades culturais."
+          localizacao="SP"
+          frequencia="Pontual"
+          carga-horaria="3h"
+      ></vaga-item>
 
-
+      <!-- Vaga 4: Causa Mulheres -->
+      <vaga-item
+          imagem="/src/assets/img/vagamulheres.avif"
+          titulo="Mentoria Profissional"
+          ong="Mulheres em Ação"
+          causas="Mulheres"
+          descricao="Apoiar mulheres em situação de vulnerabilidade com orientação profissional e oficinas de empoderamento."
+          localizacao="SP"
+          frequencia="Fins de Semana"
+          carga-horaria="3h Semanais"
+      ></vaga-item>
 
       </div>
-
-
-      <i id="bnt-right" class="fa-solid fa-angle-right fa-3x" onclick="direcao(2, 360)"></i>
-
-    </section>
   </div>
 
-  <div id="footer"></div>
-  <script src="../js/main.js"></script>
-  <script src="../js/carrossel.js"></script>
-</body>
+  <section class="vagas-container">
+  <div class="titulo-vagas">
+    <div class="bolinha">
+      <i class="fa-solid fa-lightbulb"></i>
+    </div>
+    <h3>Vagas em Destaque</h3>
+  </div>
+</section>
 
+                <div class="vagas-carrossel">
+        <div class="grid-vagas">
+          <!-- Humanitária -->
+      <vaga-item
+          imagem="/src/assets/img/vagahumanitaria.jpg"
+          titulo="Campanha Solidária"
+          ong="Mãos que Ajudam"
+          causas="Humanitária"
+          descricao="Auxiliar na arrecadação e distribuição de alimentos, roupas e materiais para comunidades em situação de vulnerabilidade."
+          localizacao="SP"
+          frequencia="Pontual"
+          carga-horaria="3h"
+      ></vaga-item>
+
+      <!-- Religiosa -->
+      <vaga-item
+          imagem="/src/assets/img/religioso.png"
+          titulo="Apoio em Eventos Comunitários"
+          ong="Comunidade Luz"
+          causas="Religiosa"
+          descricao="Participar da organização e execução de eventos comunitários, promovendo encontros, celebrações e apoio espiritual."
+          localizacao="SP"
+          frequencia="Recorrente"
+          carga-horaria="2h Semanais"
+      ></vaga-item>
+
+      <!-- Cultural -->
+<vaga-item
+    imagem="/src/assets/img/vagacultural.jpg"
+    titulo="Oficinas Culturais"
+    ong="Arte em Movimento"
+    causas="Cultural"
+    descricao="Apoiar a organização e execução de oficinas de dança, música e artes visuais, promovendo cultura e expressão artística na comunidade."
+    localizacao="SP"
+    frequencia="Pontual"
+    carga-horaria="3h"
+></vaga-item>
+
+      <!-- Saúde -->
+      <vaga-item
+          imagem="/src/assets/img/vagasaude.jpeg"
+          titulo="Campanha de Saúde"
+          ong="Saúde para Todos"
+          causas="Saúde"
+          descricao="Auxiliar em campanhas de vacinação, triagem de saúde e conscientização sobre hábitos saudáveis na comunidade."
+          localizacao="SP"
+          frequencia="Pontual"
+          carga-horaria="3h"
+      ></vaga-item>
+
+        </div>
+      </div>
+     </div>
+
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+    <script src="../js/carrossel.js"></script>
+  </body>
 </html>

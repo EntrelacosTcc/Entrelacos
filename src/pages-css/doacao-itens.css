@@ -88,6 +88,7 @@
 .como-funciona-container h2{
     color: #09625D;
     margin-bottom: 20px;
+    font-size: 1.8rem;
 }
 
 .como-funciona-container h3{
@@ -138,6 +139,85 @@
 .passos p{
     font-size: 16px;
 }
+
+/* Container dos pedidos de doação */
+.pedidoDoacao-container {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;   
+  justify-content: flex-start; 
+  gap: 20px;              
+  padding: 20px 0;
+}
+
+/* PEDIDO DE DOACAO */
+.doacao {
+  display: flex;
+  align-items: flex-start;          
+  gap: 15px;                        
+  width: 100%;                      
+  max-width: 700px;   
+  padding: 20px;
+  background-color: #3eb4ae49;
+  border-radius: 15px;
+  box-sizing: border-box;
+  overflow: hidden;               
+}
+
+.doacao-img {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+  object-fit: cover; 
+}
+
+.pedidoDoacao {
+  flex: 1;                          
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;   
+  gap: 10px;
+  min-height: 100px;
+  position: relative;
+}
+
+.pedidoDoacao span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.pedidoDoacao p {
+  margin: 0;
+  line-height: 1.4;
+  word-wrap: break-word;           
+  overflow-wrap: break-word;
+  flex-grow: 1;                     
+}
+
+/* Botão */
+.doacaoBtn {
+  margin-left: auto; 
+  background-color: #05625D;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 9px;
+  padding: 5px 25px;
+  height: 32px;
+  transition: background-color 0.2s ease;
+}
+
+.doacaoBtn:hover {
+  background-color: #04847d;
+}
+
+.pedidoDoacao-container h2{
+    color: #09625D;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
 
 @media (max-width: 822px) {
 
