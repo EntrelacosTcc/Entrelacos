@@ -151,60 +151,19 @@
     <h3>Vagas relacionadas a você</h3>
   </div>
 </section>
+ <div class="carrossel-section">
+   
 
- <div class="vagasVoluntariado-container animar-scroll">
+    <div class="carrossel-container">
+      <button class="arrow left" data-carrossel="carrossel1" data-direction="-1">&#10094;</button>
 
-      <div class="vagas-carrossel">
-        <div class="grid-vagas">
- <!-- Vaga 1: Causa Animal -->
-      <vaga-item
-          imagem="/src/assets/img/vagapet.jpg"
-          titulo="Adoção de Animais"
-          ong="Amigos dos Pets"
-          causas="Animal"
-          descricao="Auxiliar na organização de eventos de adoção e cuidados básicos dos animais, promovendo bem-estar e conscientização."
-          localizacao="SP"
-          frequencia="Recorrente"
-          carga-horaria="3h Semanais"
-      ></vaga-item>
+      <!-- Carrossel preenchido via JS -->
+      <div class="carrossel" id="carrossel1"></div>
 
-      <!-- Vaga 2: Causa Social -->
-      <vaga-item
-          imagem="/src/assets/img/vagaalfabetizacao.jpg"
-          titulo="Projeto de Alfabetização"
-          ong="Leitura para Todos"
-          causas="Social, Educacional"
-          descricao="Ajudar crianças e adolescentes a melhorar a leitura e escrita através de atividades lúdicas e oficinas educativas."
-          localizacao="SP"
-          frequencia="Recorrente"
-          carga-horaria="4h Semanais"
-      ></vaga-item>
+      <button class="arrow right" data-carrossel="carrossel1" data-direction="1">&#10095;</button>
+    </div>
 
-      <!-- Vaga 3: Causa LGBTQIA+ -->
-      <vaga-item
-          imagem="/src/assets/img/vagalgbt.jpg"
-          titulo="Oficinas de Inclusão"
-          ong="Diversidade Viva"
-          causas="LGBTQIA+"
-          descricao="Auxiliar na condução de oficinas sobre inclusão e direitos LGBTQIA+, promovendo debates e atividades culturais."
-          localizacao="SP"
-          frequencia="Pontual"
-          carga-horaria="3h"
-      ></vaga-item>
-
-      <!-- Vaga 4: Causa Mulheres -->
-      <vaga-item
-          imagem="/src/assets/img/vagamulheres.avif"
-          titulo="Mentoria Profissional"
-          ong="Mulheres em Ação"
-          causas="Mulheres"
-          descricao="Apoiar mulheres em situação de vulnerabilidade com orientação profissional e oficinas de empoderamento."
-          localizacao="SP"
-          frequencia="Fins de Semana"
-          carga-horaria="3h Semanais"
-      ></vaga-item>
-
-      </div>
+    <div class="carrossel-indicators" id="indicators1"></div>
   </div>
 
   <section class="vagas-container">
@@ -273,6 +232,7 @@
 
     <div id="footer"></div>
     <script src="../js/main.js"></script>
+    <script src="../js/vagas.js"></script>
     <script src="../js/carrossel.js"></script>
   </body>
 </html>
