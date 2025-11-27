@@ -266,7 +266,9 @@ a{
     border-radius: 100%;
     border: 1px solid #09625D;
     flex-shrink: 0;
-    background-color: #00000054;
+    background-image: url(../assets/img/raizesDoFuturo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .vagaDoacaoInfo {
