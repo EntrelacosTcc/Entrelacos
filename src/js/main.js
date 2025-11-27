@@ -243,7 +243,7 @@ function updateNavbarWithUser(profile) {
         <div class="user-navbar-info" style="display: flex; align-items: center; gap: 8px; cursor: pointer; justify-content: center;">
             <img src="${profile.foto || '/src/assets/img/default-avatar.png'}"
                  style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #4CAF50;">
-            <span style="color: #000; font-weight: 500; font-size: 10px;">${firstName}</span>
+            <span style="color: #ffffffff; font-weight: 500; font-size: 10px;">${firstName}</span>
         </div>
     `;
 
@@ -251,6 +251,85 @@ function updateNavbarWithUser(profile) {
     if (authLink) authLink.href = "/src/perfil-users/perfilusuario.html";
 
     addUserDropdown(authItem, profile);
+}
+
+// function addUserDropdown(authItem, profile) {
+//     const existing = authItem.querySelector('.user-dropdown');
+//     if (existing) existing.remove();
+
+//     const dropdown = document.createElement('div');
+//     dropdown.className = 'user-dropdown';
+//     dropdown.style.cssText = `
+//         position: absolute; top: 100%; right: 0;
+//         background: white; border-radius: 8px;
+//         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+//         padding: 10px 0; min-width: 180px;
+//         display: none; z-index: 1000;
+//     `;
+
+//     dropdown.innerHTML = `
+//         <div style="padding: 10px 15px; border-bottom: 1px solid #eee;">
+//             <div style="font-weight: bold;">${profile.nome}</div>
+//             <div style="font-size: 12px; color: #666;">${profile.email}</div>
+//         </div>
+//         <a href="/src/perfil-users/perfilusuario.html" style="display: block; padding: 10px 15px;">
+//             <i class="fas fa-user"></i> Meu Perfil
+//         </a>
+//         <a href="#" class="logout-btn" style="display: block; padding: 10px 15px; color: #e74c3c;">
+//             <i class="fas fa-sign-out-alt"></i> Sair
+//         </a>
+//     `;
+
+//     authItem.style.position = 'relative';
+//     authItem.appendChild(dropdown);
+
+//     authItem.querySelector('.user-navbar-info').addEventListener('click', () => {
+//         dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+//     });
+
+//     document.addEventListener('click', (e) => {
+//         if (!authItem.contains(e.target)) dropdown.style.display = 'none';
+//     });
+// }
+
+
+function updateNavbarWithOng(profile) {
+    const authItem = document.getElementById('auth-item');
+    const enterBtn = document.querySelector('.enter-btn');
+
+    if (!authItem || !enterBtn) return;
+
+    const firstName = profile.nome_ong ? profile.nome_ong.split(' ')[0] : 'ONG';
+
+    enterBtn.innerHTML = `
+        <div class="user-navbar-info" style="display: flex; align-items: center; gap: 8px; cursor: pointer; justify-content: center;">
+            <img src="${profile.foto || '/src/assets/img/raizesDoFuturo.png'}"
+                 style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #4CAF50;">
+            <span style="color: #ffffffff; font-weight: 500; font-size: 10px;">${firstName}</span>
+        </div>
+    `;
+
+    const authLink = authItem.querySelector('a');
+    if (authLink) authLink.href = "/src/perfil-users/perfilong.html";
+
+    // ADICIONE este event listener para atualizações em tempo real:
+    window.addEventListener('ongProfileUpdated', (event) => {
+        const img = enterBtn.querySelector('img');
+        if (img && event.detail.foto) {
+            img.src = event.detail.foto;
+        }
+        
+        // Atualizar também o nome se necessário
+        if (event.detail.nome_ong) {
+            const span = enterBtn.querySelector('span');
+            if (span) {
+                const newFirstName = event.detail.nome_ong.split(' ')[0];
+                span.textContent = newFirstName;
+            }
+        }
+    });
+
+    addOngDropdown(authItem, profile);
 }
 
 function addUserDropdown(authItem, profile) {
@@ -292,27 +371,6 @@ function addUserDropdown(authItem, profile) {
     });
 }
 
-function updateNavbarWithOng(profile) {
-    const authItem = document.getElementById('auth-item');
-    const enterBtn = document.querySelector('.enter-btn');
-
-    if (!authItem || !enterBtn) return;
-
-    const firstName = profile.nome_ong ? profile.nome_ong.split(' ')[0] : 'ONG';
-
-    enterBtn.innerHTML = `
-        <div class="user-navbar-info" style="display: flex; align-items: center; gap: 8px; cursor: pointer; justify-content: center;">
-            <img src="${profile.profileImage || '/src/assets/img/default-avatar.png'}"
-                 style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid #4CAF50;">
-            <span style="color: #000; font-weight: 500; font-size: 10px;">${firstName}</span>
-        </div>
-    `;
-
-    const authLink = authItem.querySelector('a');
-    if (authLink) authLink.href = "/src/perfil-users/perfilong.html";
-
-    addOngDropdown(authItem, profile);
-}
 
 function addOngDropdown(authItem, profile) {
     const existing = authItem.querySelector('.user-dropdown');
@@ -333,7 +391,7 @@ function addOngDropdown(authItem, profile) {
             <div style="font-weight: bold;">${profile.nome_ong}</div>
             <div style="font-size: 12px; color: #666;">${profile.email}</div>
         </div>
-        <a href="/src/pages-html/perfilong.html" style="display: block; padding: 10px 15px;">
+        <a href="/src/perfil-users/perfilong.html" style="display: block; padding: 10px 15px;">
             <i class="fas fa-user"></i> Meu Perfil
         </a>
         <a href="#" class="logout-btn" style="display: block; padding: 10px 15px; color: #e74c3c;">
@@ -475,7 +533,7 @@ function loadVLibras() {
 function checkAuth() {
     const protectedPages = [
         '/src/perfil-users/perfilusuario.html',
-        '/src/pages-html/perfilusuario.html'
+        '/src/perfil-users/perfilusuario.html'
     ];
 
     const currentPage = window.location.pathname;

@@ -176,22 +176,21 @@ class OngController {
 
   // GET /api/ong/profile (autenticado)
   static async getOngProfile(req, res) {
-    try {
-      const firebaseUid = req.userId;
-      
-      // Usar o método do PerfilOngModel que faz join com a tabela ong
-      const profile = await PerfilOngModel.getCompleteProfile(firebaseUid);
-      
-      if (!profile) {
-        return res.status(404).json({ error: 'ONG não encontrada' });
-      }
+  try {
+    const firebaseUid = req.userId;
 
-      return res.json(profile);
-    } catch (err) {
-      console.error('getOngProfile error', err);
-      return res.status(500).json({ error: 'Erro no servidor' });
-    }
+    const ong = await OngModel.findByFirebaseUid(firebaseUid);
+    if (!ong) 
+      return res.status(404).json({ error: "ONG não encontrada" });
+
+    return res.json(ong);
+
+  } catch (err) {
+    console.error("getOngProfile error", err);
+    return res.status(500).json({ error: "Erro no servidor" });
   }
+}
+
 
   // GET /api/ong/:id (público - para visualização de perfil público)
   static async getOngPublicProfile(req, res) {
@@ -277,6 +276,8 @@ class OngController {
       return res.status(500).json({ error: 'Erro ao atualizar perfil' });
     }
   }
+
+  
 }
 
 module.exports = OngController;
