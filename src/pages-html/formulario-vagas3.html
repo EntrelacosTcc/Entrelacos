@@ -1,104 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../assets/img/logo-navbar.png">
-    <title>Informações Vagas</title>
+    <title>Criar Vaga</title>
     <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href= "../pages-css/formulario-vagas.css">
+    <link rel="stylesheet" href="../pages-css/formulario-vagas.css">
 </head>
+
 <body>
-  <!-- API VLibras -->
-<div vw class="enabled">
-  <div vw-access-button class="active"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
-  </div>
-</div>
 
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-<script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
-</script>
-    <div id="navbar"></div>
+<div id="navbar"></div>
+
 <div class="form-container">
-  <h2>Informações sobre a Vaga</h2>
-  <p class="subtitle">Preencha as informações sobre a vaga a ser criada</p>
+  <h2>Finalizar criação da vaga</h2>
+  <p class="subtitle">Revise e conclua o envio da vaga</p>
 
-  
+  <!-- ENDEREÇO -->
+  <label>Endereço da Atividade:</label>
+  <input type="text" id="input-endereco" placeholder="Ex: Rua das Flores, 123 - São Paulo">
+
+  <!-- DATA -->
+  <label>Data da Atividade:</label>
+  <input type="date" id="input-data">
+
+  <!-- TAREFAS -->
   <label>Tarefas do Voluntário:</label>
-  <p class="small-text">Liste as funções que serão realizadas pelo voluntário.</p>
-  <input type="text" id="input-tarefa" placeholder="Escreva aqui" />
+  <input type="text" id="input-tarefa" placeholder="Digite e aperte Enter">
   <ul id="lista-tarefas" class="lista-itens"></ul>
 
-  
-  <label>Requisitos</label>
-  <p class="small-text">Liste quais são os requisitos aos voluntários para que realizem a atividade.</p>
-  <input type="text" id="input-requisito" placeholder="Escreva aqui" />
+  <!-- REQUISITOS -->
+  <label>Requisitos:</label>
+  <input type="text" id="input-requisito" placeholder="Digite e aperte Enter">
   <ul id="lista-requisitos" class="lista-itens"></ul>
 
-  
-  <label>Classificação etária da vaga</label>
-  <p class="small-text">Selecione uma das opções abaixo</p>
-
+  <!-- CLASSIFICAÇÃO -->
+  <label>Classificação Etária</label>
   <div class="classificacao-container">
-    <div class="classificacao-box">
-      <i class="fas fa-users"></i>
+    <label class="classificacao-box">
+      <input type="radio" name="classificacao" value="Voluntariado Familiar">
       <strong>Voluntariado Familiar</strong>
-      <p class="small-text">Menores de 18 anos podem participar, desde que acompanhados por um responsável adulto.</p>
-    </div>
+    </label>
 
-    <div class="classificacao-box">
-      <i class="fas fa-user-tie"></i>
-      <strong>Destinada a maiores de 18 anos</strong>
-      <p class="small-text">Esta vaga é exclusiva para voluntários com 18 anos ou mais.</p>
-    </div>
+    <label class="classificacao-box">
+      <input type="radio" name="classificacao" value="18+">
+      <strong>18+</strong>
+    </label>
   </div>
 
   <div class="button-container">
-    <button id="">Criar vaga</button>
+    <button id="criarVagaBtn">Criar Vaga</button>
   </div>
 </div>
 
-    <script src="../js/main.js"></script>
 <script>
-  function adicionarItem(inputId, listaId) {
+
+// ---------------- ADICIONAR ITENS SEM BUGS ----------------
+function adicionarItem(inputId, listaId) {
     const input = document.getElementById(inputId);
     const lista = document.getElementById(listaId);
+
     const texto = input.value.trim();
+    if (texto === "") return;
 
-    if (texto !== "") {
-      const li = document.createElement("li");
-      li.innerHTML = `
-        <span><i class="fas fa-check"></i> ${texto}</span>
+    const li = document.createElement("li");
+    li.innerHTML = `
+        <span>${texto}</span>
         <span class="remove">&times;</span>
-      `;
-      lista.appendChild(li);
-      input.value = "";
+    `;
 
-      li.querySelector(".remove").addEventListener("click", () => {
-        li.remove();
-      });
-    }
-  }
+    lista.appendChild(li);
+    input.value = "";
 
-  document.getElementById("input-tarefa").addEventListener("keypress", function(e) {
+    li.querySelector(".remove").addEventListener("click", () => li.remove());
+}
+
+// ENTER → adicionar item
+document.getElementById("input-tarefa").addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
-      e.preventDefault();
-      adicionarItem("input-tarefa", "lista-tarefas");
+        e.preventDefault();
+        adicionarItem("input-tarefa", "lista-tarefas");
     }
-  });
+});
 
-  document.getElementById("input-requisito").addEventListener("keypress", function(e) {
+document.getElementById("input-requisito").addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
-      e.preventDefault();
-      adicionarItem("input-requisito", "lista-requisitos");
+        e.preventDefault();
+        adicionarItem("input-requisito", "lista-requisitos");
     }
-  });
+});
+
+// ---------------- BOTÃO CRIAR VAGA ----------------
+document.getElementById("criarVagaBtn").addEventListener("click", async () => {
+
+    // Se digitou sem dar Enter → adicionar automaticamente
+    if (document.getElementById("input-tarefa").value.trim() !== "") {
+        adicionarItem("input-tarefa", "lista-tarefas");
+    }
+    if (document.getElementById("input-requisito").value.trim() !== "") {
+        adicionarItem("input-requisito", "lista-requisitos");
+    }
+
+    const vaga = JSON.parse(localStorage.getItem("vagaDados"));
+    if (!vaga) {
+        alert("Erro: Informações anteriores não carregadas.");
+        return;
+    }
+
+    // Coletar novos campos
+    const endereco = document.getElementById("input-endereco").value.trim();
+    const data_escolhida = document.getElementById("input-data").value;
+
+    if (!endereco || !data_escolhida) {
+        alert("Preencha o endereço e a data da atividade.");
+        return;
+    }
+
+    // Pegando os textos das listas
+    const tarefas = Array.from(
+        document.querySelectorAll("#lista-tarefas li span:first-child")
+    ).map(el => el.textContent);
+
+    const requisitos = Array.from(
+        document.querySelectorAll("#lista-requisitos li span:first-child")
+    ).map(el => el.textContent);
+
+    const classificacao = document.querySelector("input[name='classificacao']:checked")?.value || "";
+
+    // OBJETO FINAL - AGORA COM ENDEREÇO E DATA
+    const novaVaga = {
+        titulo: vaga.nome,
+        visao_geral: vaga.visao,
+        sobre_a_vaga: vaga.sobre,
+        status: "ATIVA",
+        imagem_url: vaga.imagem || "",
+        formato_trabalho: vaga.formato,
+        tarefas_voluntario: JSON.stringify(tarefas),
+        requisitos: JSON.stringify(requisitos),
+        classificacao_etaria: classificacao,
+        horas: vaga.horas || null,
+        endereco: endereco,
+        data_escolhida: data_escolhida,
+        id_usuario: 3,
+        id_ong: 1
+    };
+
+    try {
+
+        const response = await fetch("http://localhost:3002/api/vagas", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(novaVaga)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            alert("Erro ao criar vaga!");
+            console.log(result);
+            return;
+        }
+
+        alert("Vaga criada com sucesso!");
+        localStorage.removeItem("vagaDados");
+
+        window.location.href = "../pages-html/vaga-concluido.html";
+
+    } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao conectar ao servidor.");
+    }
+
+});
+
 </script>
+ <!-- API de acessibilidade -->
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
 
-
-
+<script src="../js/main.js"></script>
+  
 </body>
 </html>
