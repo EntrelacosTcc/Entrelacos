@@ -603,7 +603,7 @@ async handleImageUpload(event, type) {
         const type = activeOption.dataset.type;
         if (type === "text") {
           const content = postContent ? postContent.value.trim() : "";
-          if (!content) return alert("Escreva algo antes de postar!");
+          if (!content) return alert("Post Criado com Sucesso!");
           createPost(content, null);
         } else {
           const file = postImage ? postImage.files[0] : null;
